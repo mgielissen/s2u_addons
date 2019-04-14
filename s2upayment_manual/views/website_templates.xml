@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="select_acquirer" name="Display Acquirer Information">
+        <div class="row mt16">
+            <a t-attf-href="/shop/checkout/payment/manual">
+                <img src="/s2upayment_manual/static/src/img/manual.jpg" alt="Uw bestelling betalen dmv zelf overmaken" class="img-responsive" />
+            </a>
+            <p>
+                Ik wil het bedrag zelf overmaken op uw rekening.
+            </p>
+        </div>
+    </template>
+
+    <template id="payment_oops" name="Oops">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <h1 class="col-sm-8 col-sm-offset-2">Oops!</h1>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Er is iets fout gegaan tijdens het selecteren van de overmaking.</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">De volgende fout is opgetreden:</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2"><b><t t-esc="error"/></b></p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="shop_checkout_confirm" name="Geld overmaken">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <h1 class="col-sm-8 col-sm-offset-2">Checkout: bevestigen bestelling</h1>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">U heeft ervoor gekozen het geld zelf over te maken.</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">U kunt dit doen door het bedrag van <b><strong t-field="transaction.tot_to_pay" t-field-options='{"widget": "monetary", "display_currency": "transaction.currency_id"}'/></b> over te maken op rekening <b><t t-esc="transaction.acquirer_id.manual_account"/></b> ten name van <b><t t-esc="transaction.acquirer_id.manual_account_owner"/></b> onder vermelding van <b><t t-esc="transaction.reference"/></b></p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Zodra wij uw bedrag hebben ontvangen gaan wij over tot verzending.</p>
+                </div>
+                <div class="form-group mt32">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <a t-attf-href="/shop/checkout/payment/manual/confirm/{{ transaction.name }}/{{ transaction.id }}" class="btn btn-primary">Ik ga akkoord en maak het bedrag zsm over</a>
+                        <a t-attf-href="/shop" class="btn btn-secundary">Nee, nog even verder winkelen</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
+

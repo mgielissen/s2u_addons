@@ -1,0 +1,31 @@
+<templates>    
+    <t t-name="FieldProjectClassification">
+        <span class="oe_form_field oe_form_field_project_classification" style="font-weight: normal; width: 240px !important; height: 60px; color: #666; margin: -5px 5px -1px 0px; padding: 0; border-radius: 0; box-shadow: none; background: white;">
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_shae.png"'
+                 width="60" height="60" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_brons.png"'
+                 width="60" height="60" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_silver.png"'
+                 width="60" height="60" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_gold.png"'
+                 width="60" height="60" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_platinum.png"'
+                 width="60" height="60" border="0" draggable="false"/>
+        </span>
+    </t>
+
+    <t t-name="FieldProjectClassificationKanban">
+        <span>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_shae.png"'
+                 width="30" height="30" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_brons.png"'
+                 width="30" height="30" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_silver.png"'
+                 width="30" height="30" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_gold.png"'
+                 width="30" height="30" border="0" draggable="false"/>
+            <img t-att-src='_s + "/s2uproject/static/src/img/project_platinum.png"'
+                 width="30" height="30" border="0" draggable="false"/>
+        </span>
+    </t>
+</templates>

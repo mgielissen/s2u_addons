@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_action_increase_view" model="ir.ui.view">
+        <field name="name">Extend/add service</field>
+        <field name="model">s2usubscription.action.increase</field>
+        <field name="arch" type="xml">
+            <form string="Extend service">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="subscription_id" invisible="1" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="service_ids" nolabel="1" widget="one2many_list" context = "{'subscription_id': subscription_id}" >
+                            <tree string="Services" editable="bottom" create="false" delete="false">
+                                <field name="subscription_order_id" options="{'no_create': True, 'no_open': True}"
+                                       required="1" domain="[('id', '=', subscription_order_id)]"/>
+                                <field name="date_end" readonly="1" />
+                                <field name="state" readonly="1" />
+                                <field name="extend_subscription" required="True" />
+                                <field name="service_id" options="{'no_create': True, 'no_open': True}" required="1" />
+                                <field name="price" />
+                                <field name="date_start" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="do_increase" string="Extend services" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

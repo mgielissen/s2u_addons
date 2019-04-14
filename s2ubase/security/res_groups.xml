@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="s2ubase.production_company" model="res.groups">
+            <field name="category_id" ref="s2ubase.module_category_s2uframework"/>
+            <field name="name">Production company</field>
+        </record>
+        <record id="s2ubase.analytic_accounts" model="res.groups">
+            <field name="category_id" ref="s2ubase.module_category_s2uframework"/>
+            <field name="name">Analytic accounts</field>
+        </record>
+        <record id="s2ubase.archiver" model="res.groups">
+            <field name="category_id" ref="s2ubase.module_category_s2uframework"/>
+            <field name="name">Archiver</field>
+        </record>
+        <record id="s2ubase.b2c" model="res.groups">
+            <field name="category_id" ref="s2ubase.module_category_s2uframework"/>
+            <field name="name">B2C</field>
+        </record>
+    </data>
+</openerp>

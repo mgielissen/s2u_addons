@@ -1,0 +1,45 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="sale_product_rule">
+            <field name="name">Object s2u.sale.product</field>
+            <field name="model_id" ref="model_s2u_sale_product"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="product_category_rule">
+            <field name="name">Object s2u.product.category</field>
+            <field name="model_id" ref="model_s2u_product_category"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="product_sub_category_rule">
+            <field name="name">Object s2u.product.sub.category</field>
+            <field name="model_id" ref="model_s2u_product_sub_category"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="product_delivery_rule">
+            <field name="name">Object s2u.product.delivery</field>
+            <field name="model_id" ref="model_s2u_product_delivery"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="product_registration_rule">
+            <field name="name">Object s2u.product.registration</field>
+            <field name="model_id" ref="model_s2u_product_registration"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="product_variant_rule">
+            <field name="name">Object s2u.product.variant</field>
+            <field name="model_id" ref="model_s2u_product_variant"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+    </data>
+</openerp>

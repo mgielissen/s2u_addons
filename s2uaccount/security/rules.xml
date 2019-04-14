@@ -1,0 +1,88 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="account_category_rule">
+            <field name="name">Object s2u.account.category</field>
+            <field name="model_id" ref="model_s2u_account_category"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_account_rule">
+            <field name="name">Object s2u.account.account</field>
+            <field name="model_id" ref="model_s2u_account_account"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_vat_category_rule">
+            <field name="name">Object s2u.account.vat.category</field>
+            <field name="model_id" ref="model_s2u_account_vat_category"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_vat_rule">
+            <field name="name">Object s2u.account.vat</field>
+            <field name="model_id" ref="model_s2u_account_vat"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_invoice_rule">
+            <field name="name">Object s2u.account.invoice</field>
+            <field name="model_id" ref="model_s2u_account_invoice"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_invoice_po_rule">
+            <field name="name">Object s2u.account.invoice.po</field>
+            <field name="model_id" ref="model_s2u_account_invoice_po"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_bank_rule">
+            <field name="name">Object s2u.account.bank</field>
+            <field name="model_id" ref="model_s2u_account_bank"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_memorial_rule">
+            <field name="name">Object s2u.account.memorial</field>
+            <field name="model_id" ref="model_s2u_account_memorial"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_vat_country_rule">
+            <field name="name">Object s2u.account.vat.country</field>
+            <field name="model_id" ref="model_s2u_account_vat_country"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_analytic_rule">
+            <field name="name">Object s2u.account.analytic</field>
+            <field name="model_id" ref="model_s2u_account_analytic"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_payment_term_rule">
+            <field name="name">Object s2u.account.payment.term</field>
+            <field name="model_id" ref="model_s2u_account_payment_term"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="account_move_rule">
+            <field name="name">Object s2u.account.move</field>
+            <field name="model_id" ref="model_s2u_account_move"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+    </data>
+</openerp>

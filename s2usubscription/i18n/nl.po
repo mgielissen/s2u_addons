@@ -1,0 +1,1529 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* s2usubscription
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-27 14:09+0000\n"
+"PO-Revision-Date: 2019-02-27 14:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_outgoing_count
+msgid "# of Deliveries"
+msgstr "# Leveringen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_discount_count
+msgid "# of Discounts"
+msgstr "# Kortingen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_count
+msgid "# of Invoices"
+msgstr "# Facturen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_subscriptions_open_count
+msgid "# of Open subscriptions"
+msgstr "# Open abo's"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_count
+msgid "# of Periods"
+msgstr "# Perioden"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_rma_count
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_rma_count
+msgid "# of RMA's"
+msgstr "# RMA's"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_serialnumber_count
+msgid "# of Serialnumbers"
+msgstr "# Serienummers"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscriptions_count
+msgid "# of Subscription discounts"
+msgstr "# Kortingen op abo's"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_subscriptions_count
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_count
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscriptionv2_count
+msgid "# of Subscriptions"
+msgstr "# Abonnementen"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+#: selection:s2u.crm.entity.discount.subscription,discount_type:0
+msgid "% discount"
+msgstr "% korting"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_form
+msgid "&amp;nbsp;Months"
+msgstr "&amp;nbsp;Maanden"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:814
+#, python-format
+msgid "1 month"
+msgstr "1 maand"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:819
+#, python-format
+msgid "1 year"
+msgstr "1 jaar"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_report
+msgid "<strong>Customer Address</strong>"
+msgstr "<strong>Adres klant</strong>"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_report
+msgid "<strong>Duration:</strong>"
+msgstr "<strong>Duur:</strong>"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_report
+msgid "<strong>From:</strong>"
+msgstr "<strong>Van:</strong>"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_report
+msgid "<strong>Recurring amount:</strong>"
+msgstr "<strong>Termijnbedrag:</strong>"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotaal:</strong>"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_report
+msgid "<strong>Till:</strong>"
+msgstr "<strong>T/m:</strong>"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Totaal</strong>"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "<strong>Vat</strong>"
+msgstr "<strong>BTW</strong>"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_account_id
+msgid "Account"
+msgstr "Gb.Rek."
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_action_on_end
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_action_on_end
+msgid "Action on end"
+msgstr "Actie op einddatum"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "Activate"
+msgstr "Activeer"
+
+#. module: s2usubscription
+#: selection:s2u.subscription,state:0
+#: selection:s2u.subscription.order,state:0
+#: selection:s2u.subscriptionv2,state:0
+#: selection:s2usubscription.action.increase.service,state:0
+msgid "Active"
+msgstr "Actief"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_search_view
+msgid "Active subscriptions"
+msgstr "Active subscriptions"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_address_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_address_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_address_id
+msgid "Address"
+msgstr "Adres"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:35
+#: code:addons/s2usubscription/models/subscription.py:1082
+#, python-format
+msgid "Address does not belong to the selected debitor!"
+msgstr "Het adres behoort niet tot de geselecteerde debiteur!"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.template,create_project_criteria:0
+msgid "Always"
+msgstr "Altijd"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_amount
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_amount
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_subscriptions
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "Amount"
+msgstr "Bedrag"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_amount
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_amount
+msgid "Amount (monthly)"
+msgstr "Bedrag p/m"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_amount_open
+msgid "Amount Open"
+msgstr "Open"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_amount_paid
+msgid "Amount Paid"
+msgstr "Bedrag betaald"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_amount_total
+msgid "Amount Total"
+msgstr "Totaalbedrag"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_amount_for_invoice
+msgid "Amount for invoice"
+msgstr "Bedrag voor facturatie"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_price
+msgid "Amount monthly"
+msgstr "Bedrag p/m"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_price
+msgid "Amount unit"
+msgstr "Bedrag (per eenheid)"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+msgid "Are you sure? This can not be reverted!"
+msgstr "Bent u zeker? Deze stap kan niet ongedaan worden gemaakt!"
+
+#. module: s2usubscription
+#: selection:s2u.subscription,type:0
+#: selection:s2u.subscription.period,type:0
+#: selection:s2u.subscriptionv2,type:0
+msgid "B2B"
+msgstr "B2B"
+
+#. module: s2usubscription
+#: selection:s2u.subscription,type:0
+#: selection:s2u.subscription.period,type:0
+#: selection:s2u.subscriptionv2,type:0
+msgid "B2C"
+msgstr "B2C"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_block_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_ids
+msgid "Block"
+msgstr "Block"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.sale_form
+msgid "Blocks"
+msgstr "Blocks"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:892
+#, python-format
+msgid "COPY"
+msgstr "COPY"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entity"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.wizard_action_increase_view
+msgid "Cancel"
+msgstr "Annuleer"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "Cancel subscription"
+msgstr "Abo beëindigen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_is_canceled
+#: selection:s2u.subscription,state:0
+#: selection:s2u.subscription.order,state:0
+#: selection:s2u.subscription.period,state:0
+#: selection:s2u.subscriptionv2,state:0
+#: selection:s2usubscription.action.increase.service,state:0
+msgid "Canceled"
+msgstr "Beëindigd"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_code
+msgid "Code"
+msgstr "Code"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_company_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_company_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_company_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_company_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_company_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_company_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: s2usubscription
+#: selection:s2u.subscription,state:0
+#: selection:s2u.subscription.order,state:0
+#: selection:s2u.subscriptionv2,state:0
+#: selection:s2usubscription.action.increase.service,state:0
+msgid "Concept"
+msgstr "Concept"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_contact_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_contact_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_contact_id
+msgid "Contact"
+msgstr "Contact"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:33
+#: code:addons/s2usubscription/models/subscription.py:1080
+#, python-format
+msgid "Contact does not belong to the selected debitor!"
+msgstr "Contactpersoon behoort niet tot de geselecteerde debiteur!"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_cost_price
+msgid "Cost price"
+msgstr "Kostprijs"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_period_form
+msgid "Create invoice"
+msgstr "Maak factuur"
+
+#. module: s2usubscription
+#: model:ir.actions.server,name:s2usubscription.ir_cron_subscription_create_invoices_action_ir_actions_server
+#: model:ir.cron,cron_name:s2usubscription.ir_cron_subscription_create_invoices_action
+#: model:ir.cron,name:s2usubscription.ir_cron_subscription_create_invoices_action
+msgid "Create invoices for subscriptions"
+msgstr "Maak facturen voor abonnementen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_create_next_invoice
+msgid "Create next invoice"
+msgstr "Volgende termijn"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_create_project
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_create_project_criteria
+msgid "Create project"
+msgstr "Maak project"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_create_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_create_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_currency_id
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_current_period
+msgid "Current period"
+msgstr "Huidige periode"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_date
+msgid "Date"
+msgstr "Datum"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/controller/portal.py:66
+#, python-format
+msgid "Date from"
+msgstr "Datum van"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/controller/portal.py:67
+#, python-format
+msgid "Date till"
+msgstr "Datum t/m"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "De volgende diensten maken onderdeel uit van deze aanbieding:"
+msgstr "De volgende diensten maken onderdeel uit van deze aanbieding:"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "De volgende producten maken onderdeel uit van deze aanbieding:"
+msgstr "De volgende producten maken onderdeel uit van deze aanbieding:"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_partner_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_partner_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_partner_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_partner_id
+msgid "Debitor"
+msgstr "Debiteur"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_description
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_subs_descript
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_name_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_form
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_product_detail
+msgid "Details"
+msgstr "Details"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.sale_subscription_discount_form
+msgid "Discount"
+msgstr "Korting"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_ids
+msgid "Discount for subscriptions"
+msgstr "Korting voor abo's"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.crm_entity_form
+msgid "Discount on subscriptions"
+msgstr "Korting op abo's"
+
+#. module: s2usubscription
+#: model:ir.actions.act_window,name:s2usubscription.action_sale_subscription_discount
+#: model:ir.ui.view,arch_db:s2usubscription.sale_subscription_discount_tree
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_form
+msgid "Discounts"
+msgstr "Kortingen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_display_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_display_name
+msgid "Display Name"
+msgstr "Schermnaam"
+
+#. module: s2usubscription
+#: selection:s2u.subscription,state:0
+#: selection:s2u.subscription.order,state:0
+#: selection:s2u.subscriptionv2,state:0
+#: selection:s2usubscription.action.increase.service,state:0
+msgid "Done"
+msgstr "Klaar"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_page
+msgid "Draft Subscription"
+msgstr "Concept abo"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_months
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_subscriptions
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_form
+msgid "Duration"
+msgstr "Tijdsduur"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_months
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_periods
+msgid "Duration (months)"
+msgstr "Duur (in maanden)"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_date_end
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_date_end
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_date_end
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_subscriptions
+msgid "Ends"
+msgstr "T/m"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_entity_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_partner_id
+msgid "Entity"
+msgstr "Entiteit"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.template,action_on_end:0
+msgid "Exten subscription"
+msgstr "Verleng abo"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_extend_subscription
+msgid "Extend"
+msgstr "Verleng"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.wizard_action_increase_view
+msgid "Extend service"
+msgstr "Verleng abo"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.wizard_action_increase_view
+msgid "Extend services"
+msgstr "Verleng abo"
+
+#. module: s2usubscription
+#: selection:s2u.subscriptionv2,action_on_end:0
+msgid "Extend subscription"
+msgstr "Verleng abo"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:1245
+#, python-format
+msgid "Extend/add services"
+msgstr "Verlengen/toevoegen dienst"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/wizards/increase_wizard.py:148
+#, python-format
+msgid "Extended/added services"
+msgstr "Extended/added services"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2usubscription_action_increase
+#: model:ir.model,name:s2usubscription.model_s2usubscription_action_increase_service
+msgid "Extends or adds a service to an existing subscription"
+msgstr "Verlengen of toevoegen aan een bestaand abonnement"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_price_gross
+msgid "Gross"
+msgstr "Bruto"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_gross_amount_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_gross_amount_subscriptions
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_quot_gross_amount_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_quot_gross_amount_subscriptions
+msgid "Gross amount"
+msgstr "Bruto"
+
+#. module: s2usubscription
+#: selection:s2u.crm.entity,invoice_condition:0
+#: selection:s2u.subscription.template,invoice_condition:0
+#: selection:s2u.subscriptionv2,invoice_condition:0
+msgid "Half-yearly"
+msgstr "Halfjaarlijks"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/sale.py:24
+#, python-format
+msgid "Halfjaarlijks"
+msgstr "Halfjaarlijks"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2usubscription
+#: selection:s2u.subscription,payment_type:0
+#: selection:s2u.subscriptionv2,payment_type:0
+msgid "Incasso"
+msgstr "Incasso"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_increase_id
+msgid "Increase"
+msgstr "Ophogen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_interest
+msgid "Interest (%)"
+msgstr "Interest (%)"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_invoice_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_invoice_id
+msgid "Invoice"
+msgstr "Factuur"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_currency_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_currency_id
+msgid "Invoice Currency"
+msgstr "Valuta"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "Invoices"
+msgstr "Facturen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_invoice_condition
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_condition
+msgid "Invoicing"
+msgstr "Facturatie"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_is_extended
+msgid "Is extended"
+msgstr "Is verlengd"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_price
+msgid "Item price"
+msgstr "Stuk prijs"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/sale.py:26
+#, python-format
+msgid "Jaarlijks"
+msgstr "Jaarlijks"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/sale.py:22
+#, python-format
+msgid "Kwartaal"
+msgstr "Kwartaal"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_label_for_service
+msgid "Label"
+msgstr "Label"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_project_type_label_for_service
+msgid "Label for service"
+msgstr "Label voor abo"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase___last_update
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service___last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_write_uid
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_write_date
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_lines_with_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_lines_with_subscriptions
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_ordered_with_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_ordered_with_subscriptions
+msgid "Lines with products"
+msgstr "Regels met producten"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/sale.py:20
+#, python-format
+msgid "Maandelijks"
+msgstr "Maandelijks"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_margin
+msgid "Margin (%)"
+msgstr "Margin (%)"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.template,period_unit:0
+#: selection:s2u.subscriptionv2,period_unit:0
+msgid "Month"
+msgstr "Maand"
+
+#. module: s2usubscription
+#: selection:s2u.crm.entity,invoice_condition:0
+#: selection:s2u.subscription.template,invoice_condition:0
+#: selection:s2u.subscriptionv2,invoice_condition:0
+msgid "Monthly"
+msgstr "Maandelijks"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_name
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_name
+msgid "Name"
+msgstr "Naam"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_net_amount_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_net_amount_subscriptions
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_quot_net_amount_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_quot_net_amount_subscriptions
+msgid "Net amount"
+msgstr "Netto"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_price_netto
+msgid "Netto"
+msgstr "Netto"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.template,create_project_criteria:0
+msgid "No"
+msgstr "Nee"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_date_notify
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_date_notify
+msgid "Notify"
+msgstr "Informeer"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.template,create_project_criteria:0
+msgid "Only if not exists"
+msgstr "Wanneer niet aanwezig"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.crm_entity_form
+#: selection:s2u.subscription.period,state:0
+msgid "Open"
+msgstr "Open"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_order_id
+msgid "Order"
+msgstr "Order"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_warehouse_outgoing
+msgid "Outgoing"
+msgstr "Uitgaand"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "Outgoings"
+msgstr "Uitgaande"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.period,state:0
+msgid "Paid"
+msgstr "Betaald"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_month_payment
+msgid "Payment Month"
+msgstr "Betaald in maand"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_year_payment
+msgid "Payment Year"
+msgstr "Betaald in jaar"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_payment_key
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_payment_key
+msgid "Payment key"
+msgstr "Betalings Key"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_payment_type
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_payment_type
+msgid "Payment type"
+msgstr "Betaalwijze"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.period,state:0
+msgid "Pending"
+msgstr "Pending"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "Per"
+msgstr "Per"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_period_id
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_period_form
+msgid "Period"
+msgstr "Periode"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_period_for_invoice
+msgid "Period for invoice"
+msgstr "Periode voor factuur"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:1543
+#, python-format
+msgid "Period:"
+msgstr "Periode:"
+
+#. module: s2usubscription
+#: model:ir.actions.act_window,name:s2usubscription.action_subscription_period
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_ids
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_period_tree
+msgid "Periods"
+msgstr "Perioden"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_writeoff_periods
+msgid "Periods for writeoff"
+msgstr "# afschrijvingen"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:594
+#, python-format
+msgid "Please define a default outgoing delivery type!"
+msgstr "U dient een uitgaande levering type te definiëren!"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:31
+#: code:addons/s2usubscription/models/subscription.py:1078
+#, python-format
+msgid "Please select a b2b debitor!"
+msgstr "U dient een b2b debiteur te selecteren!"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:38
+#: code:addons/s2usubscription/models/subscription.py:1085
+#, python-format
+msgid "Please select a b2c debitor!"
+msgstr "U dient een b2c debiteur te selecteren!"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:1364
+#, python-format
+msgid "Please select a start date for the service in the future!"
+msgstr "U dient een datum in de toekomst te selecteren voor de dienst!"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_postfix
+#: model:ir.ui.view,arch_db:s2usubscription.sale_form
+msgid "Postfix"
+msgstr "Postfix"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_prefix
+#: model:ir.ui.view,arch_db:s2usubscription.sale_form
+msgid "Prefix"
+msgstr "Voorvoegsel"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_price_is_net
+msgid "Price is netto"
+msgstr "Bedrag is netto"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_discount
+msgid "Price/%"
+msgstr "Prijs/%"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "Price/month"
+msgstr "Prijs/maand"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_product_id
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "Product"
+msgstr "Product"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_product_registration
+msgid "Product registration"
+msgstr "Product registratie"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_ids
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_ids
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_form
+msgid "Products"
+msgstr "Producten"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_project_type
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_projecttype_id
+msgid "Project type"
+msgstr "Project type"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_qty
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "Qty"
+msgstr "Stuks"
+
+#. module: s2usubscription
+#: selection:s2u.crm.entity,invoice_condition:0
+#: selection:s2u.subscription.template,invoice_condition:0
+#: selection:s2u.subscriptionv2,invoice_condition:0
+msgid "Quarterly"
+msgstr "Kwartaal"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_warehouse_rma
+msgid "RMA"
+msgstr "RMA"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "RMA's"
+msgstr "RMA's"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_product_ref
+msgid "Ref."
+msgstr "Ref."
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_reference
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: s2usubscription
+#: selection:s2u.subscription,payment_type:0
+#: selection:s2u.subscriptionv2,payment_type:0
+msgid "Rekening"
+msgstr "Rekening"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_period_pivot
+msgid "Report-Pivot"
+msgstr "Report-Pivot"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_period_graph
+msgid "Report-graph"
+msgstr "Report-graph"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "Reshipment"
+msgstr "Opnieuw verzenden"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_sale_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_sale_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_saleline_id
+msgid "SO"
+msgstr "SO"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_sale
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_sale_id
+#: model:ir.ui.view,arch_db:s2usubscription.sale_form
+msgid "Sale"
+msgstr "Verkoop"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_sale_template
+msgid "Sale Template"
+msgstr "Verkoop template"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_sale_line
+msgid "Sale line"
+msgstr "Verkoop regel"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.sale_subscription_discount_search_view
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_block_search_view
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_period_search_view
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_search_view
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_search_view
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_search_view
+msgid "Search"
+msgstr "Zoek"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_block_sequence
+msgid "Sequence"
+msgstr "Reeks"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "Serialnumbers"
+msgstr "Serienummers"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_template_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_service_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_service_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_subscription_order_id
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_form
+msgid "Service"
+msgstr "Dienst"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_name_form
+msgid "Service Block"
+msgstr "Service Block"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_ec
+msgid "Service code"
+msgstr "Dienst code"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_product_detail
+msgid "Service details"
+msgstr "Dienst details"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_invoice_condition
+msgid "Service invoicing"
+msgstr "Dienst facturatie"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:919
+#: code:addons/s2usubscription/models/subscription.py:936
+#, python-format
+msgid "Service name already exists!"
+msgstr "Dienst naam is reeds aanwezig!"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_service_notify
+msgid "Service notify"
+msgstr "Dienst waarschuwing"
+
+#. module: s2usubscription
+#: model:ir.actions.act_window,name:s2usubscription.action_subscription_template
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_ids
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_ids
+#: model:ir.ui.menu,name:s2usubscription.menu_subscription_template_v2
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_template_tree
+#: model:ir.ui.view,arch_db:s2usubscription.wizard_action_increase_view
+msgid "Services"
+msgstr "Diensten"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_block_tree
+msgid "Services Blocks"
+msgstr "Services Blocks"
+
+#. module: s2usubscription
+#: model:ir.actions.act_window,name:s2usubscription.action_subscription_block
+#: model:ir.ui.menu,name:s2usubscription.menu_subscription_block
+msgid "Services blocks"
+msgstr "Services blocks"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_block_short_descript
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_reference
+msgid "Short descript."
+msgstr "Korte omschr."
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_date_start
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_date_start
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_date_start
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_subscriptions
+msgid "Start"
+msgstr "Start"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_state
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_state
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_state
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_state
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_service_state
+msgid "State"
+msgstr "Staat / Provincie"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/controller/portal.py:68
+#, python-format
+msgid "Status"
+msgstr "Status"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_stock_account_id
+msgid "Stock Account for deliveries"
+msgstr "Stock Account for deliveries"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.template,action_on_end:0
+#: selection:s2u.subscriptionv2,action_on_end:0
+msgid "Stop subscription"
+msgstr "Stop abo"
+
+#. module: s2usubscription
+#: selection:s2u.subscriptionv2,state:0
+msgid "Stopped"
+msgstr "Gestopt"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscriptionv2
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_product_registration_pallet_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_product_registration_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_template_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_invoice_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_warehouse_outgoing_subscriptionv2_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_warehouse_rma_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_warehouse_rma_subscriptionv2_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_warehouse_serialnumber_pallet_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_warehouse_serialnumber_subscription_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2usubscription_action_increase_subscription_id
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_subscriptions
+msgid "Subscription #"
+msgstr "Abo #"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:512
+#, python-format
+msgid "Subscription %s"
+msgstr "Abo %s"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_page
+msgid "Subscription Active"
+msgstr "Abo actief"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_page
+msgid "Subscription Canceled"
+msgstr "Abo geannuleerd"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_page
+msgid "Subscription Finished"
+msgstr "Abo afgelopen"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription_template
+msgid "Subscription Template"
+msgstr "Abo Template"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_line_subscription_price_month
+msgid "Subscription price/month"
+msgstr "Subscription price/month"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_line_subscription_total_month
+msgid "Subscription total/month"
+msgstr "Subscription total/month"
+
+#. module: s2usubscription
+#: model:ir.actions.act_window,name:s2usubscription.action_subscription
+#: model:ir.actions.act_window,name:s2usubscription.action_subscriptionv2
+#: model:ir.ui.menu,name:s2usubscription.menu_sales_subscriptions
+#: model:ir.ui.menu,name:s2usubscription.menu_subscriptionv2
+#: model:ir.ui.view,arch_db:s2usubscription.crm_entity_form
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_home_menu_subscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_home_subscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_subscriptions
+#: model:ir.ui.view,arch_db:s2usubscription.sale_form
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_tree
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_tree
+msgid "Subscriptions"
+msgstr "Abonnementen"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_surcharge
+msgid "Surcharge (%)"
+msgstr "Toeslag (%)"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_product_template_id
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_template_id
+msgid "Template"
+msgstr "Sjabloon"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_my_subscriptions
+msgid "There are currently no subscriptions for your account."
+msgstr "There are currently no subscriptions for your account."
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/unit.py:33
+#, python-format
+msgid "There is no stock account defined for product %s!"
+msgstr "There is no stock account defined for product %s!"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/unit.py:31
+#, python-format
+msgid "There is no stock account defined for service %s!"
+msgstr "There is no stock account defined for service %s!"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/unit.py:78
+#, python-format
+msgid "There is no stock account found in rma line for product %s!"
+msgstr "There is no stock account found in rma line for product %s!"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models_inherited/unit.py:80
+#, python-format
+msgid "There is no stock account found in rma line for service %s!"
+msgstr "There is no stock account found in rma line for service %s!"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_error
+msgid "There was an error processing this page."
+msgstr "There was an error processing this page."
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_form
+msgid "This will ends the subscription immediately!"
+msgstr "Deze actie zal de abo direct beëindigen!"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_search_view
+msgid "To extend"
+msgstr "Te verlengen"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "Tot. amount"
+msgstr "Tot. bedrag"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.subscriptionv2_tree
+msgid "Total"
+msgstr "Totaal"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usubscription.print_quotation_so_document
+msgid "Total/month"
+msgstr "Totaal/maand"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_ids
+#: model:ir.ui.view,arch_db:s2usubscription.subscription_period_form
+msgid "Transactions"
+msgstr "Transacties"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_crm_entity_discount_subscription_discount_type
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_type
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_type
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_type
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_type
+msgid "Type"
+msgstr "Soort"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_period_unit
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscriptionv2_period_unit
+msgid "Unit"
+msgstr "Eenheid"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:239
+#, python-format
+msgid "Unknown invoice condition!"
+msgstr "Onbekende conditie voor facturatie!"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_product_use_product_detail_so
+msgid "Use details SO"
+msgstr "Gebruik product details van SO"
+
+#. module: s2usubscription
+#: model:ir.model.fields,help:s2usubscription.field_s2u_subscription_template_ec
+msgid "Use this field to mark this service entity specific."
+msgstr "Use this field to mark this service entity specific."
+
+#. module: s2usubscription
+#: selection:s2u.crm.entity.discount.subscription,discount_type:0
+msgid "Use this price"
+msgstr "Gebruik deze prijs"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_quot_vat_amount_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_quot_vat_amount_subscriptions
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_vat_amount_products
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_sale_vat_amount_subscriptions
+msgid "VAT"
+msgstr "BTW"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_report
+msgid "VAT:"
+msgstr "BTW-Nr.:"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_template_vat_id
+msgid "Vat"
+msgstr "BTW"
+
+#. module: s2usubscription
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_order_product_detail
+#: model:ir.model.fields,field_description:s2usubscription.field_s2u_subscription_period_transaction_product_detail
+msgid "Version"
+msgstr "Versie"
+
+#. module: s2usubscription
+#: selection:s2u.subscription.template,period_unit:0
+#: selection:s2u.subscriptionv2,period_unit:0
+msgid "Year"
+msgstr "Jaar"
+
+#. module: s2usubscription
+#: selection:s2u.crm.entity,invoice_condition:0
+#: selection:s2u.subscription.template,invoice_condition:0
+#: selection:s2u.subscriptionv2,invoice_condition:0
+msgid "Yearly"
+msgstr "Jaarlijks"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:1261
+#, python-format
+msgid "You can not delete a confirmed subscription!"
+msgstr "U kunt een bevestigd abonnement niet verwijderen!"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:114
+#, python-format
+msgid "You can not delete an active subscription!"
+msgstr "U kunt een actieve abo niet verwijderen!"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_error
+#: model:ir.ui.view,arch_db:s2usubscription.portal_subscription_success
+msgid "close"
+msgstr "Sluiten"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:816
+#, python-format
+msgid "months"
+msgstr "Maanden"
+
+#. module: s2usubscription
+#: model:ir.ui.view,arch_db:s2usubscription.wizard_action_increase_view
+msgid "or"
+msgstr "of"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:829
+#, python-format
+msgid "per month"
+msgstr "Per maand"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:831
+#, python-format
+msgid "per year"
+msgstr "Per jaar"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_crm_entity_discount_subscription
+msgid "s2u.crm.entity.discount.subscription"
+msgstr "s2u.crm.entity.discount.subscription"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_sale_subscription_block
+msgid "s2u.sale.subscription.block"
+msgstr "s2u.sale.subscription.block"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription_block
+msgid "s2u.subscription.block"
+msgstr "s2u.subscription.block"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription_order
+msgid "s2u.subscription.order"
+msgstr "s2u.subscription.order"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription_period
+msgid "s2u.subscription.period"
+msgstr "s2u.subscription.period"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription_period_transaction
+msgid "s2u.subscription.period.transaction"
+msgstr "s2u.subscription.period.transaction"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription_product
+msgid "s2u.subscription.product"
+msgstr "s2u.subscription.product"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscription_template_product
+msgid "s2u.subscription.template.product"
+msgstr "s2u.subscription.template.product"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_subscriptionv2_invoice
+msgid "s2u.subscriptionv2.invoice"
+msgstr "s2u.subscriptionv2.invoice"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_warehouse_serialnumber
+msgid "s2u.warehouse.serialnumber"
+msgstr "s2u.warehouse.serialnumber"
+
+#. module: s2usubscription
+#: model:ir.model,name:s2usubscription.model_s2u_warehouse_unit_product_transaction
+msgid "s2u.warehouse.unit.product.transaction"
+msgstr "s2u.warehouse.unit.product.transaction"
+
+#. module: s2usubscription
+#: code:addons/s2usubscription/models/subscription.py:821
+#, python-format
+msgid "years"
+msgstr "Jaren"
+

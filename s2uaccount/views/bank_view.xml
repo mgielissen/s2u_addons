@@ -1,0 +1,144 @@
+<openerp>
+    <data>
+        <!-- Bank -->
+        <record model="ir.ui.view" id="bank_search_view">
+            <field name="model">s2u.account.bank</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="account_id" />
+                    <field name="transactions_till" />
+                </search>
+            </field>
+        </record>
+
+        <record id="bank_form" model="ir.ui.view">
+            <field name="model">s2u.account.bank</field>
+            <field name="arch" type="xml">
+                <form string="Bank">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="transactions_till" />
+                                <field name="account_id" />
+                            </group>
+                            <group>
+                                <field name="start_saldo" />
+                                <field name="end_saldo" />
+                                <field name="currency_id" groups="base.group_multi_currency" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Lines">
+                                        <field name="date_trans" />
+                                        <field name="type" />
+                                        <field name="partner_id" />
+                                        <field name="account_id" />
+                                        <field name="descript" />
+                                        <field name="vat_amount" sum="Total"/>
+                                        <field name="trans_amount" sum="Total" />
+                                    </tree>
+                                    <form string="Line">
+                                        <group>
+                                            <group>
+                                                <field name="type" />
+                                                <field name="partner_id" attrs="{'invisible': [('type', 'in', ['nor', 'bat'])],
+                                                                                 'required': [('type', 'in', ['deb', 'cre'])]}" />
+                                                <field name="account_id" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])],
+                                                                                 'required': [('type', 'in', ['nor'])]}" />
+                                                <field name="descript" />
+                                                <field name="vat_id" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])]}" />
+                                            </group>
+                                            <group>
+                                                <field name="gross_amount" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])],
+                                                                                   'required': [('type', 'in', ['nor'])]}" />
+                                                <field name="net_amount" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])]}" />
+                                                <field name="vat_amount" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])],
+                                                                                 'required': [('type', 'in', ['nor'])]}" />
+                                                <field name="trans_amount" />
+                                                <field name="date_trans" />
+                                                <field name="analytic_id" />
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Invoices (SO)" >
+                                                <field name="so_ids" nolabel="1" widget="one2many_list"
+                                                       attrs="{'readonly': [('type', 'in', ['nor', 'cre', 'bat'])]}" >
+                                                    <tree string="Invoices" editable="bottom">
+                                                        <field name="invoice_id" domain="[('partner_id', '=', parent.partner_id),
+                                                                                          ('state', '=', 'invoiced')]" />
+                                                        <field name="trans_amount" />
+                                                        <field name="open_amount" />
+                                                        <field name="type" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                            <page string="Invoices (PO)" >
+                                                <field name="po_ids" nolabel="1" widget="one2many_list"
+                                                       attrs="{'readonly': [('type', 'in', ['nor', 'deb', 'bat'])]}" >
+                                                    <tree string="Invoices" editable="bottom">
+                                                        <field name="invoice_id" domain="[('partner_id', '=', parent.partner_id)]" />
+                                                        <field name="trans_amount" />
+                                                        <field name="open_amount" />
+                                                        <field name="type" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                            <page string="MT940 details">
+                                                <group>
+                                                    <field name="mt940_bank_number" />
+                                                    <field name="mt940_bank_owner" />
+                                                    <field name="mt940_eref" />
+                                                </group>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Other details">
+                                <group string="Accounts for payment differences">
+                                    <group>
+                                        <field name="account_accepted_id" />
+                                        <field name="account_so_difference_id" />
+                                        <field name="account_po_difference_id" />
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bank_tree" model="ir.ui.view">
+            <field name="model">s2u.account.bank</field>
+            <field name="arch" type="xml">
+                <tree string="Bank">
+                    <field name="name" />
+                    <field name="transactions_till" />
+                    <field name="account_id" />
+                    <field name="start_saldo" />
+                    <field name="end_saldo" />
+                    <field name="currency_id" groups="base.group_multi_currency" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_bank" model="ir.actions.act_window">
+            <field name="name">Bank/cash</field>
+            <field name="res_model">s2u.account.bank</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="bank_tree" />
+        </record>
+
+        <menuitem action="action_bank" id="menu_bank"
+            parent="menu_accounting_financial" sequence="30" groups="s2uaccount.group_account_manager" />
+
+    </data>
+</openerp>

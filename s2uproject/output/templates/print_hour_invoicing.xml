@@ -1,0 +1,112 @@
+<openerp>
+<data>
+
+<template id="print_hour_invoicing_document">
+    <t t-call="web.internal_layout">
+        <div class="page">
+            <t t-foreach="data" t-as="partner">
+                <div class="row col-xs-12 text-center" style="font-size:20px">
+                    <span t-esc="partner"/>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2 text-center ">
+                        <b>User</b>
+                    </div>
+                    <div class="col-xs-3 text-center ">
+                        <b>Project</b>
+                    </div>
+                    <div class="col-xs-2 text-center ">
+                        <b>Date</b>
+                    </div>
+                    <div class="col-xs-1 text-center ">
+                        <b>Hours</b>
+                    </div>
+                    <div class="col-xs-2 text-center ">
+                        <b>Fase</b>
+                    </div>
+                    <div class="col-xs-1 text-center ">
+                        <b>Role</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid black;"></div>
+                    </div>
+                </div>
+                <t t-foreach="hour_sort" t-as="hour">
+                    <t t-if="hour  in data[partner]">
+                        <div class="row">
+                            <div class="col-xs-2 text-center ">
+                                <span t-esc="data[partner][hour]['user']"/>
+                            </div>
+                            <div class="col-xs-3 text-center ">
+                                <span t-esc="data[partner][hour]['project']"/>
+                            </div>
+                            <div class="col-xs-2 text-center ">
+                                <span t-esc="data[partner][hour]['date']"/>
+                            </div>
+                            <div class="col-xs-1 text-center ">
+                                <span t-esc="data[partner][hour]['hours']"/>
+                            </div>
+                            <div class="col-xs-2 text-center ">
+                                <span t-esc="data[partner][hour]['fase']"/>
+                            </div>
+                            <div class="col-xs-1 text-center ">
+                                <span t-esc="data[partner][hour]['rate']"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 text-left ">
+                                <span t-esc="data[partner][hour]['description']"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div style="border-bottom: 1px solid black;"></div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+                <div class="row">
+                    <div class="col-xs-2 text-center ">
+                        <b>Total</b>
+                    </div>
+                    <div class="col-xs-3 text-center ">
+                    </div>
+                    <div class="col-xs-2 text-center ">
+                    </div>
+                    <div class="col-xs-1 text-center ">
+                        <b><span t-esc="tot_hours"/></b>
+                    </div>
+                    <div class="col-xs-2 text-center ">
+                    </div>
+                    <div class="col-xs-1 text-center ">
+                    </div>
+                </div>
+                <p style="page-break-after:always;"></p>
+            </t>
+        </div>
+    </t>
+</template>
+        
+        
+<template id="print_hour_invoicing">
+    <t t-call="web.html_container">
+        <t t-call="s2uproject.print_hour_invoicing_document" />
+    </t>
+</template>
+
+<template id="print_hour_invoicing2">
+    <t t-call="web.html_container">
+        <t t-call="s2uproject.print_hour_invoicing_document" />
+    </t>
+</template>
+
+<template id="print_hour">
+    <t t-call="web.html_container">
+        <t t-call="s2uproject.print_hour_invoicing_document" />
+    </t>
+</template>
+
+</data>
+</openerp>

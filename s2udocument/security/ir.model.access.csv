@@ -1,0 +1,4 @@
+"id","group_id:id","name","model_id","perm_create","perm_unlink","perm_write","perm_read"
+"r20181207001","base.group_user","Default","s2u.document.type",1,1,1,1
+"r20181207002","base.group_user","Default","s2u.document",1,1,1,1
+"r20181207003","base.group_user","Default","s2u.document.type.ext",1,1,1,1

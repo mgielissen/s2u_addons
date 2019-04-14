@@ -1,0 +1,3364 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2usale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-15 14:52+0000\n"
+"PO-Revision-Date: 2019-01-15 15:56+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: s2usale
+#: model:mail.template,body_html:s2usale.email_template_s2u_sale_order
+msgid ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new order is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_so}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new order is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_so}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: s2usale
+#: model:mail.template,body_html:s2usale.email_template_s2u_purchase_order
+msgid ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new purchase order is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_confirm}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new purchase order is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_confirm}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: s2usale
+#: model:mail.template,body_html:s2usale.email_template_s2u_sale_quotation
+msgid ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new quotation is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_qu}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new quotation is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_qu}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: s2usale
+#: model:mail.template,body_html:s2usale.email_template_s2u_purchase_quotation
+msgid ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new quotation request is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_request}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new quotation request is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Quotation number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Quotation date: ${object.date_request}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_amount_base
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_amount
+msgid "# Amount"
+msgstr "# Bedrag"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_incoming_count
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_outgoing_count
+msgid "# of Deliveries"
+msgstr "# Leveringen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_document_count
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_document_count
+msgid "# of Docs"
+msgstr "# Documenten"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_crm_entity_invoice_count
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_invoice_count
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_count
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_invoice_count
+msgid "# of Invoices"
+msgstr "# Facturen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_crm_entity_invoice_open_count
+msgid "# of Open invoices"
+msgstr "# Open facturen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_crm_entity_so_open_count
+msgid "# of Open sales"
+msgstr "# Open SO's"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_purchase_count
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_incoming_purchase_count
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_count
+msgid "# of Purchases"
+msgstr "# Inkopen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_rma_count
+msgid "# of RMA's"
+msgstr "# RMA's"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_crm_entity_so_count
+msgid "# of Sales"
+msgstr "# Verkopen"
+
+#. module: s2usale
+#: model:mail.template,subject:s2usale.email_template_s2u_sale_order
+msgid "${object.company_id.name} Order (Ref ${object.name or 'n/a'})"
+msgstr "${object.company_id.name} Order (Ref ${object.name or 'n/a'})"
+
+#. module: s2usale
+#: model:mail.template,subject:s2usale.email_template_s2u_purchase_order
+msgid "${object.company_id.name} Purchase Order (Ref ${object.name or 'n/a'})"
+msgstr "${object.company_id.name} Purchase Order (Ref ${object.name or 'n/a'})"
+
+#. module: s2usale
+#: model:mail.template,subject:s2usale.email_template_s2u_purchase_quotation
+msgid "${object.company_id.name} Purchase Quotation Request (Ref ${object.name or 'n/a'})"
+msgstr "${object.company_id.name} Purchase Quotation Request (Ref ${object.name or 'n/a'})"
+
+#. module: s2usale
+#: model:mail.template,subject:s2usale.email_template_s2u_sale_quotation
+msgid "${object.company_id.name} Quotation (Ref ${object.name or 'n/a'})"
+msgstr "${object.company_id.name} Quotation (Ref ${object.name or 'n/a'})"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "% discount"
+msgstr "% korting"
+
+#. module: s2usale
+#: code:addons/s2usale/models_inherited/shipment.py:206
+#, python-format
+msgid "%d stuks"
+msgstr "%d stuks"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: s2usale
+#: selection:s2u.sale,condition:0
+#: selection:s2usale.action.so.quotation,condition:0
+msgid "100%"
+msgstr "100%"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:104
+#, python-format
+msgid "40 procent bij opdracht, 40% bij start werkzaamheden en 20% bij oplevering na decharge"
+msgstr "40 procent bij opdracht, 40% bij start werkzaamheden en 20% bij oplevering na decharge"
+
+#. module: s2usale
+#: selection:s2u.sale,condition:0
+#: selection:s2usale.action.so.quotation,condition:0
+msgid "40/40/20"
+msgstr "40/40/20"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:101
+#, python-format
+msgid "50% bij opdracht en 50% bij oplevering na decharge"
+msgstr "50% bij opdracht en 50% bij oplevering na decharge"
+
+#. module: s2usale
+#: selection:s2u.sale,condition:0
+#: selection:s2usale.action.so.quotation,condition:0
+msgid "50/50"
+msgstr "50/50"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<i class=\"fa fa-arrow-circle-right\"/> Accept &amp; Sign"
+msgstr "<i class=\"fa fa-arrow-circle-right\"/> Accepteer &amp; Tekenen"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<i class=\"fa fa-check-circle\"/> Signed"
+msgstr "<i class=\"fa fa-check-circle\"/> Getekend"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+msgid ""
+"<span class=\"hidden-xs\">Sales Order #</span>\n"
+"                      <span class=\"visible-xs\">Ref.</span>"
+msgstr ""
+"<span class=\"hidden-xs\">Sales Order #</span>\n"
+"                      <span class=\"visible-xs\">Ref.</span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+msgid "<span class=\"label label-default\"><i class=\"fa fa-fw fa-clock-o\"/> Expired</span>"
+msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-clock-o\"/> Verlopen</span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/> Cancelled</span>"
+msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/> Geannuleerd</span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+msgid "<span class=\"label label-info\"><i class=\"fa fa-fw fa-clock-o\"/><span class=\"hidden-xs\"> Wait for payment</span></span>"
+msgstr "<span class=\"label label-info\"><i class=\"fa fa-fw fa-clock-o\"/><span class=\"hidden-xs\"> Wacht op betaling</span></span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+msgid "<span class=\"label label-success hidden-xs\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Done</span></span>"
+msgstr "<span class=\"label label-success hidden-xs\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Klaar</span></span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<span class=\"label label-success\"><i class=\"fa fa-fw fa-check\"/> Done</span>"
+msgstr "<span class=\"label label-success\"><i class=\"fa fa-fw fa-check\"/> Klaar</span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+msgid "<span style=\"font-weight: bold; font-size: 18px\">PURCHASE ORDER</span>"
+msgstr "<span style=\"font-weight: bold; font-size: 18px\">INKOOP ORDER</span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+msgid "<span style=\"font-weight: bold; font-size: 18px\">QUOTATION REQUEST</span>"
+msgstr "<span style=\"font-weight: bold; font-size: 18px\">OFFERTE AANVRAAG</span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "<span>:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "<span>:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Datum:</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<strong>Expiration Date:</strong>"
+msgstr "<strong>Geldig t/m:</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<strong>Invoicing Address</strong>"
+msgstr "<strong>Factuuradres</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<strong>Product</strong>"
+msgstr "<strong>Product</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Aantal</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<strong>Shipping Address</strong>"
+msgstr "<strong>Verzendadres</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotaal:</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Totaal</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Stuks prijs</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "<strong>Vat</strong>"
+msgstr "<strong>BTW</strong>"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "Accept &amp; Sign"
+msgstr "Accepteer &amp; Tekenen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_account_id
+msgid "Account kickback"
+msgstr "Gb.Rek. kickback"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_active
+msgid "Active"
+msgstr "Actief"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_add_id
+msgid "Add"
+msgstr "Toevoegen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_address_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_address_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_address_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_address
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_address_id
+msgid "Address"
+msgstr "Adres"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:803
+#, python-format
+msgid "Address does not belong to the selected customer!"
+msgstr "Adres behoort niet tot de geselecteerde klant!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:544
+#: code:addons/s2usale/models/purchase.py:1396
+#, python-format
+msgid "Address does not belong to the selected debitor!"
+msgstr "Adres behoort niet tot de debiteur!"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_use_email_address
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_use_email_address
+msgid "Address for mail"
+msgstr "Address for mail"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "Amount"
+msgstr "Bedrag"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_analytic_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_analytic_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_analytic_id
+msgid "Analytic"
+msgstr "Analytisch"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Archive"
+msgstr "Archiveren"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+msgid "Are qou sure?"
+msgstr "Weet u het zeker?"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+msgid "Are you sure?"
+msgstr "Weet u het zeker?"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Are you sure? You are going to archive/unarchive this object if you continue."
+msgstr "Weet u het zeker? U gaat een object archiveren/de-archiveren als u doorgaat."
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+msgid "Artwork date"
+msgstr "Aanlevering"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_available_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_available
+msgid "Available"
+msgstr "Beschikbaar"
+
+#. module: s2usale
+#: selection:s2u.dropshipping,delivery_type:0 selection:s2u.dropshipping,type:0
+#: selection:s2u.purchase,dropshipping_type:0 selection:s2u.purchase,type:0
+#: selection:s2u.sale,delivery_type:0 selection:s2u.sale,invoice_type:0
+#: selection:s2u.sale,type:0
+#: selection:s2u.sale.delivery.address,delivery_type:0
+#: selection:s2u.sale.delivery.address,load_type:0
+msgid "B2B"
+msgstr "B2B"
+
+#. module: s2usale
+#: selection:s2u.dropshipping,delivery_type:0
+#: selection:s2u.purchase,dropshipping_type:0
+#: selection:s2u.sale,delivery_type:0 selection:s2u.sale,invoice_type:0
+#: selection:s2u.sale,type:0
+#: selection:s2u.sale.delivery.address,delivery_type:0
+#: selection:s2u.sale.delivery.address,load_type:0
+msgid "B2C"
+msgstr "B2C"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Back to concept"
+msgstr "Terug naar concept"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_bold
+msgid "Bold"
+msgstr "Vet"
+
+#. module: s2usale
+#: model:res.groups,name:s2usale.bruto_or_netto
+msgid "Bruto or netto"
+msgstr "Bruto or netto"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entity"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+#: model:ir.ui.view,arch_db:s2usale.view_warehouse_outgoing_purchase
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_cancel_view
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_confirm_view
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_order_view
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_quotation_view
+msgid "Cancel"
+msgstr "Annuleer"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_cancel_reason
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_cancel_reason
+msgid "Cancel Reason"
+msgstr "Reden voor annuleren"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:850
+#, python-format
+msgid "Cancel not possible!"
+msgstr "Annuleren niet mogelijk!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1241
+#: model:ir.model,name:s2usale.model_s2usale_action_so_cancel
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_cancel_view
+#, python-format
+msgid "Cancel order"
+msgstr "Bestelling annuleren"
+
+#. module: s2usale
+#: selection:s2u.dropshipping,state:0 selection:s2u.purchase,state:0
+#: selection:s2u.sale,state:0
+msgid "Canceled"
+msgstr "Geannuleerd"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_chance
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_chance
+msgid "Chance"
+msgstr "Kans"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_code
+msgid "Code"
+msgstr "Code"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_code_supplier
+msgid "Code Supplier"
+msgstr "Code leverancier"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Communication template"
+msgstr "Correspondentie template"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_template_tree
+msgid "Communication templates"
+msgstr "Correspondentie templates"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_company_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:1128
+#: code:addons/s2usale/models/purchase.py:1162
+#: code:addons/s2usale/models/sale.py:2189
+#: code:addons/s2usale/models/sale.py:2223
+#, python-format
+msgid "Compose Email"
+msgstr "Compose Email"
+
+#. module: s2usale
+#: selection:s2u.dropshipping,state:0 selection:s2u.purchase,state:0
+#: selection:s2u.sale,state:0 selection:s2u.sale.kickback.invoicing,state:0
+msgid "Concept"
+msgstr "Concept"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_condition
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_condition
+msgid "Condition"
+msgstr "Voorwaarde"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Confirm"
+msgstr "Bevestigen"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1158
+#: model:ir.model,name:s2usale.model_s2usale_action_so_confirm
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_confirm_view
+#, python-format
+msgid "Confirm order"
+msgstr "Bevestig order"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_template_form
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Confirmation"
+msgstr "Bevestiging"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Confirmation PO"
+msgstr "Bevestig PO"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_date_confirm
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_date_confirm
+#: selection:s2u.purchase,state:0 selection:s2u.sale,state:0
+msgid "Confirmed"
+msgstr "Bevestigd"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_confirmed_by
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_confirmed_by
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_confirmed_by
+msgid "Confirmed by"
+msgstr "Bevestigd door"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_confirmed_user_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_confirmed_user_id
+msgid "Confirmed by user"
+msgstr "Bevestigd door medewerker"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_contact_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_delivery_contact_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_contact_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_dropshipping_contact_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_contact_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_contact_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_contact_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_contact_id
+msgid "Contact"
+msgstr "Contact"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:801
+#, python-format
+msgid "Contact does not belong to the selected customer!"
+msgstr "Contact behoort niet tot de geselecteerde klant!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:542
+#: code:addons/s2usale/models/purchase.py:1394
+#, python-format
+msgid "Contact does not belong to the selected debitor!"
+msgstr "Contact behoort niet tot de geselecteerde debiteur!"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+msgid "Create kickback"
+msgstr "Genereer kickback"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_order_view
+msgid "Create order"
+msgstr "Maak order"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_quotation_view
+msgid "Create purchase"
+msgstr "Maak inkoop"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_create_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_create_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_currency_id
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_delivery_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_partner_id
+msgid "Customer"
+msgstr "Klant"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_customer_code
+msgid "Customer reference"
+msgstr "Ref. van klant"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+msgid "DELIVERY ADDRESS:"
+msgstr "AFLEVERADRES:"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_date_entry
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_date_invoicing
+msgid "Date"
+msgstr "Datum"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_date_qu
+msgid "Date (Quot)"
+msgstr "Datum (offerte)"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_date_so
+msgid "Date (SO)"
+msgstr "Datum (order)"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_date_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_date_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_date_delivery
+msgid "Date delivery"
+msgstr "Datum levering"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_account_invoice_date_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_date_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_date_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_date_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_date_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_date_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_rma_date_display
+msgid "Date display"
+msgstr "Datum weergave"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_default_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_default_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_default_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_default_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_default_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_default
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_default
+msgid "Default"
+msgstr "Standaard"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_default_value
+msgid "Default value"
+msgstr "Standaard waarde"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_ids
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Deliveries"
+msgstr "Leveringen"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_warehouse_incoming
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_delivery_address
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_date_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_delivery_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_dropshipping_delivery_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_dropshipping_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_date_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_delivery_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_delivery_id
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Delivery"
+msgstr "Aflevering"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_dropshipping_address
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Delivery address"
+msgstr "Afleveradres"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+msgid "Delivery date"
+msgstr "Leverdatum"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_is_sale_address
+msgid "Delivery is sale address"
+msgstr "Levering is besteladres"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_ids
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+msgid "Detailed"
+msgstr "Details"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+msgid "Detailed info's"
+msgstr "Details"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_account_invoice_line_saledetailed_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_detailed_info
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_detailed_info
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_product_detail
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_detailed_info
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_detail
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_product_detail
+msgid "Details"
+msgstr "Details"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_discount
+msgid "Discount"
+msgstr "Korting"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_display
+msgid "Display"
+msgstr "Weergave"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_order_po_display_name
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_order_so_display_name
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_quotation_po_display_name
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_quotation_so_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_display_name
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_display_name
+msgid "Display Name"
+msgstr "Schermnaam"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_distribution
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_distribution
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_distribution
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_distribution
+msgid "Distribution"
+msgstr "Verdeling"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_confirmed_doc
+msgid "Doc. returned"
+msgstr "Getekend exemplaar retour"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Documents"
+msgstr "Documenten"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+#: selection:s2u.dropshipping,state:0 selection:s2u.sale,state:0
+#: selection:s2u.sale.kickback.invoicing,state:0
+msgid "Done"
+msgstr "Voltooid"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "Download"
+msgstr "Downloaden"
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_dropshipping
+#: model:ir.model,name:s2usale.model_s2u_dropshipping
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_dropshipping_id
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: selection:s2u.purchase,delivery_type:0 selection:s2u.sale,invoicing:0
+msgid "Dropshipping"
+msgstr "Dropship"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_dropshipping_line
+msgid "Dropshipping line"
+msgstr "Dropshipping regel"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_tree
+msgid "Dropshippings"
+msgstr "Dropshippings"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_editions
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_editions
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_editions_ordered
+msgid "Editions"
+msgstr "Aantallen"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Excel for mailmerge"
+msgstr "Excel export"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_file_name
+msgid "File Name"
+msgstr "Bestandsnaam"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_gross_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_gross_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_quot_gross_amount
+msgid "Gross amount"
+msgstr "Bruto"
+
+#. module: s2usale
+#: selection:s2u.sale,chance:0 selection:s2usale.action.so.quotation,chance:0
+msgid "High"
+msgstr "Hoog"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_order_po_id
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_order_so_id
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_quotation_po_id
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_quotation_so_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_id_4073
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_warehouse_incoming_line
+msgid "Incoming line (purchase order)"
+msgstr "Ontvangst regel (PO)"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:828
+#, python-format
+msgid "Incoming shipment [%s] already confirmed! Back to concept not possible."
+msgstr "Ontvangen levering [%s] is al bevestigd! Terug naar concept is niet meer mogelijk."
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+msgid "Incomings"
+msgstr "Ontvangsten"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:218
+#, python-format
+msgid "Invalid order"
+msgstr "Order ongeldig"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_id
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Invoice"
+msgstr "Factuur"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_currency_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_currency_id
+msgid "Invoice Currency"
+msgstr "Valuta"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1281
+#, python-format
+msgid "Invoice [%s] already confirmed! Back to concept not possible."
+msgstr "Factuur [%s] is reeds bevestigd! Terug naar concept is niet mogelijk."
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Invoice address"
+msgstr "Factuuradres"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Invoice and delivery"
+msgstr "Facturatie en levering"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_is_sale_address
+msgid "Invoice is sale address"
+msgstr "Factuur is besteladres"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_account_invoice_line
+#: model:ir.model,name:s2usale.model_s2u_account_invoice_po_line
+msgid "Invoice line"
+msgstr "Fak. Regel"
+
+#. module: s2usale
+#: selection:s2u.sale.kickback.invoicing,state:0
+msgid "Invoiced"
+msgstr "Gefactureerd"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_ids
+#: model:ir.ui.view,arch_db:s2usale.crm_entity_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+msgid "Invoices"
+msgstr "Facturen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_month_invoices
+msgid "Invoices Month"
+msgstr "Factuur maand"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoicing
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoicing_id
+msgid "Invoicing"
+msgstr "Facturatie"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_invpartner_id
+msgid "Invoicing Partner"
+msgstr "Facturatie relatie"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_is_expired
+msgid "Is expired"
+msgstr "Is verlopen"
+
+#. module: s2usale
+#: selection:s2u.dropshipping.line,price_per:0
+#: selection:s2u.purchase.line,price_per:0
+#: selection:s2u.purchase.line.qty,price_per:0
+#: selection:s2u.sale.line,price_per:0 selection:s2u.sale.line.qty,price_per:0
+msgid "Item"
+msgstr "Item"
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_sale_kickback_invoicing
+#: model:ir.ui.menu,name:s2usale.menu_sale_kickback_invoicing
+msgid "Kickback"
+msgstr "Kickback"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_kickback
+msgid "Kickback (%)"
+msgstr "Kickback (%)"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_kickback_invoicing
+msgid "Kickback Invoicing"
+msgstr "Kickback facturatie"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_year_invoices
+msgid "Kickback Year"
+msgstr "Kickback jaar"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_kickback_amount
+msgid "Kickback amount"
+msgstr "Kickback bedrag"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_kickback_invoicing_partner
+msgid "Kickback for Partner"
+msgstr "Kickback voor relatie"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_kickback_invoicing_partner_invoice
+msgid "Kickback for Partner on invoice"
+msgstr "Kickback voor relatie op factuur"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_tree
+msgid "Kickback invoicing"
+msgstr "Kickback facturatie"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_invoiceline_id
+msgid "Kickback on invoice line"
+msgstr "Kickback op factuur regel"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_invoices_till
+msgid "Kickback till"
+msgstr "Kickback t/m"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:2474
+#, python-format
+msgid "Kickback till %s"
+msgstr "Kickback t/m %s"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_detailed_label
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_detailed_label
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_detailed_label
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_label_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_label_id
+#: model:ir.ui.view,arch_db:s2usale.label2_form
+msgid "Label"
+msgstr "Omschrijving"
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_label2
+#: model:ir.ui.menu,name:s2usale.menu_action_label2
+#: model:ir.ui.view,arch_db:s2usale.label2_tree
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Labels"
+msgstr "Labels"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_lang
+msgid "Language"
+msgstr "Taal"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_order_po___last_update
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_order_so___last_update
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_quotation_po___last_update
+#: model:ir.model.fields,field_description:s2usale.field_report_s2usale_print_quotation_so___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order___last_update
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation___last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_write_uid
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_invoice_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_write_date
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_layout_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_layout_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_layout_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_layout_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_layout_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_name
+#: model:ir.ui.view,arch_db:s2usale.layout2_form
+msgid "Layout"
+msgstr "Layout"
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_layout2
+#: model:ir.ui.menu,name:s2usale.menu_action_layout2
+#: model:ir.ui.view,arch_db:s2usale.layout2_tree
+msgid "Layouts"
+msgstr "Layouts"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_outgoing_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_outgoing_id
+msgid "Levering"
+msgstr "Levering"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_country_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_country_id
+msgid "Leveringsland"
+msgstr "Leveringsland"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_dropshippingline_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_purchaseline_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_purchaseline_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_line_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_saleline_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_saleline_id
+msgid "Line"
+msgstr "Regel"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_line_ids
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+msgid "Lines"
+msgstr "Regels"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_load_address
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Loading address"
+msgstr "Laad adres"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_load_entity_id
+msgid "Loading entity"
+msgstr "Laad entity"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_warehouse_id
+msgid "Location"
+msgstr "Locatie"
+
+#. module: s2usale
+#: selection:s2u.sale,chance:0 selection:s2usale.action.so.quotation,chance:0
+msgid "Low"
+msgstr "Laag"
+
+#. module: s2usale
+#: selection:s2u.sale,confirmed_by:0
+#: selection:s2usale.action.so.confirm,confirmed_by:0
+#: selection:s2usale.action.so.quotation,confirmed_by:0
+msgid "Mail"
+msgstr "Mail"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_mail_template_id
+msgid "Mail template"
+msgstr "Mail template"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1124
+#: model:ir.model,name:s2usale.model_s2usale_action_so_order
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_order_view
+#, python-format
+msgid "Make order"
+msgstr "Make order"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:985
+#: model:ir.model,name:s2usale.model_s2usale_action_so_quotation
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_quotation_view
+#, python-format
+msgid "Make quotation"
+msgstr "Maak offerte voor klant"
+
+#. module: s2usale
+#: model:res.groups,name:s2usale.group_sale_manager
+msgid "Manager (s2uFramework)"
+msgstr "Manager (s2uFramework)"
+
+#. module: s2usale
+#: selection:s2u.sale,invoicing:0
+msgid "Manual"
+msgstr "Handmatig"
+
+#. module: s2usale
+#: selection:s2u.sale,chance:0 selection:s2usale.action.so.quotation,chance:0
+msgid "Medium"
+msgstr "Middel"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_net_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_net_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_quot_net_amount
+msgid "Net amount"
+msgstr "Netto"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_next_step
+msgid "Next step"
+msgstr "Vervolg stap"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:2508
+#, python-format
+msgid "No VAT is defined for kickback account!"
+msgstr "Er is geen BTW gedefinieerd voor gb.rek. van kickback!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:763
+#: code:addons/s2usale/models/sale.py:1525
+#: code:addons/s2usale/models/sale.py:1565
+#: code:addons/s2usale/models/sale.py:1625
+#, python-format
+msgid "No VAT is defined for product %s!"
+msgstr "Geen BTW gedefinieerd voor product %s!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:729
+#: code:addons/s2usale/models/sale.py:1487
+#: code:addons/s2usale/models/sale.py:1589
+#, python-format
+msgid "No financial account is defined for product %s!"
+msgstr "Geen gb.rek. gedefinieerd voor product %s!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1793
+#, python-format
+msgid "No supplier found for product %s!"
+msgstr "Geen leverancier gevonden voor product %s!"
+
+#. module: s2usale
+#: selection:s2u.purchase,delivery_type:0
+msgid "Normal"
+msgstr "Normaal"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+msgid "ORDER"
+msgstr "ORDERBEVESTIGING"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1646
+#, python-format
+msgid "On completion"
+msgstr "Bij voltooiing"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1644 selection:s2u.sale,invoicing:0
+#, python-format
+msgid "On confirmation"
+msgstr "Bij bevestiging"
+
+#. module: s2usale
+#: selection:s2u.sale,invoicing:0
+msgid "On delivery"
+msgstr "Bij levering"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_on_invoice
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_on_invoice
+msgid "On invoice"
+msgstr "Op factuur"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.crm_entity_form
+msgid "Open"
+msgstr "Open"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:211
+#, python-format
+msgid "Operation not allowed"
+msgstr "Handeling niet toegestaan"
+
+#. module: s2usale
+#: model:ir.actions.report,name:s2usale.s2usale_orders_po
+#: model:ir.actions.report,name:s2usale.s2usale_orders_so
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_for_order
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_for_order
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_for_order
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_for_order
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_for_order
+#: model:ir.ui.view,arch_db:s2usale.portal_my_home_menu_sale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+#: model:ir.ui.view,arch_db:s2usale.sale_form selection:s2u.sale,state:0
+msgid "Order"
+msgstr "Order"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:84
+#: code:addons/s2usale/controller/portal.py:137
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+#, python-format
+msgid "Order Date"
+msgstr "Besteldatum"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Order by Email"
+msgstr "Order by Email"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:220
+#, python-format
+msgid "Order is not in a state requiring customer validation."
+msgstr "Order is not in a state requiring customer validation."
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+msgid "Order number"
+msgstr "Ordernummer"
+
+#. module: s2usale
+#: selection:s2u.layout.label.po,display:0
+#: selection:s2u.layout.label.so,display:0
+#: selection:s2u.purchase.line.label,display:0
+#: selection:s2u.sale.line.label,display:0
+msgid "Order only"
+msgstr "Alleen bestelling"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:227
+#, python-format
+msgid "Order signed by %s"
+msgstr "Order getekend door %s"
+
+#. module: s2usale
+#: model:mail.template,report_name:s2usale.email_template_s2u_sale_order
+msgid "Order-${(object.name or '').replace('/','_')}.pdf"
+msgstr "Order-${(object.name or '').replace('/','_')}.pdf"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_ordered_line_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_ordered_line_ids
+msgid "Ordered lines"
+msgstr "Regels voor bestelling"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Other details"
+msgstr "Overige details"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+msgid "Our order number"
+msgstr "Ons ordernummer"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_warehouse_outgoing
+msgid "Outgoing"
+msgstr "Uitgaand"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1273
+#, python-format
+msgid "Outgoing shipment [%s] already confirmed! Back to concept not possible."
+msgstr "Uitgaande levering [%s] is al bevestigd! Terug naar concept is niet meer mogelijk."
+
+#. module: s2usale
+#: code:addons/s2usale/wizards/sale_wizard.py:333
+#, python-format
+msgid "Outgoing shipment [%s] already confirmed! Cancel not possible."
+msgstr "Outgoing shipment [%s] already confirmed! Cancel not possible."
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_warehouse_outgoing_todo
+msgid "Outgoing todo (sales order)"
+msgstr "Uitgaand todo (so order)"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Outgoings"
+msgstr "Uitgaande"
+
+#. module: s2usale
+#: selection:s2u.sale,confirmed_by:0
+#: selection:s2usale.action.so.confirm,confirmed_by:0
+#: selection:s2usale.action.so.quotation,confirmed_by:0
+msgid "Own PO"
+msgstr "Eigen PO"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_account_invoice_po_line_purchaseline_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_incoming_line_purchase_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_todo_purchase_id
+msgid "PO"
+msgstr "PO"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_po_price
+msgid "PO Price"
+msgstr "PO Prijs"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1648
+#, python-format
+msgid "Part payment"
+msgstr "Deel betaling"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_partner_id
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+msgid "Partner"
+msgstr "Relatie"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_ids
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+msgid "Partners"
+msgstr "Relaties"
+
+#. module: s2usale
+#: selection:s2u.sale,state:0
+msgid "Payment"
+msgstr "Betaling"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:42
+#, python-format
+msgid "Payment within %d days with a reference to the invoice number."
+msgstr "Betaling binnen %d dagen onder vermelding van het factuurnummer."
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_price_per
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_price_per
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_price_per
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_price_per
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_price_per
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "Per"
+msgstr "Per"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1729
+#, python-format
+msgid "Please define a default outgoing delivery type!"
+msgstr "U dient een standaard uitgaande levering type te definiëren!"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_confirm_view
+msgid "Please enter all relevant information for this confirmation:"
+msgstr "Geef alle relevante informatie in voor bevestiging:"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:799
+#, python-format
+msgid "Please select a b2b customer!"
+msgstr "U dient een b2b klant te selecteren!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:540
+#: code:addons/s2usale/models/purchase.py:1392
+#, python-format
+msgid "Please select a b2b debitor!"
+msgstr "U dient een b2b debiteur te selecteren!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:806
+#, python-format
+msgid "Please select a b2c customer!"
+msgstr "U dient een b2b klant te selecteren!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:547
+#: code:addons/s2usale/models/purchase.py:1399
+#, python-format
+msgid "Please select a b2c debitor!"
+msgstr "U dient een b2c debiteur te selecteren!"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_account_invoice_postfix_invoice
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_postfix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_postfix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_postfix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_postfix_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_postfix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_postfix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_postfix_confirmation_po
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_postfix_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_postfix_invoice
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_postfix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_postfix_quotation_po
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_postfix_rma
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_postfix_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_rma_postfix_rma
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_rma_prefix_rma
+#: model:ir.ui.view,arch_db:s2usale.purchase_template_form
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Postfix"
+msgstr "Postfix"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_account_invoice_prefix_invoice
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_postfix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_postfix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_prefix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_prefix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_prefix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_prefix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_prefix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_prefix_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_prefix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_prefix_confirmation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_prefix_confirmation_po
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_prefix_delivery
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_prefix_invoice
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_prefix_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_prefix_quotation_po
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_prefix_rma
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_prefix_delivery
+#: model:ir.ui.view,arch_db:s2usale.purchase_template_form
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Prefix"
+msgstr "Voorvoegsel"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_price
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_price
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_price
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_price
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_price
+msgid "Price"
+msgstr "Prijs"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_price_after_discount
+msgid "Price after discount"
+msgstr "Prijs na korting"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_price_is_net
+msgid "Price is VAT exclusive"
+msgstr "Prijs is ex. BTW"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_price_is_net
+msgid "Price is netto"
+msgstr "Bedrag is netto"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_product_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_id_3900
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_product_id
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "Product"
+msgstr "Product"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Products"
+msgstr "Producten"
+
+#. module: s2usale
+#: code:addons/s2usale/models_inherited/shipment.py:189
+#, python-format
+msgid "Programmation error: the expected model for this action is 's2u.warehouse.outgoing'. The provided one is '%d'."
+msgstr "Programmation error: the expected model for this action is 's2u.warehouse.outgoing'. The provided one is '%d'."
+
+#. module: s2usale
+#: code:addons/s2usale/models_inherited/shipment.py:187
+#, python-format
+msgid "Programmation error: wizard action executed without active_model or active_id in context."
+msgstr "Programmation error: wizard action executed without active_model or active_id in context."
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_project
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_project
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_project
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_project
+msgid "Project"
+msgstr "Project"
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_purchase
+#: model:ir.model,name:s2usale.model_s2u_purchase
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_purchase_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_purchase_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_po_line_id
+#: model:ir.ui.menu,name:s2usale.menu_action_purchase
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.layout2_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.view_warehouse_outgoing_purchase
+#: model:ir.ui.view,arch_db:s2usale.warehouse_outgoing_form
+msgid "Purchase"
+msgstr "Inkoop"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_purchase_template
+#: model:ir.ui.view,arch_db:s2usale.purchase_template_form
+msgid "Purchase Template"
+msgstr "Inkoop template"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_purchase_line
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_purchaseline_id
+msgid "Purchase line"
+msgstr "Inkoop regel"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_purchase_line_qty
+msgid "Purchase line Qty"
+msgstr "PO regel aantal"
+
+#. module: s2usale
+#: code:addons/s2usale/models_inherited/shipment.py:46
+#: model:ir.ui.view,arch_db:s2usale.view_warehouse_outgoing_purchase
+#, python-format
+msgid "Purchase products"
+msgstr "PO producten"
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_purchase_template
+msgid "Purchase template"
+msgstr "Inkoop template"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_template_tree
+msgid "Purchase templates"
+msgstr "Inkoop templates"
+
+#. module: s2usale
+#: model:mail.template,report_name:s2usale.email_template_s2u_purchase_order
+msgid "Purchase-Order-${(object.name or '').replace('/','_')}.pdf"
+msgstr "Purchase-Order-${(object.name or '').replace('/','_')}.pdf"
+
+#. module: s2usale
+#: model:mail.template,report_name:s2usale.email_template_s2u_purchase_quotation
+msgid "Purchase-Quotation-Request-${(object.name or '').replace('/','_')}.pdf"
+msgstr "Purchase-Quotation-Request-${(object.name or '').replace('/','_')}.pdf"
+
+#. module: s2usale
+#: model:ir.ui.menu,name:s2usale.menu_sales_purchases
+#: model:ir.ui.view,arch_db:s2usale.purchase_calendar
+#: model:ir.ui.view,arch_db:s2usale.purchase_tree
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+#: model:ir.ui.view,arch_db:s2usale.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2usale.warehouse_outgoing_form
+msgid "Purchases"
+msgstr "Inkopen"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "QUOTATION"
+msgstr "OFFERTE"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_product_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_qty_3906
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_product_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_qty
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_qty_purchase
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Qty"
+msgstr "Stuks"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_qty_pdf
+msgid "Qty/Distri"
+msgstr "Aantal/Verdeling"
+
+#. module: s2usale
+#: model:ir.actions.report,name:s2usale.s2usale_quotations_po
+#: model:ir.actions.report,name:s2usale.s2usale_quotations_so
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_name_quot
+#: model:ir.ui.view,arch_db:s2usale.portal_my_home_menu_sale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+#: model:ir.ui.view,arch_db:s2usale.purchase_template_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+#: selection:s2u.sale,state:0
+msgid "Quotation"
+msgstr "Offerte"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+msgid "Quotation #"
+msgstr "Offerte #"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "Quotation PO"
+msgstr "Offerte PO"
+
+#. module: s2usale
+#: selection:s2u.layout.label.so,display:0
+#: selection:s2u.sale.line.label,display:0
+msgid "Quotation and Order"
+msgstr "Offerte en bestelling"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Quotation by Email"
+msgstr "Quotation by Email"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "Quotation number"
+msgstr "Offerte nummer"
+
+#. module: s2usale
+#: selection:s2u.layout.label.so,display:0
+#: selection:s2u.sale.line.label,display:0
+msgid "Quotation only"
+msgstr "Alleen offerte"
+
+#. module: s2usale
+#: model:mail.template,report_name:s2usale.email_template_s2u_sale_quotation
+msgid "Quotation-${(object.name or '').replace('/','_')}.pdf"
+msgstr "Quotation-${(object.name or '').replace('/','_')}.pdf"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_home_menu_sale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_home_sale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+msgid "Quotations"
+msgstr "Offertes"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_warehouse_rma
+#: model:ir.ui.view,arch_db:s2usale.sale_template_form
+msgid "RMA"
+msgstr "RMA"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "RMA's"
+msgstr "RMA's"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:85
+#: code:addons/s2usale/controller/portal.py:138
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_reference
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+#, python-format
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_confirmed_remark
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_confirmed_remark
+msgid "Remark"
+msgstr "Opmerking"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_date_request
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_qty_ids
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: selection:s2u.dropshipping,state:0 selection:s2u.purchase,state:0
+msgid "Request"
+msgstr "Aanvraag"
+
+#. module: s2usale
+#: selection:s2u.layout.label.po,display:0
+#: selection:s2u.purchase.line.label,display:0
+msgid "Request and Order"
+msgstr "Aanvraag en bestelling"
+
+#. module: s2usale
+#: selection:s2u.layout.label.po,display:0
+#: selection:s2u.purchase.line.label,display:0
+msgid "Request only"
+msgstr "Alleen aanvraag"
+
+#. module: s2usale
+#: selection:s2u.sale,state:0
+msgid "Running"
+msgstr "Uitvoeren"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_account_invoice_line_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_ids
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_todo_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_cancel_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_confirm_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_order_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2usale_action_so_quotation_sale_id
+msgid "SO"
+msgstr "SO"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_saleline_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_todo_saleline_id
+msgid "SO Line"
+msgstr "SO regel"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_po_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_po_document
+msgid "SUPPLIER:"
+msgstr "LEVERANCIER:"
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_sale
+#: model:ir.model,name:s2usale.model_s2u_sale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_display
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_sale_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_sale_id
+#: model:ir.ui.menu,name:s2usale.menu_action_sale
+#: model:ir.ui.view,arch_db:s2usale.layout2_form
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Sale"
+msgstr "Verkoop"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_template
+msgid "Sale Template"
+msgstr "Verkoop template"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.invoice_form
+msgid "Sale details"
+msgstr "Verkoop details"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_line
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_product_saleline_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_qty_saleline_id
+msgid "Sale line"
+msgstr "Verkoop regel"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_line_product
+msgid "Sale line Product"
+msgstr "Verkoop regel product"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_line_qty
+msgid "Sale line Qty"
+msgstr "Verkoop regel aantal"
+
+#. module: s2usale
+#: model:ir.ui.menu,name:s2usale.menu_sales
+#: model:ir.ui.menu,name:s2usale.menu_sales_sales
+#: model:ir.ui.view,arch_db:s2usale.crm_entity_form
+#: model:ir.ui.view,arch_db:s2usale.sale_calendar
+#: model:ir.ui.view,arch_db:s2usale.sale_tree
+msgid "Sales"
+msgstr "Verkoop"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_home_menu_sale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_home_sale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+msgid "Sales Orders"
+msgstr "Bestellingen"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_account_invoice
+msgid "Sales invoice"
+msgstr "Verkoopfactuur"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.crm_entity_form
+msgid "Sales orders"
+msgstr "Bestellingen"
+
+#. module: s2usale
+#: model:res.groups,name:s2usale.group_sale_salesman
+msgid "Salesperson (s2uFramework)"
+msgstr "Verkoper (s2uFramework)"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_search_view
+#: model:ir.ui.view,arch_db:s2usale.label2_search_view
+#: model:ir.ui.view,arch_db:s2usale.layout2_search_view
+#: model:ir.ui.view,arch_db:s2usale.purchase_search_view
+#: model:ir.ui.view,arch_db:s2usale.purchase_template_search_view
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_search_view
+#: model:ir.ui.view,arch_db:s2usale.sale_search_view
+#: model:ir.ui.view,arch_db:s2usale.sale_template_search_view
+msgid "Search"
+msgstr "Zoek"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_access_token
+msgid "Security Token"
+msgstr "Security Token"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_detailed_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_label_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_order_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_request_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_po_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_label_so_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_detailed_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_detailed_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_sequence
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_sequence
+msgid "Sequence"
+msgstr "Reeks"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:554
+#: code:addons/s2usale/models/purchase.py:1406
+#, python-format
+msgid "Sequence for creating PO not exists!"
+msgstr "Sequence voor maken PO bestaat niet!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:823
+#, python-format
+msgid "Sequence for creating SO not exists!"
+msgstr "Sequence voor maken SO bestaat niet!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:813
+#, python-format
+msgid "Sequence for creating quotation not exists!"
+msgstr "Sequence voor maken offerte bestaat niet!"
+
+#. module: s2usale
+#: model:ir.ui.menu,name:s2usale.menu_sales_settings
+msgid "Settings"
+msgstr "Instellingen"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_form
+msgid "Settings for kickback"
+msgstr "Instellingen voor kickback"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_reference
+msgid "Short descript."
+msgstr "Korte omschr."
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_show_total_amount
+msgid "Show amount"
+msgstr "Toon totaal"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:213
+#, python-format
+msgid "Signature is missing."
+msgstr "Signature is missing."
+
+#. module: s2usale
+#: selection:s2u.sale,confirmed_by:0
+#: selection:s2usale.action.so.confirm,confirmed_by:0
+#: selection:s2usale.action.so.quotation,confirmed_by:0
+msgid "Signed copy"
+msgstr "Getekend exemplaar"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_dropshipping_type
+msgid "Soort"
+msgstr "Soort"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:86
+#: code:addons/s2usale/controller/portal.py:139
+#, python-format
+msgid "Stage"
+msgstr "Fase"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_state
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_state
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_state
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_state
+msgid "State"
+msgstr "Status"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_partner_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_entity_id
+msgid "Supplier"
+msgstr "Leverancier"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_tinno
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_tinno
+msgid "TIN no."
+msgstr "BTW-Nr."
+
+#. module: s2usale
+#: model:ir.actions.act_window,name:s2usale.action_sale_template
+#: model:ir.model.fields,field_description:s2usale.field_s2u_account_invoice_template_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_id_4206
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_template_so_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_id_3988
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_template_name
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_template_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_rma_template_id
+#: model:ir.ui.menu,name:s2usale.menu_action_sale_template
+msgid "Template"
+msgstr "Sjabloon"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+msgid "There are currently no orders for your account."
+msgstr "There are currently no orders for your account."
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+msgid "There are currently no quotations for your account."
+msgstr "There are currently no quotations for your account."
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:1150
+#, python-format
+msgid "There are no lines marked as order, please enter some lines and mark them for the order."
+msgstr "U heeft geen regels gemarkeerd voor de order!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:1112
+#: code:addons/s2usale/models/purchase.py:1146
+#: code:addons/s2usale/models/sale.py:2173
+#: code:addons/s2usale/models/sale.py:2207
+#, python-format
+msgid "There is no mail address present to use!"
+msgstr "There is no mail address present to use!"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:803
+#, python-format
+msgid "There is nothing to purchase, please enter some lines and mark them for ordering."
+msgstr "Er is niets te bestellen, u dient regels in te geven en te markeren om te bestellen."
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:654
+#: code:addons/s2usale/models/purchase.py:788
+#: code:addons/s2usale/models/purchase.py:1457
+#: code:addons/s2usale/models/purchase.py:1475
+#, python-format
+msgid "There is nothing to purchase, please enter some lines."
+msgstr "Er is niks te bestellen, u dient een aantal regels in te geven."
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_error
+msgid "There was an error processing this page."
+msgstr "Er was een fout met het verwerken van deze pagina."
+
+#. module: s2usale
+#: model:ir.model.fields,help:s2usale.field_s2usale_action_so_confirm_confirmed_doc
+msgid "This field holds the document you received back from the customer where he/she confirmes the order."
+msgstr "This field holds the document you received back from the customer where he/she confirmes the order."
+
+#. module: s2usale
+#: code:addons/s2usale/models_inherited/shipment.py:163
+#, python-format
+msgid "This shipment contains lines from purchase order [%s]! Delete is not possible"
+msgstr "De levering bevat regels van inkoop order [%s]! Verwijderen is niet mogelijk."
+
+#. module: s2usale
+#: code:addons/s2usale/models_inherited/shipment.py:29
+#, python-format
+msgid "This shipment contains lines from sales order [%s]! Delete is not possible"
+msgstr "De levering bevat regels van verkoop order [%s]! Verwijderen is niet mogelijk."
+
+#. module: s2usale
+#: selection:s2u.dropshipping,state:0
+msgid "To transfer"
+msgstr "Te verzenden"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_warehouse_outgoing_purchase_add_item_todo_id
+msgid "Todo"
+msgstr "Te doen"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_tot_amount
+msgid "Tot. Amount"
+msgstr "Tot. bedrag"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.print_order_so_document
+#: model:ir.ui.view,arch_db:s2usale.print_quotation_so_document
+msgid "Tot. amount"
+msgstr "Tot. bedrag"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_partner_tot_amount
+msgid "Tot. kickback"
+msgstr "Tot. kickback"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_orders
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+#: model:ir.ui.view,arch_db:s2usale.purchase_form
+#: model:ir.ui.view,arch_db:s2usale.purchase_tree
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_tree
+#: model:ir.ui.view,arch_db:s2usale.sale_tree
+#: selection:s2u.dropshipping.line,price_per:0
+#: selection:s2u.purchase.line,price_per:0
+#: selection:s2u.purchase.line.qty,price_per:0
+#: selection:s2u.sale.line,price_per:0 selection:s2u.sale.line.qty,price_per:0
+msgid "Total"
+msgstr "Totaal"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_trailer_no
+msgid "Trailer-No."
+msgstr "Trailer.-Nr."
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+msgid "Transfer"
+msgstr "Verplaatsing"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_date_transfered
+#: selection:s2u.dropshipping,state:0
+msgid "Transfered"
+msgstr "Verstuurd"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_delivery_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_delivery_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_address_load_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_delivery_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_type
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_type
+msgid "Type"
+msgstr "Soort"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.dropshipping_form
+msgid "Undo confirm"
+msgstr "Ongedaan maken"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.sale_kickback_invoicing_form
+msgid "Update kickback"
+msgstr "Update kickback"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_layout_use_as_default
+msgid "Use as default"
+msgstr "Als standaard"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_user_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_kickback_invoicing_user_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_user_id
+msgid "User"
+msgstr "Gebruiker"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_dropshipping_line_vat_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_vat_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_vat_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_vat_id
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_quot_vat_amount
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_vat_amount
+#: model:ir.ui.view,arch_db:s2usale.portal_order_page
+msgid "VAT"
+msgstr "BTW"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_my_quotations
+msgid "Valid Until"
+msgstr "Geldig t/m"
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_date_valid
+msgid "Valid till"
+msgstr "Vervaldat."
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_calc_value_order
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_calc_value_request
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_calc_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_order_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_line_label_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_calc_value_invoice
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_invoice_line_label_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_calc_value_order
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_calc_value_quotation
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_calc_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_order_value
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_line_label_value
+msgid "Value"
+msgstr "Waarde"
+
+#. module: s2usale
+#: code:addons/s2usale/models/sale.py:98
+#, python-format
+msgid "Volledig bij beschikbaar komen van de producten"
+msgstr "Volledig bij beschikbaar komen van de producten"
+
+#. module: s2usale
+#: selection:s2usale.action.so.order,next_step:0
+msgid "Wait for payment"
+msgstr "Wacht op betaling"
+
+#. module: s2usale
+#: selection:s2usale.action.so.order,next_step:0
+msgid "Wat for confirmation"
+msgstr "Wacht op bevestiging"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_cancel_view
+msgid "What is the Reason to cancel the order process?"
+msgstr "Wat is de reden voor het annuleren van deze bestelling?"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_quotation_view
+msgid "What is the chance this quotation becomes order?"
+msgstr "Wat is de kans dat deze order wordt bevestigd?"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_order_view
+msgid "What is the next step in the order process?"
+msgstr "Wat is de volgende stap?"
+
+#. module: s2usale
+#: model:ir.model.fields,help:s2usale.field_s2u_sale_show_total_amount
+msgid "When active, the total amount is printed on the quotation otherwise this is skipped."
+msgstr "Als dit veld een haakje bevat, dan wordt het totaal bedrag onderaan op de offerte weergegeven. Is deze niet gezet, wordt het totaal bedrag weggelaten."
+
+#. module: s2usale
+#: selection:s2u.sale,invoicing:0
+msgid "When completed"
+msgstr "Wanneer voltooid"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:635
+#: code:addons/s2usale/models/purchase.py:1438
+#: code:addons/s2usale/models/sale.py:962
+#, python-format
+msgid "You can not delete a confirmed order!"
+msgstr "U kunt een bevestigde order niet verwijderen!"
+
+#. module: s2usale
+#: code:addons/s2usale/controller/portal.py:231
+#, python-format
+msgid "Your Order has been confirmed."
+msgstr "Uw bestelling is bevestigd."
+
+#. module: s2usale
+#: model:ir.model.fields,field_description:s2usale.field_s2u_purchase_your_reference
+#: model:ir.model.fields,field_description:s2usale.field_s2u_sale_customer_code
+msgid "Your reference"
+msgstr "Uw referentie"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:413
+#: code:addons/s2usale/models/sale.py:23 code:addons/s2usale/models/sale.py:672
+#, python-format
+msgid "april"
+msgstr "april"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:414
+#: code:addons/s2usale/models/sale.py:24 code:addons/s2usale/models/sale.py:673
+#, python-format
+msgid "august"
+msgstr "augustus"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.portal_order_error
+#: model:ir.ui.view,arch_db:s2usale.portal_order_success
+msgid "close"
+msgstr "Sluiten"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:415
+#: code:addons/s2usale/models/sale.py:25 code:addons/s2usale/models/sale.py:674
+#, python-format
+msgid "december"
+msgstr "december"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:412
+#: code:addons/s2usale/models/sale.py:22 code:addons/s2usale/models/sale.py:671
+#, python-format
+msgid "februar"
+msgstr "februari"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:412
+#: code:addons/s2usale/models/sale.py:22 code:addons/s2usale/models/sale.py:671
+#, python-format
+msgid "januar"
+msgstr "januari"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:414
+#: code:addons/s2usale/models/sale.py:24 code:addons/s2usale/models/sale.py:673
+#, python-format
+msgid "july"
+msgstr "juli"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:413
+#: code:addons/s2usale/models/sale.py:23 code:addons/s2usale/models/sale.py:672
+#, python-format
+msgid "june"
+msgstr "juni"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:412
+#: code:addons/s2usale/models/sale.py:22 code:addons/s2usale/models/sale.py:671
+#, python-format
+msgid "march"
+msgstr "maart"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:413
+#: code:addons/s2usale/models/sale.py:23 code:addons/s2usale/models/sale.py:672
+#, python-format
+msgid "may"
+msgstr "mei"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:415
+#: code:addons/s2usale/models/sale.py:25 code:addons/s2usale/models/sale.py:674
+#, python-format
+msgid "november"
+msgstr "november"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:415
+#: code:addons/s2usale/models/sale.py:25 code:addons/s2usale/models/sale.py:674
+#, python-format
+msgid "october"
+msgstr "oktober"
+
+#. module: s2usale
+#: model:ir.ui.view,arch_db:s2usale.view_warehouse_outgoing_purchase
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_cancel_view
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_confirm_view
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_order_view
+#: model:ir.ui.view,arch_db:s2usale.wizard_action_so_quotation_view
+msgid "or"
+msgstr "of"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:419
+#: code:addons/s2usale/models/sale.py:678
+#: selection:s2u.dropshipping.line,price_per:0
+#: selection:s2u.purchase.line,price_per:0
+#: selection:s2u.purchase.line.qty,price_per:0
+#: selection:s2u.sale.line,price_per:0 selection:s2u.sale.line.qty,price_per:0
+#, python-format
+msgid "per 10"
+msgstr "per 10"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:420
+#: code:addons/s2usale/models/sale.py:679
+#: selection:s2u.dropshipping.line,price_per:0
+#: selection:s2u.purchase.line,price_per:0
+#: selection:s2u.purchase.line.qty,price_per:0
+#: selection:s2u.sale.line,price_per:0 selection:s2u.sale.line.qty,price_per:0
+#, python-format
+msgid "per 100"
+msgstr "per 100"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:421
+#: code:addons/s2usale/models/sale.py:680
+#: selection:s2u.dropshipping.line,price_per:0
+#: selection:s2u.purchase.line,price_per:0
+#: selection:s2u.purchase.line.qty,price_per:0
+#: selection:s2u.sale.line,price_per:0 selection:s2u.sale.line.qty,price_per:0
+#, python-format
+msgid "per 1000"
+msgstr "per 1000"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:418
+#: code:addons/s2usale/models/sale.py:677
+#, python-format
+msgid "per Item"
+msgstr "per Item"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_report_s2usale_print_order_po
+msgid "report.s2usale.print_order_po"
+msgstr "report.s2usale.print_order_po"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_report_s2usale_print_order_so
+msgid "report.s2usale.print_order_so"
+msgstr "report.s2usale.print_order_so"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_report_s2usale_print_quotation_po
+msgid "report.s2usale.print_quotation_po"
+msgstr "report.s2usale.print_quotation_po"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_report_s2usale_print_quotation_so
+msgid "report.s2usale.print_quotation_so"
+msgstr "report.s2usale.print_quotation_so"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_dropshipping_line_detailed
+msgid "s2u.dropshipping.line.detailed"
+msgstr "s2u.dropshipping.line.detailed"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_label
+msgid "s2u.label"
+msgstr "s2u.label"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_layout
+msgid "s2u.layout"
+msgstr "s2u.layout"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_layout_label
+msgid "s2u.layout.label"
+msgstr "s2u.layout.label"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_layout_label_po
+msgid "s2u.layout.label.po"
+msgstr "s2u.layout.label.po"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_layout_label_po_order
+msgid "s2u.layout.label.po.order"
+msgstr "s2u.layout.label.po.order"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_layout_label_po_request
+msgid "s2u.layout.label.po.request"
+msgstr "s2u.layout.label.po.request"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_layout_label_so
+msgid "s2u.layout.label.so"
+msgstr "s2u.layout.label.so"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_purchase_detailed
+msgid "s2u.purchase.detailed"
+msgstr "s2u.purchase.detailed"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_purchase_line_label
+msgid "s2u.purchase.line.label"
+msgstr "s2u.purchase.line.label"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_purchase_line_label_order
+msgid "s2u.purchase.line.label.order"
+msgstr "s2u.purchase.line.label.order"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_delivery_address
+msgid "s2u.sale.delivery.address"
+msgstr "s2u.sale.delivery.address"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_detailed
+msgid "s2u.sale.detailed"
+msgstr "s2u.sale.detailed"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_invoice_line_label
+msgid "s2u.sale.invoice.line.label"
+msgstr "s2u.sale.invoice.line.label"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_line_label
+msgid "s2u.sale.line.label"
+msgstr "s2u.sale.line.label"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_sale_line_label_order
+msgid "s2u.sale.line.label.order"
+msgstr "s2u.sale.line.label.order"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_warehouse_outgoing_purchase_add
+msgid "s2u.warehouse.outgoing.purchase.add"
+msgstr "s2u.warehouse.outgoing.purchase.add"
+
+#. module: s2usale
+#: model:ir.model,name:s2usale.model_s2u_warehouse_outgoing_purchase_add_item
+msgid "s2u.warehouse.outgoing.purchase.add.item"
+msgstr "s2u.warehouse.outgoing.purchase.add.item"
+
+#. module: s2usale
+#: code:addons/s2usale/models/purchase.py:414
+#: code:addons/s2usale/models/sale.py:24 code:addons/s2usale/models/sale.py:673
+#, python-format
+msgid "september"
+msgstr "september"
+
+#. module: s2usale
+#: model:res.groups,comment:s2usale.group_sale_salesman
+msgid "the user will have access to his own data in the sales application."
+msgstr "the user will have access to his own data in the sales application."
+
+#. module: s2usale
+#: model:res.groups,comment:s2usale.group_sale_manager
+msgid "the user will have an access to the sales configuration as well as statistic reports."
+msgstr "the user will have an access to the sales configuration as well as statistic reports."

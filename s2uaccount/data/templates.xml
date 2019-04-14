@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="account_category_d" model="s2u.template.account.category">
+            <field name="code">D</field>
+            <field name="name">Eigen vermogen</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="account_category_d_16" model="s2u.template.account.category">
+            <field name="code">D.16</field>
+            <field name="name">Ondernemingsvermogen firmant 1</field>
+            <field name="parent_id" ref="account_category_d" />
+            <field name="type">asset</field>
+        </record>
+
+        <record id="account_category_g" model="s2u.template.account.category">
+            <field name="code">G</field>
+            <field name="name">Vlottende activa</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="account_category_g_10" model="s2u.template.account.category">
+            <field name="code">G.10</field>
+            <field name="name">Voorraden</field>
+            <field name="parent_id" ref="account_category_g" />
+            <field name="type">asset</field>
+        </record>
+
+    	<record id="account_category_h" model="s2u.template.account.category">
+            <field name="code">H</field>
+            <field name="name">Vorderingen</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="account_category_h_10" model="s2u.template.account.category">
+            <field name="code">H.10</field>
+            <field name="name">Handelsdebiteuren</field>
+            <field name="parent_id" ref="account_category_h" />
+            <field name="type">asset</field>
+        </record>
+
+        <record id="account_category_h_15" model="s2u.template.account.category">
+            <field name="code">H.15</field>
+            <field name="name">Liquide middelen</field>
+            <field name="parent_id" ref="account_category_h" />
+            <field name="type">asset</field>
+        </record>
+
+        <record id="account_category_i" model="s2u.template.account.category">
+            <field name="code">I</field>
+            <field name="name">Kortlopende schulden</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="account_category_i_11" model="s2u.template.account.category">
+            <field name="code">I.11</field>
+            <field name="name">Schulden aan leveranciers en handelskredieten</field>
+            <field name="parent_id" ref="account_category_i" />
+            <field name="type">asset</field>
+        </record>
+
+        <record id="account_category_i_14" model="s2u.template.account.category">
+            <field name="code">I.14</field>
+            <field name="name">Belastingen en premies sociale verzekeringen</field>
+            <field name="parent_id" ref="account_category_i" />
+            <field name="type">liability</field>
+        </record>
+
+        <record id="account_category_j" model="s2u.template.account.category">
+            <field name="code">J</field>
+            <field name="name">Kosten</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="account_category_j_17" model="s2u.template.account.category">
+            <field name="code">J.17</field>
+            <field name="name">Huisvestingskosten</field>
+            <field name="parent_id" ref="account_category_j" />
+            <field name="type">expense</field>
+        </record>
+
+        <record id="account_category_j_20" model="s2u.template.account.category">
+            <field name="code">J.20</field>
+            <field name="name">Algemene kosten</field>
+            <field name="parent_id" ref="account_category_j" />
+            <field name="type">expense</field>
+        </record>
+
+        <record id="account_category_k" model="s2u.template.account.category">
+            <field name="code">K</field>
+            <field name="name">Inkopen</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="account_category_k_10" model="s2u.template.account.category">
+            <field name="code">K.10</field>
+            <field name="name">Inkopen</field>
+            <field name="parent_id" ref="account_category_k" />
+            <field name="type">expense</field>
+        </record>
+
+        <record id="account_category_l" model="s2u.template.account.category">
+            <field name="code">L</field>
+            <field name="name">Omzet</field>
+            <field name="type">category</field>
+        </record>
+
+        <record id="account_category_l_10" model="s2u.template.account.category">
+            <field name="code">L.10</field>
+            <field name="name">Netto omzet</field>
+            <field name="parent_id" ref="account_category_l" />
+            <field name="type">income</field>
+        </record>
+
+        <record id="vat_category_1" model="s2u.template.account.vat.category">
+            <field name="code">1</field>
+            <field name="name">Leveringen en/of diensten binnenland</field>
+        </record>
+
+        <record id="vat_category_1_a" model="s2u.template.account.vat.category">
+            <field name="code">1a</field>
+            <field name="name">Leveringen/diensten belast met 21&#37;</field>
+            <field name="parent_id" ref="vat_category_1" />
+        </record>
+
+        <record id="vat_category_1_b" model="s2u.template.account.vat.category">
+            <field name="code">1b</field>
+            <field name="name">	Leveringen/diensten belast met 6&#37;</field>
+            <field name="parent_id" ref="vat_category_1" />
+        </record>
+
+        <record id="vat_category_1_c" model="s2u.template.account.vat.category">
+            <field name="code">1c</field>
+            <field name="name">Leveringen/diensten belast met overige tarieven behalve &#37;</field>
+            <field name="parent_id" ref="vat_category_1" />
+        </record>
+
+        <record id="vat_category_1_e" model="s2u.template.account.vat.category">
+            <field name="code">1e</field>
+            <field name="name">Leveringen niet belast (0&#37;) (hoofdaanneming)</field>
+            <field name="parent_id" ref="vat_category_1" />
+        </record>
+
+        <record id="vat_category_2" model="s2u.template.account.vat.category">
+            <field name="code">2</field>
+            <field name="name">Verleggingsregelingen: btw naar u verlegd</field>
+        </record>
+
+        <record id="vat_category_2_a" model="s2u.template.account.vat.category">
+            <field name="code">2a</field>
+            <field name="name">Verleggingsregeling (onderaanneming)</field>
+            <field name="parent_id" ref="vat_category_2" />
+        </record>
+
+        <record id="vat_category_3" model="s2u.template.account.vat.category">
+            <field name="code">3</field>
+            <field name="name">Leveringen naar het buitenland</field>
+        </record>
+
+        <record id="vat_category_3_a" model="s2u.template.account.vat.category">
+            <field name="code">3a</field>
+            <field name="name">Leveringen BUITEN de EU (uitvoer uit de EU)</field>
+            <field name="parent_id" ref="vat_category_3" />
+        </record>
+
+        <record id="vat_category_3_b" model="s2u.template.account.vat.category">
+            <field name="code">3b</field>
+            <field name="name">Leveringen en Diensten BINNEN de EU</field>
+            <field name="parent_id" ref="vat_category_3" />
+        </record>
+
+        <record id="vat_category_3_c" model="s2u.template.account.vat.category">
+            <field name="code">3c</field>
+            <field name="name">Afstandsverkopen</field>
+            <field name="parent_id" ref="vat_category_3" />
+        </record>
+
+        <record id="vat_category_4" model="s2u.template.account.vat.category">
+            <field name="code">4</field>
+            <field name="name">Leveringen vanuit het buitenland</field>
+        </record>
+
+        <record id="vat_category_4_a" model="s2u.template.account.vat.category">
+            <field name="code">4a</field>
+            <field name="name">Verkrijgingen (invoer !) BUITEN EU</field>
+            <field name="parent_id" ref="vat_category_4" />
+        </record>
+
+        <record id="vat_category_4_b" model="s2u.template.account.vat.category">
+            <field name="code">4b</field>
+            <field name="name">Verkrijgingen (invoer !) BINNEN EU</field>
+            <field name="parent_id" ref="vat_category_4" />
+        </record>
+
+        <record id="vat_category_5" model="s2u.template.account.vat.category">
+            <field name="code">5</field>
+            <field name="name">Voorbelasting, kleine-ondernemersregeling, schatting, en eindtotaal</field>
+        </record>
+
+        <record id="vat_category_5_a" model="s2u.template.account.vat.category">
+            <field name="code">5a</field>
+            <field name="name">Verschuldige omzetbelasting (rubrieken 1a t/m 4b)</field>
+            <field name="parent_id" ref="vat_category_5" />
+        </record>
+
+        <record id="vat_category_5_b" model="s2u.template.account.vat.category">
+            <field name="code">5b</field>
+            <field name="name">Voorbelasting (BTW)</field>
+            <field name="parent_id" ref="vat_category_5" />
+        </record>
+
+        <record id="vat_category_5_c" model="s2u.template.account.vat.category">
+            <field name="code">5c</field>
+            <field name="name">Subtotaal (rubriek 5a min 5b)</field>
+            <field name="parent_id" ref="vat_category_5" />
+        </record>
+
+        <record id="account_vat_01" model="s2u.template.account.vat">
+            <field name="code">01</field>
+            <field name="name">21&#37;</field>
+            <field name="rule_gross">amount * 1.21</field>
+            <field name="rule_net">amount / 1.21</field>
+            <field name="rule_vat">amount * 0.21</field>
+            <field name="type">sell</field>
+            <field name="vat_report">01</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_02" model="s2u.template.account.vat">
+            <field name="code">02</field>
+            <field name="name">6&#37;</field>
+            <field name="rule_gross">amount * 1.06</field>
+            <field name="rule_net">amount / 1.06</field>
+            <field name="rule_vat">amount * 0.06</field>
+            <field name="type">sell</field>
+            <field name="vat_report">02</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_04" model="s2u.template.account.vat">
+            <field name="code">04</field>
+            <field name="name">BTW import (buiten EU)</field>
+            <field name="rule_gross">amount</field>
+            <field name="rule_net">amount</field>
+            <field name="rule_vat">amount * 0.21</field>
+            <field name="type">buy</field>
+            <field name="vat_report">18</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_06" model="s2u.template.account.vat">
+            <field name="code">06</field>
+            <field name="name">21&#37;</field>
+            <field name="rule_gross">amount * 1.21</field>
+            <field name="rule_net">amount / 1.21</field>
+            <field name="rule_vat">amount * 0.21</field>
+            <field name="type">buy</field>
+            <field name="vat_report">10</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_07" model="s2u.template.account.vat">
+            <field name="code">07</field>
+            <field name="name">6&#37;</field>
+            <field name="rule_gross">amount * 1.06</field>
+            <field name="rule_net">amount / 1.06</field>
+            <field name="rule_vat">amount * 0.06</field>
+            <field name="type">buy</field>
+            <field name="vat_report">10</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_10" model="s2u.template.account.vat">
+            <field name="code">10</field>
+            <field name="name">BTW icv (binnen EU)</field>
+            <field name="rule_gross">amount</field>
+            <field name="rule_net">amount</field>
+            <field name="rule_vat">amount * 0.21</field>
+            <field name="type">buy</field>
+            <field name="vat_report">17</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_13" model="s2u.template.account.vat">
+            <field name="code">13</field>
+            <field name="name">BTW af te dragen buiten EU</field>
+            <field name="rule_gross">amount</field>
+            <field name="rule_net">amount</field>
+            <field name="rule_vat">0.0</field>
+            <field name="type">sell</field>
+            <field name="vat_report">16</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_14d" model="s2u.template.account.vat">
+            <field name="code">14d</field>
+            <field name="name">BTW af te dragen binnen EU - diensten</field>
+            <field name="rule_gross">amount</field>
+            <field name="rule_net">amount</field>
+            <field name="rule_vat">0.0</field>
+            <field name="type">sell</field>
+            <field name="vat_report">15</field>
+            <field name="tinno_obligatory">True</field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_14l" model="s2u.template.account.vat">
+            <field name="code">14l</field>
+            <field name="name">BTW af te dragen binnen EU - leveringen</field>
+            <field name="rule_gross">amount</field>
+            <field name="rule_net">amount</field>
+            <field name="rule_vat">0.0</field>
+            <field name="type">sell</field>
+            <field name="vat_report">15</field>
+            <field name="tinno_obligatory">True</field>
+            <field name="category">del</field>
+        </record>
+
+        <record id="account_vat_15" model="s2u.template.account.vat">
+            <field name="code">15</field>
+            <field name="name">BTW af te dragen 0&#37;</field>
+            <field name="rule_gross">amount</field>
+            <field name="rule_net">amount</field>
+            <field name="rule_vat">0.0</field>
+            <field name="type">sell</field>
+            <field name="vat_report">03</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_vat_16" model="s2u.template.account.vat">
+            <field name="code">16</field>
+            <field name="name">BTW verlegd 21&#37;</field>
+            <field name="rule_gross">amount</field>
+            <field name="rule_net">amount</field>
+            <field name="rule_vat">amount * 0.21</field>
+            <field name="type">buy</field>
+            <field name="vat_report">06</field>
+            <field name="tinno_obligatory"></field>
+            <field name="category">ser</field>
+        </record>
+
+        <record id="account_0635" model="s2u.template.account.account">
+            <field name="code">0635</field>
+            <field name="name">Arbeidsongeschiktheidsverzekering</field>
+            <field name="type">equity</field>
+            <field name="category_id" ref="account_category_d_16" />
+        </record>
+
+        <record id="account_1500" model="s2u.template.account.account">
+            <field name="code">1500</field>
+            <field name="name">Handelsvoorraad</field>
+            <field name="type">stock</field>
+            <field name="category_id" ref="account_category_g_10" />
+        </record>
+
+        <record id="account_1501" model="s2u.template.account.account">
+            <field name="code">1501</field>
+            <field name="name">Voorraad beschikbaar gesteld</field>
+            <field name="type">stock</field>
+            <field name="category_id" ref="account_category_g_10" />
+        </record>
+
+        <record id="account_2000" model="s2u.template.account.account">
+            <field name="code">2000</field>
+            <field name="name">Debiteuren</field>
+            <field name="type">receivable</field>
+            <field name="category_id" ref="account_category_h_10" />
+        </record>
+
+        <record id="account_2900" model="s2u.template.account.account">
+            <field name="code">2900</field>
+            <field name="name">Kas</field>
+            <field name="type">cash</field>
+            <field name="category_id" ref="account_category_h_15" />
+        </record>
+
+        <record id="account_2910" model="s2u.template.account.account">
+            <field name="code">2910</field>
+            <field name="name">Bankrekening 1</field>
+            <field name="type">bank</field>
+            <field name="category_id" ref="account_category_h_15" />
+        </record>
+
+        <record id="account_2911" model="s2u.template.account.account">
+            <field name="code">2911</field>
+            <field name="name">Bankrekening 2</field>
+            <field name="type">bank</field>
+            <field name="category_id" ref="account_category_h_15" />
+        </record>
+
+        <record id="account_2912" model="s2u.template.account.account">
+            <field name="code">2912</field>
+            <field name="name">Bankrekening 3</field>
+            <field name="type">bank</field>
+            <field name="category_id" ref="account_category_h_15" />
+        </record>
+
+        <record id="account_3020" model="s2u.template.account.account">
+            <field name="code">3020</field>
+            <field name="name">Crediteuren</field>
+            <field name="type">payable</field>
+            <field name="category_id" ref="account_category_i_11" />
+        </record>
+
+        <record id="account_3140" model="s2u.template.account.account">
+            <field name="code">3140</field>
+            <field name="name">BTW afdracht EU</field>
+            <field name="type">other</field>
+            <field name="category_id" ref="account_category_i_14" />
+        </record>
+
+        <record id="account_3141" model="s2u.template.account.account">
+            <field name="code">3141</field>
+            <field name="name">BTW voorheffing EU</field>
+            <field name="type">other</field>
+            <field name="category_id" ref="account_category_i_14" />
+        </record>
+
+        <record id="account_3145" model="s2u.template.account.account">
+            <field name="code">3145</field>
+            <field name="name">BTW afdracht buiten EU</field>
+            <field name="type">other</field>
+            <field name="category_id" ref="account_category_i_14" />
+        </record>
+
+        <record id="account_3151" model="s2u.template.account.account">
+            <field name="code">3151</field>
+            <field name="name">BTW af te dragen 21&#37;</field>
+            <field name="type">other</field>
+            <field name="category_id" ref="account_category_i_14" />
+        </record>
+
+        <record id="account_3155" model="s2u.template.account.account">
+            <field name="code">3155</field>
+            <field name="name">BTW af te dragen 6&#37;</field>
+            <field name="type">other</field>
+            <field name="category_id" ref="account_category_i_14" />
+        </record>
+
+        <record id="account_3165" model="s2u.template.account.account">
+            <field name="code">3165</field>
+            <field name="name">BTW voorheffing hoog</field>
+            <field name="type">other</field>
+            <field name="category_id" ref="account_category_i_14" />
+        </record>
+
+        <record id="account_3166" model="s2u.template.account.account">
+            <field name="code">3166</field>
+            <field name="name">BTW voorheffing laag</field>
+            <field name="type">other</field>
+            <field name="category_id" ref="account_category_i_14" />
+        </record>
+
+        <record id="account_4200" model="s2u.template.account.account">
+            <field name="code">4200</field>
+            <field name="name">Huur hoofdvestiging</field>
+            <field name="type">expense</field>
+            <field name="category_id" ref="account_category_j_17" />
+        </record>
+
+        <record id="account_4971" model="s2u.template.account.account">
+            <field name="code">4971</field>
+            <field name="name">Geaccepteerd betaalverschil</field>
+            <field name="type">expense</field>
+            <field name="category_id" ref="account_category_j_20" />
+        </record>
+
+        <record id="account_7000" model="s2u.template.account.account">
+            <field name="code">7000</field>
+            <field name="name">Inkopen</field>
+            <field name="type">expense</field>
+            <field name="vat_id" ref="account_vat_06" />
+            <field name="category_id" ref="account_category_k_10" />
+        </record>
+
+        <record id="account_7099" model="s2u.template.account.account">
+            <field name="code">7099</field>
+            <field name="name">Kredietbeperking</field>
+            <field name="type">expense</field>
+            <field name="category_id" ref="account_category_k_10" />
+        </record>
+
+        <record id="account_8000" model="s2u.template.account.account">
+            <field name="code">8000</field>
+            <field name="name">Omzet hoog</field>
+            <field name="type">income</field>
+            <field name="vat_id" ref="account_vat_01" />
+            <field name="category_id" ref="account_category_l_10" />
+        </record>
+
+        <record id="account_8099" model="s2u.template.account.account">
+            <field name="code">8099</field>
+            <field name="name">Betalingskorting</field>
+            <field name="type">income</field>
+            <field name="category_id" ref="account_category_l_10" />
+        </record>
+
+        <record id="account_8100" model="s2u.template.account.account">
+            <field name="code">8100</field>
+            <field name="name">Omzet laag</field>
+            <field name="type">income</field>
+            <field name="vat_id" ref="account_vat_02" />
+            <field name="category_id" ref="account_category_l_10" />
+        </record>
+
+        <record id="account_8200" model="s2u.template.account.account">
+            <field name="code">8200</field>
+            <field name="name">Omzet nul</field>
+            <field name="type">income</field>
+            <field name="vat_id" ref="account_vat_15" />
+            <field name="category_id" ref="account_category_l_10" />
+        </record>
+
+        <record id="vat_rule_01_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_01" />
+            <field name="rule_type">plus</field>
+            <field name="account_id" ref="account_3151" />
+            <field name="category_id" ref="vat_category_1_a" />
+        </record>
+
+        <record id="vat_rule_02_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_02" />
+            <field name="rule_type">plus</field>
+            <field name="account_id" ref="account_3155" />
+            <field name="category_id" ref="vat_category_1_b" />
+        </record>
+
+        <record id="vat_rule_04_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_04" />
+            <field name="rule_type">plus</field>
+            <field name="account_id" ref="account_3165" />
+            <field name="category_id" ref="vat_category_5_b" />
+        </record>
+
+        <record id="vat_rule_04_2" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_04" />
+            <field name="rule_type">min</field>
+            <field name="account_id" ref="account_3145" />
+            <field name="category_id" ref="vat_category_4_a" />
+        </record>
+
+        <record id="vat_rule_06_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_06" />
+            <field name="rule_type">plus</field>
+            <field name="account_id" ref="account_3165" />
+            <field name="category_id" ref="vat_category_5_b" />
+        </record>
+
+        <record id="vat_rule_07_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_07" />
+            <field name="rule_type">plus</field>
+            <field name="account_id" ref="account_3166" />
+            <field name="category_id" ref="vat_category_5_b" />
+        </record>
+
+        <record id="vat_rule_10_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_10" />
+            <field name="rule_type">plus</field>
+            <field name="account_id" ref="account_3165" />
+            <field name="category_id" ref="vat_category_5_b" />
+        </record>
+
+        <record id="vat_rule_10_2" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_10" />
+            <field name="rule_type">min</field>
+            <field name="account_id" ref="account_3141" />
+            <field name="category_id" ref="vat_category_4_b" />
+        </record>
+
+        <record id="vat_rule_13_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_13" />
+            <field name="rule_type">plus</field>
+            <field name="category_id" ref="vat_category_3_a" />
+        </record>
+
+        <record id="vat_rule_14d_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_14d" />
+            <field name="rule_type">plus</field>
+            <field name="category_id" ref="vat_category_3_b" />
+        </record>
+
+        <record id="vat_rule_14l_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_14l" />
+            <field name="rule_type">plus</field>
+            <field name="category_id" ref="vat_category_3_b" />
+        </record>
+
+        <record id="vat_rule_15_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_15" />
+            <field name="rule_type">plus</field>
+            <field name="category_id" ref="vat_category_1_e" />
+        </record>
+
+        <record id="vat_rule_16_1" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_16" />
+            <field name="rule_type">plus</field>
+            <field name="account_id" ref="account_3165" />
+            <field name="category_id" ref="vat_category_5_b" />
+        </record>
+
+        <record id="vat_rule_16_2" model="s2u.template.account.vat.rule">
+            <field name="vat_id" ref="account_vat_16" />
+            <field name="rule_type">min</field>
+            <field name="account_id" ref="account_3140" />
+            <field name="category_id" ref="vat_category_2_a" />
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,59 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="sale_rule">
+            <field name="name">Object s2u.sale</field>
+            <field name="model_id" ref="model_s2u_sale"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="purchase_rule">
+            <field name="name">Object s2u.purchase</field>
+            <field name="model_id" ref="model_s2u_purchase"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="sale_template_rule">
+            <field name="name">Object s2u.sale.template</field>
+            <field name="model_id" ref="model_s2u_sale_template"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="dropshipping_rule">
+            <field name="name">Object s2u.dropshipping</field>
+            <field name="model_id" ref="model_s2u_dropshipping"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="purchase_template_rule">
+            <field name="name">Object s2u.purchase.template</field>
+            <field name="model_id" ref="model_s2u_purchase_template"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="label_rule">
+            <field name="name">Object s2u.label</field>
+            <field name="model_id" ref="model_s2u_label"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="layout_rule">
+            <field name="name">Object s2u.layout</field>
+            <field name="model_id" ref="model_s2u_layout"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="sale_kickback_rule">
+            <field name="name">Object s2u.sale.kickback.invoicing</field>
+            <field name="model_id" ref="model_s2u_sale_kickback_invoicing"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+    </data>
+</openerp>

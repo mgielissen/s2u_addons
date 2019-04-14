@@ -1,0 +1,17 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="s2u_document_type_rule">
+            <field name="name">Object s2u.document.type</field>
+            <field name="model_id" ref="model_s2u_document_type"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="s2u_document_rule">
+            <field name="name">Object s2u.document</field>
+            <field name="model_id" ref="model_s2u_document"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+    </data>
+</openerp>

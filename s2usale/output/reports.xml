@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+
+        <report
+            id="s2usale_quotations_so"
+            model="s2u.sale"
+            string="Quotation"
+            report_type="qweb-pdf"
+            name="s2usale.print_quotation_so"
+            file="s2usale.print_quotation_so"
+            attachment="('Quotation-' + (object.name or 'Quotation').replace('/','')+'.pdf')"
+        />
+
+        <report
+            id="s2usale_orders_so"
+            model="s2u.sale"
+            string="Order"
+            report_type="qweb-pdf"
+            name="s2usale.print_order_so"
+            file="s2usale.print_order_so"
+            attachment="('Order-' + (object.name or 'Order').replace('/','')+'.pdf')"
+        />
+
+        <report
+            id="s2usale_quotations_po"
+            model="s2u.purchase"
+            string="Quotation"
+            report_type="qweb-pdf"
+            name="s2usale.print_quotation_po"
+            file="s2usale.print_quotation_po"
+            attachment="('Quotation-' + (object.name or 'Quotation').replace('/','')+'.pdf')"
+        />
+
+        <report
+            id="s2usale_orders_po"
+            model="s2u.purchase"
+            string="Order"
+            report_type="qweb-pdf"
+            name="s2usale.print_order_po"
+            file="s2usale.print_order_po"
+            attachment="('Order-' + (object.name or 'Order').replace('/','')+'.pdf')"
+        />
+
+        <report
+            id="s2usale_report_journal"
+            model="s2u.sale"
+            string="Report Journal"
+            report_type="qweb-pdf"
+            name="s2usale.report_journal"
+            file="s2usale.report_journal"
+            />
+
+        <report
+            id="s2usale_report_journal_po"
+            model="s2u.purchase"
+            string="Report Journal"
+            report_type="qweb-pdf"
+            name="s2usale.report_journal_po"
+            file="s2usale.report_journal_po"
+            />
+
+    </data>
+</openerp>

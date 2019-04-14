@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_action_so_quotation_view" model="ir.ui.view">
+        <field name="name">Create quotation</field>
+        <field name="model">s2usale.action.so.quotation</field>
+        <field name="arch" type="xml">
+            <form string="Create purchase">
+                <sheet>
+                    <group string="What is the chance this quotation becomes order?">
+                        <group>
+                            <field name="chance" required="1" />
+                        </group>
+                        <group>
+                            <field name="condition" required="1" />
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="do_quotation" string="Make quotation" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_action_so_order_view" model="ir.ui.view">
+        <field name="name">Create order</field>
+        <field name="model">s2usale.action.so.order</field>
+        <field name="arch" type="xml">
+            <form string="Create order">
+                <sheet>
+                    <group string="What is the next step in the order process?">
+                        <group>
+                            <field name="next_step" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="do_order" string="Make order" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_action_so_confirm_view" model="ir.ui.view">
+        <field name="name">Confirm order</field>
+        <field name="model">s2usale.action.so.confirm</field>
+        <field name="arch" type="xml">
+            <form string="Confirm order">
+                <sheet>
+                    <group string="Please enter all relevant information for this confirmation:">
+                        <group>
+                            <field name="confirmed_by" required="1" />
+                            <field name="confirmed_user_id" required="1" />
+                            <field name="customer_code" required="1" />
+                        </group>
+                        <group>
+                            <field name="confirmed_remark" />
+                            <field name="file_name" invisible="1" />
+                            <field name="confirmed_doc" widget="binary"  filename="file_name" />
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="do_confirm" string="Confirm order" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_action_so_cancel_view" model="ir.ui.view">
+        <field name="name">Cancel order</field>
+        <field name="model">s2usale.action.so.cancel</field>
+        <field name="arch" type="xml">
+            <form string="Cancel order">
+                <sheet>
+                    <group string="What is the Reason to cancel the order process?">
+                        <group>
+                            <field name="cancel_reason" required="1" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="do_cancel" string="Cancel order" type="object" default_focus="1" class="oe_highlight" />
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

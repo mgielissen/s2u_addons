@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="report_trial_balance">
+    <t t-call="web.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <h2><span t-esc="res_company.name"/>: Proef saldibalans (<span t-esc="fiscal_year"/>)</h2>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="text-left">
+                            <th></th>
+                            <td width="4px"></td>
+                            <th></th>
+                            <td width="4px"></td>
+                            <th class="text-right"></th>
+                            <td width="4px"></td>
+                            <th class="text-center" colspan="3">
+                                <span t-esc="label_left" />
+                            </th>
+                            <td width="4px"></td>
+                            <th class="text-center" colspan="3">
+                                <span t-esc="label_right" />
+                            </th>
+                            <td width="4px"></td>
+                            <th class="text-right"></th>
+                        </tr>
+                        <tr class="text-left">
+                            <th>Gb.Rekening</th>
+                            <td width="4px"></td>
+                            <th>Omschrijving</th>
+                            <td width="4px"></td>
+                            <th class="text-right">beginsaldo</th>
+                            <td width="4px"></td>
+                            <th class="text-right">debet</th>
+                            <td width="4px"></td>
+                            <th class="text-right">credit</th>
+                            <td width="4px"></td>
+                            <th class="text-right">debet</th>
+                            <td width="4px"></td>
+                            <th class="text-right">credit</th>
+                            <td width="4px"></td>
+                            <th class="text-right">eindsaldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="assets_liabilities" t-as="cat">
+                            <t t-foreach="cat['accounts']" t-as="account">
+                                <tr class="text-left">
+                                    <td>
+                                        <span t-esc="account['code']" />
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td>
+                                        <span t-esc="account['name']" />
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['start_saldo'] != 0.0">
+                                            <span t-esc="account['start_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['left_debit'] != 0.0">
+                                            <span t-esc="account['left_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['left_credit'] != 0.0">
+                                            <span t-esc="account['left_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['right_debit'] != 0.0">
+                                            <span t-esc="account['right_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['right_credit'] != 0.0">
+                                            <span t-esc="account['right_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['end_saldo'] != 0.0">
+                                            <span t-esc="account['end_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr class="text-left">
+                                <th style="border-top:solid 1px; border-bottom:solid 2px;"></th>
+                                <th width="4px"></th>
+                                <th style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <span t-esc="cat['name']" />
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['start_saldo'] != 0.0">
+                                        <span t-esc="cat['start_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['left_debit'] != 0.0">
+                                        <span t-esc="cat['left_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['left_credit'] != 0.0">
+                                        <span t-esc="cat['left_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['right_debit'] != 0.0">
+                                        <span t-esc="cat['right_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['right_credit'] != 0.0">
+                                        <span t-esc="cat['right_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['end_saldo'] != 0.0">
+                                        <span t-esc="cat['end_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </tr>
+                            <tr class="text-left">
+                                <th>&#160;</th>
+                                <th width="4px"></th>
+                                <th>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <p style="page-break-after:always;"></p>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="text-left">
+                            <th></th>
+                            <td width="4px"></td>
+                            <th></th>
+                            <td width="4px"></td>
+                            <th class="text-right"></th>
+                            <td width="4px"></td>
+                            <th class="text-center" colspan="3">
+                                <span t-esc="label_left" />
+                            </th>
+                            <td width="4px"></td>
+                            <th class="text-center" colspan="3">
+                                <span t-esc="label_right" />
+                            </th>
+                            <td width="4px"></td>
+                            <th class="text-right"></th>
+                        </tr>
+                        <tr class="text-left">
+                            <th>Gb.Rekening</th>
+                            <td width="4px"></td>
+                            <th>Omschrijving</th>
+                            <td width="4px"></td>
+                            <th class="text-right">beginsaldo</th>
+                            <td width="4px"></td>
+                            <th class="text-right">debet</th>
+                            <td width="4px"></td>
+                            <th class="text-right">credit</th>
+                            <td width="4px"></td>
+                            <th class="text-right">debet</th>
+                            <td width="4px"></td>
+                            <th class="text-right">credit</th>
+                            <td width="4px"></td>
+                            <th class="text-right">eindsaldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="expenses_income" t-as="cat">
+                            <t t-foreach="cat['accounts']" t-as="account">
+                                <tr class="text-left">
+                                    <td>
+                                        <span t-esc="account['code']" />
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td>
+                                        <span t-esc="account['name']" />
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['start_saldo'] != 0.0">
+                                            <span t-esc="account['start_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['left_debit'] != 0.0">
+                                            <span t-esc="account['left_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['left_credit'] != 0.0">
+                                            <span t-esc="account['left_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['right_debit'] != 0.0">
+                                            <span t-esc="account['right_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['right_credit'] != 0.0">
+                                            <span t-esc="account['right_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                    <td width="4px"></td>
+                                    <td class="text-right">
+                                        <t t-if="account['end_saldo'] != 0.0">
+                                            <span t-esc="account['end_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr class="text-left">
+                                <th style="border-top:solid 1px; border-bottom:solid 2px;"></th>
+                                <th width="4px"></th>
+                                <th style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <span t-esc="cat['name']" />
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['start_saldo'] != 0.0">
+                                        <span t-esc="cat['start_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['left_debit'] != 0.0">
+                                        <span t-esc="cat['left_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['left_credit'] != 0.0">
+                                        <span t-esc="cat['left_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['right_debit'] != 0.0">
+                                        <span t-esc="cat['right_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['right_credit'] != 0.0">
+                                        <span t-esc="cat['right_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="cat['end_saldo'] != 0.0">
+                                        <span t-esc="cat['end_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </tr>
+                            <tr class="text-left">
+                                <th>&#160;</th>
+                                <th width="4px"></th>
+                                <th>
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                                <th width="4px"></th>
+                                <th class="text-right">
+                                </th>
+                            </tr>
+                        </t>
+                        <tr class="text-left">
+                            <th>&#160;</th>
+                            <th width="4px"></th>
+                            <th>
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                        </tr>
+                        <tr class="text-left">
+                            <th style="border-top:solid 1px; border-bottom:solid 2px;"></th>
+                            <th width="4px"></th>
+                            <th style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <t t-if="profit_loss['profit_loss'] &gt;= 0.0">Saldo verlies</t>
+                                <t t-if="profit_loss['profit_loss'] &lt; 0.0">Saldo winst</t>
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <t t-if="profit_loss['left_debit'] != 0.0">
+                                    <span t-esc="profit_loss['left_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </t>
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <t t-if="profit_loss['left_credit'] != 0.0">
+                                    <span t-esc="profit_loss['left_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </t>
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <t t-if="profit_loss['right_debit'] != 0.0">
+                                    <span t-esc="profit_loss['right_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </t>
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <t t-if="profit_loss['right_credit'] != 0.0">
+                                    <span t-esc="profit_loss['right_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </t>
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <span t-esc="profit_loss['profit_loss']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </th>
+                        </tr>
+                        <tr class="text-left">
+                            <th>&#160;</th>
+                            <th width="4px"></th>
+                            <th>
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                            <th width="4px"></th>
+                            <th class="text-right">
+                            </th>
+                        </tr>
+                        <tr class="text-left">
+                            <th style="border-top:solid 1px; border-bottom:solid 2px;"></th>
+                            <th width="4px"></th>
+                            <th style="border-top:solid 1px; border-bottom:solid 2px;">Eind totaal</th>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <t t-if="end_totals['start_saldo'] != 0.0">
+                                    <span t-esc="end_totals['start_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </t>
+                            </th>
+                            <th width="4px"></th>
+                            <t t-if="round(end_totals['left_debit'], 2) != round(end_totals['left_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px; color: red;">
+                                    <t t-if="end_totals['left_debit'] != 0.0">
+                                        <span t-esc="end_totals['left_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <t t-if="round(end_totals['left_debit'], 2) == round(end_totals['left_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="end_totals['left_debit'] != 0.0">
+                                        <span t-esc="end_totals['left_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <th width="4px"></th>
+                            <t t-if="round(end_totals['left_debit'], 2) != round(end_totals['left_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px; color: red;">
+                                    <t t-if="end_totals['left_credit'] != 0.0">
+                                        <span t-esc="end_totals['left_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <t t-if="round(end_totals['left_debit'], 2) == round(end_totals['left_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="end_totals['left_credit'] != 0.0">
+                                        <span t-esc="end_totals['left_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <th width="4px"></th>
+                            <t t-if="round(end_totals['right_debit'], 2) != round(end_totals['right_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px; color: red;">
+                                    <t t-if="end_totals['right_debit'] != 0.0">
+                                        <span t-esc="end_totals['right_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <t t-if="round(end_totals['right_debit'], 2) == round(end_totals['right_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="end_totals['right_debit'] != 0.0">
+                                        <span t-esc="end_totals['right_debit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <th width="4px"></th>
+                            <t t-if="round(end_totals['right_debit'], 2) != round(end_totals['right_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px; color: red;">
+                                    <t t-if="end_totals['right_credit'] != 0.0">
+                                        <span t-esc="end_totals['right_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <t t-if="round(end_totals['right_debit'], 2) == round(end_totals['right_credit'], 2)">
+                                <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                    <t t-if="end_totals['right_credit'] != 0.0">
+                                        <span t-esc="end_totals['right_credit']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </t>
+                                </th>
+                            </t>
+                            <th width="4px"></th>
+                            <th class="text-right" style="border-top:solid 1px; border-bottom:solid 2px;">
+                                <t t-if="end_totals['end_saldo'] != 0.0">
+                                    <span t-esc="end_totals['end_saldo']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </t>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+
+</odoo>

@@ -1,0 +1,83 @@
+<openerp>
+    <data>
+        <!-- Instance -->
+        <record model="ir.ui.view" id="instance_template_search_view">
+            <field name="model">s2u.instance</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="service_id" />
+                    <field name="tag_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="instance_form" model="ir.ui.view">
+            <field name="model">s2u.instance</field>
+            <field name="arch" type="xml">
+                <form string="Instance">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="toggle_active"
+                                    type="object"
+                                    groups="s2ubase.archiver"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-archive"
+                                    title="Archive"
+                                    confirm="Are you sure? You are going to archive/unarchive this object if you continue.">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}' />
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="service_id" />
+                                <field name="tag_id" />
+                                <field name="confirm_template_id" />
+                                <field name="activated_template_id" />
+                            </group>
+                            <group>
+                                <field name="instance_server" />
+                                <field name="instance_port" />
+                                <field name="instance_db" />
+                                <field name="master_password" password="True" />
+                                <field name="admin_user" />
+                                <field name="admin_password" password="True" />
+                            </group>
+                        </group>
+                        <group string="Description">
+                            <field name="description" nolabel="1" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="instance_tree" model="ir.ui.view">
+            <field name="model">s2u.instance</field>
+            <field name="arch" type="xml">
+                <tree string="Instances" >
+                    <field name="name" />
+                    <field name="service_id" />
+                    <field name="tag_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_instance" model="ir.actions.act_window">
+            <field name="name">Instances</field>
+            <field name="res_model">s2u.instance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="instance_tree" />
+        </record>
+
+        <menuitem action="action_instance" id="menu_instance"
+            parent="s2usale.menu_sales_settings" sequence="300" groups="s2usale.group_sale_manager" />
+    </data>
+</openerp>

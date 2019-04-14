@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_trial_balance_view" model="ir.ui.view">
+        <field name="name">Report Trial Balance</field>
+        <field name="model">report.s2uaccount.trial.balance</field>
+        <field name="arch" type="xml">
+            <form string="Report Trial Balance">
+                <field name="company_id" invisible="1"/>
+                <group>
+                    <group>
+                        <field name="fiscal_year"/>
+                    </group>
+                    <group>
+                    </group>
+                </group>
+                <group string="Please enter the data you want to see in your trial balance">
+                    <group>
+                        <field name="compare_left"/>
+                        <field name="left_from" attrs="{'invisible': [('compare_left', '=', 'year')],
+                                                         'required': [('compare_left', '!=', 'year')]}" />
+                        <field name="left_till" attrs="{'invisible': [('compare_left', '=', 'year')],
+                                                         'required': [('compare_left', '!=', 'year')]}" />
+                    </group>
+                    <group>
+                        <field name="compare_right"/>
+                        <field name="right_from" attrs="{'invisible': [('compare_right', '=', 'year')],
+                                                         'required': [('compare_right', '!=', 'year')]}" />
+                        <field name="right_till" attrs="{'invisible': [('compare_right', '=', 'year')],
+                                                         'required': [('compare_right', '!=', 'year')]}" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_report_trial_balance" model="ir.actions.act_window">
+        <field name="name">Report Trial Balance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.s2uaccount.trial.balance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="report_trial_balance_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="menu_report_trial_balance"
+        name="Trial balance"
+        parent="s2uaccount.menu_accounting_reporting"
+        action="action_report_trial_balance" groups="s2uaccount.group_account_manager" />
+
+</odoo>

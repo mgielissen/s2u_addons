@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="print_quotation_so_document" inherit_id="s2usale.print_quotation_so_document" >
+    <xpath expr="//div[@name='product_block']" position="after">
+        <div name="project_block">
+            <div class="row mt16" t-if="o.hour_ids">
+                <div class="col-xs-12">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th colspan="5">De volgende ureninzet maken onderdeel uit van deze aanbieding:</th>
+                            </tr>
+                            <tr>
+                                <th>Fase / Role</th>
+                                <th>Description</th>
+                                <th class="text-right">Rate p/h</th>
+                                <th class="text-right">Hours</th>
+                                <th class="text-right">Tot. amount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <t t-foreach="o.hour_ids" t-as="line">
+                                <tr>
+                                    <td><span t-field="line.stage_id.name"/> <span t-field="line.rate_id.name"/></td>
+                                    <td><span t-field="line.descript"/></td>
+                                    <td class="text-right"><span t-field="line.rate_per_hour" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></td>
+                                    <td class="text-right"><span t-field="line.hours" t-field-options='{"widget": "float_time"}'/></td>
+                                    <td class="text-right"><span t-field="line.amount" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row" t-if="o.show_total_amount and o.hour_ids">
+                <div class="col-xs-4 pull-right">
+                    <table class="table table-condensed">
+                        <tr class="border-black">
+                            <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Subtotal</strong></td>
+                            <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                                <span t-field="o.quot_net_amount_hours" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Vat</strong></td>
+                            <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                                <span t-field="o.quot_vat_amount_hours" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                        <tr class="border-black">
+                            <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Total</strong></td>
+                            <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                                 <span t-field="o.quot_gross_amount_hours" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </xpath>
+</template>
+
+<template id="print_order_so_document" inherit_id="s2usale.print_order_so_document">
+    <xpath expr="//div[@name='product_block']" position="after">
+        <div class="row mt16" t-if="o.hour_ids">
+            <div class="col-xs-12">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Fase</th>
+                            <th>Role</th>
+                            <th>Description</th>
+                            <th class="text-right">Rate p/h</th>
+                            <th class="text-right">Hours</th>
+                            <th class="text-right">Tot. amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="invoice_tbody">
+                        <t t-foreach="o.hour_ids" t-as="line">
+                            <tr>
+                                <td><span t-field="line.stage_id.name"/></td>
+                                <td><span t-field="line.rate_id.name"/></td>
+                                <td><span t-field="line.descript"/></td>
+                                <td class="text-right"><span t-field="line.rate_per_hour" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></td>
+                                <td class="text-right"><span t-field="line.hours" t-field-options='{"widget": "float_time"}'/></td>
+                                <td class="text-right"><span t-field="line.amount" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row" t-if="o.hour_ids">
+            <div class="col-xs-4 pull-right">
+                <table class="table table-condensed">
+                    <tr class="border-black">
+                        <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Subtotal</strong></td>
+                        <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                            <span t-field="o.net_amount_hours" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Vat</strong></td>
+                        <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                            <span t-field="o.vat_amount_hours" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr class="border-black">
+                        <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Total</strong></td>
+                        <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                             <span t-field="o.gross_amount_hours" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </xpath>
+</template>
+
+</data>
+</openerp>

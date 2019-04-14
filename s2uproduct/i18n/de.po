@@ -1,0 +1,443 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2uproduct
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-27 07:00+0000\n"
+"PO-Revision-Date: 2017-10-27 09:57+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_account_id
+msgid "Account"
+msgstr "Konto"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_price_after_comma
+msgid "After comma"
+msgstr "Nach dem Komma"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_price_as_float
+msgid "As float"
+msgstr "Als dezimal"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_price_before_comma
+msgid "Before comma"
+msgstr "Vor dem Komma"
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entity"
+
+#. module: s2uproduct
+#: model:ir.actions.act_window,name:s2uproduct.action_product_category
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_cat_ids
+#: model:ir.ui.menu,name:s2uproduct.menu_product_category
+#: model:ir.ui.view,arch_db:s2uproduct.product_category_tree
+msgid "Categories"
+msgstr "Kategorien"
+
+#. module: s2uproduct
+#: model:ir.ui.view,arch_db:s2uproduct.product_sub_category_form
+msgid "Categories..."
+msgstr "Kategorien..."
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_name
+#: model:ir.ui.view,arch_db:s2uproduct.product_category_form
+msgid "Category"
+msgstr "Kategorie"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_code
+msgid "Code"
+msgstr "Code"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_company_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_company_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_company_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_company_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: s2uproduct
+#: model:ir.ui.menu,name:s2uproduct.menu_product_configuration
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_country_id
+msgid "Country"
+msgstr "Land"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_create_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_create_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_create_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_create_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_create_uid
+msgid "Created by"
+msgstr "Angelegt von"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_create_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_create_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_create_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_create_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_create_date
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_currency_id
+msgid "Currency"
+msgstr "Währung"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_name
+msgid "Deliver time"
+msgstr "Lieferzeit"
+
+#. module: s2uproduct
+#: model:ir.actions.act_window,name:s2uproduct.action_product_delivery
+#: model:ir.ui.menu,name:s2uproduct.menu_product_delivery
+#: model:ir.ui.view,arch_db:s2uproduct.product_delivery_tree
+msgid "Deliveries"
+msgstr "Lieferungen"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_delivery_id
+#: model:ir.ui.view,arch_db:s2uproduct.product_delivery_form
+msgid "Delivery"
+msgstr "Lieferung"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_description
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_form
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: s2uproduct
+#: selection:s2u.product.delivery,type:0
+msgid "Direct"
+msgstr "Direct"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_display_name
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_display_name
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_display_name
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_display_name
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_display_name
+msgid "Display Name"
+msgstr "Angezeigter Name"
+
+#. module: s2uproduct
+#: selection:s2u.sale.product,product_type:0
+msgid "Dropshipping"
+msgstr "Dropshipping"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_price_gross
+msgid "Gross"
+msgstr "Brutto"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_hona
+msgid "Hide when not available"
+msgstr "Ausblenden, wenn nicht verfügbar"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_id
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_image
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_form
+msgid "Image"
+msgstr "Bild"
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_wizard_import_ubl
+msgid "Import UBL"
+msgstr "Import UBL"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_days
+msgid "In days"
+msgstr "In Tagen"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category___last_update
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery___last_update
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category___last_update
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country___last_update
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_write_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_write_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_write_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_write_uid
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_write_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_write_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_write_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_country_write_date
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_image_medium
+msgid "Medium-sized image"
+msgstr "Mittelgroßes Bild"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_name
+msgid "Name"
+msgstr "Name"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_price_net_as_str
+msgid "Net as str"
+msgstr "Netto als String"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_no_delivery_id
+msgid "No delivery"
+msgstr "Keine Lieferung"
+
+#. module: s2uproduct
+#: selection:s2u.product.delivery,type:0
+msgid "Not deliverable"
+msgstr "Nicht lieferbar"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_po_account_id
+msgid "PO Account"
+msgstr "PO Konto"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_po_price
+msgid "PO Price"
+msgstr "PO Preis"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_po_vat_id
+msgid "PO Vat"
+msgstr "PO MwSt"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_price
+msgid "Price"
+msgstr "Preis"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_price_is_net
+msgid "Price is netto"
+msgstr "Preis ist Netto"
+
+#. module: s2uproduct
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_form
+msgid "Product"
+msgstr "Produkt"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_product_url
+msgid "Product Url"
+msgstr "Produkt Url"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_sub_ids
+msgid "Product categories"
+msgstr "Produkt Kategorien"
+
+#. module: s2uproduct
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_form
+msgid "Product categories..."
+msgstr "Produkt Kategorien..."
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_s2u_product_category
+msgid "Product category"
+msgstr "Produkt Kategorie"
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_s2u_product_delivery
+msgid "Product delivery"
+msgstr "Produktlieferung"
+
+#. module: s2uproduct
+#: code:addons/s2uproduct/models/product.py:22
+#, python-format
+msgid "Product detail not allowed for product [%s]"
+msgstr "Produktdetail für Produkt nicht erlaubt [%s]"
+
+#. module: s2uproduct
+#: code:addons/s2uproduct/models/product.py:24
+#, python-format
+msgid "Product detail not allowed for this product"
+msgstr "Produktdetail für dieses Produkt nicht erlaubt"
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_s2u_product_sub_category
+msgid "Product sub category"
+msgstr "Produktunterkategorie"
+
+#. module: s2uproduct
+#: model:ir.actions.act_window,name:s2uproduct.action_sale_product
+#: model:ir.ui.menu,name:s2uproduct.menu_product
+#: model:ir.ui.menu,name:s2uproduct.menu_product_sale_product
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_tree
+msgid "Products"
+msgstr "Produkte"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_publish_webshop
+msgid "Publish webshop"
+msgstr "Veröffentlichen im Internetshop"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_purchase
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_form
+msgid "Purchase"
+msgstr "Einkauf"
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_s2u_purchase_product
+msgid "Purchase product"
+msgstr "Produkt kaufen"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_qty_available
+msgid "Qty available"
+msgstr "Menge verfügbar"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_qty_reserved
+msgid "Qty reserved"
+msgstr "Menge reserviert"
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_s2u_sale_product
+msgid "Sale product"
+msgstr "Verkaufsprodukt"
+
+#. module: s2uproduct
+#: model:ir.model,name:s2uproduct.model_s2u_sale_country
+msgid "Sale product in countries"
+msgstr "Verkaufsprodukt in Ländern"
+
+#. module: s2uproduct
+#: model:ir.ui.menu,name:s2uproduct.menu_product_sale
+msgid "Sales"
+msgstr "Verkauf"
+
+#. module: s2uproduct
+#: model:ir.ui.view,arch_db:s2uproduct.product_category_search_view
+#: model:ir.ui.view,arch_db:s2uproduct.product_delivery_search_view
+#: model:ir.ui.view,arch_db:s2uproduct.product_sub_category_search_view
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_search_view
+msgid "Search"
+msgstr "Suchen"
+
+#. module: s2uproduct
+#: selection:s2u.sale.product,product_type:0
+msgid "Service"
+msgstr "Service"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_image_small
+msgid "Small-sized image"
+msgstr "Miniaturbild"
+
+#. module: s2uproduct
+#: selection:s2u.sale.product,product_type:0
+msgid "Stockable"
+msgstr "Lagerbar"
+
+#. module: s2uproduct
+#: model:ir.actions.act_window,name:s2uproduct.action_product_sub_category
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_sub_ids
+#: model:ir.ui.menu,name:s2uproduct.menu_product_sub_category
+#: model:ir.ui.view,arch_db:s2uproduct.product_sub_category_tree
+msgid "Sub categories"
+msgstr "Unterkategorien"
+
+#. module: s2uproduct
+#: model:ir.ui.view,arch_db:s2uproduct.product_category_form
+msgid "Sub categories..."
+msgstr "Unterkategorien..."
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_sub_category_name
+#: model:ir.ui.view,arch_db:s2uproduct.product_sub_category_form
+msgid "Sub category"
+msgstr "Unterkategorie"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_entity_id
+msgid "Supplier"
+msgstr "Lieferant"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_category_title
+msgid "Title"
+msgstr "Anrede"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_product_delivery_type
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_product_type
+msgid "Type"
+msgstr "Typ"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_ubl_match
+msgid "UBL match"
+msgstr "UBL match "
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_vat_id
+msgid "Vat"
+msgstr "MwSt"
+
+#. module: s2uproduct
+#: model:ir.ui.view,arch_db:s2uproduct.sale_product_form
+msgid "Webshop"
+msgstr "Internetshop"
+
+#. module: s2uproduct
+#: model:ir.model.fields,field_description:s2uproduct.field_s2u_sale_product_weight
+msgid "Weight (kg)"
+msgstr "Gewicht (kg)"
+
+#. module: s2uproduct
+#: selection:s2u.product.delivery,type:0
+msgid "Within entered days"
+msgstr "Innerhalb von Tagen"

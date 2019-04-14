@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_import_ubl_view" model="ir.ui.view">
+        <field name="name">Import UBL</field>
+        <field name="model">wizard.import.ubl</field>
+        <field name="arch" type="xml">
+            <form string="Import UBL">
+                <field name="company_id" invisible="1"/>
+
+                <group string="Please select UBL file to import:">
+                    <group>
+                        <field name="ubl_data" filename="ubl_fname" />
+                    </group>
+                    <group>
+                        <field name="ubl_fname" invisible="1" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="do_import_ubl" string="Import" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_import_ubl" model="ir.actions.act_window">
+        <field name="name">Import UBL</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.import.ubl</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_import_ubl_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="menu_wizard_import_ubl"
+        parent="menu_accounting_financial"
+        action="action_wizard_import_ubl" sequence="100" groups="s2uaccount.group_account_manager" />
+
+</odoo>

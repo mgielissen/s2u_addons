@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="Project"
+                  id="menu_project"
+                  sequence="95"/>
+
+        <menuitem id="menu_project_project" name="Project" parent="menu_project" sequence="10" />
+        <menuitem id="menu_project_report" name="Report" parent="menu_project" sequence="20" />
+        <menuitem id="menu_project_settings" name="Settings" parent="menu_project" sequence="30" />
+    </data>
+</openerp>
+

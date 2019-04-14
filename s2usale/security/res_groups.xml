@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="group_sale_salesman" model="res.groups">
+            <field name="name">Salesperson (s2uFramework)</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="comment">the user will have access to his own data in the sales application.</field>
+        </record>
+
+        <record id="group_sale_manager" model="res.groups">
+            <field name="name">Manager (s2uFramework)</field>
+            <field name="comment">the user will have an access to the sales configuration as well as statistic reports.</field>
+            <field name="category_id" ref="base.module_category_sales_management"/>
+            <field name="implied_ids" eval="[(4, ref('group_sale_salesman'))]"/>
+        </record>
+
+        <record id="s2usale.bruto_or_netto" model="res.groups">
+            <field name="category_id" ref="s2ubase.module_category_s2uframework"/>
+            <field name="name">Bruto or netto</field>
+        </record>
+    </data>
+</openerp>

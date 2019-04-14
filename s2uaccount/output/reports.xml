@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+
+        <report 
+            id="s2uaccount_so_invoices"
+            model="s2u.account.invoice"
+            string="Invoice"
+            report_type="qweb-pdf"
+            name="s2uaccount.print_invoice_so"
+            file="s2uaccount.print_invoice_so"
+            attachment="('Invoice-'+(object.name or '').replace('/','')+'.pdf')"
+        />
+
+        <report
+            id="s2uaccount_report_vat"
+            model="report.s2uaccount.vat"
+            string="Report Vat"
+            report_type="qweb-pdf"
+            name="s2uaccount.report_vat"
+            file="s2uaccount.report_vat"
+            />
+
+        <report
+            id="s2uaccount_report_trial_balance"
+            model="report.s2uaccount.trial.balance"
+            string="Report Trial Balance"
+            report_type="qweb-pdf"
+            name="s2uaccount.report_trial_balance"
+            file="s2uaccount.report_trial_balance"
+            />
+
+        <report
+            id="s2uaccount_report_debtor"
+            model="report.s2uaccount.debtor"
+            string="Report Debtor"
+            report_type="qweb-pdf"
+            name="s2uaccount.report_debtor"
+            file="s2uaccount.report_debtor"
+            />
+
+        <report
+            id="s2uaccount_report_creditor"
+            model="report.s2uaccount.creditor"
+            string="Report Creditor"
+            report_type="qweb-pdf"
+            name="s2uaccount.report_creditor"
+            file="s2uaccount.report_creditor"
+            />
+
+        <report
+            id="s2uaccount_report_ledger"
+            model="report.s2uaccount.ledger"
+            string="Report Ledger"
+            report_type="qweb-pdf"
+            name="s2uaccount.report_ledger"
+            file="s2uaccount.report_ledger"
+            />
+
+    </data>
+</openerp>

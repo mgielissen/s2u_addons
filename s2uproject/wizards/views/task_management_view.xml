@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_close_tasks_view_multi" model="ir.ui.view">
+        <field name="name">Close tasks</field>
+        <field name="model">s2u.project.action.close.tasks</field>
+        <field name="arch" type="xml">
+            <form string="Close tasks">
+                <sheet>
+                    <h2>You are going to close the selected tasks. When tasks are closed, users can no longer write hours on the closed tasks.</h2>
+                    <p>If you want to continue, please click the button "Close tasks" or click "Cancel" if you want to abort this action.</p>
+                </sheet>
+                <footer>
+                    <button name="do_close_tasks" string="Close tasks" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_reopen_tasks_view_multi" model="ir.ui.view">
+        <field name="name">Reopen tasks</field>
+        <field name="model">s2u.project.action.reopen.tasks</field>
+        <field name="arch" type="xml">
+            <form string="Reopen tasks">
+                <sheet>
+                    <h2>You are going to reopen the selected tasks. When tasks are reopened, users can write or change hours on the reopened tasks.</h2>
+                    <p>If you want to continue, please click the button "Reopen tasks" or click "Cancel" if you want to abort this action.</p>
+                </sheet>
+                <footer>
+                    <button name="do_reopen_tasks" string="Reopen tasks" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

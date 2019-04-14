@@ -1,0 +1,360 @@
+<openerp>
+    <data>
+        <!-- Unit -->
+        <record model="ir.ui.view" id="warehouse_unit_search_view">
+            <field name="model">s2u.warehouse.unit</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="parent_id" />
+                    <field name="type" />
+                    <field name="unit_date" />
+                    <field name="pallet_id" />
+                    <field name="location_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_unit_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse unit" create="false" edit="false" delete="false" >
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_outgoing"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('outgoing_count', '=', 0)]}">
+                                <field name="outgoing_count" widget="statinfo" string="Outgoings"/>
+                            </button>
+                            <button name="action_view_incoming"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('incoming_count', '=', 0)]}">
+                                <field name="incoming_count" widget="statinfo" string="Incomings"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="unit_date" />
+                                <field name="location_id" />
+                                <field name="assigned" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="pallet_id"
+                                       attrs="{'invisible': [('type', '!=', 'pallet')],
+                                               'required': [('type', '=', 'pallet')]}" />
+                                <field name="pallet_factor"
+                                       attrs="{'invisible': [('type', '!=', 'pallet')],
+                                               'required': [('type', '=', 'pallet')]}" />
+                                <field name="parent_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_unit_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse unit" create="false" edit="false" delete="false">
+                    <field name="name" />
+                    <field name="unit_date" />
+                    <field name="type" />
+                    <field name="pallet_id" />
+                    <field name="location_id" />
+                    <field name="on_unit" />
+                    <field name="parent_id" />
+                    <field name="assigned" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_unit" model="ir.actions.act_window">
+            <field name="name">Units</field>
+            <field name="res_model">s2u.warehouse.unit</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_unit_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_unit" id="menu_warehouse_unit"
+            parent="menu_warehouse_stock" sequence="10" groups="s2uwarehouse.group_warehouse_user" />
+
+        <!-- Unit product -->
+        <record model="ir.ui.view" id="warehouse_unit_product_search_view">
+            <field name="model">s2u.warehouse.unit.product</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="product_id" />
+                    <field name="product_detail" />
+                    <field name="location_id" />
+                    <field name="unit_id" />
+                    <field name="serialnumber" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_unit_product_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit.product</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse unit item" create="false" edit="false" delete="false" >
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_outgoing"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('outgoing_count', '=', 0)]}">
+                                <field name="outgoing_count" widget="statinfo" string="Outgoings"/>
+                            </button>
+                            <button name="action_view_incoming"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('incoming_count', '=', 0)]}">
+                                <field name="incoming_count" widget="statinfo" string="Incomings"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="product_detail" />
+                                <field name="serialnumber" />
+                            </group>
+                            <group>
+                                <field name="product_qty" />
+                                <field name="assigned_qty" />
+                                <field name="product_value" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="unit_id" options="{'no_create': True, 'no_open': True}" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Transactions">
+                                <field name="transactions" nolabel="1" widget="one2many_list" readonly="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="qty" />
+                                        <field name="source_model" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="transaction_date" />
+                                                <field name="qty" />
+                                            </group>
+                                            <group>
+                                                <field name="source_model" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_unit_product_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit.product</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse unit item" create="false" edit="false" delete="false">
+                    <field name="product_id" />
+                    <field name="product_detail" />
+                    <field name="serialnumber" />
+                    <field name="location_id" />
+                    <field name="unit_id" />
+                    <field name="product_qty" sum="Total"/>
+                    <field name="assigned_qty" sum="Total"/>
+                    <field name="product_value" />
+                    <field name="total_value" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_unit_product2" model="ir.actions.act_window">
+            <field name="name">Location/unit</field>
+            <field name="res_model">s2u.warehouse.unit.product</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_unit_product_tree" />
+            <field name="domain">[('unit_id.active', '=', True), ('product_qty', '>', 0.0)]</field>
+        </record>
+
+        <menuitem action="action_warehouse_unit_product2" id="menu_warehouse_unit_product"
+            parent="menu_warehouse_stock" sequence="20" groups="s2uwarehouse.group_warehouse_user" />
+
+        <record id="view_warehouse_unit_product_new_location" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit.product.new.location</field>
+            <field name="arch" type="xml">
+                <form string="Move to location">
+                    <header>
+                        <button name="do_move" string="Move" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id" readonly="1" />
+                            </group>
+                            <group>
+                                <field name="qty_move" />
+                                <field name="location_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="act_view_warehouse_unit_product_new_location"
+            name="New location"
+            res_model="s2u.warehouse.unit.product.new.location"
+            src_model="s2u.warehouse.unit.product"
+            view_mode="form" target="new" view_type="form" />
+
+        <record id="view_warehouse_unit_product_to_production" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit.product.to.production</field>
+            <field name="arch" type="xml">
+                <form string="To production">
+                    <header>
+                        <button name="do_production" string="Production" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id" readonly="1" />
+                            </group>
+                            <group>
+                                <field name="qty_production" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="act_view_warehouse_unit_product_to_production"
+            name="To production"
+            res_model="s2u.warehouse.unit.product.to.production"
+            src_model="s2u.warehouse.unit.product"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- Unit product transaction -->
+        <record model="ir.ui.view" id="warehouse_unit_product_transaction_search_view">
+            <field name="model">s2u.warehouse.unit.product.transaction</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="transaction_date" />
+                    <field name="source_model" />
+                    <field name="product_id" />
+                    <field name="rel_product_id" />
+                    <field name="rel_product_detail" />
+                    <field name="rel_serialnumber" />
+                    <field name="unit_id" />
+                    <field name="location_id" />
+                    <field name="supplier_no" />
+                    <field name="entity_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_unit_product_transaction_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit.product.transaction</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse unit item transaction" create="false" edit="false" delete="false">
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_outgoing"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('outgoing_count', '=', 0)]}">
+                                <field name="outgoing_count" widget="statinfo" string="Outgoings"/>
+                            </button>
+                            <button name="action_view_incoming"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('incoming_count', '=', 0)]}">
+                                <field name="incoming_count" widget="statinfo" string="Incomings"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="transaction_date" />
+                                <field name="location_id" />
+                            </group>
+                            <group>
+                                <field name="parent_id" />
+                                <field name="unit_id" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="rel_product_id" />
+                                <field name="rel_product_detail" />
+                                <field name="rel_serialnumber" />
+                                <field name="qty" />
+                            </group>
+                            <group>
+                                <field name="product_id" />
+                                <field name="entity_id" />
+                                <field name="supplier_no" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_unit_product_transaction_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.unit.product.transaction</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse unit item transaction" create="false" edit="false" delete="false">
+                    <field name="transaction_date" />
+                    <field name="location_id" />
+                    <field name="parent_id" />
+                    <field name="unit_id" />
+                    <field name="rel_product_id" />
+                    <field name="rel_product_detail" />
+                    <field name="rel_serialnumber" />
+                    <field name="qty" />
+                    <field name="entity_id" />
+                    <field name="supplier_no" />
+                    <field name="source_model" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_unit_product_transaction" model="ir.actions.act_window">
+            <field name="name">Transactions</field>
+            <field name="res_model">s2u.warehouse.unit.product.transaction</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_unit_product_transaction_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_unit_product_transaction" id="menu_warehouse_unit_product_transaction2"
+            parent="menu_warehouse_stock" sequence="30" groups="s2uwarehouse.group_warehouse_manager" />
+
+    </data>
+</openerp>

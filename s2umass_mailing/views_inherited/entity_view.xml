@@ -1,0 +1,23 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="crm_entity_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_form"/>
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group/group/field[@name='tag_ids']" position="after">
+                    <field name="mailinglist_ids" widget="many2many_tags" options="{'no_create_edit': True}" placeholder="Mailing lists..."/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="crm_entity_contact_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_contact_form"/>
+            <field name="model">s2u.crm.entity.contact</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group/group/field[@name='skype']" position="after">
+                    <field name="mailinglist_ids" widget="many2many_tags" options="{'no_create_edit': True}" placeholder="Mailing lists..."/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

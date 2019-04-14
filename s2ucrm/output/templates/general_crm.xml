@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="print_address_data_content">
+            <t t-if="document_object.partner_id.type == 'b2c'">
+                <t t-if="document_object.partner_id.prefix">
+                    <span t-field="document_object.partner_id.prefix" /><br />
+                </t>
+            </t>
+            <t t-if="document_object.partner_id.type == 'b2b'">
+                <span t-field="document_object.partner_id.name" /><br />
+                <t t-if="document_object.contact_id and document_object.contact_id.prefix">
+                    <span t-field="document_object.contact_id.prefix"/><br />
+                </t>
+                <t t-if="document_object.contact_id and not document_object.contact_id.prefix">
+                    <span t-field="document_object.contact_id.name" /><br />
+                </t>
+                <t t-if="document_object.address_id">
+                    <span t-field="document_object.address_id.address" /><br />
+                    <t t-if="document_object.address_id.zip">
+                        <span t-field="document_object.address_id.zip"/>&#160;&#160;
+                    </t>
+                    <span t-field="document_object.address_id.city" /><br />
+                    <t t-if="document_object.address_id.country_id and document_object.address_id.country_id.code != 'NL'">
+                        <span t-field="document_object.address_id.country_id.name" /><br />
+                    </t>
+                </t>
+            </t>
+            <t t-if="document_object.partner_id.type == 'b2c'">
+                <t t-if="document_object.partner_id.address">
+                    <span t-field="document_object.partner_id.address" /><br />
+                </t>
+                <t t-if="document_object.partner_id.zip">
+                    <span t-field="document_object.partner_id.zip"/>&#160;&#160;
+                </t>
+                <t t-if="document_object.partner_id.city">
+                    <span t-field="document_object.partner_id.city" /><br />
+                </t>
+                <t t-if="document_object.partner_id.country_id and document_object.partner_id.country_id.code != 'NL'">
+                    <span t-field="document_object.partner_id.country_id.name" />
+                </t>
+            </t>
+        </template>
+
+        <template id="print_address_data">
+            <div class="row">
+                <div class="col-xs-5 col-xs-offset-7">
+                    <p>
+                        <t t-call="s2ucrm.print_address_data_content" />
+                    </p>
+                </div>
+            </div>
+        </template>
+
+    </data>
+</openerp>

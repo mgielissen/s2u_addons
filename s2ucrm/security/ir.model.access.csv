@@ -1,0 +1,9 @@
+"id","group_id:id","name","model_id","perm_create","perm_unlink","perm_write","perm_read"
+"r20161020001","base.group_user","Default","s2u.crm.entity",1,1,1,1
+"r20161020002","base.group_user","Default","s2u.crm.entity.address",1,1,1,1
+"r20161020003","base.group_user","Default","s2u.crm.entity.contact",1,1,1,1
+"r20161122001","base.group_user","Default","s2u.crm.tag",1,1,1,1
+"r20161219001","base.group_user","Default","s2u.crm.lead",1,1,1,1
+"r20170104001","base.group_user","Default","s2u.crm.entity.message",1,1,1,1
+"r20171102001","base.group_user","Default","s2u.crm.favorite",1,1,1,1
+"r20180201001","base.group_user","Default","s2u.crm.entity.delivery",1,1,1,1

@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="display_shoppingcard" name="Display shoppingcard">
+        <div class="cd-cart-container empty">
+	         <a href="#0" class="cd-cart-trigger">
+	             <ul class="count">
+                     <li>0</li>
+                     <li>0</li>
+                 </ul>
+	         </a>
+
+             <div class="cd-cart">
+	             <div class="wrapper">
+		             <header>
+                         <h2>Winkelwagen</h2>
+                         <span class="undo">Product verwijderd. <a href="#0">Ongedaan</a></span>
+                     </header>
+
+                     <div class="body">
+                         <ul>
+                             <!-- products added to the cart will be inserted here using JavaScript -->
+                             <t t-foreach="shoppingcart" t-as="item">
+                                 <li class="product">
+                                     <div class="product-image">
+                                         <a t-att-href="item.get('product_url', '#0')"><img t-att-src="'/shop/product/picture/' + item['product_model'] + '/' + str(item['product_id']) +'/default/small'"
+                                                           t-att-alt="item['product']" /></a>
+                                     </div>
+                                     <div class="product-details">
+                                         <h3><a t-att-href="item.get('product_url', '#0')"><t t-esc="item['product']"/></a></h3>
+                                         <span class="price" t-att-data-price="item['price']" t-att-data-productmodel="item['product_model']" t-att-data-producturl="item.get('product_url', '#0')" t-att-data-productid="item['product_id']">€ <t t-esc="item['price_string']" /></span>
+                                         <div class="actions">
+                                             <a href="#0" class="delete-item">Verwijderen</a>
+                                             <div class="quantity">
+                                                 <label t-att-for="'cd-product-' + str(item['no'])">Aantal</label>
+                                                 <span class="select">
+                                                     <select t-att-id="'cd-product-' + str(item['no'])" name="quantity">
+                                                         <option value="1" t-att-selected="'selected' if item['qty_1'] else None">1</option>
+                                                         <option value="2" t-att-selected="'selected' if item['qty_2'] else None">2</option>
+                                                         <option value="3" t-att-selected="'selected' if item['qty_3'] else None">3</option>
+                                                         <option value="4" t-att-selected="'selected' if item['qty_4'] else None">4</option>
+                                                         <option value="5" t-att-selected="'selected' if item['qty_5'] else None">5</option>
+                                                         <option value="6" t-att-selected="'selected' if item['qty_6'] else None">6</option>
+                                                         <option value="7" t-att-selected="'selected' if item['qty_7'] else None">7</option>
+                                                         <option value="8" t-att-selected="'selected' if item['qty_8'] else None">8</option>
+                                                         <option value="9" t-att-selected="'selected' if item['qty_9'] else None">9</option>
+                                                     </select>
+                                                 </span>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </li>
+                             </t>
+                         </ul>
+                     </div>
+
+                     <footer>
+                         <a href="#0" class="checkout btn"><em>Checkout - € <span data-total="0">0</span></em></a>
+                     </footer>
+                 </div>
+             </div> <!-- .cd-cart -->
+        </div> <!-- cd-cart-container -->
+    </template>
+
+    <template id="display_searchfilter" name="Display searchfilter">
+        <div class="col-sm-12 mt16 mb16">
+            <button type="button" class="btn btn-secundary" data-toggle="collapse" data-target="#show-filters">Filters &amp;dArr;</button>
+        </div>
+        <form class="form-horizontal searchfilter-data-form col-sm-12" action="/shop" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <div class="form-group">
+                <input type="text" class="form-control" name="filter_search"
+                       t-att-value="filtervals.get('filter_search')" placeholder="Wat zoekt u?"/>
+            </div>
+
+            <div id="show-filters" class="collapse">
+            <t t-foreach="categories" t-as="cat">
+                <div class="row">
+                    <h3>
+                        <t t-if="'filter-' + str(cat['id']) in filtervals">
+                            <input type="checkbox" t-att-name="'filter-' + str(cat['id'])" t-att-value="cat['id']" checked="checked"/> <t t-esc="cat['name']"/>
+                        </t>
+                        <t t-if="'filter-' + str(cat['id']) not in filtervals">
+                            <input type="checkbox" t-att-name="'filter-' + str(cat['id'])" t-att-value="cat['id']" /> <t t-esc="cat['name']"/>
+                        </t>
+                    </h3>
+                    <t t-foreach="cat['subcats']" t-as="sub">
+                        <t t-if="'subfilter' + str(cat['id']) + '-' + str(sub['id']) in filtervals">
+                            <p><input type="checkbox" t-att-name="'subfilter' + str(cat['id']) + '-' + str(sub['id'])" t-att-value="sub['id']" t-att-data-catid="cat['id']" checked="checked" /> <t t-esc="sub['name']"/></p>
+                        </t>
+                        <t t-if="'subfilter' + str(cat['id']) + '-' + str(sub['id']) not in filtervals">
+                            <p><input type="checkbox" t-att-name="'subfilter' + str(cat['id']) + '-' + str(sub['id'])" t-att-value="sub['id']" t-att-data-catid="cat['id']" /> <t t-esc="sub['name']"/></p>
+                        </t>
+                    </t>
+                </div>
+            </t>
+            </div>
+            <div class="form-group">
+                <a href="#0" class="apply-searchfilter btn btn-primary">Filters toepassen</a>
+            </div>
+            <div class="form-group">
+                <a href="#0" class="clear-searchfilter btn btn-secundary">Filters wissen</a>
+            </div>
+        </form>
+    </template>
+
+    <template id="shop_product_empty" name="Shop gesloten">
+        <t t-set="use_shop_assets" t-value="True"/>
+        <t t-call="website.layout">
+            <div class="container mb64">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="row">
+                            <h3 class="col-sm-12"></h3>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="row">
+                            <h1 class="col-sm-12">Shop momenteel gesloten</h1>
+                        </div>
+                        <div class="row">
+                            <p>Momenteel is onze shop gesloten, zodra wij open zijn laten wij dit zo snel mogelijk weten. Excuses voor dit ongemak.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="shop_product_empty_filter" name="Shop geen resultaten">
+        <t t-set="use_shop_assets" t-value="True"/>
+        <t t-call="website.layout">
+            <div class="container mb64">
+                <div class="row">
+                    <div class="col-sm-2 cd-shop-filter">
+                        <t t-call="s2uecommerce.display_searchfilter" />
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="row">
+                            <h1 class="col-sm-12">Geen producten aanwezig waarop u zoekt</h1>
+                        </div>
+                        <div class="row">
+                            <p class="col-sm-12">Helaas zijn er geen producten gevonden waarop u heeft gezocht. Pas uw filter aan voor een nieuwe zoekopdracht.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                </div>
+            </div>
+            <t t-call="s2uecommerce.display_shoppingcard" />
+        </t>
+    </template>
+
+    <template id="shop_product_list" name="Product overzicht">
+        <t t-set="use_shop_assets" t-value="True"/>
+        <t t-call="website.layout">
+            <div id="pdmodal" class="pdmodal">
+                <!-- The Close Button -->
+                <span class="pdclose" onclick="document.getElementById('pdmodal').style.display='none'">&amp;times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="pdmodal-content" id="imgcontent" />
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="pdcaption"></div>
+            </div>
+            <div class="container mb64">
+                <div class="row">
+                    <div class="col-sm-2 cd-shop-filter">
+                        <t t-call="s2uecommerce.display_searchfilter" />
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <h1 class="col-sm-12">Product overzicht</h1>
+                        </div>
+                        <t t-foreach="products" t-as="product">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <a t-att-href="product.product_url" t-att-alt="product.name">
+                                                <h2><t t-esc="product.name"/></h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <img class="pdimage" t-att-src="'/shop/product/picture/' + product._name + '/' + str(product.id) +'/default/large'" t-att-alt="product.name" style="width:128px;" />
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p><t t-esc="product.description"/></p>
+                                            <div t-if="product.variant_id">
+                                                <a t-att-href="product.variant_url" t-att-alt="product.variant_id.name">
+                                                    Bekijk alle beschikbare varianten
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="row">
+                                        <div class="col-sm-12 pull-right">
+                                            <p class="pull-right"><t t-esc="product.price_prefix"/>     <font style="font-size: 56px;"><t t-esc="product.price_before_comma"/>,</font><font style="font-size: 24px;"><sup><t t-esc="product.price_after_comma"/></sup></font></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 pull-right">
+                                            <p class="pull-right"><font style="font-size: 16px;">(<t t-esc="product.price_net_as_str" /> excl. BTW)</font></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 pull-right">
+                                            <t t-if="not product.delivery_id or (product.delivery_id and product.delivery_id.type != 'not')">
+                                                <p class="pull-right text-nowrap">
+                                                    <a href="#0" class="cd-add-to-cart"
+                                                       t-att-data-price="product.price_as_float"
+                                                       t-att-data-productmodel="product._name"
+                                                       t-att-data-producturl="product.product_url"
+                                                       t-att-data-productid="product.id"
+                                                       t-att-data-product="product.name">In winkelwagen</a>
+                                                </p>
+                                            </t>
+                                            <t t-if="product.delivery_id and product.delivery_id.type == 'not'">
+                                                <p class="pull-right text-nowrap">
+                                                    <a href="#0" class="cd-sent-alert-cart"
+                                                       t-att-data-productmodel="product._name"
+                                                       t-att-data-producturl="product.product_url"
+                                                       t-att-data-productid="product.id">Herinner mij</a>
+                                                </p>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt16">
+                                <div class="col-sm-12" style='border-bottom:1px solid #ccc;'>
+                                    <t t-if="product.delivery_id and product.qty_virtual &gt; 0.0">
+                                        <p><t t-esc="product.delivery_id.name"/> - <b>Momenteel <t t-esc="int(product.qty_virtual)"/> <t t-esc="product.stock_prefix"/> op voorraad</b></p>
+                                    </t>
+                                    <t t-if="product.no_delivery_id and product.qty_virtual &lt;= 0.0">
+                                        <p><t t-esc="product.no_delivery_id.name"/></p>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-md-10 dd-pager" t-if="len(products) &gt; 0">
+                        <nav aria-label="Page navigation">
+                            <p>
+                                pagina
+                                <span class="dd-number"><t t-esc="current_page"/></span>
+                                van
+                                <span class="dd-number"><t t-esc="tot_pages"/></span>
+                                pagina's met totaal
+                                <span class="dd-number"><t t-esc="tot_products"/></span>
+                                producten
+                            </p>
+
+                            <ul class="pagination">
+                                <li t-att-class=" 'disabled' if current_page == 1 else '' ">
+                                    <a t-att-href="rel_prev" aria-label="Previous">
+                                        <span aria-hidden="true" class="label"><i class="fa fa-angle-left" aria-hidden="true"/></span>
+                                    </a>
+                                </li>
+                                <t t-foreach="pages" t-as="page">
+                                    <t t-if="page=='...'">
+                                        <li>
+                                            <span>...</span>
+                                        </li>
+                                    </t>
+                                    <t t-if="page != '...'">
+                                        <li t-att-class=" 'active' if page['num'] == current_page else '' ">
+                                            <a t-att-href="page['url']" t-raw="page['num']"/>
+                                        </li>
+                                    </t>
+                                </t>
+                                <li t-att-class=" 'disabled' if current_page == tot_pages else '' ">
+                                    <a t-att-href="rel_next" aria-label="Next">
+                                        <span aria-hidden="true" class="label"><i class="fa fa-angle-right" aria-hidden="true"/></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <t t-call="s2uecommerce.display_shoppingcard" />
+        </t>
+    </template>
+
+
+    <template id="shop_variant_list" name="Product overzicht">
+        <t t-set="use_shop_assets" t-value="True"/>
+        <t t-call="website.layout">
+            <div id="pdmodal" class="pdmodal">
+                <!-- The Close Button -->
+                <span class="pdclose" onclick="document.getElementById('pdmodal').style.display='none'">&amp;times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="pdmodal-content" id="imgcontent" />
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="pdcaption"></div>
+            </div>
+            <div class="container mb64">
+                <div class="row">
+                    <div class="col-sm-2 cd-shop-filter">
+                        <t t-call="s2uecommerce.display_searchfilter" />
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <h1 class="col-sm-12">Alle beschikbare varianten</h1>
+                        </div>
+                        <t t-foreach="products" t-as="product">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <a t-att-href="product.product_url" t-att-alt="product.name">
+                                                <h2><t t-esc="product.name"/></h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <img class="pdimage" t-att-src="'/shop/product/picture/' + product._name + '/' + str(product.id) +'/default/large'" t-att-alt="product.name" style="width:128px;" />
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p><t t-esc="product.description"/></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="row">
+                                        <div class="col-sm-12 pull-right">
+                                            <p class="pull-right"><t t-esc="product.price_prefix"/>     <font style="font-size: 56px;"><t t-esc="product.price_before_comma"/>,</font><font style="font-size: 24px;"><sup><t t-esc="product.price_after_comma"/></sup></font></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 pull-right">
+                                            <p class="pull-right"><font style="font-size: 16px;">(<t t-esc="product.price_net_as_str" /> excl. BTW)</font></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 pull-right">
+                                            <t t-if="not product.delivery_id or (product.delivery_id and product.delivery_id.type != 'not')">
+                                                <p class="pull-right text-nowrap">
+                                                    <a href="#0" class="cd-add-to-cart"
+                                                       t-att-data-price="product.price_as_float"
+                                                       t-att-data-productmodel="product._name"
+                                                       t-att-data-producturl="product.product_url"
+                                                       t-att-data-productid="product.id"
+                                                       t-att-data-product="product.name">In winkelwagen</a>
+                                                </p>
+                                            </t>
+                                            <t t-if="product.delivery_id and product.delivery_id.type == 'not'">
+                                                <p class="pull-right text-nowrap">
+                                                    <a href="#0" class="cd-sent-alert-cart"
+                                                       t-att-data-productmodel="product._name"
+                                                       t-att-data-producturl="product.product_url"
+                                                       t-att-data-productid="product.id">Herinner mij</a>
+                                                </p>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt16">
+                                <div class="col-sm-12" style='border-bottom:1px solid #ccc;'>
+                                    <t t-if="product.delivery_id and product.qty_virtual &gt; 0.0">
+                                        <p><t t-esc="product.delivery_id.name"/> - <b>Momenteel <t t-esc="int(product.qty_virtual)"/> <t t-esc="product.stock_prefix"/> op voorraad</b></p>
+                                    </t>
+                                    <t t-if="product.no_delivery_id and product.qty_virtual &lt;= 0.0">
+                                        <p><t t-esc="product.no_delivery_id.name"/></p>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-md-10 dd-pager" t-if="len(products) &gt; 0">
+                        <nav aria-label="Page navigation">
+                            <p>
+                                pagina
+                                <span class="dd-number"><t t-esc="current_page"/></span>
+                                van
+                                <span class="dd-number"><t t-esc="tot_pages"/></span>
+                                pagina's met totaal
+                                <span class="dd-number"><t t-esc="tot_products"/></span>
+                                producten
+                            </p>
+
+                            <ul class="pagination">
+                                <li t-att-class=" 'disabled' if current_page == 1 else '' ">
+                                    <a t-att-href="rel_prev" aria-label="Previous">
+                                        <span aria-hidden="true" class="label"><i class="fa fa-angle-left" aria-hidden="true"/></span>
+                                    </a>
+                                </li>
+                                <t t-foreach="pages" t-as="page">
+                                    <t t-if="page=='...'">
+                                        <li>
+                                            <span>...</span>
+                                        </li>
+                                    </t>
+                                    <t t-if="page != '...'">
+                                        <li t-att-class=" 'active' if page['num'] == current_page else '' ">
+                                            <a t-att-href="page['url']" t-raw="page['num']"/>
+                                        </li>
+                                    </t>
+                                </t>
+                                <li t-att-class=" 'disabled' if current_page == tot_pages else '' ">
+                                    <a t-att-href="rel_next" aria-label="Next">
+                                        <span aria-hidden="true" class="label"><i class="fa fa-angle-right" aria-hidden="true"/></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <t t-call="s2uecommerce.display_shoppingcard" />
+        </t>
+    </template>
+
+    <template id="shop_product_detail">
+        <t t-set="use_shop_assets" t-value="True"/>
+        <t t-call="website.layout">
+            <t t-if="len(product.name) &gt; 0">
+                <t t-set="additional_title" t-value="product.name"/>
+            </t>
+            <t t-if="product.description and len(product.description) &gt; 0">
+                <t t-set="additional_description" t-value="product.description"/>
+            </t>
+            <div id="pdmodal" class="pdmodal">
+                <!-- The Close Button -->
+                <span class="pdclose" onclick="document.getElementById('pdmodal').style.display='none'">&amp;times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="pdmodal-content" id="imgcontent" />
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="pdcaption"></div>
+            </div>
+            <div class="container mb64">
+                <div class="row">
+                    <div class="col-sm-2 cd-shop-filter">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row" id="product_details">
+                            <h1 class="col-sm-12"><t t-esc="product.name"/></h1>
+                        </div>
+                        <div class="row">
+                            <img class="pdimage col-sm-4" t-att-src="'/shop/product/picture/' + product._name + '/' + str(product.id) +'/default/large'"
+                                 t-att-alt="product.name" style="width:256px;" />
+                            <div class="col-sm-8 mt8">
+                                <p><t t-esc="product.description"/></p>
+                                <div t-if="product.variant_id">
+                                    <a t-att-href="product.variant_url" t-att-alt="product.variant_id.name">
+                                        Bekijk alle beschikbare varianten
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt16">
+                            <div class="col-sm-12">
+                                <t t-if="product.delivery_id and product.qty_virtual &gt; 0.0">
+                                    <p><t t-esc="product.delivery_id.name"/> - <b>Momenteel <t t-esc="int(product.qty_virtual)"/> <t t-esc="product.stock_prefix"/> op voorraad</b></p>
+                                </t>
+                                <t t-if="product.no_delivery_id and product.qty_virtual &lt;= 0.0">
+                                    <p><t t-esc="product.no_delivery_id.name"/></p>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="row mt32">
+                            <t t-esc="product.price_prefix"/>
+                        </div>
+                        <div class="row">
+                            <p class="col-sm-12 pull-right"><font style="font-size: 56px;"><t t-esc="product.price_before_comma"/>,</font><font style="font-size: 24px;"><sup><t t-esc="product.price_after_comma"/></sup></font></p>
+                        </div>
+                        <div class="row">
+                            <p class="col-sm-12 pull-right"><font style="font-size: 16px;">(<t t-esc="product.price_net_as_str" /> excl. BTW)</font></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 pull-right">
+                                <t t-if="not product.delivery_id or (product.delivery_id and product.delivery_id.type != 'not')">
+                                    <p class="pull-right text-nowrap">
+                                        <a href="#0" class="cd-add-to-cart"
+                                           t-att-data-price="product.price_as_float"
+                                           t-att-data-productmodel="product._name"
+                                           t-att-data-producturl="product.product_url"
+                                           t-att-data-productid="product.id"
+                                           t-att-data-product="product.name">In winkelwagen</a>
+                                    </p>
+                                </t>
+                                <t t-if="product.delivery_id and product.delivery_id.type == 'not'">
+                                    <p class="pull-right text-nowrap">
+                                        <a href="#0" class="cd-sent-alert-cart"
+                                           t-att-data-productmodel="product._name"
+                                           t-att-data-producturl="product.product_url"
+                                           t-att-data-productid="product.id">Herinner mij</a>
+                                    </p>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-2 form-group">
+                        <a t-attf-href="/shop" class="btn btn-secundary">Terug naar product overzicht</a>
+                    </div>
+                </div>
+                <div id="product_details_bottom">
+                </div>
+            </div>
+            <t t-call="s2uecommerce.display_shoppingcard" />
+        </t>
+    </template>
+
+    <template id="shop_checkout" name="Checkout adresgegevens">
+        <t t-set="use_checkout_assets" t-value="True"/>
+        <t t-call="website.layout">
+            <div class="container mb64">
+                <h1 class="col-sm-10 col-sm-offset-2">Checkout: adresgegevens</h1>
+                <form class="form-horizontal checkout-data-form" action="/shop/checkout/confirm" method="post" enctype="multipart/form-data" id="checkout_form">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div t-attf-class="delivery-required form-group #{default.get('delivery_same') and 'hide' or ''}">
+                        <h2 t-attf-class="col-sm-6 col-sm-offset-2">Factuuradres</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label col-sm-offset-2">Dit adres is</label>
+                        <div class="col-sm-3 control-label">
+                            <input type="radio" name="order_type" value="b2c" t-att-checked="'checked' if default.get('type_b2c') else None" /> Particulier
+                            <input type="radio" name="order_type" value="b2b" t-att-checked="'checked' if default.get('type_b2b')else None" /> Zakelijk
+                        </div>
+                    </div>
+                    <div t-attf-class="b2b-required form-group #{error.get('company') and 'has-error' or ''} #{default.get('type_b2c') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="company">Bedrijf</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('company')" class="b2b-required-input form-control"
+                                   name="company" t-att-required="'required' if default.get('type_b2b') else None" />
+                            <span t-if="error.get('company')" class="help-block"><t t-esc="error.get('company')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="b2b-required form-group #{error.get('c_of_c') and 'has-error' or ''} #{default.get('type_b2c') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="c_of_c">KvK nummer</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('c_of_c')" class="form-control"
+                                   name="c_of_c" />
+                            <span t-if="error.get('c_of_c')" class="help-block"><t t-esc="error.get('c_of_c')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="b2b-required form-group #{error.get('tinno') and 'has-error' or ''} #{default.get('type_b2c') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="tinno">BTW nummer</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('tinno')" class="b2b-required-input form-control"
+                                   name="tinno" t-att-required="'required' if default.get('type_b2b') else None" />
+                            <span t-if="error.get('tinno')" class="help-block"><t t-esc="error.get('tinno')"/></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label col-sm-offset-2">Aanhef</label>
+                        <div class="col-sm-3 control-label">
+                            <input type="radio" name="contact_prefix" value="m" checked="checked" /> Dhr.
+                            <input type="radio" name="contact_prefix" value="f" /> Mevr.
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error.get('name') and 'has-error' or ''}">
+                        <label class="col-sm-2 control-label" for="name">Naam</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('name')" class="form-control" name="name" required="True"/>
+                            <span t-if="error.get('name')" class="help-block"><t t-esc="error.get('name')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error.get('address') and 'has-error' or ''}">
+                        <label class="col-sm-2 control-label" for="address">Adres</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('address')" class="form-control" name="address" required="True"/>
+                            <span t-if="error.get('address')" class="help-block"><t t-esc="error.get('address')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''}">
+                        <label class="col-sm-2 control-label" for="zip">Postcode</label>
+                        <div class="col-sm-2">
+                            <input type="text" t-att-value="default.get('zip')" class="form-control" name="zip" required="True"/>
+                            <span t-if="error.get('zip')" class="help-block"><t t-esc="error.get('zip')"/></span>
+                        </div>
+                        <label class="col-sm-1 control-label" for="city">Plaats</label>
+                        <div class="col-sm-3">
+                            <input type="text" t-att-value="default.get('city')" class="form-control" name="city" required="True"/>
+                            <span t-if="error.get('city')" class="help-block"><t t-esc="error.get('city')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''}">
+                        <label class="col-sm-2 control-label" for="country_id">Land</label>
+                        <div class="col-sm-6">
+                            <select name="country_id" class="form-control" required="True">
+                                <option value="">Land...</option>
+                                <t t-foreach="countries or []" t-as="country">
+                                    <option t-att-value="country.id" t-att-selected="'selected' if country.id == default.get('country_id') else None"><t t-esc="country.country_id.name"/></option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div t-attf-class="form-group #{error.get('email') and 'has-error' or ''}">
+                        <label class="col-sm-2 control-label" for="email">Uw email adres</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('email')" class="form-control" name="email" required="True"/>
+                            <span t-if="error.get('email')" class="help-block"><t t-esc="error.get('email')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="form-group #{error.get('phone') and 'has-error' or ''}">
+                        <label class="col-sm-2 control-label" for="phone">Uw telefoon nummer</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('phone')" class="form-control" name="phone" required="True"/>
+                            <span t-if="error.get('phone')" class="help-block"><t t-esc="error.get('phone')"/></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label col-sm-offset-2">Bezorgadres is factuuradres </label>
+                        <div class="col-sm-3 control-label">
+                            <input type="radio" name="delivery_type" value="same" t-att-checked="'checked' if default.get('delivery_same') else None" /> Ja
+                            <input type="radio" name="delivery_type" value="different" t-att-checked="'checked' if default.get('delivery_different')else None" /> Nee
+                        </div>
+                    </div>
+
+                    <div t-attf-class="delivery-required form-group #{default.get('delivery_same') and 'hide' or ''}">
+                        <h2 t-attf-class="col-sm-6 col-sm-offset-2">Bezorgadres</h2>
+                    </div>
+
+                    <div class="delivery-required form-group">
+                        <label class="col-sm-3 control-label col-sm-offset-2">Dit adres is</label>
+                        <div class="col-sm-3 control-label">
+                            <input type="radio" name="order_delivery_type" value="b2c" t-att-checked="'checked' if default.get('type_delivery_b2c') else None" /> Particulier
+                            <input type="radio" name="order_delivery_type" value="b2b" t-att-checked="'checked' if default.get('type_delivery_b2b') else None" /> Zakelijk
+                        </div>
+                    </div>
+                    <div t-attf-class="delivery-required b2b-delivery-required form-group #{error.get('delivery_company') and 'has-error' or ''} #{default.get('type_delivery_b2c') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="company">Bedrijf</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('delivery_company')" class="b2b-delivery-required-input form-control"
+                                   name="delivery_company" t-att-required="'required' if (default.get('type_delivery_b2b') and default.get('delivery_different')) else None" />
+                            <span t-if="error.get('delivery_company')" class="help-block"><t t-esc="error.get('delivery_company')"/></span>
+                        </div>
+                    </div>
+
+                    <div t-attf-class="delivery-required form-group #{default.get('delivery_same') and 'hide' or ''}">
+                        <label class="col-sm-3 control-label col-sm-offset-2">Aanhef</label>
+                        <div class="col-sm-3 control-label">
+                            <input type="radio" name="delivery_contact_prefix" value="m" checked="checked" /> Dhr.
+                            <input type="radio" name="delivery_contact_prefix" value="f" /> Mevr.
+                        </div>
+                    </div>
+                    <div t-attf-class="delivery-required form-group #{error.get('delivery_name') and 'has-error' or ''} #{default.get('delivery_same') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="name">Naam</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('delivery_name')" class="form-control" name="delivery_name"
+                                   t-att-required="'required' if default.get('delivery_different') else None" />
+                            <span t-if="error.get('delivery_name')" class="help-block"><t t-esc="error.get('delivery_name')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="delivery-required form-group #{error.get('delivery_address') and 'has-error' or ''} #{default.get('delivery_same') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="address">Adres</label>
+                        <div class="col-sm-6">
+                            <input type="text" t-att-value="default.get('delivery_address')" class="form-control" name="delivery_address"
+                                   t-att-required="'required' if default.get('delivery_different') else None" />
+                            <span t-if="error.get('delivery_address')" class="help-block"><t t-esc="error.get('delivery_address')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="delivery-required form-group #{error.get('delivery_zip') and 'has-error' or ''} #{default.get('delivery_same') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="zip">Postcode</label>
+                        <div class="col-sm-2">
+                            <input type="text" t-att-value="default.get('delivery_zip')" class="form-control" name="delivery_zip"
+                                   t-att-required="'required' if default.get('delivery_different') else None" />
+                            <span t-if="error.get('delivery_zip')" class="help-block"><t t-esc="error.get('delivery_zip')"/></span>
+                        </div>
+                        <label class="col-sm-1 control-label" for="city">Plaats</label>
+                        <div class="col-sm-3">
+                            <input type="text" t-att-value="default.get('delivery_city')" class="form-control" name="delivery_city"
+                                   t-att-required="'required' if default.get('delivery_different') else None" />
+                            <span t-if="error.get('delivery_city')" class="help-block"><t t-esc="error.get('delivery_city')"/></span>
+                        </div>
+                    </div>
+                    <div t-attf-class="delivery-required form-group #{error.get('delivery_country_id') and 'has-error' or ''} #{default.get('delivery_same') and 'hide' or ''}">
+                        <label class="col-sm-2 control-label" for="delivery_country_id">Land</label>
+                        <div class="col-sm-6">
+                            <select name="delivery_country_id" class="form-control" t-att-required="'required' if default.get('delivery_different') else None">
+                                <option value="">Land...</option>
+                                <t t-foreach="countries or []" t-as="country">
+                                    <option t-att-value="country.id" t-att-selected="'selected' if country.id == default.get('delivery_country_id') else None"><t t-esc="country.country_id.name"/></option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div t-if="request.env.user.id != request.website.user_id.id" class="form-group">
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary">Verder</button>
+                            <a t-attf-href="/shop" class="btn btn-secundary">Nee, nog even verder winkelen</a>
+                        </div>
+                    </div>
+
+                    <div t-if="request.env.user.id == request.website.user_id.id" class="form-group">
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary">Verder als gast</button>
+                            <a t-attf-href="/web/signup?redirect=/shop/checkout" class="btn btn-secundary">Maak een account</a>
+                            <a t-attf-href="/web/login?redirect=/shop/checkout" class="btn btn-secundary">Ik heb al een account</a>
+                            <a t-attf-href="/shop" class="btn btn-secundary">Nee, nog even verder winkelen</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="shop_checkout_payment_item" name="Checkout betaalwijze - order item">
+        <tr>
+            <td><t t-esc="item['product']" /></td>
+            <td class="text-right"><t t-esc="item['qty']" /></td>
+            <td class="text-right"><t t-esc="item['tot_amount']" /> €</td>
+        </tr>
+    </template>
+
+    <template id="shop_checkout_payment" name="Checkout betaalwijze">
+        <t t-call="website.layout">
+            <div class="container mb64">
+                <h1 class="col-sm-offset-2">Checkout: betaalwijze</h1>
+                <p class="col-sm-offset-2 mb32">Kies uw gewenste betaalmethode om uw bestelling af te ronden.</p>
+                <p class="col-sm-offset-2 mb16">Uw bestelling:</p>
+                <div class="row col-sm-offset-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Omschrijving</th>
+                            <th class="text-right">Aantal</th>
+                            <th class="text-right">Bedrag</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="order_items" t-as="item">
+                            <t t-call="s2uecommerce.shop_checkout_payment_item" />
+                        </t>
+                        <tr>
+                            <td></td>
+                            <td>Totaal excl. BTW</td>
+                            <td class="text-right" style="border-top: 2px solid black;"><t t-esc="order['tot_amount_net']" /> €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>BTW</td>
+                            <td class="text-right"><t t-esc="order['tot_amount_vat']" /> €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Totaal incl. BTW</td>
+                            <td class="text-right" style="border-top: 2px solid black;"><t t-esc="order['tot_amount_gross']" /> €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Verzendkosten</td>
+                            <td class="text-right"><t t-esc="order['tot_amount_shipment']" /> €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><b>Totaal te betalen</b></td>
+                            <td class="text-right" style="border-top: 4px solid black;"><b><t t-esc="order['tot_amount_to_pay']" /> €</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="row mb16">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <h2>Kies uw betaalwijze:</h2>
+                        <t t-foreach="acquirers" t-as="acq">
+                            <div class="row">
+                                <t t-set="acq" t-value="acq"/>
+                                <t t-call="s2upayment_{{ acq.provider }}.select_acquirer" />
+                            </div>
+                        </t>
+                    </div>
+                </div>
+                <div class="form-group mt32">
+                    <div class="col-sm-6 col-sm-offset-2">
+                        <a t-attf-href="/shop" class="btn btn-secundary">Nee, nog even verder winkelen</a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="shop_checkout_final" name="Checkout controleren">
+        <t t-call="website.layout">
+            <div class="container mb64">
+                <h1 class="col-sm-10 col-sm-offset-2">Checkout: controleren</h1>
+                <form class="form-horizontal" action="/shop/checkout/final" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="form-group">
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary">Bestelling doorvoeren</button>
+                            <a t-attf-href="/shop" class="btn btn-secundary">Nee, nog even verder winkelen</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="shop_checkout_thanks" name="Bedankt voor uw bestelling">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row mt64">
+                    <h1 class="col-sm-8 col-sm-offset-2">Bedankt voor uw bestelling.</h1>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Wij danken u voor uw bestelling. Voor vragen kunt u ons altijd mailen of telefonisch bereiken.</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="shop_checkout_pending" name="Betaling in behandeling">
+        <t t-call="website.layout">
+            <div class="container mb64">
+                <div class="row">
+                    <h1 class="col-sm-8 col-sm-offset-2">Uw betaling is momenteel in behandeling.</h1>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Door de pagina te aktualiseren kunt u de status van uw betaling controleren.</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="ecommerce_oops" name="Oops">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <h1 class="col-sm-8 col-sm-offset-2">Oops!</h1>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Er is iets fout gegaan tijdens het bestellen.</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">De volgende fout is opgetreden:</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2"><b><t t-esc="error"/></b></p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
+

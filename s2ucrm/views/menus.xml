@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="CRM"
+                  id="menu_crm"
+                  sequence="90"/>
+
+        <menuitem id="menu_crm_crm" name="CRM" parent="menu_crm" sequence="10"/>
+    </data>
+</openerp>
+

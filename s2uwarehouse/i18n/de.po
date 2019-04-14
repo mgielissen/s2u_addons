@@ -1,0 +1,3245 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2uwarehouse
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 13:24+0000\n"
+"PO-Revision-Date: 2019-01-23 14:44+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_tot_surface
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_tot_surface
+msgid "# Surface"
+msgstr "# Fläche"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_tot_weight
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_tot_weight
+msgid "# Weight"
+msgstr "# Gewicht"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_crm_entity_outgoing_count
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_outgoing_count
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_outgoing_count
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_outgoing_count
+msgid "# of Deliveries"
+msgstr "Anzahl der Lieferungen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_invoice_count
+msgid "# of Invoices"
+msgstr "# Rechnungen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_crm_entity_outgoing_open_count
+msgid "# of Open deliveries"
+msgstr "# Offene Lieferungen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_production_count
+msgid "# of Productions"
+msgstr "# Produktionen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_crm_entity_rma_count
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_crm_entity_rma_open_count
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_rma_count
+msgid "# of RMA's"
+msgstr "# RMA's"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_crm_entity_serialnumber_count
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_serialnumber_count
+msgid "# of Serialnumbers"
+msgstr "# Seriennummern"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_transaction_count
+msgid "# of Transactions"
+msgstr "# von Transaktionen"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_location
+msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;+"
+msgstr "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;+"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<b># delivered<br/>\n"
+"                    # ordered</b>"
+msgstr "<b># geliefert <br/> # bestellt</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "<b>- residue -</b>"
+msgstr "<b>- Restmenge -</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "<b>- subset -</b>"
+msgstr "<b>- Teilmenge -</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid "<b>Customer:</b><br/>"
+msgstr "<b>Kunde:</b><br/>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid "<b>Delivery:</b><br/>"
+msgstr "<b>Lieferung:</b><br/>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<b>Weight<br/>\n"
+"                    Surface</b>"
+msgstr "<b>Gewicht <br/> Fläche</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "<b>before</b>"
+msgstr "<b>Vortrag</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid "<b>delivery note</b>"
+msgstr "<b>Lieferschein</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "<b>palette</b>"
+msgstr "<b>Palette</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "<b>palletizing:</b><br/>"
+msgstr "<b>Palettierung:</b><br/>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "<b>stock</b>"
+msgstr "<b>Bestand</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "<b>today</b>"
+msgstr "<b>Heute</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<br/>\n"
+"                <b>Code</b>"
+msgstr ""
+"<br/>\n"
+"                <b>Code</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<br/>\n"
+"                <b>Description</b>"
+msgstr ""
+"<br/>\n"
+"                <b>Bezeichung</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<br/>\n"
+"                <b>Order</b>"
+msgstr ""
+"<br/>\n"
+"                <b>Auftrag</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<br/>\n"
+"                <b>Pallets</b>"
+msgstr ""
+"<br/>\n"
+"                <b>Palleten</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<br/>\n"
+"                <b>Pos</b>"
+msgstr ""
+"<br/>\n"
+"                <b>Pos</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid ""
+"<br/>\n"
+"                <b>VE</b>"
+msgstr ""
+"<br/>\n"
+"                <b>VE</b>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_rma_document
+msgid "<span>:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "<span>:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_location
+msgid ""
+"<strong>\n"
+"                                Product\n"
+"                            </strong>"
+msgstr ""
+"<strong>\n"
+"                                Produkt\n"
+"                            </strong>"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_location
+msgid ""
+"<strong>\n"
+"                                Quantity\n"
+"                            </strong>"
+msgstr ""
+"<strong>\n"
+"                                Anzahl\n"
+"                            </strong>"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_active
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_active
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_active
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_active
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_produced_transaction
+msgid "Add"
+msgstr "Hinzufügen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_address_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_address_id
+msgid "Address"
+msgstr "Adresse"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2985
+#, python-format
+msgid "Address does not belong to the selected customer!"
+msgstr "Adresse gehört nicht zum ausgewählten Kunden!"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_product
+msgid "Amount"
+msgstr "Preis"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_correction_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_product_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_scrapped_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_unit_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+msgid "Are you sure?"
+msgstr "Bist du dir sicher?"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+msgid "Are you sure? All transactions will be reverted."
+msgstr "Bist du sicher? Alle Transaktionen werden rückgängig gemacht."
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+msgid "Are you sure? Items are stored back into warehouse."
+msgstr "Bist du sicher? Die Artikel werden in das Lager zurückgegeben."
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+msgid "Assign"
+msgstr "Zuordnen"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1361
+#, python-format
+msgid "Assign units and items"
+msgstr "Einheiten und Gegenstände zuordnen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_qty_assigned
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_assigned_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_assigned
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_assigned_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_assigned_qty
+msgid "Assigned"
+msgstr "Zugewiesen"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:16
+#, python-format
+msgid "Assigned can not have negative value!"
+msgstr "Zugewiesen kann keinen negativen Wert haben!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:320
+#, python-format
+msgid "Assigned qty can not be more as item qty present in warehouse!"
+msgstr "Zugeordnete Menge kann nicht mehr als Artikelmenge im Lager vorhanden sein!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:318
+#, python-format
+msgid "Assigned qty in warehouse can not be negative!"
+msgstr "Zugeordnete Menge im Lager kann nicht negativ sein!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_name
+msgid "Assignment"
+msgstr "Zuteilen"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_available
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_qty_available
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_available_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_available_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_available
+msgid "Available"
+msgstr "verfügbar"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing,delivery_type:0
+#: selection:s2u.warehouse.outgoing,load_type:0
+#: selection:s2u.warehouse.outgoing,type:0 selection:s2u.warehouse.rma,type:0
+msgid "B2B"
+msgstr "B2B"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing,delivery_type:0
+#: selection:s2u.warehouse.outgoing,load_type:0
+#: selection:s2u.warehouse.outgoing,type:0 selection:s2u.warehouse.rma,type:0
+msgid "B2C"
+msgstr "B2C"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+msgid "Back to concept"
+msgstr "Zurück zum Konzept"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.confirm.pick,picking_method:0
+msgid "Below quantity allowed"
+msgstr "Untere Menge erlaubt"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.confirm.pick,picking_method:0
+msgid "Below/above qty allowed"
+msgstr "Unter / Über Menge erlaubt"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing.unit.product,type:0
+msgid "Box"
+msgstr "Box"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_width
+msgid "Breedte (mm)"
+msgstr "Breite (mm)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_by_customer
+msgid "By customer"
+msgstr "vom Kunden"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.confirm.pick,picking_method:0
+msgid "By serialnumber"
+msgstr "von der Seriennummer"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entität"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventory_location_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventroy_product_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_history_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_saldo_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_incoming_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_outgoing_merge_with
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_produced_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_rma_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_new_location
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_to_production
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.wizard_confirm_and_pick_view
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.produced,state:0
+#: selection:s2u.warehouse.production.used.materials,state:0
+msgid "Canceled"
+msgstr "abgebrochen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_code
+msgid "Code"
+msgstr "Code"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_company_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.move.scrapped,scrap_method:0
+msgid "Complete unit"
+msgstr "Komplette Einheit"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.incoming,state:0
+#: selection:s2u.warehouse.move.correction,state:0
+#: selection:s2u.warehouse.move.product,state:0
+#: selection:s2u.warehouse.move.scrapped,state:0
+#: selection:s2u.warehouse.move.unit,state:0
+#: selection:s2u.warehouse.production.used.materials,state:0
+#: selection:s2u.warehouse.rma,state:0
+msgid "Concept"
+msgstr "Konzept"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_correction_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_product_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_scrapped_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_unit_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.wizard_confirm_and_pick_view
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.wizard_confirm_and_pick_view
+msgid "Confirm and Pick"
+msgstr "Bestätigen und auswählen"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_confirm_pick
+msgid "Confirm and Pick wizard"
+msgstr "Assistent bestätigen und auswählen"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.move.correction,state:0
+#: selection:s2u.warehouse.move.product,state:0
+#: selection:s2u.warehouse.move.scrapped,state:0
+#: selection:s2u.warehouse.move.unit,state:0
+msgid "Confirmed"
+msgstr "Bestätigt"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_delivery_contact_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_contact_id
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2983
+#, python-format
+msgid "Contact does not belong to the selected customer!"
+msgstr "Kontakt gehört nicht zum ausgewählten Kunden!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:346
+#, python-format
+msgid "Contact does not belong to the selected delivery!"
+msgstr "Kontakt gehört nicht zur ausgewählten Lieferung!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_contact_id
+msgid "Contactpersoon"
+msgstr "Kontaktperson"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_correction_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_correction_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_correction_tree
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_pallet_correction_tree
+msgid "Correction"
+msgstr "Korrektur"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:143
+#, python-format
+msgid "Correction qty must have a positive value!"
+msgstr "Korrekturmenge muss einen positiven Wert haben!"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_move_correction
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_movement_correction
+msgid "Correction/found"
+msgstr "Korrektur/gefunden"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_count_unit
+msgid "Count unit"
+msgstr "Einheit zählen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_create_id
+msgid "Create"
+msgstr "erstellen"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_create_production_from_outgoing
+msgid "Create production"
+msgstr "Produktion anlegen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_create_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_create_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_entity_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_entity_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_entity_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_partner_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_entity_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_saldo
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_date_entry
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_date_entry
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_date_entry
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_date_entry
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_entry_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_date_produced
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_transaction_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_unit_date
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid "Date"
+msgstr "Datum"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_date_till
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_date_till
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_date_till
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_date_till
+msgid "Date Till"
+msgstr "Datum bis"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_date_delivery
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_date_delivery
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_date_delivery
+msgid "Date delivery"
+msgstr "Lieferdatum"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_date_delivery
+msgid "Date retour"
+msgstr "Retourdatum"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_default
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_default
+msgid "Default"
+msgstr "Standard"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.crm_entity_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_calendar
+msgid "Deliveries"
+msgstr "Lieferungen"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_incoming
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_produced
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_delivery_entity_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_outgoing_type_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+msgid "Delivery"
+msgstr "Lieferung"
+
+#. module: s2uwarehouse
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_delivery
+msgid "Delivery Note"
+msgstr "Lieferschein"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+msgid "Delivery and Load address"
+msgstr "Liefer- und Ladeadresse"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_descript
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_product_detail
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_product_detail
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_product_detail
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_product_detail
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_product_detail
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_rel_product_detail
+msgid "Details"
+msgstr "Details"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_delivery_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_inventory_location_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_inventory_product_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_outgoing_card_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_pallets_history_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_pallets_saldo_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_rma_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_unit_card_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_display_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_distribution
+msgid "Distribution"
+msgstr "Verteilung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+#: selection:s2u.warehouse.incoming,state:0
+#: selection:s2u.warehouse.outgoing,state:0
+#: selection:s2u.warehouse.produced,state:0 selection:s2u.warehouse.rma,state:0
+msgid "Done"
+msgstr "Fertig"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.unit,type:0
+msgid "Doos"
+msgstr "Box"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.unit,type:0
+msgid "Eenheid"
+msgstr "Einheit"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_entity_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_entity_id
+msgid "Entity"
+msgstr "Entität"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.confirm.pick,picking_method:0
+msgid "Exact quantity"
+msgstr "Genaue menge"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing.unit.product,type:0
+msgid "Existing"
+msgstr "Bestehende"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_date_delivery
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_date_delivery
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+msgid "Expected"
+msgstr "Erwartete"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_pallet_factor
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_pallet_factor
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_pallet_factor
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_pallet_factor
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_pallet_factor
+msgid "Factor"
+msgstr "Faktor"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_from_location_id
+msgid "From location"
+msgstr "Vom Ort"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_from_unit_id
+msgid "From unit"
+msgstr "Von Einheit"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_weight
+msgid "Gewicht (kg)"
+msgstr "Gewicht (kg)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,help:s2uwarehouse.field_s2u_warehouse_outgoing_todo_type
+msgid "Give info about the shipment: normal, part or rest delivery of a specific SO."
+msgstr "Geben Sie Informationen über die Sendung an: normale, Teil- oder Restlieferung einer bestimmten SO."
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_group_items
+msgid "Group"
+msgstr "Gruppe"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_height
+msgid "Hoogte/dikte (mm)"
+msgstr "Höhe/Dicke (mm)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_delivery_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_inventory_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_inventory_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_outgoing_card_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_pallets_history_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_pallets_saldo_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_rma_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_unit_card_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,help:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_group_items
+msgid "If you want all products on the same pallet or in the same box, select this option."
+msgstr "Wenn Sie möchten, dass alle Produkte auf der gleichen Palette oder im selben Karton liegen, wählen Sie diese Option."
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.produced,state:0
+msgid "In production"
+msgstr "In Produktion"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_on_unit
+msgid "In/on unit"
+msgstr "In/auf Einheit"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_incoming
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_incoming_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_incoming_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_shipment_incoming
+#: selection:s2u.warehouse.location,usage:0
+msgid "Incoming"
+msgstr "Eingehend"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_incoming_line_id
+msgid "Incoming line"
+msgstr "Eingehende Linie"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_incoming_line
+msgid "Incoming line (purchase order)"
+msgstr "Eingehende Linie(Bestellung)"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.s2u_warehouse_inventory_location_view_action
+#: model:ir.ui.menu,name:s2uwarehouse.menu_iranus_s2u_inventory_location
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventory_location_view
+msgid "Inventory Location"
+msgstr "Lagerort"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_location
+msgid "Inventory Location till date"
+msgstr "Lagerort bis Datum"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "Inventory Pallet History for"
+msgstr "Lagerpaletten-Historie für"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_saldo
+msgid "Inventory Pallet Saldo till date"
+msgstr "Lagerpalette Saldo bis Datum"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.s2u_warehouse_inventory_product_view_action
+#: model:ir.ui.menu,name:s2uwarehouse.menu_iranus_s2u_inventory_product
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventroy_product_view
+msgid "Inventory Product"
+msgstr "Inventarprodukt"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_product
+msgid "Inventory Product till date"
+msgstr "IInventarprodukt bis Datum"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_account_invoice_line
+msgid "Invoice line"
+msgstr "Rechnungszeile"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+msgid "Invoices"
+msgstr "Rechnungen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_unitproduct_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_unitproduct_id
+msgid "Item"
+msgstr "Artikel"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_item_picking
+msgid "Item picking"
+msgstr "Artikelauswahl"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:312
+#, python-format
+msgid "Item qty in warehouse can not be negative!"
+msgstr "Artikelmenge im Lager kann nicht negativ sein!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_product_id
+msgid "Item/product"
+msgstr "Artikel/Produkt"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+msgid "Items"
+msgstr "Artikel"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_items_assigned_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_items_assigned_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+msgid "Items assigned"
+msgstr "Zugeordnete Artikel"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_move_product
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_movement_product
+msgid "Items from unit"
+msgstr "Artikel von Einheit"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.act_view_warehouse_produced_transaction
+msgid "Items produced"
+msgstr "Produzierte Artikel"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_entity_id
+msgid "Klant"
+msgstr "Kunde"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_delivery_lang
+msgid "Language"
+msgstr "Sprache"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_delivery___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_inventory_location___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_inventory_product___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_outgoing_card___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_pallets_history___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_pallets_saldo___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_rma___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2uwarehouse_print_unit_card___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction___last_update
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_write_uid
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_location_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_inventory_product_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_history_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_report_s2u_warehouse_pallets_saldo_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_write_date
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.produced.line,type:0
+msgid "Left over"
+msgstr "Rest"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.location,usage:0
+msgid "Leftover"
+msgstr "Rest"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_length
+msgid "Lengte (mm)"
+msgstr "Länge (mm)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_delivery_address
+msgid "Leveradres"
+msgstr "Leveradres"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_entity_id
+msgid "Leverancier"
+msgstr "Lieferant"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_incoming_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_incoming_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_incoming_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_outgoing_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_tree
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_tree
+msgid "Levering"
+msgstr "Lieferung"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_delivery_country_id
+msgid "Leveringsland"
+msgstr "Lieferland"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_line_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_line_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_line_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_line_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+msgid "Lines"
+msgstr "Linien"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_load_address
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+msgid "Loading address"
+msgstr "Verladeadresse"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_load_entity_id
+msgid "Loading entity"
+msgstr "Verlade Entität"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "Loading place :<br/>"
+msgstr "Beladeort :<br/>"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_current_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_current_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_location_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_location
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_product
+msgid "Location"
+msgstr "Ort"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_location
+msgid "Location Warehouse"
+msgstr "Lagerort"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_unit_product2
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_unit_product
+msgid "Location/unit"
+msgstr "Location/unit"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_location
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_location
+msgid "Locations"
+msgstr "Orte"
+
+#. module: s2uwarehouse
+#: model:res.groups,name:s2uwarehouse.group_warehouse_manager
+msgid "Manager (s2uFramework)"
+msgstr "Manager (s2uFramework)"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_outgoing_merge_with
+msgid "Merge"
+msgstr "Merge"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_outgoing_merge_with
+msgid "Merge delivery with"
+msgstr "Merge delivery with"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.act_view_warehouse_outgoing_merge_with
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_merge_with_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_merge_with_outgoing_id
+msgid "Merge with"
+msgstr "Merge with"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_new_location
+msgid "Move"
+msgstr "bewegen"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_product_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_product_tree
+msgid "Move items"
+msgstr "Artikel verschieben"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:433
+#, python-format
+msgid "Move qty must have a positive value!"
+msgstr "Verschobene Menge muss einen positiven Wert haben!"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_new_location
+msgid "Move to location"
+msgstr "An Ort verschieben"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_unit_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_unit_tree
+msgid "Move unit"
+msgstr "Einheit verschieben"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_moveproduct_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_moveunit_id
+msgid "Movement"
+msgstr "Bewegung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_movement
+msgid "Movements"
+msgstr "Bewegungen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_full_name
+msgid "Name"
+msgstr "Bezeichnung"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.act_view_warehouse_unit_product_new_location
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_location_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_location_id
+#: selection:s2u.warehouse.move.unit,movement_to:0
+msgid "New location"
+msgstr "Neuer Ort"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_to_unit_id
+msgid "New unit"
+msgstr "Neue Einheit"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.rma.add.item,product_usable:0
+msgid "No"
+msgstr "Nein"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1556
+#, python-format
+msgid "No VAT is defined for product %s!"
+msgstr "Für das Produkt %s ist keine Mehrwertsteuer definiert !"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2845
+#, python-format
+msgid "No customer selected! Merge not possible."
+msgstr "Kein Kunde ausgewählt Zusammenführen nicht möglich."
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1511
+#, python-format
+msgid "No financial account is defined for product %s!"
+msgstr "Es ist kein Finanzkonto für das Produkt %s definiert!"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.location,usage:0
+#: selection:s2u.warehouse.outgoing.todo,type:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/wizards/confirm_and_pick.py:250
+#, python-format
+msgid "Not enough present for product %s to deliver!"
+msgstr "Nicht genug anwesend für Produkt %s zu liefern!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_notusable_qty
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+#: selection:s2u.warehouse.location,usage:0
+msgid "Not usable"
+msgstr "nicht nutzbar"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_note
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "Note"
+msgstr "Notiz"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_notes
+msgid "Notes"
+msgstr "Notizen"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1171
+#, python-format
+msgid "Nothing is assigned at the moment, \"confirm\" is not possible!"
+msgstr "Zur Zeit ist nichts vorgemerkt ,\"Bestätigen\" ist nicht möglich!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2261
+#, python-format
+msgid "Nothing is received at the moment, \"done\" is not possible!"
+msgstr "Im Moment wird nichts empfangen, \"erledigt\" ist nicht möglich!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1644
+#, python-format
+msgid "Nothing is shipped at the moment, \"done\" is not possible!"
+msgstr "Im Moment wird nichts versendet,\"fertig\" ist nicht möglich!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_name
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "Number"
+msgstr "Nummer"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.move.unit,movement_to:0
+msgid "On other pallet"
+msgstr "Auf anderer Palette"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_on_unit
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_on_unit
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_on_unit
+msgid "On unit"
+msgstr "auf Einheit"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+msgid "Opdracht"
+msgstr "Zuteilung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.crm_entity_form
+msgid "Open"
+msgstr "Offen"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "Order from"
+msgstr "Bestellung vom"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_reference
+msgid "Our reference"
+msgstr "Unsere Reference"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_outgoing
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_account_invoice_line_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_todo_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_outgoing_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_shipment_outgoing
+#: selection:s2u.warehouse.location,usage:0
+msgid "Outgoing"
+msgstr "Ausgehend"
+
+#. module: s2uwarehouse
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_outgoing_card
+msgid "Outgoing Card"
+msgstr "Ausgangskarte"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_outgoing_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_outgoing_line_id
+msgid "Outgoing line"
+msgstr "Ausgangszeile"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_todo
+msgid "Outgoing todo (sales order)"
+msgstr "Ausgehende zutun (Kundenauftrag)"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_outgoing_type
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_outgoing_type
+msgid "Outgoing types"
+msgstr "Ausgehende Typen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_line_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.outgoing_create_production_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_available_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_form
+msgid "Outgoings"
+msgstr "Ausgehende"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid "Page :"
+msgstr "Seite :"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_pallet
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_add_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_add_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_add_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_pallet_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_saldo
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_pallet_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_pallet_tree
+#: selection:s2u.warehouse.unit,type:0
+msgid "Pallet"
+msgstr "Palette"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_pallet_correction
+msgid "Pallet Correction"
+msgstr "Palette Korrektur"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.s2u_warehouse_pallets_history_view_action
+#: model:ir.ui.menu,name:s2uwarehouse.menu_iranus_s2u_pallets_history2
+msgid "Pallet History"
+msgstr "Paletten-Historie"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.s2u_warehouse_pallets_saldo_view_action
+#: model:ir.ui.menu,name:s2uwarehouse.menu_iranus_s2u_pallets_saldo2
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_saldo_view
+msgid "Pallet Saldo"
+msgstr "Paletten Saldo"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_pallet_correction
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_shipment_pallet_correction2
+msgid "Pallet correction"
+msgstr "Palletten Korrektur"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_pallet
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_ids
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_pallet
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+msgid "Pallets"
+msgstr "Paletten"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_history_view
+msgid "Pallets History"
+msgstr "Paletten History"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_incoming_pallet_retour
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+msgid "Pallets retour"
+msgstr "Paletten retour"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_parent_id
+msgid "Parent"
+msgstr "Vorläufer"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_parent_id
+msgid "Parent unit"
+msgstr "Vorläufer Einheit"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing.todo,type:0
+msgid "Part"
+msgstr "Teil"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing,state:0
+#: selection:s2u.warehouse.produced,state:0
+msgid "Pending"
+msgstr "steht aus"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_picking_method
+msgid "Picking method"
+msgstr "Aufstellungsmethode"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_date_produced
+msgid "Planning"
+msgstr "Planung"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:479
+#, python-format
+msgid "Please confirm production first, before producing goods!"
+msgstr "Bitte erst Produktion bestätigen, bevor Sie die Ware produzieren!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:3156
+#, python-format
+msgid "Please confirm this RMA shipment first, before receiving goods!"
+msgstr "Bitte bestätigen Sie diesen RMA-Versand zuerst, bevor Sie Waren erhalten!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2381
+#, python-format
+msgid "Please confirm this incoming shipment first, before receiving goods!"
+msgstr "Bitte bestätigen Sie diesen Wareneingang, bevor Sie Waren erhalten!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1923
+#, python-format
+msgid "Please confirm this outgoing shipment first, before shipping goods!"
+msgstr "Bitte bestätigen Sie diesen Versand, bevor Sie Waren versenden!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1526
+#, python-format
+msgid "Please define Country VAT rule for country %s!"
+msgstr "Bitte definieren Sie die Mehrwertsteuerregel für das Land %s!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:3240
+#: code:addons/s2uwarehouse/models/shipment.py:3293
+#: code:addons/s2uwarehouse/models/shipment.py:3353
+#: code:addons/s2uwarehouse/models/shipment.py:3409
+#: code:addons/s2uwarehouse/models/shipment.py:3497
+#: code:addons/s2uwarehouse/models/shipment.py:3552
+#: code:addons/s2uwarehouse/models/shipment.py:3612
+#: code:addons/s2uwarehouse/models/shipment.py:3667
+#, python-format
+msgid "Please define a location for type 'Not usable'!"
+msgstr "Bitte geben Sie einen Ort für den Typ \"Nicht verwendbar\" an!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:3130
+#, python-format
+msgid "Please define incoming location for warehouse!"
+msgstr "Bitte geben Sie den Lagerort für eingehende Waren an!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:499
+#: code:addons/s2uwarehouse/models/production.py:583
+#: code:addons/s2uwarehouse/models/shipment.py:2394
+#: code:addons/s2uwarehouse/models/shipment.py:2544
+#: code:addons/s2uwarehouse/models/shipment.py:3169
+#: code:addons/s2uwarehouse/models/shipment.py:3429
+#, python-format
+msgid "Please enter a valid value for 'Qty'!"
+msgstr "Bitte geben Sie einen gültigen Wert für 'Menge' ein!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2981
+#, python-format
+msgid "Please select a b2b customer!"
+msgstr "Bitte wählen Sie einen B2B-Kunden aus!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:344
+#, python-format
+msgid "Please select a b2b delivery!"
+msgstr "Bitte wählen Sie eine B2B Lieferung!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:357
+#, python-format
+msgid "Please select a b2b loading!"
+msgstr "Bitte wähle ein B2B Ladung!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2988
+#, python-format
+msgid "Please select a b2c customer!"
+msgstr "Bitte wählen Sie einen b2c-Kunden aus!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:349
+#, python-format
+msgid "Please select a b2c delivery!"
+msgstr "Bitte wählen Sie eine B2C Lieferung!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:360
+#, python-format
+msgid "Please select a b2c loading!"
+msgstr "Bitte wähle ein B2C Ladung!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_product_value
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_product_value
+msgid "Price/value"
+msgstr "Preis/Anzahl"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventory_location_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventroy_product_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_history_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_saldo_view
+msgid "Print"
+msgstr "Drucken"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+msgid "Produce"
+msgstr "produzieren"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_produced_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_produced_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_produced_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_produced_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_produced_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_produced_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_produced_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_produced_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: selection:s2u.warehouse.location,usage:0
+msgid "Produced"
+msgstr "produziert"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_produced_line
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_produced_line_id
+msgid "Produced line"
+msgstr "Produzierte Linie"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: selection:s2u.warehouse.produced.line,type:0
+msgid "Producing"
+msgstr "produzieren"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_product_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_rel_product_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_product
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_rma_document
+msgid "Product"
+msgstr "Produkt"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_sn_registration
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_sn_registration
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_sn_registration
+msgid "Product registration"
+msgstr "Product registration"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_produced
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_prodproduct_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_produnit_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_produced2
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_production2
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_to_production
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: selection:s2u.warehouse.outgoing,state:0
+msgid "Production"
+msgstr "Produktion"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1418
+#, python-format
+msgid "Production for Delivery"
+msgstr "Produktion für Lieferung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_calendar
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_tree
+msgid "Productions"
+msgstr "Produktionen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_unitproduct_ids
+msgid "Products"
+msgstr "Produkte"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2840
+#, python-format
+msgid "Programmation error: the expected model for this action is 's2u.warehouse.outgoing'. The provided one is '%d'."
+msgstr "Programmierungsfehler: Das erwartete Modell für diese Aktion lautet 's2u.warehouse.outgoing'. Der zur Verfügung gestellte ist '%d'."
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:417
+#, python-format
+msgid "Programmation error: the expected model for this action is 's2u.warehouse.produced'. The provided one is '%d'."
+msgstr "Programmierungsfehler: Das erwartete Modell für diese Aktion ist 's2u.warehouse.produced'. Der zur Verfügung gestellte ist '%d'."
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1877
+#: code:addons/s2uwarehouse/models/unit.py:551
+#: code:addons/s2uwarehouse/models/unit.py:602
+#, python-format
+msgid "Programmation error: the expected model for this action is 's2u.warehouse.unit.product'. The provided one is '%d'."
+msgstr "Programmierungsfehler: Das erwartete Modell für diese Aktion ist 's2u.warehouse.unit.product'. Der zur Verfügung gestellte ist '%d'."
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:415
+#: code:addons/s2uwarehouse/models/shipment.py:2838
+#: code:addons/s2uwarehouse/models/unit.py:549
+#: code:addons/s2uwarehouse/models/unit.py:600
+#, python-format
+msgid "Programmation error: wizard action executed without active_model or active_id in context."
+msgstr "Programmierungsfehler: Assistentenaktion, die im Kontext ohne Active Model oder Active ID ausgeführt wird."
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_create_production_project
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_project
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_project
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_project
+msgid "Project"
+msgstr "Projekt"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_product_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_product_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_pallet_retour_pallet_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_product_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_product_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_product_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_qty_received
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_product_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_qty
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_rma_document
+msgid "Qty"
+msgstr "Menge"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_assigned_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_assigned_qty
+msgid "Qty assigned"
+msgstr "Menge zugewiesen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_product_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_new_location_qty_move
+msgid "Qty move"
+msgstr "Menge bewegen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_qty_open
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_qty_open
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_qty_open
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_qty_open
+msgid "Qty open"
+msgstr "Menge offen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_to_production_qty_production
+msgid "Qty production"
+msgstr "Menge Produktion"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_qty_received
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_qty_received
+msgid "Qty received"
+msgstr "Menge erhalten"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_available_qty_reserved
+msgid "Qty reserved"
+msgstr "Menge reserviert"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_product_qty
+msgid "Qty scrapped"
+msgstr "Menge verschrottet"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_product_qty
+msgid "Qty used"
+msgstr "Menge verwendet"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_inventory_product
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_saldo
+msgid "Quantity"
+msgstr "Menge"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_rma
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_rma
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_rma
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_rma_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_rma_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_rma_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_rma_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_shipment_rma
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_rma_document
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_tree
+#: selection:s2u.warehouse.location,usage:0
+#: selection:s2u.warehouse.outgoing,state:0
+msgid "RMA"
+msgstr "RMA"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_date_rma
+msgid "RMA Date"
+msgstr "RMA Datum"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_rma_line_id
+msgid "RMA Line"
+msgstr "RMA Linie"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_line_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_rma_line_id
+msgid "RMA line"
+msgstr "RMA linie"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_rma_line
+msgid "RMA line (returning goods from customer)"
+msgstr "RMA linie (returning goods from customer)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_rma_notusable_id
+msgid "RMA not usable"
+msgstr "RMA nicht benutzbar"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_rma_notusable
+msgid "RMA not usable (returning goods from customer not usable)"
+msgstr "RMA nicht benutzbar (returning goods from customer not usable)"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_rma_document
+msgid "RMA number"
+msgstr "RMA Nummer"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.crm_entity_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_calendar
+msgid "RMA's"
+msgstr "RMA's"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_is_ready
+msgid "Ready"
+msgstr "Bereit"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_incoming_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_incoming_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_produced_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_rma_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+msgid "Receive goods"
+msgstr "Ware erhalten"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_rma_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_rma_transaction
+msgid "Receive goods for RMA"
+msgstr "Ware erhalten für RMA"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_received_qty
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_received_qty
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_incoming_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_rma_transaction
+msgid "Received"
+msgstr "erhalten"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_reference
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_reference
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_reference
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_reference
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_rma_document
+msgid "Reference"
+msgstr "Referenz"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_remarks
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_remarks
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_scrapped_form
+msgid "Remarks"
+msgstr "Anmerkung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+msgid "Reopen"
+msgstr "Wieder öffnen"
+
+#. module: s2uwarehouse
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_print_inventory_location
+msgid "Report Inventory Location"
+msgstr "Bericht Lagerstandort"
+
+#. module: s2uwarehouse
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_print_inventory_product
+msgid "Report Inventory Product"
+msgstr "Bericht Lagerprodukt"
+
+#. module: s2uwarehouse
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_print_pallets_history
+msgid "Report Pallet History"
+msgstr "Bericht Paletten History"
+
+#. module: s2uwarehouse
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_print_pallets_saldo
+msgid "Report Pallet Saldo"
+msgstr "Bericht Paletten Balance"
+
+#. module: s2uwarehouse
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_reporting
+msgid "Reports"
+msgstr "Berichte"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+#: selection:s2u.warehouse.production.used.materials,state:0
+msgid "Reserved"
+msgstr "reserviert"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing.todo,type:0
+msgid "Rest"
+msgstr "Rest"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_item_serialnumbers
+msgid "S/N"
+msgstr "S/N"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_sn_registration
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_sn_registration
+msgid "S/N registration"
+msgstr "S/N registration"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_scrap_method
+msgid "Scrap"
+msgstr "Schrott"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_scrapped_id
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_scrapped_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_scrapped_tree
+msgid "Scrapped"
+msgstr "Verschrottet"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:27
+#, python-format
+msgid "Scrapped qty must have a positive value!"
+msgstr "Verschrottete Menge muss einen positiven Wert haben!"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_move_scrapped
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_movement_scrapped
+#: selection:s2u.warehouse.produced.line,type:0
+msgid "Scrapped/lost"
+msgstr "Verschrottet / verloren"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_available_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_location_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_correction_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_product_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_scrapped_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_unit_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_type_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_pallet_correction_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_pallet_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_serialnumber_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_transaction_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_search_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_uom_search_view
+msgid "Search"
+msgstr "Suchen"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2155
+#, python-format
+msgid "Sequence for creating s2u.warehouse.incoming number not exists!"
+msgstr "Sequenz zum Erstellen der s2u.warehouse.incoming-Nummer existiert nicht!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:382
+#, python-format
+msgid "Sequence for creating s2u.warehouse.outgoing number not exists!"
+msgstr "Sequenz zum Erstellen von s2u.warehouse.outgoing number existiert nicht!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2940
+#, python-format
+msgid "Sequence for creating s2u.warehouse.rma number not exists!"
+msgstr "Sequenz zum Erstellen der s2u.warehouse.rma-Nummer existiert nicht!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:25
+#, python-format
+msgid "Sequence for creating s2u.warehouse.unit not exists!"
+msgstr "Sequenz zum Erstellen von s2u.warehouse.unit existiert nicht!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:754
+#, python-format
+msgid "Sequence for creating s2u.warehouse.used.materials number not exists!"
+msgstr "Sequenz zur Erstellung der s2u.warehouse.used.materials-Nummer existiert nicht!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_line_serialnumber
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_notusable_serialnumber
+msgid "Serial number"
+msgstr "Ordnungsnummer"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_serialnumber
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_serialnumber
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_serialnumber_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_serialnumber
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_rel_serialnumber
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_rma_document
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_serialnumber_form
+msgid "Serialnumber"
+msgstr "Ordnungsnummer"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/wizards/confirm_and_pick.py:200
+#, python-format
+msgid "Serialnumber %s not found!"
+msgstr "Ordnungsnummerr %s nicht gefunden\""
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_serialnumber
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_confirm_pick_serialnumbers
+#: model:ir.ui.view,arch_db:s2uwarehouse.crm_entity_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_serialnumber_tree
+msgid "Serialnumbers"
+msgstr "Ordnungsnummer"
+
+#. module: s2uwarehouse
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_settings
+msgid "Settings"
+msgstr "Einstellungen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_add_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_qty_ship
+msgid "Ship"
+msgstr "versenden"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_item_outgoing_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_outgoing_id
+msgid "Shipment"
+msgstr "Sendung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_shipment
+msgid "Shipments"
+msgstr "Sendungen"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_shipped_qty
+msgid "Shipped"
+msgstr "Versandt"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_shipped_saldo_qty
+msgid "Shipped saldo"
+msgstr "Versand Saldo"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.move.scrapped,scrap_method:0
+msgid "Some products"
+msgstr "Einige produkte"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_source_model
+msgid "Source model"
+msgstr "Quellmodell"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_source_id
+msgid "Source rec id"
+msgstr "Quelle rec id"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.outgoing_create_production_form
+msgid "Start production"
+msgstr "Starten derProduktion"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_line_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_state
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_state
+msgid "State"
+msgstr "Bundesland"
+
+#. module: s2uwarehouse
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_stock
+msgid "Stock"
+msgstr "Lager"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_supplier_no
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_supplier_no
+msgid "Supplier No."
+msgstr "Lieferantennummer"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_delivery_tinno
+msgid "TIN no."
+msgstr "USt-ID-Nr."
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:360
+#, python-format
+msgid "The pallet you want to put this pallet on is already placed on another pallet!"
+msgstr "Die Palette, auf die Sie diese Palette legen möchten, ist bereits auf einer anderen Palette platziert!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:59
+#: code:addons/s2uwarehouse/models/move.py:173
+#: code:addons/s2uwarehouse/models/move.py:298
+#, python-format
+msgid "The unit you are referencing does not exists anymore!"
+msgstr "Die von Ihnen referenzierte Einheit existiert nicht mehr!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:461
+#: code:addons/s2uwarehouse/models/move.py:464
+#, python-format
+msgid "The unit you are referencing does not exists!"
+msgstr "Die von Ihnen referenzierte Einheit existiert nicht r!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:877
+#: code:addons/s2uwarehouse/models/shipment.py:931
+#: code:addons/s2uwarehouse/models/shipment.py:1029
+#: code:addons/s2uwarehouse/models/shipment.py:1115
+#, python-format
+msgid "There is no po account defined for product %s!"
+msgstr "Es ist kein po-Konto für das Produkt definiert%s!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:879
+#: code:addons/s2uwarehouse/models/shipment.py:933
+#: code:addons/s2uwarehouse/models/shipment.py:1031
+#: code:addons/s2uwarehouse/models/shipment.py:1117
+#, python-format
+msgid "There is no stock account defined for product %s!"
+msgstr "Es ist kein Lagerkonto für das Produkt definiert %s!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:362
+#, python-format
+msgid "There is nothing produced, you can not close this production!"
+msgstr "Es wird nichts produziert, Sie können diese Produktion nicht abschließen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:3159
+#, python-format
+msgid "This RMA is closed, you can not receive goods for it!"
+msgstr "Diese RMA ist geschlossen, Sie können keine Ware dafür erhalten!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2384
+#, python-format
+msgid "This incoming shipment is closed, you can not receive goods for it!"
+msgstr "Diese eingehende Sendung ist geschlossen, Sie können keine Ware dafür erhalten!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1926
+#, python-format
+msgid "This outgoing shipment is closed, you can not ship goods for it!"
+msgstr "Diese ausgehende Sendung ist geschlossen, Sie können dafür keine Ware versenden!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:357
+#, python-format
+msgid "This pallet contains already other units on it, you can not place it on another pallet!"
+msgstr "Diese Palette enthält bereits andere Einheiten, Sie können sie nicht auf eine andere Palette legen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:354
+#, python-format
+msgid "This pallet is assigned, you can not place it on another pallet!"
+msgstr "Diese Palette ist zugewiesen, Sie können sie nicht auf einer anderen Palette ablegen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:482
+#, python-format
+msgid "This production is closed, you can not produce new goods!"
+msgstr "Diese Produktion ist geschlossen, Sie können keine neuen Waren herstellen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:201
+#, python-format
+msgid "This unit contains other units on it, type 'Box ' not allowed!"
+msgstr "Dieses Einheit enthält andere Einheiten, Typ 'Box' ist nicht zulässig!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:203
+#, python-format
+msgid "This unit contains other units on it, you can not put this unit on another unit!"
+msgstr "Dieses Einheit enthält andere Einheiten, Sie können dieses Einheit nicht an ein anderes Einheit anschließen!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_movement_to
+msgid "To"
+msgstr "Bis"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.act_view_warehouse_unit_product_to_production
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_to_production
+msgid "To production"
+msgstr "Zur Produktion"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: selection:s2u.warehouse.outgoing,state:0
+msgid "Todo"
+msgstr "Zu erledigen"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_available_tree
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_tree
+msgid "Total"
+msgstr "Gesamt"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_trailer_no
+msgid "Trailer-No."
+msgstr "Trailer-No."
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "Trailer.-No.:"
+msgstr "Trailer.-Nr.:"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_unit_product_transaction
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_trans_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transactions
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_unit_product_transaction2
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_correction_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_product_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_scrapped_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_move_unit_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_serialnumber_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_form
+msgid "Transactions"
+msgstr "Transactions"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_delivery_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_load_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_todo_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_type_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_line_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_type
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_type_tree
+msgid "Type"
+msgstr "Typ"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_incoming_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_rma_form
+msgid "Undo"
+msgstr "Rückgängig machen"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_move_unit
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_product_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_assigned_unit_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_type
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_product_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_assigned_unit_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_pallet_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_unit_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_unit_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_movement_unit
+#: selection:s2u.warehouse.outgoing.unit.product,type:0
+msgid "Unit"
+msgstr "Einheit"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1939
+#, python-format
+msgid "Unit %s has child units on it, please select this unit over units and not over items!"
+msgstr "Einheit %s hat untergeordnete Einheiten, bitte wählen Sie diese Einheit über Einheiten und nicht über Artikeln!"
+
+#. module: s2uwarehouse
+#: model:ir.actions.report,name:s2uwarehouse.s2u_warehouse_unit_card
+msgid "Unit Card"
+msgstr "Einheitenkarte"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_name
+msgid "Unit ID"
+msgstr "Einheiten ID"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_pallet_factor
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_pallet_factor
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_pallet_factor
+msgid "Unit factor"
+msgstr "Faktor für die Einheit"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:18
+#, python-format
+msgid "Unit is already assigned!"
+msgstr "Einheit ist bereits vergeben!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_unit_product_line_unitproduct_id
+msgid "Unit product"
+msgstr "Einheit Produkt"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_product_id
+msgid "Unit/Product"
+msgstr "Unit/Product"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_unit
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_add_pallets
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_add_pallets
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_unit_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_pallets
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_unit
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+msgid "Units"
+msgstr "Einheiten"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_units_assigned_ids
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_produced_units_assigned_ids
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_outgoing_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_produced_form
+msgid "Units assigned"
+msgstr "Zugeordnete Einheiten"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:194
+#, python-format
+msgid "Units placed on another unit can only be of type 'Box'!"
+msgstr "Einheiten, die auf einer anderen Einheit platziert sind, können nur vom Typ 'Box' sein!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/uom.py:53
+#, python-format
+msgid "Unknown value [%s] for uom!"
+msgstr "Unbekannter Wert [% s] für Maßeinheit!"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_uom
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_uom
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_name
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_uom
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_uom_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_uom_tree
+msgid "Uom"
+msgstr "Maßeinheit"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_name_lower
+msgid "Uom (lower)"
+msgstr "Maßeinheit (untere)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_name_lower_singular
+msgid "Uom (lower/singular)"
+msgstr "Maßeinheit (untere/einmalig)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_uom_name_singular
+msgid "Uom (singular)"
+msgstr "Maßeinheit (einmalig)"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_add_item_product_usable
+msgid "Usable"
+msgstr "verwendbar"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_location_usage
+msgid "Usage"
+msgstr "Verwendung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+#: selection:s2u.warehouse.production.used.materials,state:0
+msgid "Used"
+msgstr "benutzt"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_production_used_materials
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_production_used_materials
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_item_usedmaterials_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_production_used_materials_line_usedmaterials_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_unit_product_transaction_usedmaterials_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_production_used_materials2
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_production_used_materials_tree
+msgid "Used materials"
+msgstr "Verwendete Materialien"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:726
+#, python-format
+msgid "Used qty must have a positive value!"
+msgstr "Verwendete Menge muss einen positiven Wert haben!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_correction_user_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_product_user_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_scrapped_user_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_move_unit_user_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_user_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_user_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_user_id
+msgid "User"
+msgstr "Benutzer"
+
+#. module: s2uwarehouse
+#: model:res.groups,name:s2uwarehouse.group_warehouse_user
+msgid "User (s2uFramework)"
+msgstr "Benutzer (s2uFramework)"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid "VAT:"
+msgstr "MwSt."
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.outgoing.unit.product,type:0
+msgid "Virtual"
+msgstr "Virtuell"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.incoming,state:0 selection:s2u.warehouse.rma,state:0
+msgid "Wait for goods"
+msgstr "Warten auf Ware"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_entity_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_incoming_warehouse_id
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_name
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_rma_warehouse_id
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_tree
+msgid "Warehouse"
+msgstr "Lager"
+
+#. module: s2uwarehouse
+#: model:res.groups,name:s2uwarehouse.allowed
+msgid "Warehouse Module"
+msgstr "Lager Module"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_available_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_available_tree
+msgid "Warehouse available"
+msgstr "Lager verfügbar"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_location_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_location_tree
+msgid "Warehouse location"
+msgstr "Lagerort"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_tree
+msgid "Warehouse unit"
+msgstr "Lagereinheit"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_tree
+msgid "Warehouse unit item"
+msgstr "Lagereinheitsartikel"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_transaction_form
+#: model:ir.ui.view,arch_db:s2uwarehouse.warehouse_unit_product_transaction_tree
+msgid "Warehouse unit item transaction"
+msgstr "Lagereinheitseinheitstransaktion"
+
+#. module: s2uwarehouse
+#: model:ir.actions.act_window,name:s2uwarehouse.action_warehouse_warehouse
+#: model:ir.ui.menu,name:s2uwarehouse.menu_warehouse_warehouse
+msgid "Warehouses"
+msgstr "Lagerhäuser"
+
+#. module: s2uwarehouse
+#: selection:s2u.warehouse.rma.add.item,product_usable:0
+msgid "Yes"
+msgstr "Ja"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:307
+#, python-format
+msgid "You are trying to move to same location!"
+msgstr "Sie versuchen, zum selben Ort zu wechseln!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:853
+#: code:addons/s2uwarehouse/models/shipment.py:995
+#: code:addons/s2uwarehouse/models/shipment.py:1080
+#: code:addons/s2uwarehouse/models/shipment.py:1786
+#: code:addons/s2uwarehouse/models/shipment.py:1824
+#: code:addons/s2uwarehouse/models/shipment.py:1953
+#: code:addons/s2uwarehouse/models/shipment.py:2018
+#, python-format
+msgid "You are trying to ship items which are not on the todo list!"
+msgstr "Sie versuchen, Artikel zu versenden, die nicht auf der Aufgabenliste stehen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:250
+#: code:addons/s2uwarehouse/models/production.py:254
+#: code:addons/s2uwarehouse/models/shipment.py:982
+#: code:addons/s2uwarehouse/models/shipment.py:986
+#: code:addons/s2uwarehouse/models/shipment.py:1776
+#: code:addons/s2uwarehouse/models/shipment.py:1780
+#: code:addons/s2uwarehouse/models/shipment.py:1946
+#, python-format
+msgid "You are trying to ship units which are not present!"
+msgstr "Sie versuchen, Einheiten zu versenden, die nicht anwesend sind!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:856
+#: code:addons/s2uwarehouse/models/production.py:940
+#, python-format
+msgid "You are trying to use items which are not present!"
+msgstr "Sie versuchen Artikel zu verwenden, die nicht vorhanden sind!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:806
+#: code:addons/s2uwarehouse/models/production.py:810
+#: code:addons/s2uwarehouse/models/production.py:890
+#: code:addons/s2uwarehouse/models/production.py:894
+#, python-format
+msgid "You are trying to use units which are not present!"
+msgstr "Sie versuchen, Einheiten zu verwenden, die nicht vorhanden sind!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1735
+#: code:addons/s2uwarehouse/models/shipment.py:2281
+#: code:addons/s2uwarehouse/models/shipment.py:3084
+#, python-format
+msgid "You can not delete a closed shipment!"
+msgstr "Sie können eine geschlossene Sendung nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:252
+#, python-format
+msgid "You can not delete a confirmed correction transaction!"
+msgstr "Sie können eine bestätigte Korrekturtransaktion nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:540
+#, python-format
+msgid "You can not delete a confirmed move transaction!"
+msgstr "Sie können einen bestätigten Bewegungsvorgang nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:406
+#, python-format
+msgid "You can not delete a confirmed move!"
+msgstr "Sie können einen bestätigten Bewegung nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:386
+#, python-format
+msgid "You can not delete a confirmed production!"
+msgstr "Sie können eine bestätigte Produktion nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:123
+#, python-format
+msgid "You can not delete a confirmed scrapped transaction!"
+msgstr "Sie können eine bestätigte ausrangierte Transaktion nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/production.py:986
+#, python-format
+msgid "You can not delete a confirmed used materials!"
+msgstr "Sie können ein beenutztes Material nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:396
+#, python-format
+msgid "You can not delete a stock product!"
+msgstr "Sie können ein Lagerprodukt nicht löschen!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/unit.py:196
+#, python-format
+msgid "You can not put units on a unit which is also placed on another unit!"
+msgstr "Sie können keine Einheiten auf einer Einheit platzieren, die sich auch auf einer anderen Einheit befindet!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:969
+#, python-format
+msgid "You have assigned items which are not on the todo list!"
+msgstr "Sie haben Artikel zugewiesen, die nicht in der Aufgabenliste enthalten sind!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:2372
+#, python-format
+msgid "You received %d products and entered %d serialnumbers."
+msgstr "Sie haben %d der Produkte erhalten und %d Seriennummern eingegeben."
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:467
+#, python-format
+msgid "You try moving items to the same unit!"
+msgstr "Sie versuchen, Elemente in dieselbe Einheit zu verschieben!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1932
+#, python-format
+msgid "You want to ship existing units, the qty to ship should be equal to qty on unit!"
+msgstr "Sie möchten vorhandene Einheiten versenden, die zu versendende Menge sollte gleich der Menge auf Einheit sein!"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/shipment.py:1936
+#, python-format
+msgid "You want to ship unit %s, but you have not selected all items on it!"
+msgstr "Sie möchten die Einheit %s versenden, aber Sie haben nicht alle Artikel darauf ausgewählt!"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_outgoing_customer_code
+msgid "Your reference"
+msgstr "Ihre Reference"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "______________________"
+msgstr "______________________"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "acknowledgment of delivery"
+msgstr "Empfangsbestätigung"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "date"
+msgstr "Datum"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.delivery_layout_page_header
+msgid "delivery:"
+msgstr "Lieferung:"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_max_height
+msgid "effectieve hoogte (mm)"
+msgstr "effektive Höhe (mm)"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "kg<br/>"
+msgstr "kg<br/>"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_max_weight
+msgid "laadvermogen (kg)"
+msgstr "Nutzlast (kg)"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventory_location_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.inventroy_product_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_history_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.pallets_saldo_view
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_incoming_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_outgoing_merge_with
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_produced_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_rma_transaction
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_new_location
+#: model:ir.ui.view,arch_db:s2uwarehouse.view_warehouse_unit_product_to_production
+#: model:ir.ui.view,arch_db:s2uwarehouse.wizard_confirm_and_pick_view
+msgid "or"
+msgstr "oder"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "pallet"
+msgstr "Paletten"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "pallet return"
+msgstr "Palettenrückgabe"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "qm"
+msgstr "qm"
+
+#. module: s2uwarehouse
+#: model:ir.model.fields,field_description:s2uwarehouse.field_s2u_warehouse_pallet_correction_pallets
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "qty"
+msgstr "Menge"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2u_warehouse_inventory_location
+msgid "report.s2u_warehouse.inventory.location"
+msgstr "report.s2u_warehouse.inventory.location"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2u_warehouse_inventory_product
+msgid "report.s2u_warehouse.inventory.product"
+msgstr "report.s2u_warehouse.inventory.product"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2u_warehouse_pallets_history
+msgid "report.s2u_warehouse.pallets.history"
+msgstr "report.s2u_warehouse.pallets.history"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2u_warehouse_pallets_saldo
+msgid "report.s2u_warehouse.pallets.saldo"
+msgstr "report.s2u_warehouse.pallets.saldo"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_delivery
+msgid "report.s2uwarehouse.print_delivery"
+msgstr "report.s2uwarehouse.print_delivery"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_inventory_location
+msgid "report.s2uwarehouse.print_inventory_location"
+msgstr "report.s2uwarehouse.print_inventory_location"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_inventory_product
+msgid "report.s2uwarehouse.print_inventory_product"
+msgstr "report.s2uwarehouse.print_inventory_product"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_outgoing_card
+msgid "report.s2uwarehouse.print_outgoing_card"
+msgstr "report.s2uwarehouse.print_outgoing_card"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_pallets_history
+msgid "report.s2uwarehouse.print_pallets_history"
+msgstr "report.s2uwarehouse.print_pallets_history"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_pallets_saldo
+msgid "report.s2uwarehouse.print_pallets_saldo"
+msgstr "report.s2uwarehouse.print_pallets_saldo"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_rma
+msgid "report.s2uwarehouse.print_rma"
+msgstr "report.s2uwarehouse.print_rma"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_report_s2uwarehouse_print_unit_card
+msgid "report.s2uwarehouse.print_unit_card"
+msgstr "report.s2uwarehouse.print_unit_card"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/available.py:19
+#, python-format
+msgid "s2u.baseproduct.item not found. Please contact you administrator."
+msgstr "s2u.baseproduct.item not found. Please contact you administrator."
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_available
+msgid "s2u.warehouse.available"
+msgstr "s2u.warehouse.available"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_incoming_add
+msgid "s2u.warehouse.incoming.add"
+msgstr "s2u.warehouse.incoming.add"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_incoming_add_item
+msgid "s2u.warehouse.incoming.add.item"
+msgstr "s2u.warehouse.incoming.add.item"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_move_correction
+msgid "s2u.warehouse.move.correction"
+msgstr "s2u.warehouse.move.correction"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_move_product
+msgid "s2u.warehouse.move.product"
+msgstr "s2u.warehouse.move.product"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_move_scrapped
+msgid "s2u.warehouse.move.scrapped"
+msgstr "s2u.warehouse.move.scrapped"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_move_unit
+msgid "s2u.warehouse.move.unit"
+msgstr "s2u.warehouse.move.unit"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_assigned_unit
+msgid "s2u.warehouse.outgoing.assigned.unit"
+msgstr "s2u.warehouse.outgoing.assigned.unit"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_assigned_unit_product
+msgid "s2u.warehouse.outgoing.assigned.unit.product"
+msgstr "s2u.warehouse.outgoing.assigned.unit.product"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_create_production
+msgid "s2u.warehouse.outgoing.create.production"
+msgstr "s2u.warehouse.outgoing.create.production"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_create_production_line
+msgid "s2u.warehouse.outgoing.create.production.line"
+msgstr "s2u.warehouse.outgoing.create.production.line"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_merge_with
+msgid "s2u.warehouse.outgoing.merge.with"
+msgstr "s2u.warehouse.outgoing.merge.with"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_type
+msgid "s2u.warehouse.outgoing.type"
+msgstr "s2u.warehouse.outgoing.type"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_unit
+msgid "s2u.warehouse.outgoing.unit"
+msgstr "s2u.warehouse.outgoing.unit"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_unit_product
+msgid "s2u.warehouse.outgoing.unit.product"
+msgstr "s2u.warehouse.outgoing.unit.product"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_outgoing_unit_product_line
+msgid "s2u.warehouse.outgoing.unit.product.line"
+msgstr "s2u.warehouse.outgoing.unit.product.line"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_produced_add
+msgid "s2u.warehouse.produced.add"
+msgstr "s2u.warehouse.produced.add"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_produced_add_item
+msgid "s2u.warehouse.produced.add.item"
+msgstr "s2u.warehouse.produced.add.item"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_produced_assigned_unit
+msgid "s2u.warehouse.produced.assigned.unit"
+msgstr "s2u.warehouse.produced.assigned.unit"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_produced_assigned_unit_product
+msgid "s2u.warehouse.produced.assigned.unit.product"
+msgstr "s2u.warehouse.produced.assigned.unit.product"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_production_used_materials_line
+msgid "s2u.warehouse.production.used.materials.line"
+msgstr "s2u.warehouse.production.used.materials.line"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_production_used_materials_line_item
+msgid "s2u.warehouse.production.used.materials.line.item"
+msgstr "s2u.warehouse.production.used.materials.line.item"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_rma_add
+msgid "s2u.warehouse.rma.add"
+msgstr "s2u.warehouse.rma.add"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_rma_add_item
+msgid "s2u.warehouse.rma.add.item"
+msgstr "s2u.warehouse.rma.add.item"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_serialnumber
+msgid "s2u.warehouse.serialnumber"
+msgstr "s2u.warehouse.serialnumber"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_unit
+msgid "s2u.warehouse.unit"
+msgstr "s2u.warehouse.unit"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_unit_product
+msgid "s2u.warehouse.unit.product"
+msgstr "s2u.warehouse.unit.product"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_unit_product_new_location
+msgid "s2u.warehouse.unit.product.new.location"
+msgstr "s2u.warehouse.unit.product.new.location"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_unit_product_to_production
+msgid "s2u.warehouse.unit.product.to.production"
+msgstr "s2u.warehouse.unit.product.to.production"
+
+#. module: s2uwarehouse
+#: model:ir.model,name:s2uwarehouse.model_s2u_warehouse_unit_product_transaction
+msgid "s2u.warehouse.unit.product.transaction"
+msgstr "s2u.warehouse.unit.product.transaction"
+
+#. module: s2uwarehouse
+#: code:addons/s2uwarehouse/models/move.py:180
+#: code:addons/s2uwarehouse/models/shipment.py:2363
+#, python-format
+msgid "serialnumber %s already exists for product %s"
+msgstr "Seriennummer %s ist bereits für Produkt %s vorhanden"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "till date"
+msgstr "bis Datum"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_delivery_document
+msgid "total:"
+msgstr "Summe:"
+
+#. module: s2uwarehouse
+#: model:ir.ui.view,arch_db:s2uwarehouse.print_pallets_history
+msgid "type"
+msgstr "Typ"

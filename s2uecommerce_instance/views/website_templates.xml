@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="instance_oops" name="Oops">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <h1 class="col-sm-8 col-sm-offset-2">Oops!</h1>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Sorry, there is a problem.</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Following error occured:</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2"><b><t t-esc="error"/></b></p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="instance_activate_form">
+        <form class="form-horizontal checkout-data-form" action="/instance/confirm" method="post" enctype="multipart/form-data" id="activate_form">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+            <div t-attf-class="form-group #{error.get('email') and 'has-error' or ''}">
+                <label class="col-sm-2 control-label" for="email">e-mailadres</label>
+                <div class="col-sm-6">
+                    <input type="text" t-att-value="form_values.get('email')" class="form-control" name="email" required="True"/>
+                    <span t-if="error.get('email')" class="help-block"><t t-esc="error.get('email')"/></span>
+                </div>
+            </div>
+
+            <div t-attf-class="form-group #{error.get('instance_id') and 'has-error' or ''}">
+                <label class="col-sm-2 control-label" for="instance_id">Instance</label>
+                <div class="col-sm-6">
+                    <select name="instance_id" class="form-control" required="True">
+                        <t t-foreach="instances or []" t-as="instance">
+                            <option t-att-value="instance.id" t-att-selected="'selected' if instance.id == form_values.get('instance_id') else None"><t t-esc="instance.name"/></option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-6 col-sm-offset-2">
+                    <button type="submit" class="btn btn-primary">Start</button>
+                    <a t-attf-href="/instance/overview" class="btn btn-secundary">Visit instance overview</a>
+                </div>
+            </div>
+        </form>
+    </template>
+
+    <template id="instance_activate">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container mt32">
+                        <div class="row">
+                            <h1 class="col-sm-10 col-sm-offset-2">Activate instance</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure">
+                    <div class="container mt32">
+                        <t t-call="s2uecommerce_instance.instance_activate_form">
+                            <t t-set="error" t-value="error" />
+                            <t t-set="form_values" t-value="form_values" />
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="instance_activate_thanks">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container mt32">
+                        <div class="row">
+                            <h1 class="col-sm-10 col-sm-offset-2">Thanks for activating our instance</h1>
+                        </div>
+                        <p class="col-sm-10 col-sm-offset-2">We sent you an email which you need to confirm. When you have confirmed the email, your instance is activated and a new mail with login information is send to you.</p>
+                        <p class="col-sm-10 col-sm-offset-2">If you are not receiving our mails, please <a href="/contactus">contact us.</a></p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="instance_activate_mail_confirmed">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container mt32">
+                        <div class="row">
+                            <h1 class="col-sm-10 col-sm-offset-2">Your email is confirmed</h1>
+                        </div>
+                        <p class="col-sm-10 col-sm-offset-2">Your email is confirmed, we have activated your instance.</p>
+                        <p class="col-sm-10 col-sm-offset-2">Within a short time you receive an email with information on how to login into your new instance.</p>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="instance_overview">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container mt32">
+                        <div class="row">
+                            <h1 class="col-sm-10 col-sm-offset-2">Instance overview</h1>
+                        </div>
+                        <t t-foreach="instances" t-as="instance">
+                            <div class="row mt16">
+                                <h2 class="col-sm-10 col-sm-offset-2"><t t-esc="instance.name"/></h2>
+                            </div>
+                            <div t-if="instance.description" class="row">
+                                <div class="col-sm-10 col-sm-offset-2"><t t-raw="instance.description"/></div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
+

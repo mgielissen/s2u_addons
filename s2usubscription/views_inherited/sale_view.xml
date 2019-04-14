@@ -1,0 +1,41 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="sale_form">
+            <field name="inherit_id" ref="s2usale.sale_form"/>
+            <field name="model">s2u.sale</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box']/button[@name='action_view_purchase']" position="after">
+                    <button name="action_view_subscriptionv2"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-tasks"
+                            attrs="{'invisible': [('subscriptionv2_count', '=', 0)]}">
+                        <field name="subscriptionv2_count" widget="statinfo" string="Subscriptions"/>
+                    </button>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page[@name='invoice_and_delivery']" position="before">
+                    <page string="Prefix" name="subscription_prefix">
+                        <group string="Prefix">
+                            <field name="subscription_prefix" nolabel="1" />
+                        </group>
+                    </page>
+                    <page string="Postfix" name="subscription_postfix">
+                        <group string="Postfix">
+                            <field name="subscription_postfix" nolabel="1" />
+                        </group>
+                    </page>
+                    <page string="Blocks" name="subscription_blocks">
+                        <field name="subscription_block_ids" nolabel="1" widget="one2many_list">
+                            <tree string="Sale" editable="bottom">
+                                <field name="sequence" widget="handle" />
+                                <field name="block_id" options="{'no_create': True}"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

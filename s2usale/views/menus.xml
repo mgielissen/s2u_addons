@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="Sales"
+                  id="menu_sales"
+                  sequence="90"/>
+
+        <menuitem id="menu_sales_sales" name="Sales" parent="menu_sales" sequence="10"/>
+        <menuitem id="menu_sales_purchases" name="Purchases" parent="menu_sales" sequence="20" />
+        <menuitem id="menu_sales_settings" name="Settings" parent="menu_sales" sequence="30" />
+    </data>
+</openerp>
+

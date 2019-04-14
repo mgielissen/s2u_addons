@@ -1,0 +1,150 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="warehouse_pallet_rule">
+            <field name="name">Object s2u.warehouse.pallet</field>
+            <field name="model_id" ref="model_s2u_warehouse_pallet"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_outgoing_rule">
+            <field name="name">Object s2u.warehouse.outgoing</field>
+            <field name="model_id" ref="model_s2u_warehouse_outgoing"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_incoming_rule">
+            <field name="name">Object s2u.warehouse.incoming</field>
+            <field name="model_id" ref="model_s2u_warehouse_incoming"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_rma_rule">
+            <field name="name">Object s2u.warehouse.rma</field>
+            <field name="model_id" ref="model_s2u_warehouse_rma"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_location_rule">
+            <field name="name">Object s2u.warehouse.location</field>
+            <field name="model_id" ref="model_s2u_warehouse_location"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_unit_rule">
+            <field name="name">Object s2u.warehouse.unit</field>
+            <field name="model_id" ref="model_s2u_warehouse_unit"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_move_scrapped_rule">
+            <field name="name">Object s2u.warehouse.move.scrapped</field>
+            <field name="model_id" ref="model_s2u_warehouse_move_scrapped"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_move_correction_rule">
+            <field name="name">Object s2u.warehouse.move.correction</field>
+            <field name="model_id" ref="model_s2u_warehouse_move_correction"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_move_unit_rule">
+            <field name="name">Object s2u.warehouse.move.unit</field>
+            <field name="model_id" ref="model_s2u_warehouse_move_unit"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_move_product_rule">
+            <field name="name">Object s2u.warehouse.move.product</field>
+            <field name="model_id" ref="model_s2u_warehouse_move_product"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_uom_rule">
+            <field name="name">Object s2u.warehouse.uom</field>
+            <field name="model_id" ref="model_s2u_warehouse_uom"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_pallet_correction_rule">
+            <field name="name">Object s2u.warehouse.pallet.correction</field>
+            <field name="model_id" ref="model_s2u_warehouse_pallet_correction"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_unit_product_transaction">
+            <field name="name">Object s2u.warehouse.unit.product.transaction</field>
+            <field name="model_id" ref="model_s2u_warehouse_unit_product_transaction"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_production_used_materials_rule">
+            <field name="name">Object s2u.warehouse.production.used.materials</field>
+            <field name="model_id" ref="model_s2u_warehouse_production_used_materials"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_available_rule">
+            <field name="name">Object s2u.warehouse.available</field>
+            <field name="model_id" ref="model_s2u_warehouse_available"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_outgoing_type_rule">
+            <field name="name">Object s2u.warehouse.outgoing.type</field>
+            <field name="model_id" ref="model_s2u_warehouse_outgoing_type"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_incoming_retour_rule">
+            <field name="name">Object s2u.warehouse.incoming.pallet.retour</field>
+            <field name="model_id" ref="model_s2u_warehouse_incoming_pallet_retour"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_produced_rule">
+            <field name="name">Object s2u.warehouse.produced</field>
+            <field name="model_id" ref="model_s2u_warehouse_produced"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_rule">
+            <field name="name">Object s2u.warehouse</field>
+            <field name="model_id" ref="model_s2u_warehouse"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_unit_product_rule">
+            <field name="name">Object s2u.warehouse.unit.product</field>
+            <field name="model_id" ref="model_s2u_warehouse_unit_product"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="warehouse_serialnumber_rule">
+            <field name="name">Object s2u.warehouse.serialnumber</field>
+            <field name="model_id" ref="model_s2u_warehouse_serialnumber"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+    </data>
+</openerp>

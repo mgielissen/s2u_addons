@@ -1,0 +1,184 @@
+<openerp>
+    <data>
+        <!-- category -->
+        <record model="ir.ui.view" id="vat_category_search_view">
+            <field name="model">s2u.account.vat.category</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="parent_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="vat_category_form" model="ir.ui.view">
+            <field name="model">s2u.account.vat.category</field>
+            <field name="arch" type="xml">
+                <form string="VAT category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="parent_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vat_category_tree" model="ir.ui.view">
+            <field name="model">s2u.account.vat.category</field>
+            <field name="arch" type="xml">
+                <tree string="VAT categories">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="parent_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_vat_category" model="ir.actions.act_window">
+            <field name="name">VAT category</field>
+            <field name="res_model">s2u.account.vat.category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vat_category_tree" />
+        </record>
+
+        <menuitem action="action_vat_category" id="menu_vat_category"
+            parent="menu_accounting_settings" sequence="10" groups="s2uaccount.group_account_manager" />
+
+        <!-- vat -->
+        <record model="ir.ui.view" id="vat_search_view">
+            <field name="model">s2u.account.vat</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="type" />
+                </search>
+            </field>
+        </record>
+
+        <record id="vat_form" model="ir.ui.view">
+            <field name="model">s2u.account.vat</field>
+            <field name="arch" type="xml">
+                <form string="VAT">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="name" />
+                                <field name="type" />
+                                <field name="category" />
+                                <field name="vat_report" />
+                            </group>
+                            <group>
+                                <field name="rule_gross" />
+                                <field name="rule_net" />
+                                <field name="rule_vat" />
+                                <field name="tinno_obligatory" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Rules">
+                                <field name="rule_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Rules" editable="bottom">
+                                        <field name="rule_type" />
+                                        <field name="account_id" />
+                                        <field name="category_id" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vat_tree" model="ir.ui.view">
+            <field name="model">s2u.account.vat</field>
+            <field name="arch" type="xml">
+                <tree string="VAT">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="vat_report" />
+                    <field name="type" />
+                    <field name="rule_gross" />
+                    <field name="rule_net" />
+                    <field name="rule_vat" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_vat" model="ir.actions.act_window">
+            <field name="name">VAT</field>
+            <field name="res_model">s2u.account.vat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vat_tree" />
+        </record>
+
+        <menuitem action="action_vat" id="menu_vat"
+            parent="menu_accounting_settings" sequence="20" groups="s2uaccount.group_account_manager" />
+
+        <!-- country -->
+        <record model="ir.ui.view" id="vat_country_search_view">
+            <field name="model">s2u.account.vat.country</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="country_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="vat_country_form" model="ir.ui.view">
+            <field name="model">s2u.account.vat.country</field>
+            <field name="arch" type="xml">
+                <form string="VAT category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="country_id" />
+                            </group>
+                            <group>
+                                <field name="vat_sell_id" />
+                                <field name="vat_buy_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vat_country_tree" model="ir.ui.view">
+            <field name="model">s2u.account.vat.country</field>
+            <field name="arch" type="xml">
+                <tree string="VAT countries">
+                    <field name="country_id" />
+                    <field name="vat_sell_id" />
+                    <field name="vat_buy_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_vat_country" model="ir.actions.act_window">
+            <field name="name">VAT country</field>
+            <field name="res_model">s2u.account.vat.country</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vat_country_tree" />
+        </record>
+
+        <menuitem action="action_vat_country" id="menu_vat_country"
+            parent="menu_accounting_settings" sequence="30" groups="s2uaccount.group_account_manager" />
+    </data>
+</openerp>

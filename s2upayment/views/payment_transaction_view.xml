@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Payment Transaction -->
+        <record model="ir.ui.view" id="payment_transaction_search_view">
+            <field name="model">s2u.payment.transaction</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="state" />
+                    <field name="sale_id" />
+                    <field name="reference" />
+                </search>
+            </field>
+        </record>
+
+        <record id="payment_transaction_tree" model="ir.ui.view">
+            <field name="model">s2u.payment.transaction</field>
+            <field name="arch" type="xml">
+                <tree string="Transactions" colors="red:state == 'done' and not sale_id;">
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="acquirer_id" />
+                    <field name="tot_amount" />
+                    <field name="tot_costs" />
+                    <field name="tot_to_pay" />
+                    <field name="state" />
+                    <field name="sale_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="payment_transaction_form" model="ir.ui.view">
+            <field name="model">s2u.payment.transaction</field>
+            <field name="arch" type="xml">
+                <form string="Transaction">
+                    <header>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="reference" />
+                                <field name="tot_to_pay" />
+                            </group>
+                            <group>
+                                <field name="acquirer_id" />
+                                <field name="tot_amount" />
+                                <field name="tot_costs" />
+                                <field name="sale_id" readonly="1" />
+                            </group>
+                        </group>
+                        <group string="Invoice data">
+                            <group>
+                                <field name="checkout_order_type"/>
+                                <field name="checkout_company"/>
+                                <field name="checkout_c_of_c"/>
+                                <field name="checkout_tinno"/>
+                                <field name="checkout_contact_prefix"/>
+                                <field name="checkout_name"/>
+                            </group>
+                            <group>
+                                <field name="checkout_address"/>
+                                <field name="checkout_zip"/>
+                                <field name="checkout_city"/>
+                                <field name="checkout_country_id"/>
+                                <field name="checkout_email"/>
+                                <field name="checkout_phone"/>
+                                <field name="checkout_delivery_type"/>
+                            </group>
+                        </group>
+                        <group string="Alternativ shipment address">
+                            <group>
+                                <field name="checkout_order_delivery_type"/>
+                                <field name="checkout_delivery_company"/>
+                                <field name="checkout_delivery_name"/>
+                                <field name="checkout_delivery_address"/>
+                            </group>
+                            <group>
+                                <field name="checkout_delivery_zip"/>
+                                <field name="checkout_delivery_city"/>
+                                <field name="checkout_delivery_country_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="item_ids" nolabel="1" widget="one2many_list">
+                                <tree string="Shoppingcart" editable="bottom">
+                                    <field name="product_id" />
+                                    <field name="product_model" />
+                                    <field name="product_name" />
+                                    <field name="qty" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_payment_transaction" model="ir.actions.act_window">
+            <field name="name">Transactions</field>
+            <field name="res_model">s2u.payment.transaction</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="payment_transaction_tree" />
+            <field name="search_view_id" ref="payment_transaction_search_view"/>
+        </record>
+
+        <menuitem action="action_payment_transaction" id="menu_payment_transaction"
+            parent="menu_payment" sequence="20"
+            groups="s2upayment.group_ecommerce" />
+
+    </data>
+</openerp>

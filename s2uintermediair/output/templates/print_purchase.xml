@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <template id="print_quotation_po_document" inherit_id="s2usale.print_quotation_po_document" >
+        <xpath expr="//div[@name='order_number_block']" position="replace">
+            <div class="row mt32" style="font-weight: bold;" name="order_number_block" >
+                <div class="col-xs-3">
+                    Our order number
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-field="o.reference"/>
+                </div>
+                <div class="col-xs-3">
+                    Delivery date
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.date_delivery" t-field="o.date_delivery"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='reference_block']" position="replace">
+            <div class="row" style="font-weight: bold;" name="reference_block">
+                <div class="col-xs-3">
+                    Your reference
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.your_reference" t-field="o.your_reference"/>
+                </div>
+                <div class="col-xs-3">
+                    Artwork date
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.date_artwork" t-field="o.date_artwork"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@t-if='o.line_ids']" position="replace">
+            <t t-foreach="o.line_ids" t-as="block">
+                <div t-if="o.project and not block.product_id" class="row mt16 mb8">
+                    <div class="col-xs-12">
+                        <span t-att-style="'font-family: Times New Roman; font-weight: bold; font-size: 120%'" t-field="o.project" />
+                    </div>
+                </div>
+                <div t-if="block.product_id" class="row mt16 mb8">
+                    <div class="col-xs-12">
+                        <span t-att-style="'font-family: Times New Roman; font-weight: bold; font-size: 120%'" t-field="block.product_id" />
+                    </div>
+                </div>
+                <t t-foreach="block.label_ids" t-as="label">
+                    <t t-if="label.display in ['both', 'quotation'] and label.value not in ['{{staffel}}', '{{total-amount}}'] and label.calc_value_request">
+                        <div t-if="label.label_id.bold" class="row mt16 mb16">
+                            <div class="col-xs-3" style="padding-right:0;">
+                                <b><t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span></b>
+                            </div>
+                            <div class="col-xs-9 text-justify" style="padding-left:0;">
+                                <span t-field="label.calc_value_request"/>
+                            </div>
+                        </div>
+                        <div t-if="not label.label_id.bold" class="row">
+                            <div class="col-xs-3" style="padding-right:0;">
+                                <t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span>
+                            </div>
+                            <div class="col-xs-9 text-justify" style="padding-left:0;">
+                                <span t-field="label.calc_value_request"/>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-if="label.display in ['both', 'quotation'] and label.value == '{{total-amount}}' and label.calc_value_request">
+                        <div class="row mt16 mb16">
+                            <div class="col-xs-3" style="padding-right:0;">
+                                <b><t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span></b>
+                            </div>
+                            <div class="col-xs-5" style="padding-left:0;">
+                            </div>
+                            <div class="col-xs-1" style="padding-left:0; text-align: right;">
+                                <b>€</b>
+                            </div>
+                            <div class="col-xs-1" style="padding-left:0; text-align: right;">
+                                <b><span t-field="label.calc_value_request"/></b>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-if="label.display in ['both', 'quotation'] and label.value == '{{staffel}}' and label.calc_value_request">
+                        <t t-set="label_printed" t-value="0"/>
+                        <t t-foreach="block.qty_ids" t-as="qty">
+                            <div t-if="qty.id != block.qty_ids[0].id" class="row">
+                                <t t-if="label_printed != 0">
+                                    <div class="col-xs-3" style="padding-right:0;"></div>
+                                </t>
+                                <t t-if="label_printed == 0">
+                                    <t t-set="label_printed" t-value="1"/>
+                                    <div class="col-xs-3" style="padding-right:0;">
+                                        <t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span>
+                                    </div>
+                                </t>
+                                <div class="col-xs-5" style="padding-left:0;">
+                                    <span t-field="qty.qty_pdf"/>
+                                </div>
+                                <div class="col-xs-1" style="padding-left:0; text-align: right;">€</div>
+                                <div class="col-xs-1" style="padding-left:0; text-align: right;">
+                                    <span t-field="qty.amount_pdf_nc" />
+                                </div>
+                            </div>
+                        </t>
+                        <div class="row mb8"></div>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="print_order_po_document" inherit_id="s2usale.print_order_po_document">
+        <xpath expr="//div[@name='order_number_block']" position="replace">
+            <div class="row mt32" style="font-weight: bold;" name="order_number_block" >
+                <div class="col-xs-3">
+                    Our order number
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-field="o.reference"/>
+                </div>
+                <div class="col-xs-3">
+                    Delivery date
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.date_delivery" t-field="o.date_delivery"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='reference_block']" position="replace">
+            <div class="row" style="font-weight: bold;" name="reference_block">
+                <div class="col-xs-3">
+                    Your reference
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.your_reference" t-field="o.your_reference"/>
+                </div>
+                <div class="col-xs-3">
+                    Artwork date
+                </div>
+                <div class="col-xs-3">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.date_artwork" t-field="o.date_artwork"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@t-if='o.line_ids']" position="replace">
+            <t t-foreach="o.line_ids" t-as="block">
+                <t t-if="block.for_order">
+                    <div t-if="o.project and not block.product_id" class="row mt16 mb8">
+                        <div class="col-xs-12">
+                            <span t-att-style="'font-family: Times New Roman; font-weight: bold; font-size: 120%'" t-field="o.project" />
+                        </div>
+                    </div>
+                    <div t-if="block.product_id" class="row mt16 mb8">
+                        <div class="col-xs-12">
+                            <span t-att-style="'font-family: Times New Roman; font-weight: bold; font-size: 120%'" t-field="block.product_id" />
+                        </div>
+                    </div>
+                    <t t-foreach="block.label_ids" t-as="label">
+                        <t t-if="label.display in ['both', 'order'] and label.value not in ['{{staffel}}', '{{total-amount}}'] and label.calc_value_order">
+                            <div t-if="label.label_id.bold" class="row mt16 mb16">
+                                <div class="col-xs-3" style="padding-right:0;">
+                                    <b><t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span></b>
+                                </div>
+                                <div class="col-xs-9 text-justify" style="padding-left:0;">
+                                    <span t-field="label.calc_value_order"/>
+                                </div>
+                            </div>
+                            <div t-if="not label.label_id.bold" class="row">
+                                <div class="col-xs-3" style="padding-right:0;">
+                                    <t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span>
+                                </div>
+                                <div class="col-xs-9 text-justify" style="padding-left:0;">
+                                    <span t-field="label.calc_value_order"/>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-if="label.display in ['both', 'order'] and label.value == '{{total-amount}}' and label.calc_value_order">
+                            <div class="row mt16 mb16">
+                                <div class="col-xs-3" style="padding-right:0;">
+                                    <b><t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span></b>
+                                </div>
+                                <div class="col-xs-5" style="padding-left:0;">
+                                </div>
+                                <div class="col-xs-1" style="padding-left:0; text-align: right;">
+                                    <b>€</b>
+                                </div>
+                                <div class="col-xs-1" style="padding-left:0; text-align: right;">
+                                    <b><span t-field="label.calc_value_order"/></b>
+                                </div>
+                            </div>
+                            <div t-if="not label.label_id.bold" class="row">
+                                <div class="col-xs-3" style="padding-right:0;">
+                                    <t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span>
+                                </div>
+                                <div class="col-xs-5" style="padding-left:0;">
+                                </div>
+                                <div class="col-xs-1" style="padding-left:0; text-align: right;">€</div>
+                                <div class="col-xs-1" style="padding-left:0; text-align: right;">
+                                    <span t-field="label.calc_value_order"/>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-if="label.display in ['both', 'order'] and label.value == '{{staffel}}' and label.calc_value_order">
+                            <t t-set="label_printed" t-value="0"/>
+                            <t t-foreach="block.qty_ids" t-as="qty">
+                                <div t-if="qty.id != block.qty_ids[0].id" class="row">
+                                    <t t-if="label_printed != 0">
+                                        <div class="col-xs-3" style="padding-right:0;"></div>
+                                    </t>
+                                    <t t-if="label_printed == 0">
+                                        <t t-set="label_printed" t-value="1"/>
+                                        <div class="col-xs-3" style="padding-right:0;">
+                                            <t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span>
+                                        </div>
+                                    </t>
+                                    <div class="col-xs-5" style="padding-left:0;">
+                                        <span t-field="qty.qty_pdf"/>
+                                    </div>
+                                    <div class="col-xs-1" style="padding-left:0; text-align: right;">€</div>
+                                    <div class="col-xs-1" style="padding-left:0; text-align: right;">
+                                        <span t-field="qty.amount_pdf_nc" />
+                                    </div>
+                                </div>
+                            </t>
+                            <div class="row mb8"></div>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+</data>
+</openerp>

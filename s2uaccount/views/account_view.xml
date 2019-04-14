@@ -1,0 +1,231 @@
+<openerp>
+    <data>
+        <!-- category -->
+        <record model="ir.ui.view" id="account_category_search_view">
+            <field name="model">s2u.account.category</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="type" />
+                    <field name="parent_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="account_category_form" model="ir.ui.view">
+            <field name="model">s2u.account.category</field>
+            <field name="arch" type="xml">
+                <form string="Account category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="parent_id" attrs="{'invisible': [('type', '=', 'category')],
+                                                                'required': [('type', '!=', 'category')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_category_tree" model="ir.ui.view">
+            <field name="model">s2u.account.category</field>
+            <field name="arch" type="xml">
+                <tree string="Account categories">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="parent_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_category" model="ir.actions.act_window">
+            <field name="name">Account category</field>
+            <field name="res_model">s2u.account.category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="account_category_tree" />
+        </record>
+
+        <menuitem action="action_account_category" id="menu_account_category"
+            parent="menu_accounting_settings" sequence="11" groups="s2uaccount.group_account_manager" />
+
+        <!-- account -->
+        <record model="ir.ui.view" id="account_search_view">
+            <field name="model">s2u.account.account</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="type" />
+                    <field name="category_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="account_form" model="ir.ui.view">
+            <field name="model">s2u.account.account</field>
+            <field name="arch" type="xml">
+                <form string="Account">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="category_id" />
+                                <field name="vat_id" attrs="{'invisible': ['!', ('type', 'in', ['income', 'expense'])]}" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                            </group>
+                            <group>
+                                <field name="bank_account" attrs="{'invisible': [('type', '!=', 'bank')]}" />
+                                <field name="mt940_format" attrs="{'invisible': [('type', '!=', 'bank')]}" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_tree" model="ir.ui.view">
+            <field name="model">s2u.account.account</field>
+            <field name="arch" type="xml">
+                <tree string="Account">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="category_id" />
+                    <field name="end_saldo" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account" model="ir.actions.act_window">
+            <field name="name">Account</field>
+            <field name="res_model">s2u.account.account</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="account_tree" />
+        </record>
+
+        <menuitem action="action_account" id="menu_account"
+            parent="menu_accounting_settings" sequence="30" groups="s2uaccount.group_account_manager" />
+
+        <!-- analytic -->
+        <record model="ir.ui.view" id="analytic_search_view">
+            <field name="model">s2u.account.analytic</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="analytic_form" model="ir.ui.view">
+            <field name="model">s2u.account.analytic</field>
+            <field name="arch" type="xml">
+                <form string="Analytic Account">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="saldo" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="analytic_tree" model="ir.ui.view">
+            <field name="model">s2u.account.analytic</field>
+            <field name="arch" type="xml">
+                <tree string="Analytic">
+                    <field name="name" />
+                    <field name="debit" sum="Total" />
+                    <field name="credit" sum="Total" />
+                    <field name="saldo" sum="Total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_analytic" model="ir.actions.act_window">
+            <field name="name">Analytic</field>
+            <field name="res_model">s2u.account.analytic</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="analytic_tree" />
+        </record>
+
+        <menuitem action="action_analytic" id="menu_analytic"
+            parent="menu_accounting_settings" sequence="31" groups="s2uaccount.group_account_manager" />
+
+        <!-- payment term -->
+        <record model="ir.ui.view" id="account_payment_term_search_view">
+            <field name="model">s2u.account.payment.term</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="payment_terms" />
+                </search>
+            </field>
+        </record>
+
+        <record id="account_payment_term_form" model="ir.ui.view">
+            <field name="model">s2u.account.payment.term</field>
+            <field name="arch" type="xml">
+                <form string="Account category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="payment_terms" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_payment_term_tree" model="ir.ui.view">
+            <field name="model">s2u.account.payment.term</field>
+            <field name="arch" type="xml">
+                <tree string="Payment terms">
+                    <field name="name" />
+                    <field name="payment_terms" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_payment_term" model="ir.actions.act_window">
+            <field name="name">Payment terms</field>
+            <field name="res_model">s2u.account.payment.term</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="account_payment_term_tree" />
+        </record>
+
+        <menuitem action="action_account_payment_term" id="menu_account_payment_term"
+            parent="menu_accounting_settings" sequence="35" groups="s2uaccount.group_account_manager" />
+    </data>
+</openerp>

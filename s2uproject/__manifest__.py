@@ -1,0 +1,37 @@
+{
+    'name': 'Solutions2use Project',
+    'author': 'Solutions2use',
+    'license': 'AGPL-3',
+    'website': 'https://www.solutions2use.com',
+    'version': '0.1',
+    'summary': 'Solutions2use Project',
+    'category':  'Project',
+    'images': ['static/description/icon.png'],
+    'description':
+        """
+        """,
+    'depends': ['s2ucrm', 's2uaccount', 's2usale', 's2uproduct', 's2uwarehouse', 's2udocument'],
+    'data': [
+        'security/res_groups.xml',
+        'security/rules.xml',
+        'security/ir.model.access.csv',
+        'views/menus.xml',
+        'views/project_view.xml',
+        'views/project_portal_templates.xml',
+        'views_inherited/sale_view.xml',
+        'views_inherited/entity_view.xml',
+        'wizards/views/increase_wizard_view.xml',
+        'wizards/views/task_management_view.xml',
+        'views/classification_widget_template.xml',
+        'views/project_templates.xml',
+        'output/reports.xml',
+        'output/templates/print_hour_invoicing.xml',
+        'output/templates/print_sale.xml',
+    ],
+    'qweb': [
+        'static/src/xml/base.xml',
+        'static/src/xml/project.xml',
+    ],
+    'installable': True,
+    'auto_install': False,
+}

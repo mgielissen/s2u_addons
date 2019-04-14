@@ -1,0 +1,31 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="crm_entity_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_form"/>
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box_s2u']" position="inside">
+                    <button name="action_view_so"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-euro"
+                            title="Sales orders">
+                        <field name="so_open_count" widget="statinfo" string="Open" nolabel="1"/>/
+                        <field name="so_count" widget="statinfo" string="Sales" nolabel="1"/>
+                    </button>
+                    <button name="action_view_invoice"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-pencil-square-o"
+                            attrs="{'invisible': [('invoice_count', '=', 0)]}"
+                            title="Invoices">
+                        <field name="invoice_open_count" widget="statinfo" string="Open" nolabel="1"/>/
+                        <field name="invoice_count" widget="statinfo" string="Invoices" nolabel="1"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

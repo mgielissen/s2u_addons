@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<template id="print_invoice_so_document" inherit_id="s2uaccount.print_invoice_so_document">
+    <xpath  expr="//div[@class='page']"  position="replace">         
+            <div class="row">
+                <div class="col-xs-12">
+                    <span t-att-style="'font-weight: bold; font-size: 18px'">INVOICE</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7" t-att-style="'margin-top: 60px;'">
+                    <p t-att-style="'font-weight: bold;'">
+                        <t t-call="s2ucrm.print_address_data_content">
+                            <t t-set="document_object" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                        </t>
+                    </p>
+                </div>
+                <div class="col-xs-5" style="margin-top: 60px; text-align: right;">
+                    <p t-if="o.template_id" t-field="o.date_display" />
+                </div>
+            </div>
+
+            <div class="row mt64">
+                <b>
+                    <div class="col-xs-2" style="padding-right:0;">
+                        Invoice number<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                    </div>
+                    <div class="col-xs-10" style="padding-left:0;">
+                        <span t-if="o.name" t-field="o.name"/>
+                    </div>
+                </b>
+            </div>
+            <div class="row">
+                <b>
+                    <div class="col-xs-2" style="padding-right:0;">
+                        Order number<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                    </div>
+                    <div class="col-xs-10" style="padding-left:0;">
+                        <span t-if="o.intermediair_linked_orders" t-field="o.intermediair_linked_orders"/>
+                    </div>
+                </b>
+            </div>
+
+            <div class="row mt16">
+                <b>
+                    <div class="col-xs-2" style="padding-right:0;">
+                        Your reference<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                    </div>
+                    <div class="col-xs-10" style="padding-left:0;">
+                        <span t-if="o.customer_code" t-field="o.customer_code"/>
+                    </div>
+                </b>
+            </div>
+
+            <div class="row mt32 mb16">
+                <div class="col-xs-12">
+                    <span t-if="o.template_id" t-field="o.prefix_invoice" />
+                </div>
+            </div>
+
+            <t t-foreach="o.line_ids" t-as="line">
+                <t t-if="line.saledetailed_ids">
+                    <div class="row mt16">
+                        <div class="col-xs-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3" style="padding-right:0;">
+                            <b>Item<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span></b>
+                        </div>
+                        <div class="col-xs-9" style="padding-left:0;">
+                            <b><span t-field="line.descript"/></b>
+                        </div>
+                    </div>
+                    <div class="row mt16">
+                        <div class="col-xs-12">
+                        </div>
+                    </div>
+                    <t t-foreach="line.saledetailed_ids" t-as="label">
+                        <div t-if="label.value">
+                            <div t-if="label.label_id.bold" class="row mt16 mb16">
+                                <div class="col-xs-3" style="padding-right:0;">
+                                    <b><t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span></b>
+                                </div>
+                                <div class="col-xs-9 text-justify" style="padding-left:0;">
+                                    <span t-field="label.calc_value_invoice"/>
+                                </div>
+                            </div>
+                            <div t-if="not label.label_id.bold" class="row">
+                                <div class="col-xs-3" style="padding-right:0;">
+                                    <t t-esc="label.label_id.name"/><span class="pull-right" style="margin-right: 10px;">:</span>
+                                </div>
+                                <div class="col-xs-9 text-justify" style="padding-left:0;">
+                                    <span t-field="label.calc_value_invoice"/>
+                                </div>
+                            </div>
+                        </div>
+
+                    </t>
+                    <div class="row mt16">
+                        <div class="col-xs-12">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3" style="padding-right:0;">
+                            <b>Total agreed amount</b><span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                        </div>
+                        <div class="col-xs-9" style="padding-left:0;">
+                            <div class="pull-right" style="width: 75px; text-align: right;">
+                                <b t-if="line.net_amount" t-field="line.net_amount" />
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+
+            <div class="row mt16">
+                <div class="col-xs-9" style="padding-right:0;">
+                    0,1&amp;#37; afvalbeheersbijdrage verpakkingen
+                </div>
+                <div class="col-xs-3" style="padding-left:0;">
+                    <div class="pull-right" style="width: 75px; border-bottom: solid 1px; text-align: right;">
+                         <span t-if="o.amount_bijdrage" t-field="o.amount_bijdrage"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt16">
+                <div class="col-xs-3" style="padding-right:0;">
+                    Subtotal<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                </div>
+                <div class="col-xs-9" style="padding-left:0;">
+                    <div class="pull-right" style="width: 75px; text-align: right;">
+                        <span t-if="o.amount_net" t-field="o.amount_net" />
+                    </div>
+                </div>
+            </div>
+            <div class="row mt16">
+                <div class="col-xs-3" style="padding-right:0;">
+                    Vat<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                </div>
+                <div class="col-xs-9" style="padding-left:0;">
+                    <div class="pull-right" style="width: 75px; border-bottom: solid 1px; text-align: right;">
+                         <span t-if="o.amount_vat" t-field="o.amount_vat"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt16">
+                <div class="col-xs-3" style="padding-right:0;">
+                    <b>Total</b><span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                </div>
+                <div class="col-xs-9" style="padding-left:0;">
+                    <div class="pull-right" style="width: 75px; border-bottom: double 3px; text-align: right;">
+                        <span t-if="o.amount_gross" t-field="o.amount_gross" />
+                    </div>
+                </div>
+            </div>
+
+            <div t-if="o.postfix_invoice" class="row mt32">
+                <div class="col-xs-12">
+                    <span t-field="o.postfix_invoice" />
+                </div>
+            </div>
+    </xpath>
+</template>
+
+
+</data>
+</openerp>

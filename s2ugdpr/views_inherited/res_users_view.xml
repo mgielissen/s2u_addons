@@ -1,0 +1,19 @@
+<openerp>
+    <data>
+        <record id="view_users_form_simple_modif" model="ir.ui.view">
+            <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+            <field name="model">res.users</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/field[@name='image']" position="replace">
+                    <group>
+                        <field name="gdpr_profile_picture" attrs="{'invisible': [('image', '=', False)]}"/>
+                        <p style="width: 550px"></p>
+                    </group>
+                    <group>
+                        <field nolabel="1" name="image" readonly="0" widget='image' class="oe_avatar" options='{"preview_image": "image_small"}'/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

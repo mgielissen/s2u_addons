@@ -1,0 +1,47 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="crm_entity_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_form"/>
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box_s2u']/field[@name='rating_visual']" position="replace">
+                    <field name="classification_visual" widget="classification" />
+                </xpath>
+                <xpath expr="/form/sheet/div[@name='button_box_s2u']" position="inside">
+                    <button name="action_view_project"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-book"
+                            attrs="{'invisible': [('project_count', '=', 0)]}"
+                            title="Projects">
+                        <field name="project_open_count" widget="statinfo" string="Open" nolabel="1"/>/
+                        <field name="project_count" widget="statinfo" string="Projects" nolabel="1" />
+                    </button>
+                </xpath>
+                <xpath expr="/form/sheet/div[@name='button_box_s2u']/button[@name='action_view_contacts']" position="after">
+                    <button name="action_view_discount_rates"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-percent"
+                            attrs="{'invisible': [('discount_rates_count', '=', 0)]}"
+                            title="Discount on rates">
+                        <field name="discount_rates_count" widget="statinfo" string="Discount on rates" nolabel="1"/>
+                    </button>
+                </xpath>
+                <xpath expr="/form/sheet/group/group[@name='extra_info_right']" position="inside">
+                    <field name="use_project_zones" />
+                    <field name="project_zone1" attrs="{'invisible': [('use_project_zones', '=', False)],
+                                                        'required': [('use_project_zones', '=', True)]}" />
+                    <field name="project_zone2" attrs="{'invisible': [('use_project_zones', '=', False)],
+                                                        'required': [('use_project_zones', '=', True)]}" />
+                    <field name="project_zone3" attrs="{'invisible': [('use_project_zones', '=', False)],
+                                                        'required': [('use_project_zones', '=', True)]}" />
+                    <field name="project_zone4" attrs="{'invisible': [('use_project_zones', '=', False)],
+                                                        'required': [('use_project_zones', '=', True)]}" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

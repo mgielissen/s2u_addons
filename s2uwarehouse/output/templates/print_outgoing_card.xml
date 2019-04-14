@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="print_outgoing_card_document">
+    <t t-call="web.external_layout">
+        <t t-set="company" t-value="res_company"></t>
+        <t t-set="o" t-value="o.with_context({'lang':company.partner_id.lang})" />
+        <div class="page">
+            <t t-foreach="trans_list" t-as="trans_ids">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="text-center">
+                            <strong>
+                                <h1> <span t-field="o.name" /></h1>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="text-center">
+                            <strong>
+                                <img t-att-src="'/report/barcode/EAN13/%s' % '123456789012'"/>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <t t-foreach="trans_ids" t-as="trans_id">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="text-center">
+                                <strong>
+                                    <span t-esc="trans_id"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                    <t t-foreach="trans_ids[trans_id]" t-as="trans">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="text-center">
+                                <strong>
+                                    <span t-esc="trans_ids[trans_id][trans]['name']"/>
+                                </strong>
+                            </div>
+                        </div>
+                         <div class="col-xs-3">
+                            <div class="text-center">
+                                <strong>
+                                    <span t-esc="trans_ids[trans_id][trans]['product']"/>
+                                </strong>
+                            </div>
+                        </div>
+                         <div class="col-xs-3">
+                            <div class="text-center">
+                                <strong>
+                                    <span t-esc="trans_ids[trans_id][trans]['qty']"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                    </t>
+                </t>
+                <p style="page-break-after:always;"></p>
+            </t>
+        </div>
+    </t>
+
+</template>
+
+<template id="print_outgoing_card">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-set="company" t-value="res_company"></t>
+            <t t-call="s2uwarehouse.print_outgoing_card_document" t-lang="company.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+
+</data>
+</openerp>

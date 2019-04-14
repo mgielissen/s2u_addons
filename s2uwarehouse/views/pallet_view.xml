@@ -1,0 +1,63 @@
+<openerp>
+    <data>
+        <!-- Pallet -->
+        <record model="ir.ui.view" id="warehouse_pallet_search_view">
+            <field name="model">s2u.warehouse.pallet</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="code" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_pallet_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.pallet</field>
+            <field name="arch" type="xml">
+                <form string="Pallet">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="name" />
+                                <field name="length" />
+                                <field name="width" />
+                            </group>
+                            <group>
+                                <field name="height" />
+                                <field name="weight" />
+                                <field name="max_height" />
+                                <field name="max_weight" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_pallet_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.pallet</field>
+            <field name="arch" type="xml">
+                <tree string="Pallet">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="length" />
+                    <field name="width" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_pallet" model="ir.actions.act_window">
+            <field name="name">Pallets</field>
+            <field name="res_model">s2u.warehouse.pallet</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_pallet_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_pallet" id="menu_warehouse_pallet"
+            parent="menu_warehouse_settings" sequence="10" groups="s2uwarehouse.group_warehouse_manager" />
+
+    </data>
+</openerp>

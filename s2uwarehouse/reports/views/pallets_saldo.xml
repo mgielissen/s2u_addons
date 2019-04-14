@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pallets_saldo_view" model="ir.ui.view">
+        <field name="name">Pallet Saldo</field>
+        <field name="model">report.s2u_warehouse.pallets.saldo</field>
+        <field name="arch" type="xml">
+            <form string="Pallet Saldo">
+                <field name="company_id" invisible="1"/>
+                <group>
+                    <group>
+                        <field name="date_till"/>
+                    </group>
+                    <group>
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="s2u_warehouse_pallets_saldo_view_action" model="ir.actions.act_window">
+        <field name="name">Pallet Saldo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report.s2u_warehouse.pallets.saldo</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="pallets_saldo_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_iranus_s2u_pallets_saldo2"
+              parent="menu_warehouse_reporting"
+              action="s2u_warehouse_pallets_saldo_view_action"
+              sequence="110"
+              groups="s2ubase.production_company" />
+</odoo>

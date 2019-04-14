@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+
+        <report 
+            id="s2u_warehouse_unit_card"
+            model="s2u.warehouse.unit"
+            string="Unit Card"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_unit_card"
+            file="s2uwarehouse.print_unit_card"
+            attachment_use="False"
+            attachment="('unit_card_'+(object.name or '').replace('/','').replace(' ', '_') +'.pdf')"
+            groups="s2ubase.production_company"
+        />
+
+        <report
+            id="s2u_warehouse_outgoing_card"
+            model="s2u.warehouse.outgoing"
+            string="Outgoing Card"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_outgoing_card"
+            file="s2uwarehouse.print_outgoing_card"
+            attachment_use="True"
+            attachment="('outgoing_card_'+(object.name or '').replace('/','').replace(' ', '_') +'.pdf')"
+            groups="s2ubase.production_company"
+        />
+
+        <report
+            id="s2u_warehouse_print_inventory_product"
+            model="report.s2u_warehouse.inventory.product"
+            string="Report Inventory Product"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_inventory_product"
+            file="s2uwarehouse.print_inventory_product"
+        />
+
+        <report
+            id="s2u_warehouse_print_inventory_location"
+            model="report.s2u_warehouse.inventory.location"
+            string="Report Inventory Location"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_inventory_location"
+            file="s2uwarehouse.print_inventory_location"
+        />
+
+        <report
+            id="s2u_warehouse_print_pallets_saldo"
+            model="report.s2u_warehouse.pallets.saldo"
+            string="Report Pallet Saldo"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_pallets_saldo"
+            file="s2uwarehouse.print_pallets_saldo"
+            groups="s2ubase.production_company"
+        />
+
+        <report
+            id="s2u_warehouse_print_pallets_history"
+            model="report.s2u_warehouse.pallets.history"
+            string="Report Pallet History"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_pallets_history"
+            file="s2uwarehouse.print_pallets_history"
+            groups="s2ubase.production_company"
+        />
+
+        <report
+            id="s2u_warehouse_delivery"
+            model="s2u.warehouse.outgoing"
+            string="Delivery Note"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_delivery"
+            file="s2uwarehouse.print_delivery"
+            attachment_use="False"
+            attachment="('delivery_note_'+(object.name or '').replace('/','').replace(' ', '_') +'.pdf')"
+        />
+
+        <report
+            id="s2u_warehouse_rma"
+            model="s2u.warehouse.rma"
+            string="RMA"
+            report_type="qweb-pdf"
+            name="s2uwarehouse.print_rma"
+            file="s2uwarehouse.print_rma"
+            attachment_use="False"
+            attachment="('rma_'+(object.name or '').replace('/','').replace(' ', '_') +'.pdf')"
+        />
+
+    </data>
+</openerp>

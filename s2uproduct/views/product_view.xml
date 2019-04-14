@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Sale Product -->
+        <record model="ir.ui.view" id="sale_product_search_view">
+            <field name="model">s2u.sale.product</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="variant_id" />
+                    <field name="publish_webshop" />
+                    <field name="sub_ids" />
+                    <field name="delivery_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="sale_product_tree" model="ir.ui.view">
+            <field name="model">s2u.sale.product</field>
+            <field name="arch" type="xml">
+                <tree string="Products">
+                    <field name="image_small" widget="image"/>
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="product_type" />
+                    <field name="price" />
+                    <field name="qty_available" />
+                    <field name="qty_reserved" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sale_product_form" model="ir.ui.view">
+            <field name="model">s2u.sale.product</field>
+            <field name="arch" type="xml">
+                <form string="Product">
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_stock"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-building">
+                                <field name="stock_count" widget="statinfo" string="On stock"/>
+                            </button>
+                            <button name="action_view_discount"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-percent">
+                                <field name="discount_count" widget="statinfo" string="Discounts"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="variant_id" />
+                                <field name="delivery_id" domain="[('type', '!=', 'not')]" />
+                                <field name="weight" />
+                                <field name="qty_available" />
+                                <field name="qty_reserved" />
+                            </group>
+                            <group>
+                                <field name="account_id" />
+                                <field name="vat_id" />
+                                <field name="price" />
+                                <field name="price_is_net" />
+                                <field name="sub_ids" widget="many2many_tags" placeholder="Product categories..."/>
+                                <field name="product_type" />
+                                <field name="sn_registration" />
+                                <field name="po_account_id" attrs="{'required': [('product_type', '=', 'stock')],
+                                                                    'invisible': [('product_type', '!=', 'stock')]}" />
+                                <field name="stock_account_id" attrs="{'required': [('product_type', '=', 'stock')],
+                                                                       'invisible': [('product_type', '!=', 'stock')]}" />
+                                <field name="po_stock_account_id" attrs="{'required': [('product_type', '=', 'stock')],
+                                                                          'invisible': [('product_type', '!=', 'stock')]}" />
+                            </group>
+                        </group>
+                        <group string="Description">
+                            <field name="description" nolabel="1" />
+                        </group>
+                        <notebook>
+                            <page string="Purchase" name="purchase">
+                                <field name="purchase_ids" nolabel="1" widget="one2many_list" >
+                                    <tree string="Purchases" editable="bottom">
+                                        <field name="entity_id" />
+                                        <field name="code_supplier" />
+                                        <field name="po_price" />
+                                        <field name="po_account_id" />
+                                        <field name="po_vat_id" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Image" name="image">
+                                <group>
+                                    <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium"}' nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Webshop" name="webshop">
+                                <group>
+                                    <group>
+                                        <field name="publish_webshop" />
+                                        <field name="hona" />
+                                        <field name="no_delivery_id" domain="[('type', 'in', ['not', 'days'])]" />
+                                    </group>
+                                    <group>
+                                        <field name="stock_prefix" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sale_product" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">s2u.sale.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sale_product_tree" />
+            <field name="search_view_id" ref="sale_product_search_view"/>
+        </record>
+
+        <menuitem action="action_sale_product" id="menu_product_sale_product"
+            parent="menu_product_sale" sequence="10" groups="s2uwarehouse.group_warehouse_manager" />
+
+        <record id="action_show_on_stock" model="ir.actions.server">
+            <field name="name">On Stock</field>
+            <field name="model_id" ref="model_s2u_sale_product"/>
+            <field name="binding_model_id" ref="s2uproduct.model_s2u_sale_product"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = records.action_view_stock()
+            </field>
+        </record>
+
+        <!-- Sale Product discount -->
+        <record model="ir.ui.view" id="sale_product_discount_search_view">
+            <field name="model">s2u.crm.entity.discount.product</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="product_id" />
+                    <field name="entity_id" />
+                    <field name="discount_type" />
+                </search>
+            </field>
+        </record>
+
+        <record id="sale_product_discount_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.discount.product</field>
+            <field name="arch" type="xml">
+                <tree string="Discounts">
+                    <field name="entity_id" />
+                    <field name="product_id" />
+                    <field name="discount_type" />
+                    <field name="discount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sale_product_discount_form" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.discount.product</field>
+            <field name="arch" type="xml">
+                <form string="Discount">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id" />
+                                <field name="entity_id" />
+                            </group>
+                            <group>
+                                <field name="discount_type" />
+                                <field name="discount" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sale_product_discount" model="ir.actions.act_window">
+            <field name="name">Discounts</field>
+            <field name="res_model">s2u.crm.entity.discount.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sale_product_discount_tree" />
+            <field name="search_view_id" ref="sale_product_discount_search_view"/>
+        </record>
+
+        <!-- Product Category-->
+        <record model="ir.ui.view" id="product_category_search_view">
+            <field name="model">s2u.product.category</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="sub_ids" />
+                </search>
+            </field>
+        </record>
+
+        <record id="product_category_tree" model="ir.ui.view">
+            <field name="model">s2u.product.category</field>
+            <field name="arch" type="xml">
+                <tree string="Categories">
+                    <field name="name" />
+                    <field name="title" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_category_form" model="ir.ui.view">
+            <field name="model">s2u.product.category</field>
+            <field name="arch" type="xml">
+                <form string="Category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="title" />
+                            </group>
+                            <group>
+                                <field name="sub_ids" widget="many2many_tags" placeholder="Sub categories..."/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_product_category" model="ir.actions.act_window">
+            <field name="name">Categories</field>
+            <field name="res_model">s2u.product.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="product_category_tree" />
+            <field name="search_view_id" ref="product_category_search_view"/>
+        </record>
+
+        <menuitem action="action_product_category" id="menu_product_category"
+            parent="menu_product_configuration" sequence="10" groups="s2uwarehouse.group_warehouse_manager" />
+
+        <!-- Product Sub category-->
+        <record model="ir.ui.view" id="product_sub_category_search_view">
+            <field name="model">s2u.product.sub.category</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="cat_ids" />
+                </search>
+            </field>
+        </record>
+
+        <record id="product_sub_category_tree" model="ir.ui.view">
+            <field name="model">s2u.product.sub.category</field>
+            <field name="arch" type="xml">
+                <tree string="Sub categories">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_sub_category_form" model="ir.ui.view">
+            <field name="model">s2u.product.sub.category</field>
+            <field name="arch" type="xml">
+                <form string="Sub category">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="cat_ids" widget="many2many_tags" placeholder="Categories..."/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_product_sub_category" model="ir.actions.act_window">
+            <field name="name">Sub categories</field>
+            <field name="res_model">s2u.product.sub.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="product_sub_category_tree" />
+            <field name="search_view_id" ref="product_sub_category_search_view"/>
+        </record>
+
+        <menuitem action="action_product_sub_category" id="menu_product_sub_category"
+            parent="menu_product_configuration" sequence="20" groups="s2uwarehouse.group_warehouse_manager" />
+
+        <!-- Product Delivery-->
+        <record model="ir.ui.view" id="product_delivery_search_view">
+            <field name="model">s2u.product.delivery</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="days" />
+                    <field name="type" />
+                </search>
+            </field>
+        </record>
+
+        <record id="product_delivery_tree" model="ir.ui.view">
+            <field name="model">s2u.product.delivery</field>
+            <field name="arch" type="xml">
+                <tree string="Deliveries">
+                    <field name="name" />
+                    <field name="days" />
+                    <field name="type" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_delivery_form" model="ir.ui.view">
+            <field name="model">s2u.product.delivery</field>
+            <field name="arch" type="xml">
+                <form string="Delivery">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="type" />
+                            </group>
+                            <group>
+                                <field name="days" attrs="{'invisible': [('type', '!=', 'days')],
+                                                           'required': [('type', '=', 'days')]}" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_product_delivery" model="ir.actions.act_window">
+            <field name="name">Deliveries</field>
+            <field name="res_model">s2u.product.delivery</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="product_delivery_tree" />
+            <field name="search_view_id" ref="product_delivery_search_view"/>
+        </record>
+
+        <menuitem action="action_product_delivery" id="menu_product_delivery"
+            parent="menu_product_configuration" sequence="30" groups="s2uwarehouse.group_warehouse_manager" />
+
+        <!-- Product Variant-->
+        <record model="ir.ui.view" id="product_variant_search_view">
+            <field name="model">s2u.product.variant</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="product_variant_tree" model="ir.ui.view">
+            <field name="model">s2u.product.variant</field>
+            <field name="arch" type="xml">
+                <tree string="Variants">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_variant_form" model="ir.ui.view">
+            <field name="model">s2u.product.variant</field>
+            <field name="arch" type="xml">
+                <form string="Variant">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_product_variant" model="ir.actions.act_window">
+            <field name="name">Variants</field>
+            <field name="res_model">s2u.product.variant</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="product_variant_tree" />
+            <field name="search_view_id" ref="product_variant_search_view"/>
+        </record>
+
+        <menuitem action="action_product_variant" id="menu_product_variant"
+            parent="menu_product_configuration" sequence="40" groups="s2uwarehouse.group_warehouse_manager" />
+    </data>
+</openerp>

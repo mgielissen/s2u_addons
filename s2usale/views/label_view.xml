@@ -1,0 +1,139 @@
+<openerp>
+    <data>
+        <!-- Label -->
+        <record model="ir.ui.view" id="label2_search_view">
+            <field name="model">s2u.label</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="code" />
+                </search>
+            </field>
+        </record>
+
+        <record id="label2_form" model="ir.ui.view">
+            <field name="model">s2u.label</field>
+            <field name="arch" type="xml">
+                <form string="Label">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="sequence" />
+                                <field name="bold" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="default_value" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="label2_tree" model="ir.ui.view">
+            <field name="model">s2u.label</field>
+            <field name="arch" type="xml">
+                <tree string="Labels">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="sequence" />
+                    <field name="default_value" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_label2" model="ir.actions.act_window">
+            <field name="name">Labels</field>
+            <field name="res_model">s2u.label</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="label2_tree" />
+        </record>
+
+        <menuitem action="action_label2" id="menu_action_label2"
+            parent="menu_sales_settings" sequence="5" groups="s2ubase.production_company" />
+
+        <!-- Layout -->
+        <record model="ir.ui.view" id="layout2_search_view">
+            <field name="model">s2u.layout</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="layout2_form" model="ir.ui.view">
+            <field name="model">s2u.layout</field>
+            <field name="arch" type="xml">
+                <form string="Layout">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="use_as_default" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Sale" name="so">
+                                <field name="label_so_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Sale" editable="bottom">
+                                        <field name="sequence" />
+                                        <field name="label_id" />
+                                        <field name="default_value" />
+                                        <field name="display" />
+                                        <field name="on_invoice" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Purchase" name="po">
+                                <field name="label_po_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Purchase" editable="bottom">
+                                        <field name="sequence" />
+                                        <field name="label_id" />
+                                        <field name="default_value" />
+                                        <field name="display" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="layout2_tree" model="ir.ui.view">
+            <field name="model">s2u.layout</field>
+            <field name="arch" type="xml">
+                <tree string="Layouts">
+                    <field name="name" />
+                    <field name="use_as_default" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_layout2" model="ir.actions.act_window">
+            <field name="name">Layouts</field>
+            <field name="res_model">s2u.layout</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="layout2_tree" />
+        </record>
+
+        <menuitem action="action_layout2" id="menu_action_layout2"
+            parent="menu_sales_settings" sequence="6" groups="s2ubase.production_company" />
+
+    </data>
+</openerp>

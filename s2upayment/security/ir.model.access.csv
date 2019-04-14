@@ -1,0 +1,9 @@
+"id","group_id:id","name","model_id","perm_create","perm_unlink","perm_write","perm_read"
+"r20170305001","base.group_user","Default","s2u.payment.acquirer",1,1,1,1
+"r20170305002","base.group_user","Default","s2u.payment.transaction",1,1,1,1
+"r20170528001","base.group_user","Default","s2u.sale.country",1,1,1,1
+"r20170601001","base.group_user","Default","s2u.sale.country.portocosts",1,1,1,1
+"r20170601002","base.group_user","Default","s2u.payment.transaction.item",1,1,1,1
+
+
+

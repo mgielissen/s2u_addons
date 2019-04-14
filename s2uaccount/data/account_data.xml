@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="mt_invoice_so_created" model="mail.message.subtype">
+            <field name="name">Invoice Created</field>
+            <field name="res_model">s2u.account.invoice</field>
+            <field name="default" eval="False"/>
+            <field name="description">Invoice Created</field>
+        </record>
+        <record id="mt_invoice_so_validated" model="mail.message.subtype">
+            <field name="name">Validated</field>
+            <field name="res_model">s2u.account.invoice</field>
+            <field name="default" eval="False"/>
+            <field name="description">Invoice validated</field>
+        </record>
+        <record id="mt_invoice_so_reopened" model="mail.message.subtype">
+            <field name="name">Reopened</field>
+            <field name="res_model">s2u.account.invoice</field>
+            <field name="default" eval="False"/>
+            <field name="description">Invoice reopened</field>
+        </record>
+        <record id="mt_invoice_so_canceled" model="mail.message.subtype">
+            <field name="name">Canceled</field>
+            <field name="res_model">s2u.account.invoice</field>
+            <field name="default" eval="False"/>
+            <field name="description">Invoice canceled</field>
+        </record>
+        <record id="mt_invoice_so_proforma" model="mail.message.subtype">
+            <field name="name">Proforma Invoice Created</field>
+            <field name="res_model">s2u.account.invoice</field>
+            <field name="default" eval="False"/>
+            <field name="description">Proforma Invoice Created</field>
+        </record>
+    </data>
+</openerp>

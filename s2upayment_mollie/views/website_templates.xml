@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="select_acquirer" name="Display Acquirer Information">
+        <div class="row mt16">
+            <a t-attf-href="/shop/checkout/payment/ideal">
+                <img src="/s2upayment_mollie/static/src/img/ideal.png" alt="Uw bestelling betalen via iDEAL" class="img-responsive" />
+            </a>
+            <p>
+                Ik wil het bedrag dmv iDeal aan u overmaken.
+            </p>
+        </div>
+    </template>
+
+    <template id="payment_oops" name="Oops">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <h1 class="col-sm-8 col-sm-offset-2">Oops!</h1>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">Er is iets fout gegaan tijdens de iDeal transactie.</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2">De volgende fout is opgetreden:</p>
+                </div>
+                <div class="row">
+                    <p class="col-sm-8 col-sm-offset-2"><b><t t-esc="error"/></b></p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="payment_webhook_ok" name="Mollie Webhook">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1 class="col-sm-10 col-sm-offset-2">Mollie Webhook</h1>
+                <p class="col-sm-6 col-sm-offset-2">Status is verwerkt.</p>
+                <div class="row">
+                    <div class="col-sm-12" style="height:150px;"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
+

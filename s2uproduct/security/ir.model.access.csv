@@ -1,0 +1,10 @@
+"id","group_id:id","name","model_id","perm_create","perm_unlink","perm_write","perm_read"
+"r20161227001","base.group_user","Default","s2u.sale.product",1,1,1,1
+"r20161229001","base.group_user","Default","s2u.product.category",1,1,1,1
+"r20161229002","base.group_user","Default","s2u.product.sub.category",1,1,1,1
+"r20170108001","base.group_user","Default","s2u.product.delivery",1,1,1,1
+"r20180918001","base.group_user","Default","s2u.product.registration",1,1,1,1
+"r20181028001","base.group_portal","Default","s2u.product.registration",0,0,0,1
+"r20181209001","base.group_user","Default","s2u.sale.product.purchase",1,1,1,1
+"r20181209002","base.group_user","Default","s2u.crm.entity.discount.product",1,1,1,1
+"r20190223001","base.group_user","Default","s2u.product.variant",1,1,1,1

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="group_ecommerce" model="res.groups">
+            <field name="name">eCommerce (s2uFramework)</field>
+            <field name="category_id" ref="base.module_category_website"/>
+        </record>
+    </data>
+</openerp>

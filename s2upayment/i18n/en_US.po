@@ -1,0 +1,399 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* s2upayment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-26 11:16+0000\n"
+"PO-Revision-Date: 2017-10-26 11:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_acquirer_id
+msgid "Acquirer"
+msgstr "Acquirer"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_provider_active
+msgid "Active"
+msgstr "Active"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_address
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_delivery_address
+msgid "Address"
+msgstr "Address"
+
+#. module: s2upayment
+#: model:ir.ui.view,arch_db:s2upayment.payment_transaction_form
+msgid "Alternativ shipment address"
+msgstr "Alternativ shipment address"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_tot_amount
+msgid "Amount"
+msgstr "Amount"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_tinno
+msgid "BTW Nr."
+msgstr "BTW Nr."
+
+#. module: s2upayment
+#: selection:s2u.payment.transaction,state:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_city
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_delivery_city
+msgid "City"
+msgstr "City"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_company_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_company
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_delivery_company
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_company_id
+msgid "Company"
+msgstr "Company"
+
+#. module: s2upayment
+#: selection:s2u.payment.transaction,state:0
+msgid "Concept"
+msgstr "Concept"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_tot_costs
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_costs_ids
+msgid "Costs"
+msgstr "Costs"
+
+#. module: s2upayment
+#: model:ir.actions.act_window,name:s2upayment.country_list_action
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_country_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_delivery_country_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_country_id
+#: model:ir.ui.menu,name:s2upayment.menu_configuration_country
+#: model:ir.ui.view,arch_db:s2upayment.country_form
+#: model:ir.ui.view,arch_db:s2upayment.country_tree_view
+msgid "Country"
+msgstr "Country"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_create_uid
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_create_uid
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_create_uid
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_create_date
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_create_date
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_create_date
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_currency_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_currency_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_currency_id
+msgid "Currency"
+msgstr "Currency"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_default
+msgid "Default"
+msgstr "Default"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_delivery_type
+msgid "Delivery type"
+msgstr "Delivery type"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_display_name
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_display_name
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_display_name
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: s2upayment
+#: selection:s2u.payment.transaction,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_environment
+msgid "Environment"
+msgstr "Environment"
+
+#. module: s2upayment
+#: selection:s2u.payment.transaction,state:0
+msgid "Error"
+msgstr "Error"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_trans_expiration
+msgid "Expiration"
+msgstr "Expiration"
+
+#. module: s2upayment
+#: selection:s2u.payment.transaction,state:0
+msgid "Expired"
+msgstr "Expired"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_price_gross
+msgid "Gross"
+msgstr "Gross"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_id
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2upayment
+#: model:ir.ui.view,arch_db:s2upayment.payment_transaction_form
+msgid "Invoice data"
+msgstr "Invoice data"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_ids
+msgid "Items"
+msgstr "Items"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_c_of_c
+msgid "KvK Nr."
+msgstr "KvK Nr."
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer___last_update
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction___last_update
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item___last_update
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_write_uid
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_write_uid
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_write_uid
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_write_date
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_write_date
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_write_date
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: s2upayment
+#: model:ir.ui.view,arch_db:s2upayment.country_form
+msgid "Lines"
+msgstr "Lines"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_name
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_delivery_name
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_name
+msgid "Name"
+msgstr "Name"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_order_delivery_type
+msgid "Order delivery type"
+msgstr "Order delivery type"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_order_type
+msgid "Order type"
+msgstr "Order type"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_is_paid
+msgid "Paid"
+msgstr "Paid"
+
+#. module: s2upayment
+#: model:ir.model,name:s2upayment.model_s2u_payment_acquirer
+msgid "Payment Acquirer"
+msgstr "Payment Acquirer"
+
+#. module: s2upayment
+#: model:ir.model,name:s2upayment.model_s2u_payment_transaction
+msgid "Payment Transaction"
+msgstr "Payment Transaction"
+
+#. module: s2upayment
+#: model:ir.model,name:s2upayment.model_s2u_payment_transaction_item
+msgid "Payment Transaction Shoppingcart"
+msgstr "Payment Transaction Shoppingcart"
+
+#. module: s2upayment
+#: model:ir.ui.menu,name:s2upayment.menu_payment
+msgid "Payments"
+msgstr "Payments"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_phone
+msgid "Phone"
+msgstr "Phone"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_contact_prefix
+msgid "Prefix"
+msgstr "Prefix"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_price_is_net
+msgid "Price is netto"
+msgstr "Price is netto"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_product_id
+msgid "Product"
+msgstr "Product"
+
+#. module: s2upayment
+#: selection:s2u.payment.acquirer,environment:0
+msgid "Production"
+msgstr "Production"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_provider
+#: model:ir.ui.view,arch_db:s2upayment.payment_acquirer_form
+msgid "Provider"
+msgstr "Provider"
+
+#. module: s2upayment
+#: model:ir.actions.act_window,name:s2upayment.action_payment_acquirer
+#: model:ir.ui.menu,name:s2upayment.menu_payment_acquirer
+#: model:ir.ui.view,arch_db:s2upayment.payment_acquirer_tree
+msgid "Providers"
+msgstr "Providers"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_qty
+msgid "Qty"
+msgstr "Qty"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_reference
+msgid "Reference"
+msgstr "Reference"
+
+#. module: s2upayment
+#: model:ir.model,name:s2upayment.model_s2u_sale_country
+msgid "Sale product in countries"
+msgstr "Sale product in countries"
+
+#. module: s2upayment
+#: model:ir.ui.view,arch_db:s2upayment.country_search_view
+#: model:ir.ui.view,arch_db:s2upayment.payment_acquirer_search_view
+#: model:ir.ui.view,arch_db:s2upayment.payment_transaction_search_view
+msgid "Search"
+msgstr "Search"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_acquirer_sequence
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: s2upayment
+#: code:addons/s2upayment/models/payment_transaction.py:126
+#, python-format
+msgid "Sequence for creating payment reference not exists!"
+msgstr "Sequence for creating payment reference not exists!"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_price
+msgid "Shipment costs"
+msgstr "Shipment costs"
+
+#. module: s2upayment
+#: model:ir.model,name:s2upayment.model_s2u_sale_country_portocosts
+msgid "Shipment costs per country per wieght"
+msgstr "Shipment costs per country per wieght"
+
+#. module: s2upayment
+#: model:ir.ui.view,arch_db:s2upayment.payment_transaction_form
+msgid "Shoppingcart"
+msgstr "Shoppingcart"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_state
+msgid "State"
+msgstr "State"
+
+#. module: s2upayment
+#: selection:s2u.payment.acquirer,environment:0
+msgid "Test"
+msgstr "Test"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_weight
+msgid "Till weight (kg)"
+msgstr "Till weight (kg)"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_tot_to_pay
+msgid "To pay"
+msgstr "To pay"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_name
+msgid "Trans ID"
+msgstr "Trans ID"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_is_valid
+msgid "Trans valid"
+msgstr "Trans valid"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_item_trans_id
+#: model:ir.ui.view,arch_db:s2upayment.payment_transaction_form
+msgid "Transaction"
+msgstr "Transaction"
+
+#. module: s2upayment
+#: model:ir.actions.act_window,name:s2upayment.action_payment_transaction
+#: model:ir.ui.menu,name:s2upayment.menu_payment_transaction
+#: model:ir.ui.view,arch_db:s2upayment.payment_transaction_tree
+msgid "Transactions"
+msgstr "Transactions"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_sale_country_portocosts_vat_id
+msgid "Vat"
+msgstr "Vat"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_delivery_zip
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_zip
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: s2upayment
+#: model:ir.model.fields,field_description:s2upayment.field_s2u_payment_transaction_checkout_email
+msgid "eMail"
+msgstr "eMail"
+

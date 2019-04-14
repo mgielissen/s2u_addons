@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <template id="print_delivery_document" inherit_id="s2uwarehouse.print_delivery_document" >
+        <xpath expr="//div[@name='delivery_postfix']" position="replace">
+            <div class="row mt8" t-if="o.template_id" name="delivery_postfix">
+                <div class="col-xs-12">
+                    <p t-field="o.postfix_delivery" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</data>
+</openerp>

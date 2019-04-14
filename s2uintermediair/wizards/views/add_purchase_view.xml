@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_add_purchase_view" model="ir.ui.view">
+        <field name="name">Create purchase</field>
+        <field name="model">s2u.intermediair.add.purchase</field>
+        <field name="arch" type="xml">
+            <form string="Create purchase">
+                <sheet>
+                    <group string="Please select suppliers to add purchases for:">
+                        <group>
+                            <field name="project" />
+                        </group>
+                        <group>
+                            <field name="reference" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="supplier_ids" widget="many2many_tags" />
+                    </group>
+                    <field name="line_ids" nolabel="1" widget="one2many_list">
+                        <tree string="Purchase" editable="bottom" create="0" delete="0">
+                            <field name="purchase" />
+                            <field name="layout_id" required="1"/>
+                            <field name="pos" />
+                            <field name="qty" />
+                            <field name="distribution" />
+                            <field name="product_id" />
+                            <field name="product_detail" />
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="do_purchase" string="Purchase" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,54 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="sale_form">
+            <field name="inherit_id" ref="s2usale.sale_form"/>
+            <field name="model">s2u.sale</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box']/button[@name='action_view_purchase']" position="after">
+                    <button name="action_view_project"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-book"
+                            attrs="{'invisible': [('project_count', '=', 0)]}">
+                        <field name="project_count" widget="statinfo" string="Projects"/>
+                    </button>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page[@name='order_lines']" position="after">
+                    <page string="Project hours" name="project_hours">
+                        <group>
+                            <group>
+                                <field name="project_method" />
+                                <field name="projecttype_id" attrs="{'invisible': [('project_method', '=', 'none')],
+                                                                     'required': [('project_method', '!=', 'none')]}"
+                                       domain="[('allow_in_so', '=', True)]"/>
+                            </group>
+                            <group>
+                                <field name="zone1" attrs="{'invisible': [('project_method', '=', 'none')],
+                                                            'required': [('project_method', '!=', 'none')]}" />
+                                <field name="zone2" attrs="{'invisible': [('project_method', '=', 'none')],
+                                                            'required': [('project_method', '!=', 'none')]}" />
+                                <field name="zone3" attrs="{'invisible': [('project_method', '=', 'none')],
+                                                            'required': [('project_method', '!=', 'none')]}" />
+                                <field name="zone4" attrs="{'invisible': [('project_method', '=', 'none')],
+                                                            'required': [('project_method', '!=', 'none')]}" />
+                            </group>
+                        </group>
+                        <field name="hour_ids" nolabel="1" widget="one2many_list" attrs="{'invisible': [('project_method', '=', 'none')],
+                                                                                          'required': [('project_method', '!=', 'none')]}" >
+                            <tree string="Hours" editable="bottom">
+                                <field name="sequence" widget="handle" />
+                                <field name="stage_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="rate_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="descript" />
+                                <field name="rate_per_hour" />
+                                <field name="hours" widget="float_time" sum="Hours" />
+                                <field name="amount" sum="Amount" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

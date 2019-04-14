@@ -1,0 +1,488 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* s2uecommerce
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-26 06:32+0000\n"
+"PO-Revision-Date: 2017-10-26 06:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "<b>Totaal te betalen</b>"
+msgstr "<b>Totaal te betalen</b>"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_shoppingcard
+msgid "<em>Checkout - € <span data-total=\"0\">0</span></em>"
+msgstr "<em>Checkout - € <span data-total=\"0\">0</span></em>"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_detail
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "<span class=\"pdclose\" onclick=\"document.getElementById('pdmodal').style.display='none'\">&amp;times;</span>"
+msgstr "<span class=\"pdclose\" onclick=\"document.getElementById('pdmodal').style.display='none'\">&amp;times;</span>"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Aanhef"
+msgstr "Aanhef"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_shoppingcard
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Aantal"
+msgstr "Aantal"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_deladdr_address
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_address
+msgid "Address"
+msgstr "Address"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Adres"
+msgstr "Adres"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_delivery_is_b2c
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invoice_is_b2c
+msgid "B2c"
+msgstr "B2c"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "BTW"
+msgstr "BTW"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "BTW nummer"
+msgstr "BTW nummer"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_thanks
+msgid "Bedankt voor uw bestelling."
+msgstr "Bedankt voor uw bestelling."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Bedrag"
+msgstr "Bedrag"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Bedrijf"
+msgstr "Bedrijf"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_final
+msgid "Bestelling doorvoeren"
+msgstr "Bestelling doorvoeren"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Bezorgadres"
+msgstr "Bezorgadres"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Bezorgadres is factuuradres"
+msgstr "Bezorgadres is factuuradres"
+
+#. module: s2uecommerce
+#: model:ir.model,name:s2uecommerce.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entity"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Checkout: adresgegevens"
+msgstr "Checkout: adresgegevens"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Checkout: betaalwijze"
+msgstr "Checkout: betaalwijze"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_final
+msgid "Checkout: controleren"
+msgstr "Checkout: controleren"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_deladdr_city
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_city
+msgid "City"
+msgstr "City"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_company_id
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_deladdr_company
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_company
+msgid "Company"
+msgstr "Company"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_deladdr_country
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_country
+msgid "Country"
+msgstr "Country"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.ecommerce_oops
+msgid "De volgende fout is opgetreden:"
+msgstr "De volgende fout is opgetreden:"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Dhr."
+msgstr "Dhr."
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Dit adres is"
+msgstr "Dit adres is"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_pending
+msgid "Door de pagina te aktualiseren kunt u de status van uw betaling controleren."
+msgstr "Door de pagina te aktualiseren kunt u de status van uw betaling controleren."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.ecommerce_oops
+msgid "Er is iets fout gegaan tijdens het bestellen."
+msgstr "Er is iets fout gegaan tijdens het bestellen."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Factuuradres"
+msgstr "Factuuradres"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_searchfilter
+msgid "Filters &amp;dArr;"
+msgstr "Filters &amp;dArr;"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_searchfilter
+msgid "Filters toepassen"
+msgstr "Filters toepassen"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_searchfilter
+msgid "Filters wissen"
+msgstr "Filters wissen"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_empty_filter
+msgid "Geen producten aanwezig waarop u zoekt"
+msgstr "Geen producten aanwezig waarop u zoekt"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_empty_filter
+msgid "Helaas zijn er geen producten gevonden waarop u heeft gezocht. Pas uw filter aan voor een nieuwe zoekopdracht."
+msgstr "Helaas zijn er geen producten gevonden waarop u heeft gezocht. Pas uw filter aan voor een nieuwe zoekopdracht."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_detail
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "Herinner mij"
+msgstr "Herinner mij"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2uecommerce
+#: model:ir.model,name:s2uecommerce.model_wizard_import_ubl
+msgid "Import UBL"
+msgstr "Import UBL"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_detail
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "In winkelwagen"
+msgstr "In winkelwagen"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_is_delivery
+msgid "Invoice is delivery"
+msgstr "Invoice is delivery"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Ja"
+msgstr "Ja"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Kies uw gewenste betaalmethode om uw bestelling af te ronden."
+msgstr "Kies uw gewenste betaalmethode om uw bestelling af te ronden."
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_kvk
+msgid "KvK"
+msgstr "KvK"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "KvK nummer"
+msgstr "KvK nummer"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Land"
+msgstr "Land"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Land..."
+msgstr "Land..."
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Mevr."
+msgstr "Mevr."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_empty
+msgid "Momenteel is onze shop gesloten, zodra wij open zijn laten wij dit zo snel mogelijk weten. Excuses voor dit ongemak."
+msgstr "Momenteel is onze shop gesloten, zodra wij open zijn laten wij dit zo snel mogelijk weten. Excuses voor dit ongemak."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Naam"
+msgstr "Naam"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_deladdr_name
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_name
+msgid "Name"
+msgstr "Name"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Nee"
+msgstr "Nee"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_final
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Nee, nog even verder winkelen"
+msgstr "Nee, nog even verder winkelen"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Omschrijving"
+msgstr "Omschrijving"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_shoppingcard
+msgid "Ongedaan"
+msgstr "Ongedaan"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.ecommerce_oops
+msgid "Oops!"
+msgstr "Oops!"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Particulier"
+msgstr "Particulier"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_phone
+msgid "Phone"
+msgstr "Phone"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Plaats"
+msgstr "Plaats"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Postcode"
+msgstr "Postcode"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_deladdr_prefix
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_prefix
+msgid "Prefix"
+msgstr "Prefix"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "Product overzicht"
+msgstr "Product overzicht"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_shoppingcard
+msgid "Product verwijderd."
+msgstr "Product verwijderd."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_empty
+msgid "Shop momenteel gesloten"
+msgstr "Shop momenteel gesloten"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_detail
+msgid "Terug naar product overzicht"
+msgstr "Terug naar product overzicht"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Totaal excl. BTW"
+msgstr "Totaal excl. BTW"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Totaal incl. BTW"
+msgstr "Totaal incl. BTW"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Uw bestelling:"
+msgstr "Uw bestelling:"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_pending
+msgid "Uw betaling is momenteel in behandeling."
+msgstr "Uw betaling is momenteel in behandeling."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Uw email adres"
+msgstr "Uw email adres"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Uw telefoon nummer"
+msgstr "Uw telefoon nummer"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_vatno
+msgid "Vat no."
+msgstr "Vat no."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Verder"
+msgstr "Verder"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_shoppingcard
+msgid "Verwijderen"
+msgstr "Verwijderen"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_payment
+msgid "Verzendkosten"
+msgstr "Verzendkosten"
+
+#. module: s2uecommerce
+#: model:ir.ui.menu,name:s2uecommerce.menu_s2uecommerce_configuration
+msgid "Webshop"
+msgstr "Webshop"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout_thanks
+msgid "Wij danken u voor uw bestelling. Voor vragen kunt u ons altijd mailen of telefonisch bereiken."
+msgstr "Wij danken u voor uw bestelling. Voor vragen kunt u ons altijd mailen of telefonisch bereiken."
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.display_shoppingcard
+msgid "Winkelwagen"
+msgstr "Winkelwagen"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_checkout
+msgid "Zakelijk"
+msgstr "Zakelijk"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_deladdr_zip
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_zip
+msgid "Zip"
+msgstr "Zip"
+
+#. module: s2uecommerce
+#: model:ir.model.fields,field_description:s2uecommerce.field_s2u_ecommerce_order_invaddr_email
+msgid "eMail"
+msgstr "eMail"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_detail
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "excl. BTW)"
+msgstr "excl. BTW)"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "pagina"
+msgstr "pagina"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "pagina's met totaal"
+msgstr "pagina's met totaal"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "producten"
+msgstr "producten"
+
+#. module: s2uecommerce
+#: model:ir.model,name:s2uecommerce.model_s2u_ecommerce_order
+msgid "s2u.ecommerce.order"
+msgstr "s2u.ecommerce.order"
+
+#. module: s2uecommerce
+#: model:ir.ui.view,arch_db:s2uecommerce.shop_product_list
+msgid "van"
+msgstr "van"
+

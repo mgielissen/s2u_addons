@@ -1,0 +1,667 @@
+<openerp>
+    <data>
+        <!-- CRM Entity -->
+        <record model="ir.ui.view" id="crm_entity_search_view">
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="type" />
+                    <field name="name" />
+                    <field name="address" />
+                    <field name="zip" />
+                    <field name="tinno" />
+                    <field name="c_of_c" />
+                    <field name="tag_ids" />
+                    <field name="state" />
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_entity_form" model="ir.ui.view">
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <form string="Entity">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%" name="button_box_s2u">
+                            <field name="rating_visual" widget="rating" />
+                            <button name="action_view_addresses"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-location-arrow"
+                                    attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                    title="Addresses">
+                                <field name="addresses_count" widget="statinfo" string="Addresses" nolabel="1"/>
+                            </button>
+                            <button name="action_view_contacts"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-users"
+                                    attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                    title="Contacts">
+                                <field name="contacts_count" widget="statinfo" string="Contacts" nolabel="1"/>
+                            </button>
+                            <button name="toggle_active"
+                                    type="object"
+                                    groups="s2ubase.archiver"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-archive"
+                                    title="Archive"
+                                    confirm="Are you sure? You are going to archive/unarchive this object if you continue.">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}' />
+                            </button>
+                        </div>
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <h2 class="oe_read_only">
+                            <field name="default_address" nolabel="1"/>
+                        </h2>
+                        <group>
+                            <field name="description" attrs="{'invisible': [('type', '=', 'b2c')]}" nolabel="1" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="type" groups="s2ubase.b2c" />
+                                <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium"}'
+                                       filename="image_fname" />
+                                <field name="image_fname" invisible="1" />
+                            </group>
+                            <group>
+                                <field name="responsible_id" attrs="{'invisible': [('type', '=', 'b2c')],
+                                                                     'required': [('type', '=', 'b2b')]}" />
+                                <field name="tag_ids"
+                                       widget="many2many_tags"
+                                       options="{'color_field': 'color'}"
+                                       placeholder="Tags..."
+                                       required="1"
+                                       domain="[('type', 'in', ['entity', 'all'])]"/>
+                                <field name="sexe" attrs="{'invisible': [('type', '=', 'b2b')],
+                                                           'required': [('type', '=', 'b2c')]}" />
+                                <field name="prefix" placeholder="Mr. Doc. Prof." attrs="{'invisible': [('type', '=', 'b2b')],
+                                                                                          'required': [('type', '=', 'b2c')]}" />
+                            </group>
+                        </group>
+                        <group attrs="{'invisible': [('type', '=', 'b2b')]}">
+                            <label for="address" string="Address" attrs="{'invisible': [('type', '=', 'b2b')]}"/>
+                            <div class="o_address_format" attrs="{'invisible': [('type', '=', 'b2b')]}" >
+                                <field name="address" placeholder="Address ..." class="o_address_street"/>
+                                <field name="zip" placeholder="Zip ..." class="o_address_zip"/>
+                                <field name="city" placeholder="City ..." class="o_address_city"/>
+                            </div>
+                            <field name="communication" placeholder="Geachte heer Voorbeeld, Beste Ben," attrs="{'invisible': [('type', '=', 'b2b')],
+                                                                                                                 'required': [('type', '=', 'b2c')]}" />
+                            <field name="birthdate" attrs="{'invisible': [('type', '=', 'b2b')]}" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="phone" />
+                                <field name="mobile" attrs="{'invisible': [('type', '=', 'b2b')]}" />
+                                <field name="fax" />
+                            </group>
+                            <group>
+                                <field name="email" widget="email" />
+                                <field name="website" widget="url" />
+                                <field name="skype" attrs="{'invisible': [('type', '=', 'b2b')]}" />
+                            </group>
+                        </group>
+                        <group>
+                            <group name="extra_info_left">
+                                <field name="entity_code" attrs="{'invisible': [('type', '=', 'b2c')],
+                                                                  'required': [('type', '=', 'b2b')]}" />
+                                <label for="c_of_c" string="KVK-nummer"/>
+                                <div>
+                                    <field name="c_of_c" attrs="{'invisible': [('type', '=', 'b2c')],
+                                                                 'required': [('type', '=', 'b2b')]}" class="oe_inline" />
+                                    &amp;nbsp;<a href="https://www.kvk.nl" target="_blank" class="oe_inline">kvk.nl</a>
+                                </div>
+                                <field name="tinno" />
+                                <field name="lang" />
+                                <field name="country_id" placeholder="Country" options='{"no_open": True, "no_create": True}'/>
+                                <field name="bank_iban" />
+                                <field name="bank_bic" />
+                                <field name="bank_name" />
+                            </group>
+                            <group name="extra_info_right">
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Other details" attrs="{'invisible': True}" name="details" >
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="crm_entity_kanban">
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="type"/>
+                    <field name="phone"/>
+                    <field name="country_id"/>
+                    <field name="mobile"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_res_partner_kanban">
+                                <div class="o_kanban_image">
+                                    <t t-if="record.type.raw_value === 'b2b'">
+                                        <img t-att-src='_s + "/base/static/src/img/money.png"' class="o_kanban_image oe_kanban_avatar_smallbox"/>
+                                    </t>
+                                    <t t-if="record.type.raw_value === 'b2c'">
+                                        <img t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+                                    </t>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title oe_partner_heading"><field name="name"/></strong>
+                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <ul>
+                                        <li t-if="record.email.raw_value" class="o_text_overflow"><field name="email"/></li>
+                                    </ul>
+                                    <div class="oe_kanban_partner_links"/>
+                                </div>
+                            </div>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="crm_entity_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <tree string="Entity">
+                    <field name="name" />
+                    <field name="type" groups="s2ubase.b2c" />
+                    <field name="entity_code" />
+                    <field name="phone" />
+                    <field name="mobile" />
+                    <field name="email" />
+                    <field name="skype" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crm_entity" model="ir.actions.act_window">
+            <field name="name">Entity</field>
+            <field name="res_model">s2u.crm.entity</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="crm_entity_tree" />
+        </record>
+
+        <menuitem action="action_crm_entity" id="menu_crm_entity"
+            parent="menu_crm_crm" sequence="10" />
+
+        <!-- CRM Contacts -->
+        <record model="ir.ui.view" id="crm_entity_contact_search_view">
+            <field name="model">s2u.crm.entity.contact</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="phone" />
+                    <field name="mobile" />
+                    <field name="email" />
+                    <field name="skype" />
+                    <field name="entity_id" />
+                    <field name="address_id" />
+                    <field name="reports_to_id" />
+                    <field name="secretary_id" />
+                    <field name="search_key" />
+                    <field name="tag_ids" />
+                    <field name="sub_company" groups="s2ubase.production_company" />
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_entity_contact_form" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.contact</field>
+            <field name="arch" type="xml">
+                <form string="Contact">
+                    <header>
+                        <button name="action_excel" type="object" string="Excel for mailmerge" class="oe_read_only" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="toggle_active"
+                                    type="object"
+                                    groups="s2ubase.archiver"
+                                    class="oe_stat_button"
+                                    icon="fa-archive"
+                                    confirm="Are you sure? You are going to archive/unarchive this object if you continue.">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}' />
+                            </button>
+                        </div>
+                        <group string="Business contact data">
+                            <group>
+                                <field name="entity_id" />
+                                <field name="sub_company" groups="s2ubase.production_company" />
+                                <field name="sub_company_name" attrs="{'invisible': [('sub_company', '=', False)],
+                                                                       'required': [('sub_company', '=', True)]}" />
+                                <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium"}'
+                                       filename="image_fname" />
+                                <field name="image_fname" invisible="1" />
+                                <field name="sexe" />
+                                <field name="prefix" placeholder="T.a.v. Ben Voorbeeld" required="1" help="This string is used in all letter communications."/>
+                                <field name="name" placeholder="Firstname Lastname" />
+                                <field name="position" />
+                                <field name="communication" placeholder="Geachte heer Voorbeeld, Beste Ben," required="1" />
+                                <field name="search_key" />
+                            </group>
+                            <group>
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', entity_id)]"
+                                       context="{'default_entity_id': entity_id}" />
+                                <field name="phone" />
+                                <field name="mobile" />
+                                <field name="email" />
+                                <field name="skype" />
+                                <field name="tag_ids"
+                                       widget="many2many_tags"
+                                       options="{'color_field': 'color'}"
+                                       placeholder="Tags..."
+                                       domain="[('type', 'in', ['contact', 'all'])]" />
+                                <field name="reports_to_id"
+                                       domain="[('entity_id', '=', entity_id)]"
+                                       context="{'default_entity_id': entity_id}" />
+                                <field name="secretary_id"
+                                       domain="[('entity_id', '=', entity_id)]"
+                                       context="{'default_entity_id': entity_id}" />
+                            </group>
+                        </group>
+                        <group string="Privat contact data">
+                            <group>
+                               <field name="address" />
+                               <field name="zip" />
+                               <field name="city" />
+                               <field name="country_id" />
+                            </group>
+                            <group>
+                               <field name="phone_privat" />
+                               <field name="email_privat" />
+                               <field name="birthdate" />
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_entity_contact_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.contact</field>
+            <field name="arch" type="xml">
+                <tree string="Contact">
+                    <field name="prefix" />
+                    <field name="position" />
+                    <field name="display_company"/>
+                    <field name="phone" />
+                    <field name="mobile" />
+                    <field name="email" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crm_entity_contact" model="ir.actions.act_window">
+            <field name="name">Contact</field>
+            <field name="res_model">s2u.crm.entity.contact</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="crm_entity_contact_tree" />
+        </record>
+
+        <menuitem action="action_crm_entity_contact" id="menu_crm_entity_contact"
+            parent="menu_crm_crm" sequence="20" />
+
+        <!-- CRM Address -->
+        <record model="ir.ui.view" id="crm_entity_address_search_view">
+            <field name="model">s2u.crm.entity.address</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="address" />
+                    <field name="type" />
+                    <field name="zip" />
+                    <field name="entity_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_entity_address_form" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.address</field>
+            <field name="arch" type="xml">
+                <form string="Address">
+                    <sheet>
+                       <div class="oe_button_box" style="width: 100%;" name="button_box">
+                           <button name="toggle_active" type="object" groups="s2ubase.archiver"
+                                   class="oe_stat_button" icon="fa-archive"
+                                   confirm="Are you sure? You are going to archive/unarchive this object if you continue.">
+                               <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}' />
+                           </button>
+                       </div>
+                       <group>
+                           <field name="entity_id" />
+                           <field name="type" />
+                           <label for="address" string="Address" />
+                           <div class="o_address_format" >
+                               <field name="address" placeholder="Address ..." class="o_address_street"/>
+                               <field name="zip" placeholder="Zip ..." class="o_address_zip"/>
+                               <field name="city" placeholder="City ..." class="o_address_city"/>
+                               <field name="country_id" placeholder="Country" class="o_address_country"
+                                      options='{"no_open": True, "no_create": True}'/>
+                           </div>
+                       </group>
+                        <group>
+                            <group>
+                                <field name="inv_by_mail" />
+                            </group>
+                            <group>
+                                <field name="email" attrs="{'invisible': [('inv_by_mail', '!=', True)],
+                                                                           'required': [('inv_by_mail', '=', True)]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_entity_address_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.address</field>
+            <field name="arch" type="xml">
+                <tree string="Address">
+                    <field name="entity_id" />
+                    <field name="type" />
+                    <field name="address" />
+                    <field name="zip" />
+                    <field name="city" />
+                    <field name="country_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crm_entity_address" model="ir.actions.act_window">
+            <field name="name">Address</field>
+            <field name="res_model">s2u.crm.entity.address</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="crm_entity_address_tree" />
+        </record>
+
+        <menuitem action="action_crm_entity_address" id="menu_crm_entity_address"
+            parent="menu_crm_crm" sequence="30" />
+
+        <!-- CRM Tag -->
+        <record model="ir.ui.view" id="crm_tag_search_view">
+            <field name="model">s2u.crm.tag</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="color_select" />
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_tag_form" model="ir.ui.view">
+            <field name="model">s2u.crm.tag</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <sheet>
+                       <group>
+                           <group>
+                               <field name="name" />
+                               <field name="type" />
+                           </group>
+                           <group>
+                               <field name="color_select" />
+                           </group>
+                       </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_tag_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Tag">
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="color_select" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crm_tag" model="ir.actions.act_window">
+            <field name="name">Tag</field>
+            <field name="res_model">s2u.crm.tag</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="crm_tag_tree" />
+        </record>
+
+        <menuitem action="action_crm_tag" id="menu_crm_tag"
+            parent="menu_crm_crm" sequence="100" />
+
+        <!-- CRM Lead -->
+        <record model="ir.ui.view" id="crm_lead_search_view">
+            <field name="model">s2u.crm.lead</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="company_name" />
+                    <field name="contact_name" />
+                    <field name="address" />
+                    <field name="zip" />
+                    <field name="tinno" />
+                    <field name="c_of_c" />
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_lead_form" model="ir.ui.view">
+            <field name="model">s2u.crm.lead</field>
+            <field name="arch" type="xml">
+                <form string="Lead">
+                    <header>
+                        <button name="action_convert" type="object" string="Convert lead"
+                                class="oe_highlight oe_read_only" states="new"/>
+                        <button name="action_later" type="object" string="For later"
+                                class="oe_read_only" states="new"/>
+                        <button name="action_convert" type="object" string="Convert lead"
+                                class="oe_read_only" states="later"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_lead" />
+                                <field name="tinno" />
+                            </group>
+                            <group>
+                                <field name="c_of_c" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="company_name" />
+                            <field name="prefix" placeholder="Mr. Doc. Prof." />
+                            <field name="contact_name" />
+                            <label for="address" string="Address" />
+                            <div class="o_address_format" >
+                                <field name="address" placeholder="Address ..." class="o_address_street"/>
+                                <field name="zip" placeholder="Zip ..." class="o_address_zip"/>
+                                <field name="city" placeholder="City ..." class="o_address_city"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country"
+                                       options='{"no_open": True, "no_create": True}'/>
+                            </div>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="phone" />
+                                <field name="mobile" />
+                                <field name="fax" />
+                            </group>
+                            <group>
+                                <field name="email" />
+                                <field name="website" />
+                                <field name="skype" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="info" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_lead_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.lead</field>
+            <field name="arch" type="xml">
+                <tree string="Lead">
+                    <field name="company_name" />
+                    <field name="contact_name" />
+                    <field name="date_lead" />
+                    <field name="phone" />
+                    <field name="mobile" />
+                    <field name="email" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crm_lead" model="ir.actions.act_window">
+            <field name="name">Lead</field>
+            <field name="res_model">s2u.crm.lead</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="crm_lead_tree" />
+        </record>
+
+        <menuitem action="action_crm_lead" id="menu_crm_lead"
+            parent="menu_crm_crm" sequence="40" />
+
+        <!-- res.company -->
+        <record model="ir.ui.view" id="view_company_s2u_form">
+            <field name="name">res.company.form.s2u</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="s2uFramework">
+                        <group>
+                            <group>
+                                <field name="entity_id"/>
+                                <field name="address_id" domain="[('entity_id', '=', entity_id)]" />
+                                <field name="font_style"/>
+                                <field name="image_footer"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <!-- CRM Delivery -->
+        <record model="ir.ui.view" id="crm_entity_delivery_search_view">
+            <field name="model">s2u.crm.entity.delivery</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="entity_id" />
+                    <field name="delivery_country_id" />
+                    <field name="delivery_tinno" />
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_entity_delivery_form" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.delivery</field>
+            <field name="arch" type="xml">
+                <form string="Delivery">
+                    <sheet>
+                       <div class="oe_button_box" style="width: 100%;" name="button_box">
+                           <button name="toggle_active" type="object" groups="s2ubase.archiver"
+                                   class="oe_stat_button" icon="fa-archive"
+                                   confirm="Are you sure? You are going to archive/unarchive this object if you continue.">
+                               <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}' />
+                           </button>
+                       </div>
+                       <group>
+                           <group>
+                               <field name="entity_id" />
+                               <field name="delivery_address" />
+                           </group>
+                           <group>
+                               <field name="delivery_country_id" />
+                               <field name="delivery_tinno" />
+                               <field name="delivery_lang" />
+                               <field name="delivery_note" />
+                           </group>
+                       </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_entity_delivery_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.delivery</field>
+            <field name="arch" type="xml">
+                <tree string="Deliveries">
+                    <field name="entity_id" />
+                    <field name="delivery_address" />
+                    <field name="delivery_note" />
+                    <field name="delivery_country_id" />
+                    <field name="delivery_tinno" />
+                    <field name="delivery_lang" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crm_entity_delivery" model="ir.actions.act_window">
+            <field name="name">Deliveries</field>
+            <field name="res_model">s2u.crm.entity.delivery</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="crm_entity_delivery_tree" />
+        </record>
+
+        <menuitem action="action_crm_entity_delivery" id="menu_crm_entity_delivery"
+            parent="menu_crm_crm" sequence="35" />
+
+    </data>
+</openerp>

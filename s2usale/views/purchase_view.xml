@@ -1,0 +1,455 @@
+<openerp>
+    <data>
+        <!-- Purchases  -->
+        <record model="ir.ui.view" id="purchase_search_view">
+            <field name="model">s2u.purchase</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="date_request" />
+                    <field name="date_confirm" />
+                    <field name="partner_id" />
+                    <field name="warehouse_id" />
+                    <field name="reference" />
+                    <field name="your_reference" />
+                    <field name="project" />
+                    <field name="date_delivery" />
+                    <field name="dropshipping_partner_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="purchase_form" model="ir.ui.view">
+            <field name="model">s2u.purchase</field>
+            <field name="arch" type="xml">
+                <form string="Purchase">
+                    <header>
+                        <button name="action_request" type="object" string="Request" states="draft" class="oe_highlight oe_read_only"
+                                confirm="Are you sure?" />
+                        <button name="action_quotation_by_email" type="object" string="Quotation by Email" states="request,confirm" class="oe_read_only"/>
+                        <button name="action_confirm" type="object" string="Confirm" states="request" class="oe_highlight oe_read_only"
+                                confirm="Are you sure?" />
+                        <button name="action_order_by_email" type="object" string="Order by Email" states="confirm" class="oe_read_only"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="request,confirm" class="oe_read_only"
+                                confirm="Are you sure?" />
+                        <button name="action_undo" type="object" string="Back to concept" states="request,confirm,cancel" class="oe_read_only"
+                                confirm="Are you sure?" />
+                        <button name="action_recreate_invoice" type="object" string="Recreate invoice" states="confirm" class="oe_read_only"
+                                confirm="Are you sure?" />
+                        <button name="action_excel" type="object" string="Excel for mailmerge" class="oe_read_only" />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_invoice"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil-square-o"
+                                    attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                            <button name="action_view_incoming"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('incoming_count', '=', 0)]}">
+                                <field name="incoming_count" widget="statinfo" string="Incomings"/>
+                            </button>
+                            <button name="action_view_document"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-file"
+                                    title="Documents">
+                                <field name="document_count" widget="statinfo" string="Documents" nolabel="1"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" readonly="1" />
+                                <field name="project" />
+                                <field name="user_id" />
+                                <field name="template_so_id" />
+                                <field name="date_request" attrs="{'readonly': [('state', '!=', 'request')],
+                                                                   'required': [('state', '=', 'request')]}" />
+                                <field name="date_confirm" attrs="{'readonly': [('state', '!=', 'confirm')],
+                                                                   'required': [('state', '=', 'confirm')]}" />
+                                <field name="delivery_type" />
+                                <field name="reference" />
+                                <field name="your_reference" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="partner_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="use_email_address" />
+                                <field name="currency_id" groups="base.group_multi_currency" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines" name="order_lines">
+                                <field name="line_ids" nolabel="1" widget="one2many_list" >
+                                    <tree string="Purchase">
+                                        <field name="for_order" />
+                                        <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                        <field name="product_detail" />
+                                        <field name="qty" />
+                                        <field name="price" />
+                                        <field name="price_per" />
+                                        <field name="amount" sum="Total"/>
+                                        <field name="date_delivery" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="product_id" options="{'no_create': True, 'no_open': True}"
+                                                                         context="{'supplier_id' : parent.partner_id}" />
+                                                <field name="product_detail" />
+                                                <field name="qty" invisible="1"/>
+                                                <field name="distribution" invisible="1"/>
+                                                <field name="price" invisible="1"/>
+                                                <field name="price_per" invisible="1"/>
+                                                <field name="amount" invisible="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="project" />
+                                                <field name="date_delivery" />
+                                                <field name="code_supplier" />
+                                                <field name="analytic_id" groups="s2ubase.analytic_accounts" />
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Qty" name="qty">
+                                                <field name="qty_ids" nolabel="1" widget="one2many_list"
+                                                       context="{'supplier_id' : parent.partner_id}">
+                                                    <tree string="Qty" editable="bottom">
+                                                        <field name="qty" />
+                                                        <field name="distribution" />
+                                                        <field name="price" />
+                                                        <field name="price_per" />
+                                                        <field name="amount" />
+                                                        <field name="for_order" />
+                                                        <field name="analytic_id" groups="s2ubase.analytic_accounts" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                            <page string="Labels" name="labels_request" groups="s2ubase.production_company">
+                                                <field name="label_ids" nolabel="1" widget="one2many_list">
+                                                    <tree string="Labels" editable="bottom">
+                                                        <field name="sequence" widget="handle" />
+                                                        <field name="label_id" />
+                                                        <field name="value" />
+                                                        <field name="display" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Delivery" name="delivery">
+                                <group>
+                                    <group>
+                                        <field name="warehouse_id"
+                                               attrs="{'invisible': [('delivery_type', '!=', 'normal')],
+                                                                      'required': [('delivery_type', '=', 'normal')]}" />
+                                        <field name="dropshipping_type"
+                                               attrs="{'invisible': [('delivery_type', '!=', 'dropshipping')],
+                                                                      'required': [('delivery_type', '=', 'dropshipping')]}" />
+                                        <field name="dropshipping_partner_id"
+                                               attrs="{'invisible': [('delivery_type', '!=', 'dropshipping')],
+                                                                      'required': [('delivery_type', '=', 'dropshipping')]}" />
+                                        <field name="dropshipping_contact_id"
+                                               domain="[('entity_id', '=', dropshipping_partner_id)]"
+                                               attrs="{'invisible': [('delivery_type', '!=', 'dropshipping')]}" />
+                                        <field name="dropshipping_delivery_id"
+                                               domain="[('entity_id', '=', dropshipping_partner_id)]"
+                                               attrs="{'invisible': [('delivery_type', '!=', 'dropshipping')]}" />
+                                        <field name="dropshipping_address"
+                                               attrs="{'invisible': [('delivery_type', '!=', 'dropshipping')],
+                                                                      'required': [('delivery_type', '=', 'dropshipping')]}" />
+                                    </group>
+                                    <group>
+                                        <field name="date_delivery" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="purchase_tree" model="ir.ui.view">
+            <field name="model">s2u.purchase</field>
+            <field name="arch" type="xml">
+                <tree string="Purchases">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="project" />
+                    <field name="reference" />
+                    <field name="date_request" />
+                    <field name="date_confirm" />
+                    <field name="date_delivery" />
+                    <field name="warehouse_id" />
+                    <field name="net_amount" sum="Total" />
+                    <field name="vat_amount" />
+                    <field name="gross_amount" />
+                    <field name="currency_id" groups="base.group_multi_currency" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="purchase_calendar" model="ir.ui.view">
+            <field name="name">Purchases - planning</field>
+            <field name="model">s2u.purchase</field>
+            <field name="arch" type="xml">
+                <calendar string="Purchases" date_start="date_delivery" color="partner_id">
+                    <field name="name"/>
+                    <field name="reference"/>
+                    <field name="partner_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_purchase" model="ir.actions.act_window">
+            <field name="name">Purchase</field>
+            <field name="res_model">s2u.purchase</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="purchase_tree" />
+        </record>
+
+        <menuitem action="action_purchase" id="menu_action_purchase"
+            parent="menu_sales_purchases" sequence="10" />
+
+        <!-- Dropshipping -->
+        <record model="ir.ui.view" id="dropshipping_search_view">
+            <field name="model">s2u.dropshipping</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="date_entry" />
+                    <field name="date_transfered" />
+                    <field name="partner_id" />
+                    <field name="state" />
+                </search>
+            </field>
+        </record>
+
+        <record id="dropshipping_form" model="ir.ui.view">
+            <field name="model">s2u.dropshipping</field>
+            <field name="arch" type="xml">
+                <form string="Dropshipping">
+                    <header>
+                        <button name="action_request" type="object" string="Request" states="draft" class="oe_highlight oe_read_only" />
+                        <button name="action_confirm" type="object" string="Confirm" states="draft,request" class="oe_highlight oe_read_only" />
+                        <button name="action_undo" type="object" string="Undo confirm" states="request,to_transfeer" class="oe_read_only"
+                                confirm="Are qou sure?"/>
+                        <button name="action_transfer" type="object" string="Transfer" states="to_transfer" class="oe_highlight oe_read_only" />
+                        <button name="action_done" type="object" string="Done" states="transfered" class="oe_highlight oe_read_only"
+                                confirm="Are you sure?" />
+                        <button name="action_cancel" type="object" string="Cancel" states="transfered" class="oe_read_only"
+                                confirm="Are you sure?" />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" readonly="1" />
+                                <field name="date_entry" attrs="{'readonly': [('state', '!=', 'request')],
+                                                                 'required': [('state', '=', 'request')]}" />
+                                <field name="date_transfered" attrs="{'readonly': [('state', '!=', 'confirm')],
+                                                                      'required': [('state', '=', 'confirm')]}" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="partner_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Purchase">
+                                        <field name="qty" />
+                                        <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                        <field name="product_detail" />
+                                        <field name="price" />
+                                        <field name="price_per" />
+                                        <field name="amount" />
+                                        <field name="date_delivery" />
+                                        <field name="sale_id" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                                <field name="product_detail" />
+                                                <field name="qty" />
+                                            </group>
+                                            <group>
+                                                <field name="price" />
+                                                <field name="price_per" />
+                                                <field name="amount" />
+                                                <field name="date_delivery" />
+                                                <field name="sale_id" />
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Detailed info's">
+                                                <field name="detailed_ids" nolabel="1" widget="one2many_list">
+                                                    <tree string="Detailed" editable="bottom">
+                                                        <field name="sequence" />
+                                                        <field name="detailed_label" />
+                                                        <field name="detailed_info" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Delivery">
+                                <group>
+                                    <group string="Delivery address">
+                                        <field name="delivery_type" />
+                                        <field name="delivery_partner_id" domain="[('type', '=', delivery_type)]" />
+                                        <field name="delivery_contact_id"
+                                               domain="[('entity_id', '=', delivery_partner_id)]"
+                                               attrs="{'invisible': [('delivery_type', '=', 'b2c')]}"
+                                               context="{'default_entity_id': delivery_partner_id}" />
+                                        <field name="delivery_address"
+                                               attrs="{'invisible': [('delivery_type', '=', 'b2c')],
+                                                       'required': [('delivery_type', '=', 'b2b')]}" />
+                                    </group>
+                                    <group>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="dropshipping_tree" model="ir.ui.view">
+            <field name="model">s2u.dropshipping</field>
+            <field name="arch" type="xml">
+                <tree string="Dropshippings">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="date_entry" />
+                    <field name="date_transfered" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_dropshipping" model="ir.actions.act_window">
+            <field name="name">Dropshipping</field>
+            <field name="res_model">s2u.dropshipping</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="dropshipping_tree" />
+        </record>
+
+        <!--
+        <menuitem action="action_dropshipping" id="menu_action_dropshipping"
+            parent="menu_sales_purchases" sequence="20" />
+        -->
+
+        <!-- Purchase templates -->
+        <record model="ir.ui.view" id="purchase_template_search_view">
+            <field name="model">s2u.purchase.template</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="default" />
+                </search>
+            </field>
+        </record>
+
+        <record id="purchase_template_form" model="ir.ui.view">
+            <field name="model">s2u.purchase.template</field>
+            <field name="arch" type="xml">
+                <form string="Purchase Template">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="date_display" />
+                            </group>
+                            <group>
+                                <field name="default" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Quotation">
+                                <group string="Prefix">
+                                    <field name="prefix_quotation" />
+                                </group>
+                                <group string="Postfix">
+                                    <field name="postfix_quotation" />
+                                </group>
+                            </page>
+                            <page string="Confirmation">
+                                <group string="Prefix">
+                                    <field name="prefix_confirmation" />
+                                </group>
+                                <group string="Postfix">
+                                    <field name="postfix_confirmation" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="purchase_template_tree" model="ir.ui.view">
+            <field name="model">s2u.purchase.template</field>
+            <field name="arch" type="xml">
+                <tree string="Purchase templates">
+                    <field name="name" />
+                    <field name="default" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_purchase_template" model="ir.actions.act_window">
+            <field name="name">Purchase template</field>
+            <field name="res_model">s2u.purchase.template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="purchase_template_tree" />
+        </record>
+
+    </data>
+</openerp>

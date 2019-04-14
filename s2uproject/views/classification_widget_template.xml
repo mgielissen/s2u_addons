@@ -1,0 +1,9 @@
+<openerp>
+    <data>
+        <template id="classification_widget" name="classification widget" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/s2uproject/static/src/js/classification_widget.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

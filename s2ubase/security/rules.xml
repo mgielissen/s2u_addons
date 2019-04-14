@@ -1,0 +1,10 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="ir_filters_rule">
+            <field name="name">Object ir.filters</field>
+            <field name="model_id" ref="model_ir_filters"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+    </data>
+</openerp>

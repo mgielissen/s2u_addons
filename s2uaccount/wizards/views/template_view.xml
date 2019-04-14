@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_template_init_view" model="ir.ui.view">
+        <field name="name">Init template</field>
+        <field name="model">wizard.template.init</field>
+        <field name="arch" type="xml">
+            <form string="Init template">
+                <field name="company_id" invisible="1"/>
+                <group>
+                    <group>
+                        <field name="use_template"/>
+                    </group>
+                    <group>
+                    </group>
+                </group>
+                <footer>
+                    <button name="init_template" string="Go" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_template_init" model="ir.actions.act_window">
+        <field name="name">Init accounts</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.template.init</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_template_init_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="menu_wizard_template_init"
+        name="Templates"
+        parent="menu_accounting_settings"
+        action="action_wizard_template_init" sequence="100" groups="s2uaccount.group_account_manager" />
+
+</odoo>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="print_rma_document">
+    <t t-call="web.external_layout">
+        <t t-set="o" t-value="o.with_context({'lang':o.entity_id.lang})" />
+        <div class="page" t-att-style="o.company_id.font_style" >
+            <div class="row">
+                <div class="col-xs-12">
+                    <span t-att-style="'font-weight: bold; font-size:18px'">RMA</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-7" t-att-style="'margin-top: 30px;'">
+                    <p t-att-style="'font-weight: bold;'">
+                        <t t-call="s2ucrm.print_address_data_content">
+                            <t t-set="document_object" t-value="o.with_context({'lang':o.entity_id.lang})"/>
+                        </t>
+                    </p>
+                </div>
+                <div class="col-xs-4 pull-right">
+                    <div name="rma_date_display"></div>
+                </div>
+            </div>
+
+            <div class="row mt16" t-att-style="'font-weight: bold;'">
+                <div class="col-xs-2">
+                    RMA number
+                </div>
+                <div class="col-xs-10">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.name" t-field="o.name"/>
+                </div>
+            </div>
+            <div class="row" t-att-style="'font-weight: bold;'">
+                <div class="col-xs-2">
+                    Reference
+                </div>
+                <div class="col-xs-10">
+                    <span>:&amp;nbsp;&amp;nbsp;</span><span t-if="o.reference" t-field="o.reference"/>
+                </div>
+            </div>
+
+            <div name="rma_prefix"></div>
+
+            <div name="rma_block">
+                <div class="row mt16" t-if="o.line_ids">
+                    <div class="col-xs-12">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th></th>
+                                    <th>Serialnumber</th>
+                                    <th class="text-right">Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody class="invoice_tbody">
+                                <t t-foreach="o.line_ids" t-as="line">
+                                    <tr>
+                                        <td><span t-field="line.product_id.name"/></td>
+                                        <td><span t-field="line.product_detail"/></td>
+                                        <td><span t-field="line.serialnumber"/></td>
+                                        <td class="text-right"><span t-field="line.product_qty" /></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div name="rma_postfix"></div>
+        </div>
+    </t>
+</template>
+
+<template id="print_rma">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="s2uwarehouse.print_rma_document" t-lang="o.entity_id.lang"/>
+        </t>
+    </t>
+</template>
+
+</data>
+</openerp>

@@ -1,0 +1,611 @@
+<openerp>
+    <data>
+        <!-- Subscriptionv2 -->
+        <record model="ir.ui.view" id="subscriptionv2_search_view">
+            <field name="model">s2u.subscriptionv2</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="service_id" />
+                    <field name="partner_id" />
+                    <field name="sale_id" />
+                    <field name="date_start" />
+                    <field name="date_end" />
+                    <field name="date_notify" />
+                    <field name="reference" />
+                    <field name="invoice_condition" />
+                    <field name="state" />
+                    <filter string="Active subscriptions" domain="[('state', '=', 'active')]"
+                            name="active_subscriptions_filter"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="subscriptionv2_form" model="ir.ui.view">
+            <field name="model">s2u.subscriptionv2</field>
+            <field name="arch" type="xml">
+                <form string="Subscription" create="false">
+                    <header>
+                        <button name="action_activate" type="object" string="Activate"
+                                class="oe_highlight oe_read_only" states="draft"/>
+                        <button name="action_cancel" type="object" string="Cancel subscription" class="oe_read_only"
+                                states="active" confirm="This will ends the subscription immediately!"/>
+                        <button name="action_outgoing" type="object" string="Reshipment"
+                                class="oe_read_only" states="active"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,active,done" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_invoice"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil-square-o"
+                                    attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                            <button name="action_view_outgoing"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('outgoing_count', '=', 0)]}">
+                                <field name="outgoing_count" widget="statinfo" string="Outgoings"/>
+                            </button>
+                            <button name="action_view_rma"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-undo"
+                                    attrs="{'invisible': [('rma_count', '=', 0)]}">
+                                <field name="rma_count" widget="statinfo" string="RMA's"/>
+                            </button>
+                            <button name="action_view_serialnumber"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil"
+                                    attrs="{'invisible': [('serialnumber_count', '=', 0)]}">
+                                <field name="serialnumber_count" widget="statinfo" string="Serialnumbers" />
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type" />
+                                <field name="partner_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                            </group>
+                            <group>
+                                <field name="sale_id" options="{'no_create': True}" />
+                                <field name="reference" />
+                                <field name="date" />
+                                <field name="payment_type" />
+                                <field name="payment_key" attrs="{'invisible': [('payment_type', '!=', 'incasso')],
+                                                                  'required': [('payment_type', '=', 'incasso')]}" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="service_id" options="{'no_create': True}" readonly="1" />
+                                <field name="product_detail" groups="s2ubase.production_company" readonly="1" />
+                                <field name="amount" />
+                                <field name="periods" />
+                            </group>
+                            <group>
+                                <field name="date_start" />
+                                <field name="date_end" readonly="1" />
+                                <field name="action_on_end" />
+                                <field name="invoice_condition" />
+                                <field name="current_period" readonly="1" />
+                                <field name="create_next_invoice" readonly="1" />
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="subscriptionv2_tree" model="ir.ui.view">
+            <field name="model">s2u.subscriptionv2</field>
+            <field name="arch" type="xml">
+                <tree string="Subscriptions" create="false" >
+                    <field name="partner_id" />
+                    <field name="service_id" />
+                    <field name="reference" />
+                    <field name="amount" sum="Total" />
+                    <field name="date_start" />
+                    <field name="date_end" />
+                    <field name="date_notify" />
+                    <field name="action_on_end" />
+                    <field name="sale_id" />
+                    <field name="state" />
+                    <field name="create_next_invoice" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_subscriptionv2" model="ir.actions.act_window">
+            <field name="name">Subscriptions</field>
+            <field name="res_model">s2u.subscriptionv2</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="subscriptionv2_tree" />
+        </record>
+
+        <menuitem action="action_subscriptionv2" id="menu_subscriptionv2"
+            parent="s2usubscription.menu_sales_subscriptions" sequence="3" groups="s2usale.group_sale_salesman" />
+
+        <!-- Subscription Template-->
+        <record model="ir.ui.view" id="subscription_template_search_view">
+            <field name="model">s2u.subscription.template</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="partner_id" />
+                    <field name="ec" />
+                    <field name="label_for_service" />
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="subscription_template_form" model="ir.ui.view">
+            <field name="model">s2u.subscription.template</field>
+            <field name="arch" type="xml">
+                <form string="Service">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_discount"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-percent">
+                                <field name="discount_count" widget="statinfo" string="Discounts"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="partner_id" />
+                                <field name="ec" />
+                                <field name="label_for_service" />
+                                <field name="name" />
+                                <label for="months" string="Duration" />
+                                <div>
+                                    <field name="months" class="oe_inline"/>&amp;nbsp;Months
+                                </div>
+                                <field name="price" />
+                                <field name="action_on_end" />
+                                <field name="invoice_condition" />
+                            </group>
+                            <group>
+                                <field name="account_id" />
+                                <field name="vat_id" />
+                                <field name="stock_account_id" />
+                                <field name="create_project_criteria" />
+                                <field name="projecttype_id" options="{'no_create': True, 'no_open': True}"
+                                       attrs="{'required': [('create_project_criteria', 'in', ['always', 'exists'])],
+                                               'invisible': [('create_project_criteria', '=', 'no')]}"/>
+                                <field name="writeoff_periods" required="True" />
+                                <field name="interest" required="True" />
+                                <field name="surcharge" />
+                                <field name="margin" />
+                                <field name="cost_price" />
+                            </group>
+                        </group>
+                        <group string="Description">
+                            <field name="subs_descript" nolabel="1" />
+                        </group>
+                        <notebook>
+                            <page string="Products" name="products">
+                                <field name="product_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Products" editable="bottom">
+                                        <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                        <field name="use_product_detail_so" groups="s2ubase.production_company" />
+                                        <field name="product_detail" groups="s2ubase.production_company" />
+                                        <field name="price" />
+                                        <field name="qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="subscription_template_tree" model="ir.ui.view">
+            <field name="model">s2u.subscription.template</field>
+            <field name="arch" type="xml">
+                <tree string="Services" >
+                    <field name="partner_id" />
+                    <field name="ec" />
+                    <field name="label_for_service" />
+                    <field name="name" />
+                    <field name="months" />
+                    <field name="price" />
+                    <field name="cost_price" />
+                    <field name="account_id" />
+                    <field name="create_project_criteria" />
+                    <field name="projecttype_id" />
+                    <field name="invoice_condition" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_subscription_template" model="ir.actions.act_window">
+            <field name="name">Services</field>
+            <field name="res_model">s2u.subscription.template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="subscription_template_tree" />
+        </record>
+
+        <menuitem action="action_subscription_template" id="menu_subscription_template_v2"
+            parent="s2usale.menu_sales_settings" sequence="250" groups="s2usale.group_sale_manager" />
+
+        <!-- Subscription Block -->
+        <record model="ir.ui.view" id="subscription_block_search_view">
+            <field name="model">s2u.subscription.block</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="short_descript" />
+                </search>
+            </field>
+        </record>
+
+        <record id="subscription_name_form" model="ir.ui.view">
+            <field name="model">s2u.subscription.block</field>
+            <field name="arch" type="xml">
+                <form string="Service Block">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="short_descript" />
+                            </group>
+                        </group>
+                        <group string="Description">
+                            <field name="description" nolabel="1" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="subscription_block_tree" model="ir.ui.view">
+            <field name="model">s2u.subscription.block</field>
+            <field name="arch" type="xml">
+                <tree string="Services Blocks" >
+                    <field name="name" />
+                    <field name="short_descript" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_subscription_block" model="ir.actions.act_window">
+            <field name="name">Services blocks</field>
+            <field name="res_model">s2u.subscription.block</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="subscription_block_tree" />
+        </record>
+
+        <menuitem action="action_subscription_block" id="menu_subscription_block"
+            parent="s2usale.menu_sales_settings" sequence="260" groups="s2usale.group_sale_manager" />
+
+        <!-- Sale Subscription discount -->
+        <record model="ir.ui.view" id="sale_subscription_discount_search_view">
+            <field name="model">s2u.crm.entity.discount.subscription</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="subscription_id" />
+                    <field name="entity_id" />
+                    <field name="discount_type" />
+                </search>
+            </field>
+        </record>
+
+        <record id="sale_subscription_discount_tree" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.discount.subscription</field>
+            <field name="arch" type="xml">
+                <tree string="Discounts">
+                    <field name="entity_id" />
+                    <field name="subscription_id" />
+                    <field name="discount_type" />
+                    <field name="discount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sale_subscription_discount_form" model="ir.ui.view">
+            <field name="model">s2u.crm.entity.discount.subscription</field>
+            <field name="arch" type="xml">
+                <form string="Discount">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="subscription_id" />
+                                <field name="entity_id" />
+                            </group>
+                            <group>
+                                <field name="discount_type" />
+                                <field name="discount" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sale_subscription_discount" model="ir.actions.act_window">
+            <field name="name">Discounts</field>
+            <field name="res_model">s2u.crm.entity.discount.subscription</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sale_subscription_discount_tree" />
+            <field name="search_view_id" ref="sale_subscription_discount_search_view"/>
+        </record>
+
+        <!-- Subscription -->
+        <record model="ir.ui.view" id="subscription_search_view">
+            <field name="model">s2u.subscription</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="partner_id" />
+                    <field name="sale_id" />
+                    <field name="product_ids" />
+                    <field name="date" />
+                    <field name="state" />
+                    <field name="date_notify" />
+                    <filter string="To extend" domain="[('date_notify', '&lt;=', datetime.datetime.now().strftime('%Y-%m-%d'))]" name="to_extend_filter"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="subscription_form" model="ir.ui.view">
+            <field name="model">s2u.subscription</field>
+            <field name="arch" type="xml">
+                <form string="Subscription" create="false">
+                    <header>
+                        <button name="action_activate" type="object" string="Activate"
+                                class="oe_highlight oe_read_only" states="draft"/>
+                        <button name="action_increase" type="object" string="Extend services" class="oe_read_only"
+                                states="active,done,cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,active,done" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_period"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-calendar"
+                                    attrs="{'invisible': [('period_count', '=', 0)]}">
+                                <field name="period_count" widget="statinfo" string="Periods"/>
+                            </button>
+                            <button name="action_view_rma"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-undo"
+                                    attrs="{'invisible': [('rma_count', '=', 0)]}">
+                                <field name="rma_count" widget="statinfo" string="RMA's"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type" />
+                                <field name="partner_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                            </group>
+                            <group>
+                                <field name="sale_id" options="{'no_create': True}" />
+                                <field name="date" />
+                                <field name="payment_type" />
+                                <field name="payment_key" attrs="{'invisible': [('payment_type', '!=', 'incasso')],
+                                                                  'required': [('payment_type', '=', 'incasso')]}" />
+                                <field name="amount_paid" />
+                                <field name="amount_open" />
+                                <field name="date_notify" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Services" name="lines">
+                                <field name="order_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Services">
+                                        <field name="template_id" />
+                                        <field name="product_detail" groups="s2ubase.production_company" />
+                                        <field name="amount" />
+                                        <field name="months" />
+                                        <field name="state" />
+                                        <field name="date_start" />
+                                        <field name="date_end" />
+                                        <button name="action_cancel" type="object"
+                                                string="Cancel subscription" confirm="Are you sure? This can not be reverted!" states="active"/>
+                                    </tree>
+                                    <form string="Service">
+                                        <header>
+                                            <field name="state" widget="statusbar" />
+                                        </header>
+                                        <group>
+                                            <group>
+                                                <field name="template_id" />
+                                                <field name="product_detail" groups="s2ubase.production_company" />
+                                                <field name="amount" />
+                                                <field name="months" />
+                                            </group>
+                                            <group>
+                                                <field name="date_start" readonly="1" />
+                                                <field name="date_end" readonly="1" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="subscription_tree" model="ir.ui.view">
+            <field name="model">s2u.subscription</field>
+            <field name="arch" type="xml">
+                <tree string="Subscriptions" create="false" >
+                    <field name="partner_id" />
+                    <field name="sale_id" />
+                    <field name="date" />
+                    <field name="amount_paid" />
+                    <field name="amount_open" />
+                    <field name="date_notify" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_subscription" model="ir.actions.act_window">
+            <field name="name">Subscriptions</field>
+            <field name="res_model">s2u.subscription</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="subscription_tree" />
+        </record>
+
+        <!-- Subscription periods -->
+        <record model="ir.ui.view" id="subscription_period_search_view">
+            <field name="model">s2u.subscription.period</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="subscription_id" />
+                    <field name="partner_id" />
+                    <field name="date" />
+                    <field name="state" />
+                    <field name="year_payment" />
+                    <field name="month_payment" />
+                    <field name="invoice_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="subscription_period_form" model="ir.ui.view">
+            <field name="model">s2u.subscription.period</field>
+            <field name="arch" type="xml">
+                <form string="Period" create="false" edit="false" delete="false">
+                    <header>
+                        <button name="action_create_invoice" type="object" string="Create invoice"
+                                class="oe_highlight oe_read_only" states="pending"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type" />
+                                <field name="partner_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                            </group>
+                            <group>
+                                <field name="subscription_id" />
+                                <field name="date" />
+                                <field name="amount" />
+                                <field name="invoice_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Transactions" name="trans">
+                                <field name="transaction_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Transactions">
+                                        <field name="template_id" />
+                                        <field name="product_detail" groups="s2ubase.production_company" />
+                                        <field name="reference" />
+                                        <field name="amount" />
+                                        <field name="is_canceled" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="subscription_period_tree" model="ir.ui.view">
+            <field name="model">s2u.subscription.period</field>
+            <field name="arch" type="xml">
+                <tree string="Periods" create="false" edit="false" delete="false" >
+                    <field name="partner_id" />
+                    <field name="date" />
+                    <field name="amount" />
+                    <field name="invoice_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="subscription_period_pivot" model="ir.ui.view">
+            <field name="model">s2u.subscription.period</field>
+            <field name="arch" type="xml">
+                <pivot string="Report-Pivot" >
+                    <field name="year_payment" type="row"/>
+                    <field name="month_payment" type="row"/>
+                    <field name="amount" type="measure"/>
+                 </pivot>
+             </field>
+        </record>
+
+        <record id="subscription_period_graph" model="ir.ui.view">
+            <field name="model">s2u.subscription.period</field>
+            <field name="arch" type="xml">
+                <graph string="Report-graph" stacked="False" type="bar">
+                    <field name="year_payment" type="row"/>
+                    <field name="month_payment" type="row"/>
+                    <field name="amount" type="measure"/>
+                 </graph>
+             </field>
+        </record>
+
+        <record id="action_subscription_period" model="ir.actions.act_window">
+            <field name="name">Periods</field>
+            <field name="res_model">s2u.subscription.period</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="subscription_period_tree" />
+        </record>
+
+    </data>
+</openerp>

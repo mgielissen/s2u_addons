@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="print_unit_card_document">
+    <t t-call="web.external_layout">
+        <t t-set="company" t-value="res_company"></t>
+        <t t-set="o" t-value="o.with_context({'lang':company.partner_id.lang})" />
+            <div class="page">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="text-center">
+                            <strong>
+                            <h1> <span t-field="o.name" /></h1>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="text-center">
+                            <strong>
+                                <img t-att-src="'/report/barcode/EAN13/%s' % '123456789012'"/>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="row mt64">
+                    <div class="col-xs-6">
+                        <div class="text-left">
+                            <strong>
+                            <h1>
+                            Product
+                            </h1>
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="text-right">
+                            <strong>
+                            <h1>
+                            QTY
+                            </h1>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+-->
+             <t t-foreach="o.on_unit.split('\n')" t-as="t">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="text-left">
+                                <strong>
+                                <h1>
+                                <span t-esc="t"/>
+                                </h1>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+
+<!--
+                <t t-foreach="o.line_ids" t-as="t">
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <div class="text-left">
+                                <strong>
+                                <h1>
+                                <span t-esc="t.product_id.name"/> <span t-esc="t.product_detail"/>
+                                </h1>
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="text-right">
+                                <strong>
+                                <h1>
+                                <span t-field="t.product_qty"/>
+                                </h1>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+-->
+            </div>
+
+        </t>
+</template>
+
+<template id="print_unit_card">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-set="company" t-value="res_company"></t>
+            <t t-call="s2uwarehouse.print_unit_card_document" t-lang="company.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+
+</data>
+</openerp>

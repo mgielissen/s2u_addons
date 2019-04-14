@@ -1,0 +1,38 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="subscription_template_rule">
+            <field name="name">Object s2u.subscription.template</field>
+            <field name="model_id" ref="model_s2u_subscription_template"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="subscription_rule">
+            <field name="name">Object s2u.subscription</field>
+            <field name="model_id" ref="model_s2u_subscription"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="subscription_period_rule">
+            <field name="name">Object s2u.subscription.period</field>
+            <field name="model_id" ref="model_s2u_subscription_period"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="subscriptionv2_rule">
+            <field name="name">Object s2u.subscriptionv2</field>
+            <field name="model_id" ref="model_s2u_subscriptionv2"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="subscriptionv_block">
+            <field name="name">Object s2u.subscription.block</field>
+            <field name="model_id" ref="model_s2u_subscription_block"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+    </data>
+</openerp>

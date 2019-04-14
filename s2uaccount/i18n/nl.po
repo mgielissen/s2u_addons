@@ -1,0 +1,3175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2uaccount
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-16 06:08+0000\n"
+"PO-Revision-Date: 2019-02-16 07:24+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl\n"
+"X-Generator: Poedit 2.2\n"
+
+#. module: s2uaccount
+#: model:mail.template,body_html:s2uaccount.email_template_s2u_invoice
+msgid ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>A new invoice is available for you: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br>\n"
+"       &nbsp;&nbsp;Invoice number: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Invoice total: <strong>${object.amount_gross} ${object.currency_id.name}</strong><br>\n"
+"       &nbsp;&nbsp;Invoice date: ${object.date_invoice}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.entity_id.name or 'us'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr ""
+"\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"    % if object.type == 'b2c':\n"
+"\t    % if object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.communication}</p>\n"
+"\t\t% endif\n"
+"\t\t% if not object.partner_id.communication:\n"
+"\t        <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"\t% if object.type == 'b2b':\n"
+"\t    % if object.contact_id:\n"
+"\t\t    % if object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.communication}</p>\n"
+"\t\t    % endif\n"
+"\t\t    % if not object.contact_id.communication:\n"
+"\t            <p>${object.contact_id.name}</p>\n"
+"\t\t    % endif\n"
+"\t\t% endif\n"
+"\n"
+"\t\t% if not object.contact_id:\n"
+"\t\t    <p>${object.partner_id.name}</p>\n"
+"\t\t% endif\n"
+"\t% endif\n"
+"\n"
+"    <p>Er staat een nieuwe factuur voor u klaar: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>OVERZICHT</strong><br>\n"
+"       &nbsp;&nbsp;Factuurnummer: <strong>${object.name}</strong><br>\n"
+"       &nbsp;&nbsp;Totaal bedrag: <strong>${object.amount_gross} ${object.currency_id.name}</strong><br>\n"
+"       &nbsp;&nbsp;Factuur datum: ${object.date_invoice}<br>\n"
+"       % if object.reference:\n"
+"       &nbsp;&nbsp;Reference: ${object.reference}<br>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br>\n"
+"    <p>Als u vragen heeft, neem dan gerust contact met ons op</p>\n"
+"    <p>Dank voor het vertrouwen in ${object.company_id.entity_id.name or 'ons'}!</p>\n"
+"    <br>\n"
+"    <br>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.entity_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"\t    % if object.company_id.address_id:\n"
+"            <div style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"\t\t        ${object.company_id.address_id.address or ''}</br>\n"
+"\t\t\t\t${object.company_id.address_id.zip or ''}&nbsp;&nbsp;${object.company_id.address_id.city or ''}</br>\n"
+"\t\t\t\t% if object.company_id.address_id.country_id:\n"
+"\t\t\t\t    ${object.company_id.address_id.country_id.name}\n"
+"\t\t\t\t% endif\n"
+"            </div>\n"
+"\t\t% endif\n"
+"        % if object.company_id.entity_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Tel:&nbsp; ${object.company_id.entity_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.entity_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.entity_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_document_count
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_document_count
+msgid "# of Docs"
+msgstr "# Documenten"
+
+#. module: s2uaccount
+#: model:mail.template,subject:s2uaccount.email_template_s2u_invoice
+msgid "${object.company_id.name} Invoice (Ref ${object.name or 'n/a'})"
+msgstr "${object.company_id.name} Factuur (Ref ${object.name or 'n/a'})"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/account.py:310
+#: code:addons/s2uaccount/models/template.py:91
+#: code:addons/s2uaccount/models/template.py:202
+#: code:addons/s2uaccount/models/vat.py:103
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (copy)"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "&gt; 120 dagen"
+msgstr "&gt; 120 dagen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "0 - 30 dagen"
+msgstr "0 - 30 dagen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "31 - 60 dagen"
+msgstr "31 - 60 dagen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "61 - 90 dagen"
+msgstr "61 - 90 dagen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "91 - 120 dagen"
+msgstr "91 - 120 dagen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid ": Aangifte omzetbelasting"
+msgstr ": Aangifte omzetbelasting"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+msgid ": Crediteuren overzicht t/m"
+msgstr ": Crediteuren overzicht t/m"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid ": Debiteuren overzicht t/m"
+msgstr ": Debiteuren overzicht t/m"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+msgid ": Ledger transactions till"
+msgstr ": Grootboek transacties t/m"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid ": Proef saldibalans ("
+msgstr ": Proef saldibalans ("
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "<b>Totaal</b>"
+msgstr "<b>Totaal</b>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid ""
+"<br/>\n"
+"                                <strong>Tel:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>Tel:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid ""
+"<br/>\n"
+"                                <strong>VAT:</strong>"
+msgstr ""
+"<br/>\n"
+"                                <strong>BTW:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+msgid "<span class=\"label label-default\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Paid</span></span>"
+msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-check\"/><span class=\"hidden-xs\"> Betaald</span></span>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+msgid "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/><span class=\"hidden-xs\"> Cancelled</span></span>"
+msgstr "<span class=\"label label-default\"><i class=\"fa fa-fw fa-remove\"/><span class=\"hidden-xs\"> Geannuleerd</span></span>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+msgid "<span class=\"label label-info\"><i class=\"fa fa-fw fa-clock-o\"/><span class=\"hidden-xs\"> Waiting for Payment</span></span>"
+msgstr "<span class=\"label label-info\"><i class=\"fa fa-fw fa-clock-o\"/><span class=\"hidden-xs\"> Wacht op betaling</span></span>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "<strong>BTW</strong>"
+msgstr "<strong>BTW</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "<strong>Bedrag</strong>"
+msgstr "<strong>Bedrag</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "<strong>Customer Address</strong>"
+msgstr "<strong>Adres klant</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "<strong>Customer Code:</strong>"
+msgstr "<strong>Klant code:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "<strong>Due Date:</strong>"
+msgstr "<strong>Vervaldatum</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "<strong>Exp in EU</strong>"
+msgstr "<strong>Exp in EU</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "<strong>Exp uit EU</strong>"
+msgstr "<strong>Exp uit EU</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "<strong>Imp in EU</strong>"
+msgstr "<strong>Imp in EU</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "<strong>Imp uit EU</strong>"
+msgstr "<strong>Imp uit EU</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>Factuurdatum:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "<strong>Our ref.:</strong>"
+msgstr "<strong>Onze ref.:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Reference:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "<strong>Remarks:</strong>"
+msgstr "<strong>Opmerkingen:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotaal:</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Totaal</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "<strong>Vat</strong>"
+msgstr "<strong>BTW</strong>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "<strong>Your ref.:</strong>"
+msgstr "<strong>Uw ref.:</strong>"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,mt940_format:0
+msgid "ABNAMRO"
+msgstr "ABNAMRO"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Aangifte omzetbelasting (btw) t/m"
+msgstr "Aangifte omzetbelasting (btw) t/m"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_form
+msgid "Accept"
+msgstr "Accepteren"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.po,state:0
+msgid "Accepted"
+msgstr "Geaccepteerd"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_accepted_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_accepted_id
+msgid "Accepted difference"
+msgstr "Geaccep. verschil"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_account
+#: model:ir.model,name:s2uaccount.model_s2u_account_account
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_po_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_so_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_po_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_so_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_account_id
+#: model:ir.ui.menu,name:s2uaccount.menu_account
+#: model:ir.ui.view,arch_db:s2uaccount.account_form
+#: model:ir.ui.view,arch_db:s2uaccount.account_tree
+msgid "Account"
+msgstr "Gb.Rek."
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_currency_id
+msgid "Account Currency"
+msgstr "Gb.Rek. valuta"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.account_category_tree
+msgid "Account categories"
+msgstr "Gb.Rek. categorien"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_account_category
+#: model:ir.model,name:s2uaccount.model_s2u_account_category
+#: model:ir.ui.menu,name:s2uaccount.menu_account_category
+#: model:ir.ui.view,arch_db:s2uaccount.account_category_form
+#: model:ir.ui.view,arch_db:s2uaccount.account_payment_term_form
+msgid "Account category"
+msgstr "Gb.Rek. category"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_payment_term
+msgid "Account payment term"
+msgstr "Betalings conditie"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_accounting
+msgid "Accounting"
+msgstr "Boekhouding"
+
+#. module: s2uaccount
+#: model:res.groups,name:s2uaccount.allowed
+msgid "Accounting Module"
+msgstr "Accounting Module"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_ids
+msgid "Accounts"
+msgstr "Gb.Rekeningen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+msgid "Accounts for payment differences"
+msgstr "Gb.Rek. voor betalingsverschillen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_address_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_delivery_address
+msgid "Address"
+msgstr "Adres"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:182
+#, python-format
+msgid "Address does not belong to the selected debitor!"
+msgstr "Adres behoort niet tot geselecteerde debiteur!"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_use_email_address
+msgid "Address for mail"
+msgstr "Address for mail"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Af te dragen BTW"
+msgstr "Af te dragen BTW"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_alert_for_send
+msgid "Alert for send"
+msgstr "Signaal voor verzending"
+
+#. module: s2uaccount
+#: model:res.groups,name:s2uaccount.allow_reopen
+msgid "Allow reopen invoice"
+msgstr "Toestaan factuur heropenen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_gross_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_trans_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_trans_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_trans_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_gross_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_trans_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_trans_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_trans_amount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "Amount"
+msgstr "Bedrag"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+msgid "Amount Due"
+msgstr "Bedrag te betalen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_amount_gross
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_amount_gross
+msgid "Amount Gross"
+msgstr "Bruto"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_amount_name
+msgid "Amount Name"
+msgstr "Bedrag naam"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_amount_net
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_amount_net
+msgid "Amount Net"
+msgstr "Netto"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_amount_open
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_amount_open
+msgid "Amount Open"
+msgstr "Open"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_amount_vat
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_amount_vat
+msgid "Amount VAT"
+msgstr "BTW"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_amount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Amount net"
+msgstr "Netto"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_analytic
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_analytic_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_analytic_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_analytic_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_analytic_id
+#: model:ir.ui.menu,name:s2uaccount.menu_analytic
+#: model:ir.ui.view,arch_db:s2uaccount.analytic_tree
+msgid "Analytic"
+msgstr "Analytisch"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.analytic_form
+msgid "Analytic Account"
+msgstr "Analytic Account"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Are you sure?"
+msgstr "Weet u het zeker?"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0 selection:s2u.account.category,type:0
+#: selection:s2u.template.account.account,type:0
+#: selection:s2u.template.account.category,type:0
+msgid "Asset"
+msgstr "Bezitting"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice,type:0
+msgid "B2B"
+msgstr "B2B"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice,type:0
+msgid "B2C"
+msgstr "B2C"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW geen"
+msgstr "BTW geen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW hoog"
+msgstr "BTW hoog"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW laag"
+msgstr "BTW laag"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW nul"
+msgstr "BTW nul"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW overig"
+msgstr "BTW overig"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW prive"
+msgstr "BTW prive"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW verlegd"
+msgstr "BTW verlegd"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "BTW-nummer"
+msgstr "BTW-nummer"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_bank
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_bank_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_bank_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_account_id
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.bank_tree
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Bank"
+msgstr "Bank"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_bank_account
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_id_2497
+msgid "Bank account"
+msgstr "Bankrekening"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_bank_line
+msgid "Bank line"
+msgstr "Regel"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_bank_account
+msgid "Bank line accounting data - automatically build on create/write"
+msgstr "Bank line accounting data - automatically build on create/write"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/wizards/import_mt940.py:286
+#, python-format
+msgid "Bank not defined in your accounts."
+msgstr "Bank is niet gedefinieerd in uw grootboekrekeningen."
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_bank
+#: model:ir.ui.menu,name:s2uaccount.menu_bank
+msgid "Bank/cash"
+msgstr "Bank/contant"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_mt940_bank_number
+msgid "Bankaccount"
+msgstr "Bankrekening"
+
+#. module: s2uaccount
+#: selection:s2u.account.bank.line,type:0
+#: selection:s2u.account.memorial.line,type:0
+msgid "Batch"
+msgstr "Batch"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Berekende BTW"
+msgstr "Berekende BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Betaald"
+msgstr "Betaald"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:350
+#, python-format
+msgid "Betaling binnen %d dagen onder vermelding van factuurnummer."
+msgstr "Betaling binnen %d dagen onder vermelding van factuurnummer."
+
+#. module: s2uaccount
+#: model:res.groups,name:s2uaccount.group_account_invoice
+msgid "Billing (s2uFramework)"
+msgstr "Billing (s2uFramework)"
+
+#. module: s2uaccount
+#: model:res.groups,name:s2uaccount.group_account_manager
+msgid "Billing Manager (s2uFramework)"
+msgstr "Billing Manager (s2uFramework)"
+
+#. module: s2uaccount
+#: selection:s2u.account.bank.account,type:0
+#: selection:s2u.account.bank.line.invoice.po,type:0
+#: selection:s2u.account.bank.line.invoice.so,type:0
+#: selection:s2u.account.memorial.account,type:0
+#: selection:s2u.account.memorial.line.invoice.po,type:0
+#: selection:s2u.account.memorial.line.invoice.so,type:0
+msgid "Book as payment difference"
+msgstr "Boeken als verschil"
+
+#. module: s2uaccount
+#: selection:s2u.account.bank.account,type:0
+#: selection:s2u.account.bank.line.invoice.po,type:0
+#: selection:s2u.account.bank.line.invoice.so,type:0
+#: selection:s2u.account.memorial.account,type:0
+#: selection:s2u.account.memorial.line.invoice.po,type:0
+#: selection:s2u.account.memorial.line.invoice.so,type:0
+msgid "Book as payment discount"
+msgstr "Boeken als korting"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,type:0 selection:s2u.template.account.vat,type:0
+msgid "Buy"
+msgstr "Kopen"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entity"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat_view
+#: model:ir.ui.view,arch_db:s2uaccount.view_invoice_payment
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_mt940_view
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_ubl_view
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_template_init_view
+msgid "Cancel"
+msgstr "Annuleer"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,name:s2uaccount.mt_invoice_so_canceled
+#: selection:s2u.account.invoice,state:0
+msgid "Canceled"
+msgstr "Geannuleerd"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_page
+msgid "Cancelled Invoice"
+msgstr "Factuur geannuleerd"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Cash"
+msgstr "Contant"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_category_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_category_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_category_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_category_id
+msgid "Category"
+msgstr "Categorie"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Check"
+msgstr "Controleren"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_code
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_code
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_code
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_code
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_code
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_code
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_code
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_code
+msgid "Code"
+msgstr "Code"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_company_id
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: s2uaccount
+#: selection:report.s2uaccount.trial.balance,compare_left:0
+#: selection:report.s2uaccount.trial.balance,compare_right:0
+msgid "Complete year"
+msgstr "Totaal jaar"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:1034
+#, python-format
+msgid "Compose Email"
+msgstr "Maak email"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice,state:0
+#: selection:s2u.account.invoice.po,state:0
+msgid "Concept"
+msgstr "Concept"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_contact_id
+msgid "Contact"
+msgstr "Contact"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:180
+#, python-format
+msgid "Contact does not belong to the selected debitor!"
+msgstr "Contact behoort niet tot geselecteerde debiteur!"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_mt940_data
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_ubl_data
+msgid "Content"
+msgstr "Content"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.po,state:0
+msgid "Converting"
+msgstr "Converteren"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_country_id
+msgid "Country"
+msgstr "Land"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_create_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_create_date
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_credit
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_credit
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_credit
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_credit
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+msgid "Credit"
+msgstr "Credit"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Credit nota"
+msgstr "Creditnota"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+msgid "Crediteur"
+msgstr "Crediteur"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:992
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_creditnota_id
+#, python-format
+msgid "Creditnota"
+msgstr "Creditnota"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_partner_id
+#: model:ir.ui.menu,name:s2uaccount.menu_report_creditor
+#: selection:s2u.account.bank.line,type:0
+#: selection:s2u.account.memorial.line,type:0
+msgid "Creditor"
+msgstr "Crediteuren"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_creditor
+msgid "Creditor Report"
+msgstr "Overzicht crediteuren"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_po_difference_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_po_difference_id
+msgid "Creditor difference"
+msgstr "Crediteur verschil"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_currency_id
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_mt940_bank_owner
+msgid "Customer/Supplier"
+msgstr "Klant/Leverancier"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_source_data
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_form
+msgid "Data"
+msgstr "Gegevens"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_date_trans
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_date_trans
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_payment_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_date_trans
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_date_trans
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_date_trans
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+msgid "Date"
+msgstr "Datum"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_date_due
+msgid "Date due"
+msgstr "Vervaldatum"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_debit
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_debit
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_debit
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_debit
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+msgid "Debit"
+msgstr "Debit"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Debiteur"
+msgstr "Debiteur"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_partner_id
+#: selection:s2u.account.bank.line,type:0
+#: selection:s2u.account.memorial.line,type:0
+msgid "Debitor"
+msgstr "Debiteur"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_so_difference_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_so_difference_id
+msgid "Debitor difference"
+msgstr "Debiteur verschil"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_partner_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_partner_id
+msgid "Debitor/creditor"
+msgstr "Debiteur/crediteur"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_report_debtor
+msgid "Debtor"
+msgstr "Debiteuren"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_debtor
+msgid "Debtor Report"
+msgstr "Overzicht debiteuren"
+
+#. module: s2uaccount
+#: selection:wizard.template.init,use_template:0
+msgid "Default template"
+msgstr "Standaard template"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_vat_id
+msgid "Default vat"
+msgstr "Standaard BTW"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,category:0
+#: selection:s2u.template.account.vat,category:0
+msgid "Deliveries"
+msgstr "Leveringen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Delivery VAT<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "Leveradres BTW-Nr.<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Delivery address<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "Leveradres<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Delivery<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "Levering<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_name
+msgid "Descript"
+msgstr "Omschrijving"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_descript
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_descript
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_descript
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_descript
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_descript
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_descript
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_name
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+msgid "Description"
+msgstr "Omschrijving"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Detailed"
+msgstr "Details"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Detailed info's"
+msgstr "Details"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_detailed_info
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_detailed_info
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_ids
+msgid "Details"
+msgstr "Details"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Dgn"
+msgstr "Dgn"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_type
+msgid "Difference amount"
+msgstr "Verschil"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_discount
+msgid "Discount"
+msgstr "Korting"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_print_invoice_so_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_creditor_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_debtor_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_ledger_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_trial_balance_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_vat_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2uaccount_abstract_report_journal_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_display_name
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_display_name
+msgid "Display Name"
+msgstr "Weergave naam"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+msgid "Document"
+msgstr "Document"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_form
+msgid "Documents"
+msgstr "Documenten"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_page
+msgid "Download"
+msgstr "Download"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_page
+msgid "Draft Invoice"
+msgstr "Concept factuur"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/controller/portal.py:68
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+#, python-format
+msgid "Due Date"
+msgstr "Vervaldatum"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid "Eind totaal"
+msgstr "Eind totaal"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_end_saldo
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_end_saldo
+msgid "End saldo"
+msgstr "Eind saldo"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Equity"
+msgstr "Eigen vermogen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Excel for mailmerge"
+msgstr "Excel export"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0 selection:s2u.account.category,type:0
+#: selection:s2u.template.account.account,type:0
+#: selection:s2u.template.account.category,type:0
+msgid "Expense"
+msgstr "Kosten"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_mt940_eref
+msgid "Extra"
+msgstr "Extra"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.po,state:0
+msgid "Failed"
+msgstr "Fout"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Fak.Datum"
+msgstr "Fak.Datum"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Fak.Nr."
+msgstr "Fak.Nr."
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Faktuur"
+msgstr "Faktuur"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_mt940_fname
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_ubl_fname
+msgid "Filename"
+msgstr "Bestandsnaam"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_accounting_financial
+msgid "Financial"
+msgstr "Financieel"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_date_financial
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_financial_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_date_financial
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_financial_date
+msgid "Financial Date"
+msgstr "Boekhoudkundige datum"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_move
+msgid "Financial moves related to other objects"
+msgstr "Financial moves related to other objects"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_fiscal_year
+msgid "Fiscal year"
+msgstr "Fiscaal jaar"
+
+#. module: s2uaccount
+#: sql_constraint:s2u.account.bank:0
+msgid "For this bank account transactions till are already present !"
+msgstr "Voor deze bankrekening zijn reeds transacties t/m aanwezig !"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_left_from
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_right_from
+msgid "From"
+msgstr "Van"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Gb.Rekening"
+msgstr "Gb.Rekening"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Geaccept verschil"
+msgstr "Geaccept verschil"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "General"
+msgstr "Algemeen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_template_init_view
+msgid "Go"
+msgstr "Ga"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_gross_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_gross_amount
+msgid "Gross"
+msgstr "Bruto"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 00"
+msgstr "Group 00"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 01"
+msgstr "Group 01"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 02"
+msgstr "Group 02"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 03"
+msgstr "Group 03"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 04"
+msgstr "Group 04"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 05"
+msgstr "Group 05"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 06"
+msgstr "Group 06"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 07"
+msgstr "Group 07"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 08"
+msgstr "Group 08"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 09"
+msgstr "Group 09"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 10"
+msgstr "Group 10"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 11"
+msgstr "Group 11"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 12"
+msgstr "Group 12"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 13"
+msgstr "Group 13"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 14"
+msgstr "Group 14"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 15"
+msgstr "Group 15"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 16"
+msgstr "Group 16"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 17"
+msgstr "Group 17"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 18"
+msgstr "Group 18"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 19"
+msgstr "Group 19"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,vat_report:0
+#: selection:s2u.template.account.vat,vat_report:0
+msgid "Group 20"
+msgstr "Group 20"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_print_invoice_so_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_creditor_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_debtor_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_ledger_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_trial_balance_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2uaccount_abstract_report_journal_id
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_id
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_id
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_res_id
+msgid "Id."
+msgstr "Id."
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_mt940_view
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_ubl_view
+msgid "Import"
+msgstr "Import"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_wizard_import_mt940
+#: model:ir.model,name:s2uaccount.model_wizard_import_mt940
+#: model:ir.ui.menu,name:s2uaccount.menu_wizard_import_mt940
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_mt940_view
+msgid "Import MT940"
+msgstr "Import MT940"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_wizard_import_ubl
+#: model:ir.model,name:s2uaccount.model_wizard_import_ubl
+#: model:ir.ui.menu,name:s2uaccount.menu_wizard_import_ubl
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_ubl_view
+msgid "Import UBL"
+msgstr "Import UBL"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.po,state:0
+msgid "Importing"
+msgstr "Importeren"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0 selection:s2u.account.category,type:0
+#: selection:s2u.template.account.account,type:0
+#: selection:s2u.template.account.category,type:0
+msgid "Income"
+msgstr "Omzet"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.po,state:0
+msgid "Incoming"
+msgstr "Ontvangsten"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_wizard_template_init
+msgid "Init accounts"
+msgstr "Init gb.rekeningen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_template_init_view
+msgid "Init template"
+msgstr "Init template"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_wizard_template_init
+msgid "Initialisation of accounts and vats"
+msgstr "Initialisatie van gb.rekeningen en BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid ""
+"Intracommunautaire prestaties (ICP-opgave) Dit is een nadere specificatie van rubriek 3b in dit overzicht. In de ICP-aangifte vult u deze gegevens in\n"
+"bij rubriek 3b en niet rubriek 3a."
+msgstr ""
+"Intracommunautaire prestaties (ICP-opgave) Dit is een nadere specificatie van rubriek 3b in dit overzicht. In de ICP-aangifte vult u deze gegevens in\n"
+"bij rubriek 3b en niet rubriek 3a."
+
+#. module: s2uaccount
+#: model:ir.actions.report,name:s2uaccount.s2uaccount_so_invoices
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_invoice_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_invoice_id
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_form
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_tree
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_tree
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_page
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Invoice"
+msgstr "Factuur"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+msgid "Invoice #"
+msgstr "Factuur #"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,description:s2uaccount.mt_invoice_so_created
+#: model:mail.message.subtype,name:s2uaccount.mt_invoice_so_created
+msgid "Invoice Created"
+msgstr "Factuur gemaakt"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_currency_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_currency_id
+msgid "Invoice Currency"
+msgstr "Valuta"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/controller/portal.py:67
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_date_invoice
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_date_invoice
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+#, python-format
+msgid "Invoice Date"
+msgstr "Fak.Datum"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_month_invoice
+msgid "Invoice Month"
+msgstr "Fak. Maand"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_year_invoice
+msgid "Invoice Year"
+msgstr "Fak. Jaar"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,description:s2uaccount.mt_invoice_so_canceled
+msgid "Invoice canceled"
+msgstr "Factuur geannuleerd"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:396
+#, python-format
+msgid "Invoice is not paid."
+msgstr "Factuur is niet betaald."
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:381
+#, python-format
+msgid "Invoice is paid."
+msgstr "Factuur is betaald."
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice_line
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice_po_line
+msgid "Invoice line"
+msgstr "Fak. Regel"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,description:s2uaccount.mt_invoice_so_reopened
+msgid "Invoice reopened"
+msgstr "Factuur heropend"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,description:s2uaccount.mt_invoice_so_validated
+msgid "Invoice validated"
+msgstr "Factuur gevalideerd"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice_vat
+msgid "Invoice vat"
+msgstr "Fak. BTW"
+
+#. module: s2uaccount
+#: model:mail.template,report_name:s2uaccount.email_template_s2u_invoice
+msgid "Invoice-${(object.name or '').replace('/','_')}.pdf"
+msgstr "Invoice-${(object.name or '').replace('/','_')}.pdf"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice,state:0
+msgid "Invoiced"
+msgstr "Gefactureerd"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_po_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_so_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_po_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_so_ids
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_home_invoice
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_home_menu_invoice
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+msgid "Invoices"
+msgstr "Facturen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+msgid "Invoices (PO)"
+msgstr "Inkoop facturen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+msgid "Invoices (SO)"
+msgstr "Verkoop facturen"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_bank_line_invoice_po
+#: model:ir.model,name:s2uaccount.model_s2u_account_memorial_line_invoice_po
+msgid "Invoices PO"
+msgstr "Inkoop facturen"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_bank_line_invoice_so
+#: model:ir.model,name:s2uaccount.model_s2u_account_memorial_line_invoice_so
+msgid "Invoices SO"
+msgstr "Verkoop facturen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_is_expired
+msgid "Is expired"
+msgstr "Is verlopen"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.line,price_per:0
+msgid "Item"
+msgstr "Item"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_memorial
+#: model:ir.ui.menu,name:s2uaccount.menu_memorial
+msgid "Journal entry"
+msgstr "Memoriaal boeking"
+
+#. module: s2uaccount
+#: selection:s2u.account.bank.line.invoice.po,type:0
+#: selection:s2u.account.bank.line.invoice.so,type:0
+#: selection:s2u.account.memorial.line.invoice.po,type:0
+#: selection:s2u.account.memorial.line.invoice.so,type:0
+msgid "Keep open"
+msgstr "Open laten"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_detailed_label
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_detailed_label
+msgid "Label"
+msgstr "Label"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Landcode"
+msgstr "Landcode"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_print_invoice_so___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_creditor___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_debtor___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_ledger___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_trial_balance___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_report_vat___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_s2uaccount_abstract_report_journal___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl___last_update
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init___last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_write_uid
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_mt940_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_import_ubl_write_date
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_ledger
+msgid "Ledger Report"
+msgstr "Grootboek"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_ledger_ledger_till
+msgid "Ledger till"
+msgstr "Grootboek t/m"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_compare_left
+msgid "Left column"
+msgstr "Linker kolom"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_delivery_country_id
+msgid "Leveringsland"
+msgstr "Leveringsland"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0 selection:s2u.account.category,type:0
+#: selection:s2u.template.account.account,type:0
+#: selection:s2u.template.account.category,type:0
+msgid "Liability"
+msgstr "Verplichtingen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_line_id
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+msgid "Line"
+msgstr "Regel"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_ids
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+msgid "Lines"
+msgstr "Regels"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+msgid "MT940 details"
+msgstr "MT940 details"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_mt940_format
+msgid "MT940 format"
+msgstr "MT940 formaat"
+
+#. module: s2uaccount
+#: selection:s2u.account.category,type:0
+#: selection:s2u.template.account.category,type:0
+msgid "Main category"
+msgstr "Hoofd categorie"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat_view
+msgid "Make final"
+msgstr "Maak definitief"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_memorial
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_memorial_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_memorial_id
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_tree
+msgid "Memorial"
+msgstr "Memoriaal"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_memorial_line
+msgid "Memorial line"
+msgstr "Memoriaal regel"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_memorial_account
+msgid "Memorial line accounting data - automatically build on create/write"
+msgstr "Memorial line accounting data - automatically build on create/write"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_failed_message
+msgid "Message"
+msgstr "Bericht"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat.rule,rule_type:0
+#: selection:s2u.template.account.vat.rule,rule_type:0
+msgid "Minus"
+msgstr "Minus"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_res_model
+msgid "Model"
+msgstr "Model"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_name
+msgid "Name"
+msgstr "Naam"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_net_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_net_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_net_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_net_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_net_amount
+msgid "Net"
+msgstr "Netto"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/wizards/import_mt940.py:288
+#, python-format
+msgid "No MT940 format defined for account %s"
+msgstr "Geen MT940 formaat gedefinieerd voor gb.rekening %s"
+
+#. module: s2uaccount
+#: selection:s2u.account.bank.account,type:0
+#: selection:s2u.account.bank.line,type:0
+#: selection:s2u.account.memorial,memorial_type:0
+#: selection:s2u.account.memorial.account,type:0
+#: selection:s2u.account.memorial.line,type:0
+msgid "Normal"
+msgstr "Normaal"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/controller/portal.py:70
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_name
+#, python-format
+msgid "Number"
+msgstr "Nummer"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Omschrijving"
+msgstr "Omschrijving"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:639
+#, python-format
+msgid "Only a concept invoice can be deleted, you have to cancel the invoice!"
+msgstr "Alleen een concept factuur kan verwijderd worden! U dient de factuur te annuleren."
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_open_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_open_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_open_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_open_amount
+#: selection:s2u.account.invoice,paid_state:0
+msgid "Open"
+msgstr "Open"
+
+#. module: s2uaccount
+#: selection:s2u.account.memorial,memorial_type:0
+msgid "Opening balance"
+msgstr "Openingsbelans"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Other"
+msgstr "Overige"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+msgid "Other details"
+msgstr "Overige details"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_reference
+msgid "Our reference"
+msgstr "Onze ref."
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice,paid_state:0
+msgid "Paid"
+msgstr "Betaald"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_parent_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_category_parent_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_parent_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_category_parent_id
+msgid "Parent"
+msgstr "Bovenliggend"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Payable"
+msgstr "Betaalbaar"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.act_view_invoice_payment
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_amount_paid
+#: model:ir.ui.view,arch_db:s2uaccount.view_invoice_payment
+msgid "Payment"
+msgstr "Betaling"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_paid_state
+msgid "Payment state"
+msgstr "Betalings status"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_account_payment_term
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_crm_entity_payment_term_id
+#: model:ir.ui.menu,name:s2uaccount.menu_account_payment_term
+#: model:ir.ui.view,arch_db:s2uaccount.account_payment_term_tree
+msgid "Payment terms"
+msgstr "Betalings condities"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_payment_terms
+msgid "Payment terms (days)"
+msgstr "Betalings condities (dagen)"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_payment_term_name
+msgid "Payment terms (text)"
+msgstr "Betalings condities (tekst)"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_price_per
+msgid "Per"
+msgstr "Per"
+
+#. module: s2uaccount
+#: selection:report.s2uaccount.trial.balance,compare_left:0
+#: selection:report.s2uaccount.trial.balance,compare_right:0
+msgid "Period"
+msgstr "Periode"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:1340
+#, python-format
+msgid "Please confirm this invoice first, before register a payment for it!"
+msgstr "U dient de factuur eerst te bevestigen alvorens een betaling voor deze factuur in te geven!"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance_view
+msgid "Please enter the data you want to see in your trial balance"
+msgstr "Geef de gewenste data in welke in uw proefsaldibalans meegenomen dienen te worden."
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_mt940_view
+msgid "Please select MT940 file to import:"
+msgstr "Selecteer het MT940 bestand:"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_ubl_view
+msgid "Please select UBL file to import:"
+msgstr "Selecteer het UBL bestand:"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:1157
+#, python-format
+msgid "Please select a b2b creditor!"
+msgstr "Selecteer een b2b crediteur!"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:178
+#, python-format
+msgid "Please select a b2b debitor!"
+msgstr "Selecteer een b2b debiteur!"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:185
+#, python-format
+msgid "Please select a b2c debitor!"
+msgstr "Selecteer een b2c debiteur!"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat.rule,rule_type:0
+#: selection:s2u.template.account.vat.rule,rule_type:0
+msgid "Plus"
+msgstr "Plus"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_net_price
+msgid "Price"
+msgstr "Prijs"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_net_price_after_discount
+msgid "Price after discount"
+msgstr "Prijs na korting"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Price net"
+msgstr "Prijs netto"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat_view
+msgid "Print"
+msgstr "Print"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/wizards/import_ubl.py:424
+#, python-format
+msgid "Problem to find a correct financial account for line %s."
+msgstr "Er is geen gb.rekening gevonden voor regel %s."
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+#: selection:s2u.account.invoice,state:0
+msgid "Proforma"
+msgstr "Proforma"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_page
+msgid "Proforma Invoice"
+msgstr "Proforma factuur"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,description:s2uaccount.mt_invoice_so_proforma
+#: model:mail.message.subtype,name:s2uaccount.mt_invoice_so_proforma
+msgid "Proforma Invoice Created"
+msgstr "Proforma factuur gemaakt"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:1322
+#, python-format
+msgid "Programmation error: the expected model for this action is 's2u.account.invoice'. The provided one is '%d'."
+msgstr "Programmation error: the expected model for this action is 's2u.account.invoice'. The provided one is '%d'."
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:1320
+#, python-format
+msgid "Programmation error: wizard action executed without active_model or active_id in context."
+msgstr "Programmation error: wizard action executed without active_model or active_id in context."
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_project
+msgid "Project"
+msgstr "Project"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_invoice_po
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice_po
+#: model:ir.ui.menu,name:s2uaccount.menu_invoice_po
+msgid "Purchase invoice"
+msgstr "Inkoopfactuur"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_qty
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Qty"
+msgstr "Stuks"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "Quantity"
+msgstr "Hoeveelheid"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Receivable"
+msgstr "Ontvangbaar"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/controller/portal.py:69
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_reference
+#, python-format
+msgid "Reference"
+msgstr "Referentie"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.po,state:0
+msgid "Rejected"
+msgstr "Afgewezen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_remarks
+msgid "Remarks"
+msgstr "Opmerkingen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Reopen"
+msgstr "Heropen"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,name:s2uaccount.mt_invoice_so_reopened
+#: selection:s2u.account.invoice,state:0
+msgid "Reopened"
+msgstr "Heropend"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_vat_report
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_vat_report
+msgid "Report"
+msgstr "Report"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_report_creditor
+#: model:ir.actions.report,name:s2uaccount.s2uaccount_report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor_view
+msgid "Report Creditor"
+msgstr "Overzicht crediteuren"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_report_debtor
+#: model:ir.actions.report,name:s2uaccount.s2uaccount_report_debtor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor_view
+msgid "Report Debtor"
+msgstr "Overzicht debiteuren"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_report_ledger
+#: model:ir.actions.report,name:s2uaccount.s2uaccount_report_ledger
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger_view
+msgid "Report Ledger"
+msgstr "Grootboek"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_report_trial_balance
+#: model:ir.actions.report,name:s2uaccount.s2uaccount_report_trial_balance
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance_view
+msgid "Report Trial Balance"
+msgstr "Overzicht proefsaldibalans"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_report_vat
+#: model:ir.actions.report,name:s2uaccount.s2uaccount_report_vat
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat_view
+msgid "Report Vat"
+msgstr "Overzicht BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_report_ledger
+msgid "Report ledger"
+msgstr "Report ledger"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_report_vat
+msgid "Report vat"
+msgstr "Overzicht BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_pivot
+msgid "Report-Pivot"
+msgstr "Report-Pivot"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_graph
+msgid "Report-graph"
+msgstr "Report-graph"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_accounting_reporting
+msgid "Reports"
+msgstr "Rapportages"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_compare_right
+msgid "Right column"
+msgstr "Rechter kolom"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_rule_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_rule_type
+msgid "Rule"
+msgstr "Regel"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_vat
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_vat
+msgid "Rule for VAT amount"
+msgstr "Regel voor BTW bedrag"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_gross
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_gross
+msgid "Rule for gross amount"
+msgstr "Regel voor bruto bedrag"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_net
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_net
+msgid "Rule for net amount"
+msgstr "Regel voor netto bedrag"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.vat_form
+msgid "Rules"
+msgstr "Regels"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_analytic_saldo
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Saldo"
+msgstr "Saldo"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/memorial.py:208
+#, python-format
+msgid "Saldo for memorial booking must be zero."
+msgstr "Saldo voor een memoriaalboeking moet 0,00 zijn."
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid "Saldo verlies"
+msgstr "Saldo verlies"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid "Saldo winst"
+msgstr "Saldo winst"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_invoice
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice
+#: model:ir.ui.menu,name:s2uaccount.menu_invoice
+msgid "Sales invoice"
+msgstr "Verkoopfactuur"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.account_category_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.account_payment_term_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.account_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.analytic_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.bank_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.vat_category_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.vat_country_search_view
+#: model:ir.ui.view,arch_db:s2uaccount.vat_search_view
+msgid "Search"
+msgstr "Zoek"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_access_token
+msgid "Security Token"
+msgstr "Security Token"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,type:0 selection:s2u.template.account.vat,type:0
+msgid "Sell"
+msgstr "Verkoop"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Send by Email"
+msgstr "per mail"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_detailed_sequence
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_detailed_sequence
+msgid "Sequence"
+msgstr "Reeks"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:199
+#, python-format
+msgid "Sequence for creating invoice number not exists!"
+msgstr "Sequence for creating invoice number not exists!"
+
+#. module: s2uaccount
+#: selection:s2u.account.vat,category:0
+#: selection:s2u.template.account.vat,category:0
+msgid "Services"
+msgstr "Diensten"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_accounting_settings
+msgid "Settings"
+msgstr "Instellingen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_delivery_ref
+msgid "Shipment ref."
+msgstr "Levering ref."
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "Source Document"
+msgstr "Source Document"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_move_special_info
+msgid "Special info"
+msgstr "Extra info"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_start_saldo
+msgid "Start saldo"
+msgstr "Start saldo"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_state
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_state
+msgid "State"
+msgstr "Status"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/controller/portal.py:71
+#, python-format
+msgid "Status"
+msgstr "Status"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Stock"
+msgstr "Voorraad"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_delivery_tinno
+msgid "TIN no."
+msgstr "BTW-Nr."
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_tinno_obligatory
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_tinno_obligatory
+msgid "TIN no. obligatory"
+msgstr "BTW-Nr. verplicht"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_cloud_task_id
+msgid "Task ID"
+msgstr "Taak ID"
+
+#. module: s2uaccount
+#: selection:s2u.account.account,type:0
+#: selection:s2u.template.account.account,type:0
+msgid "Tax"
+msgstr "BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "Taxes"
+msgstr "BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Te betalen BTW"
+msgstr "Te betalen BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Te ontvangen BTW"
+msgstr "Te ontvangen BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Te vorderen BTW"
+msgstr "Te vorderen BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Te vorderen deze periode"
+msgstr "Te vorderen deze periode"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_template_account_vat_category
+msgid "Template VAT category"
+msgstr "Template BTW categorie"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_template_account_vat_rule
+msgid "Template VAT rule"
+msgstr "Template BTW regel"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_template_account_account
+msgid "Template account"
+msgstr "Template gb.rekening"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_template_account_category
+msgid "Template account category"
+msgstr "Template gb.rekening categorie"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_template_account_vat
+msgid "Template vat"
+msgstr "Template btw"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_wizard_template_init
+msgid "Templates"
+msgstr "Sjablonen"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_payment_terms
+msgid "Terms"
+msgstr "Voorwaarden"
+
+#. module: s2uaccount
+#: model:ir.model.fields,help:s2uaccount.field_s2u_account_account_type
+#: model:ir.model.fields,help:s2uaccount.field_s2u_template_account_account_type
+msgid "The 'Type' is used for features available on different types of accounts: liquidity type is for cash or bank accounts, payable/receivable is for vendor/customer accounts."
+msgstr "The 'Type' is used for features available on different types of accounts: liquidity type is for cash or bank accounts, payable/receivable is for vendor/customer accounts."
+
+#. module: s2uaccount
+#: sql_constraint:s2u.account.category:0
+#: sql_constraint:s2u.template.account.category:0
+msgid "The code must be unique !"
+msgstr "Code moet uniek zijn !"
+
+#. module: s2uaccount
+#: sql_constraint:s2u.template.account.account:0
+msgid "The code of the account must be unique !"
+msgstr "De code voor de gb.rekening moet uniek zijn !"
+
+#. module: s2uaccount
+#: sql_constraint:s2u.account.account:0
+msgid "The code of the account must be unique per administration !"
+msgstr "De code voor de gb.rekening moet voor iedere administratie uniek zijn !"
+
+#. module: s2uaccount
+#: sql_constraint:s2u.account.vat.category:0
+#: sql_constraint:s2u.template.account.vat.category:0
+msgid "The code of the category must be unique !"
+msgstr "De code voor de categorie moet uniek zijn !"
+
+#. module: s2uaccount
+#: sql_constraint:s2u.template.account.vat:0
+msgid "The code of the vat must be unique !"
+msgstr "De code voor de BTW moet uniek zijn !"
+
+#. module: s2uaccount
+#: sql_constraint:s2u.account.vat:0
+msgid "The code of the vat must be unique with the administration !"
+msgstr "De code voor de BTW moet uniek zijn binnen de administratie!"
+
+#. module: s2uaccount
+#: sql_constraint:s2u.account.vat.country:0
+msgid "The country should be defined once !"
+msgstr "The country should be defined once !"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_my_invoices
+msgid "There are currently no invoices and payments for your account."
+msgstr "There are currently no invoices and payments for your account."
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:1017
+#, python-format
+msgid "There is no mail address present to use!"
+msgstr "Er is geen mail adres beschikbaar om te gebruiken!"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_error
+msgid "There was an error processing this page."
+msgstr "There was an error processing this page."
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/wizards/import_mt940.py:292
+#, python-format
+msgid "This MT940 format is not supported"
+msgstr "Dit MT940 formaat wordt niet ondersteund."
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/wizards/import_ubl.py:332
+#, python-format
+msgid "This UBL XML file is not an invoice/refund file (InvoiceTypeCode is %s"
+msgstr "Dit UBL XML bestand is geen factuur bestand (InvoiceTypeCode is %s)"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/wizards/import_ubl.py:400
+#: code:addons/s2uaccount/wizards/import_ubl.py:410
+#, python-format
+msgid "This UBL XML file is not an invoice/refund file."
+msgstr "Dit UBL XML bestand is geen factuur bestand."
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/wizards/import_ubl.py:318
+#, python-format
+msgid "This XML file is not XML-compliant"
+msgstr "Dit XML bestand is niet XML-compliant"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:968
+#, python-format
+msgid "This invoice has already a creditnota, please check!"
+msgstr "Deze factuur is reeds gecrediteerd!"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_creditor_date_till
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_debtor_date_till
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_left_till
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_trial_balance_right_till
+msgid "Till"
+msgstr "T/m"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Tot deze periode"
+msgstr "Tot deze periode"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Totaal"
+msgstr "Totaal"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor
+msgid "Totaal crediteuren"
+msgstr "Totaal crediteuren"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor
+msgid "Totaal debiteuren"
+msgstr "Totaal debiteuren"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Totaal deze periode"
+msgstr "Totaal deze periode"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Totaal diensten"
+msgstr "Totaal diensten"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Totaal leveringen"
+msgstr "Totaal leveringen"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.analytic_tree
+#: model:ir.ui.view,arch_db:s2uaccount.bank_form
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_po_form
+#: model:ir.ui.view,arch_db:s2uaccount.memorial_form
+#: selection:s2u.account.invoice.line,price_per:0
+msgid "Total"
+msgstr "Totaal"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_tree
+msgid "Total Gross"
+msgstr "Totaal bruto"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_tree
+msgid "Total Net"
+msgstr "Totaal netto"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_tree
+msgid "Total Open"
+msgstr "Totaal open"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_tree
+msgid "Total VAT"
+msgstr "Totaal BTW"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_transactions_bank
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_transactions_memorial
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_transactions_bank
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_transactions_memorial
+msgid "Trans. Bank"
+msgstr "Trans. Bank"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_po_bankline_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_invoice_so_bankline_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_po_mline_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_invoice_so_mline_id
+msgid "Transaction"
+msgstr "Transactie"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_transactions_till
+msgid "Transactions till"
+msgstr "Transacties t/m"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_trial_balance
+msgid "Trial Balance"
+msgstr "Proefbalans"
+
+#. module: s2uaccount
+#: model:ir.ui.menu,name:s2uaccount.menu_report_trial_balance
+msgid "Trial balance"
+msgstr "Proefbalans"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_account_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_category_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_memorial_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_memorial_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_account_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_category_type
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_type
+msgid "Type"
+msgstr "Soort"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "Unit Price"
+msgstr "Stuks prijs"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_wizard_template_init_use_template
+msgid "Use"
+msgstr "Gebruik"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_user_id
+msgid "User"
+msgstr "Gebruiker"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_vat
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_vat_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_vat_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_line_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_vat_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_line_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_vat_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_po_line_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_vat_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_vat_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_vat_amount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_name
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_name
+#: model:ir.ui.menu,name:s2uaccount.menu_vat
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+#: model:ir.ui.view,arch_db:s2uaccount.vat_form
+#: model:ir.ui.view,arch_db:s2uaccount.vat_tree
+msgid "VAT"
+msgstr "BTW"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.vat_category_tree
+msgid "VAT categories"
+msgstr "BTW categorien"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_vat_category
+#: model:ir.model,name:s2uaccount.model_s2u_account_vat_category
+#: model:ir.ui.menu,name:s2uaccount.menu_vat_category
+#: model:ir.ui.view,arch_db:s2uaccount.vat_category_form
+#: model:ir.ui.view,arch_db:s2uaccount.vat_country_form
+msgid "VAT category"
+msgstr "BTW categorie"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_vat_code
+msgid "VAT code"
+msgstr "BTW code"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.vat_country_tree
+msgid "VAT countries"
+msgstr "BTW landen"
+
+#. module: s2uaccount
+#: model:ir.actions.act_window,name:s2uaccount.action_vat_country
+#: model:ir.ui.menu,name:s2uaccount.menu_vat_country
+msgid "VAT country"
+msgstr "BTW land"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_vat_buy_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_crm_entity_vat_buy_id
+msgid "VAT expense (PO)"
+msgstr "BTW inkoop (PO)"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_country_vat_sell_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_crm_entity_vat_sell_id
+msgid "VAT income (SO)"
+msgstr "BTW verkoop (SO)"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_vat_name
+msgid "VAT name"
+msgstr "BTW naam"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_ids
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_ids
+msgid "VAT rules"
+msgstr "BTW regels"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_vat_ids
+msgid "VAT summary"
+msgstr "BTW samenvatting"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_vat_till
+msgid "VAT till"
+msgstr "BTW t/m"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_vat_country
+msgid "VAT used in country"
+msgstr "BTW gebruikt in land"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_bank_account_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_account_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_memorial_line_vat_id
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger
+msgid "VAT-Code"
+msgstr "BTW-Code"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_report
+msgid "VAT:"
+msgstr "BTW-Nr.:"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.invoice_form
+msgid "Validate"
+msgstr "Valideren"
+
+#. module: s2uaccount
+#: model:mail.message.subtype,name:s2uaccount.mt_invoice_so_validated
+msgid "Validated"
+msgstr "Gevalideerd"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_vat
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_vat_rule_vat_id
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_template_account_vat_rule_vat_id
+#: model:ir.ui.view,arch_db:s2uaccount.print_invoice_so_document
+msgid "Vat"
+msgstr "BTW"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_vat
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_saved_vat_report
+msgid "Vat Report"
+msgstr "Overzicht BTW"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_vat_saved
+msgid "Vat report saved"
+msgstr "Overzicht BTW opgeslagen"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_vat_rule
+msgid "Vat rule"
+msgstr "BTW regel"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_report_s2uaccount_vat_vat_till
+msgid "Vat till"
+msgstr "BTW t/m"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.po,state:0
+msgid "Waiting"
+msgstr "Wachten"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat
+msgid "Werkelijke BTW"
+msgstr "Werkelijke BTW"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:966
+#, python-format
+msgid "You can not make a creditnota for this invoice!"
+msgstr "U kunt deze factuur niet crediteren!"
+
+#. module: s2uaccount
+#: code:addons/s2uaccount/models/invoice.py:48
+#, python-format
+msgid "Your debitor %s needs to have a valid TIN number!"
+msgstr "Uw debiteur %s heeft geen geldig BTW-Nr, dit is noodzakelijk!"
+
+#. module: s2uaccount
+#: model:ir.model.fields,field_description:s2uaccount.field_s2u_account_invoice_customer_code
+msgid "Your reference"
+msgstr "Uw referentie"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_analytic
+msgid "analytic Account"
+msgstr "Kostenplaats"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid "beginsaldo"
+msgstr "beginsaldo"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_error
+#: model:ir.ui.view,arch_db:s2uaccount.portal_invoice_success
+msgid "close"
+msgstr "Sluiten"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid "credit"
+msgstr "credit"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid "debet"
+msgstr "debit"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance
+msgid "eindsaldo"
+msgstr "eindsaldo"
+
+#. module: s2uaccount
+#: model:ir.ui.view,arch_db:s2uaccount.report_creditor_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_debtor_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_ledger_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_trial_balance_view
+#: model:ir.ui.view,arch_db:s2uaccount.report_vat_view
+#: model:ir.ui.view,arch_db:s2uaccount.view_invoice_payment
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_mt940_view
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_import_ubl_view
+#: model:ir.ui.view,arch_db:s2uaccount.wizard_template_init_view
+msgid "or"
+msgstr "of"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.line,price_per:0
+msgid "per 10"
+msgstr "per 10"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.line,price_per:0
+msgid "per 100"
+msgstr "per 100"
+
+#. module: s2uaccount
+#: selection:s2u.account.invoice.line,price_per:0
+msgid "per 1000"
+msgstr "per 1000"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_print_invoice_so
+msgid "report.s2uaccount.print_invoice_so"
+msgstr "report.s2uaccount.print_invoice_so"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_report_creditor
+msgid "report.s2uaccount.report_creditor"
+msgstr "report.s2uaccount.report_creditor"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_report_debtor
+msgid "report.s2uaccount.report_debtor"
+msgstr "report.s2uaccount.report_debtor"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_report_ledger
+msgid "report.s2uaccount.report_ledger"
+msgstr "report.s2uaccount.report_ledger"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_report_trial_balance
+msgid "report.s2uaccount.report_trial_balance"
+msgstr "report.s2uaccount.report_trial_balance"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_report_s2uaccount_report_vat
+msgid "report.s2uaccount.report_vat"
+msgstr "report.s2uaccount.report_vat"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice_detailed
+msgid "s2u.account.invoice.detailed"
+msgstr "s2u.account.invoice.detailed"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice_line_detailed
+msgid "s2u.account.invoice.line.detailed"
+msgstr "s2u.account.invoice.line.detailed"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2u_account_invoice_payment
+msgid "s2u.account.invoice.payment"
+msgstr "s2u.account.invoice.payment"
+
+#. module: s2uaccount
+#: model:ir.model,name:s2uaccount.model_s2uaccount_abstract_report_journal
+msgid "s2uaccount.abstract_report_journal"
+msgstr "s2uaccount.abstract_report_journal"

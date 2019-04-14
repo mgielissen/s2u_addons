@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="s2udocument.allowed" model="res.groups">
+            <field name="category_id" ref="s2ubase.module_category_s2uframework"/>
+            <field name="name">DMS Module</field>
+        </record>
+    </data>
+</openerp>

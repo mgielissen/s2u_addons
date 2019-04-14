@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <template id="print_rma_document" inherit_id="s2uwarehouse.print_rma_document" >
+        <xpath expr="//div[@name='rma_date_display']" position="replace">
+            <p t-if="o.template_id" t-field="o.date_display" />
+        </xpath>
+        <xpath expr="//div[@name='rma_prefix']" position="replace">
+            <div class="row mt16 mb16" t-if="o.template_id" name="rma_prefix">
+                <div class="col-xs-12">
+                    <p t-field="o.prefix_rma" />
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='rma_postfix']" position="replace">
+            <div class="row mt8" t-if="o.template_id" name="rma_postfix">
+                <div class="col-xs-12">
+                    <p t-field="o.postfix_rma" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</data>
+</openerp>

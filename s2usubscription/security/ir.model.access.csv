@@ -1,0 +1,16 @@
+"id","group_id:id","name","model_id","perm_create","perm_unlink","perm_write","perm_read"
+"r20180824001","base.group_user","Default","s2u.subscription.template",1,1,1,1
+"r20180825001","base.group_user","Default","s2u.subscription",1,1,1,1
+"r20180825003","base.group_user","Default","s2u.subscription.template.product",1,1,1,1
+"r20180826001","base.group_user","Default","s2u.subscription.product",1,1,1,1
+"r20180831001","base.group_user","Default","s2u.subscription.order",1,1,1,1
+"r20180903001","base.group_user","Default","s2u.subscription.period",1,1,1,1
+"r20180903002","base.group_user","Default","s2u.subscription.period.transaction",1,1,1,1
+"r20181027001","base.group_portal","Default","s2u.subscription",0,0,0,1
+"r20181027002","base.group_portal","Default","s2u.subscription.order",0,0,0,1
+"r20181209001","base.group_user","Default","s2u.crm.entity.discount.subscription",1,1,1,1
+"r20181211001","base.group_user","Default","s2u.subscriptionv2",1,1,1,1
+"r20181211002","base.group_user","Default","s2u.subscriptionv2.invoice",1,1,1,1
+"r20190206001","base.group_user","Default","s2u.subscription.block",1,0,0,1
+"r20190206002","s2usale.group_sale_manager","Default","s2u.subscription.block",1,1,1,1
+"r20190212001","s2usale.group_sale_manager","Default","s2u.sale.subscription.block",1,1,1,1

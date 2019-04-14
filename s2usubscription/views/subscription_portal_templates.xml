@@ -1,0 +1,138 @@
+<odoo>
+	<template id="s2usubscription.portal_my_home_menu_subscription" name="Portal layout : subscription menu entries" inherit_id="portal.portal_layout" priority="40">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'subscription'" class="active">
+                <a t-if="subscription" t-attf-href="/my/subscriptions?{{ keep_query() }}">Subscriptions</a>
+                <t t-else="">Subscriptions</t>
+            </li>
+            <li t-if="subscription">
+                <t t-esc="subscription.template_id.name"/>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="s2usubscription.portal_my_home_subscription" name="Portal My Home : subscription entries" inherit_id="portal.portal_my_home" priority="40">
+        <xpath expr="//ul[hasclass('o_portal_docs')]" position="inside">
+            <li t-if="subscription_count" class="list-group-item">
+                <span class="badge" t-esc="subscription_count"/>
+                <a href="/my/subscriptions">Subscriptions</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="s2usubscription.portal_my_subscriptions" name="My Subscription">
+      <t t-call="portal.portal_layout">
+        <h3>Subscriptions
+            <t t-call="portal.portal_searchbar"/>
+        </h3>
+        <t t-if="not invoices">
+            <p>There are currently no subscriptions for your account.</p>
+        </t>
+        <div t-if="subscriptions" class="panel panel-default">
+            <div class="table-responsive"><table class="table table-hover o_portal_my_doc_table">
+                <thead>
+                  <tr class="active">
+                    <th>Subscription #</th>
+                    <th>Start</th>
+                    <th>Ends</th>
+                    <th>Duration</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <t t-foreach="subscriptions" t-as="subscription">
+                    <tr>
+                        <td>
+                            <a t-attf-href="/my/subscriptions/#{subscription.id}" t-att-title="subscription.template_id.name"><t t-esc="subscription.template_id.name"/></a>
+                        </td>
+                        <td><span t-field="subscription.date_start"/></td>
+                        <td><span t-field="subscription.date_end"/></td>
+                        <td><span t-field="subscription.months"/></td>
+                        <td><span t-esc="subscription.amount" t-options='{"widget": "monetary", "display_currency": subscription.currency_id}'/></td>
+                    </tr>
+                </t>
+            </table></div>
+            <div t-if="pager" class="o_portal_pager text-center">
+                <t t-call="portal.pager"/>
+            </div>
+        </div>
+      </t>
+    </template>
+
+    <template id="s2usubscription.portal_subscription_page" name="Subscription Portal Template">
+        <t t-call="portal.portal_layout">
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>
+                                    <t t-call='portal.record_pager'/>
+                                    <span t-if="subscription.state == 'draft'">Draft Subscription</span>
+                                    <span t-if="subscription.state == 'active'">Subscription Active</span>
+                                    <span t-if="subscription.state == 'cancel'">Subscription Canceled</span>
+                                    <span t-if="subscription.state == 'done'">Subscription Finished</span>
+                                    <span t-field="subscription.template_id.name"/>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <t t-if="error or warning" t-call="s2usubscription.portal_subscription_error"/>
+                        <t t-if="success and (not error and not warning)" t-call="s2usubscription.portal_subscription_success"/>
+                        <t t-call="s2usubscription.portal_subscription_report"/>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure mb32"/>
+        </t>
+    </template>
+
+    <template id="s2usubscription.portal_subscription_report" name="Subscription Portal Report">
+        <div class="row">
+            <div class="col-xs-5" name="customer_address">
+                <strong>Customer Address</strong>
+                <address t-field="subscription.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                <div t-if="subscription.partner_id.vat_sell_id" class="mt16">VAT: <span t-field="subscription.partner_id.vat_sell_id"/></div>
+            </div>
+        </div>
+
+        <div class="row mt32 mb32">
+            <div class="col-xs-2" t-if="subscription.date_start">
+                <strong>From:</strong>
+                <p t-field="subscription.date_start"/>
+            </div>
+            <div class="col-xs-2" t-if="subscription.date_end">
+                <strong>Till:</strong>
+                <p t-field="subscription.date_end"/>
+            </div>
+            <div class="col-xs-2" t-if="subscription.months">
+                <strong>Duration:</strong>
+                <p t-field="subscription.months"/>
+            </div>
+            <div class="col-xs-2" t-if="subscription.amount">
+                <strong>Recurring amount:</strong>
+                <p t-field="subscription.amount" t-options='{"widget": "monetary", "display_currency": subscription.currency_id}' />
+            </div>
+        </div>
+    </template>
+
+    <template id="s2usubscription.portal_subscription_error" name="Subscription error/warning display">
+        <div class="row mr16">
+            <div t-attf-class="'col-md-12 mr16 ml16 alert alert-dismissable' #{'alert-danger' if error else 'alert-warning'}">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                <t t-if="error == 'generic'" name="generic">
+                    There was an error processing this page.
+                </t>
+            </div>
+        </div>
+    </template>
+
+    <template id="s2usubscription.portal_subscription_success" name="Subscription success display">
+        <div class="row mr16">
+            <div class="col-md-12 mr16 ml16 alert alert-dismissable alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            </div>
+        </div>
+    </template>
+</odoo>

@@ -1,0 +1,112 @@
+<openerp>
+    <data>
+        <!-- Location -->
+        <record model="ir.ui.view" id="warehouse_search_view">
+            <field name="model">s2u.warehouse</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="entity_id" />
+                    <field name="address_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="default" />
+                            </group>
+                            <group>
+                                <field name="entity_id" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', entity_id)]"
+                                       context="{'default_entity_id': entity_id}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse">
+                    <field name="name" />
+                    <field name="default" />
+                    <field name="entity_id" />
+                    <field name="address_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_warehouse" model="ir.actions.act_window">
+            <field name="name">Warehouses</field>
+            <field name="res_model">s2u.warehouse</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_warehouse" id="menu_warehouse_warehouse"
+            parent="menu_warehouse_settings" sequence="19" groups="s2uwarehouse.group_warehouse_manager" />
+
+        <!-- Location -->
+        <record model="ir.ui.view" id="warehouse_location_search_view">
+            <field name="model">s2u.warehouse.location</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_location_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.location</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse location">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="usage" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_location_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.location</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse location">
+                    <field name="name" />
+                    <field name="usage" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_location" model="ir.actions.act_window">
+            <field name="name">Locations</field>
+            <field name="res_model">s2u.warehouse.location</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_location_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_location" id="menu_warehouse_location"
+            parent="menu_warehouse_settings" sequence="20" groups="s2uwarehouse.group_warehouse_manager" />
+
+    </data>
+</openerp>

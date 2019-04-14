@@ -1,0 +1,13 @@
+"id","group_id:id","name","model_id","perm_create","perm_unlink","perm_write","perm_read"
+"r20171208002","base.group_user","Default","s2u.intermediair.calc",1,1,1,1
+"r20171208009","base.group_user","Default","s2u.intermediair.calc.fix.costs",1,1,1,1
+"r20171208010","base.group_user","Default","s2u.intermediair.calc.dynamic.costs",1,1,1,1
+"r20180103001","base.group_user","Default","s2u.intermediair.calc.totals",1,1,1,1
+"r20180106001","base.group_user","Default","s2u.intermediair.calc.dynamic.costs",1,1,1,1
+"r20180201001","base.group_user","Default","s2u.intermediair.calc.delivery.address",1,1,1,1
+"r20180304001","base.group_user","Default","s2u.intermediair.calc.detail",1,1,1,1
+"r20180304002","base.group_user","Default","s2u.intermediair.label",1,1,1,1
+"r20180304003","base.group_user","Default","s2u.intermediair.label.group",1,1,1,1
+"r20180311001","base.group_user","Default","s2u.intermediair.calc.stock",1,1,1,1
+"r20180413001","base.group_user","Default","s2u.intermediair.calc.purchase",1,1,1,1
+"r20180617001","base.group_user","Default","s2u.crm.entity.kickback",1,1,1,1

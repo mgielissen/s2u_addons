@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2ugdpr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-15 14:56+0000\n"
+"PO-Revision-Date: 2019-01-15 15:58+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: s2ugdpr
+#: model:ir.model.fields,field_description:s2ugdpr.field_res_users_gdpr_profile_picture
+msgid "Uploading the profile picture is on a voluntary basis. The profile picture is only visible within the Odoo ERP and can be viewed by colleagues within the system. You can delete your profile photo yourself at any time."
+msgstr "Het uploaden van de profiel foto is op vrijwillige basis. De profiel foto is enkel binnen het Odoo ERP zichtbaar en kan door collega’s worden bekeken binnen het systeem. Je kunt te allen tijde zelf je profielfoto verwijderen."
+
+#. module: s2ugdpr
+#: model:ir.model,name:s2ugdpr.model_res_users
+msgid "Users"
+msgstr "Gebruikers"
+
+#. module: s2ugdpr
+#: code:addons/s2ugdpr/models_inherited/res_users.py:26
+#: code:addons/s2ugdpr/models_inherited/res_users.py:29
+#: code:addons/s2ugdpr/models_inherited/res_users.py:33
+#: code:addons/s2ugdpr/models_inherited/res_users.py:42
+#, python-format
+msgid "You need to agree with the GDPR for uploading your profile picture!"
+msgstr "U dient akkoord te gaan met de AVG voor het uploaden van uw profiel foto!"

@@ -1,0 +1,63 @@
+<openerp>
+    <data>
+        <!-- s2u.sale.country -->
+        <record model="ir.ui.view" id="country_search_view">
+            <field name="model">s2u.sale.country</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="country_id" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="country_form">
+            <field name="model">s2u.sale.country</field>
+            <field name="arch" type="xml">
+                <form string="Country">
+                    <sheet>
+                        <field name="company_id" invisible="True" />
+                        <group>
+                            <group>
+                                <field name="country_id" />
+                            </group>
+                            <group>
+                                <field name="default" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="costs_ids" nolabel="1" widget="one2many_list">
+                                <tree string="Lines" editable="bottom">
+                                    <field name="weight" />
+                                    <field name="price" />
+                                    <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="country_tree_view">
+            <field name="model">s2u.sale.country</field>
+            <field name="arch" type="xml">
+                <tree string="Country">
+                    <field name="country_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="country_list_action">
+            <field name="name">Country</field>
+            <field name="res_model">s2u.sale.country</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="country_search_view"/>
+        </record>
+
+        <menuitem action="country_list_action"
+                  id="menu_configuration_country"
+                  parent="menu_payment" sequence="30"
+                  groups="s2upayment.group_ecommerce" />
+    </data>
+</openerp>

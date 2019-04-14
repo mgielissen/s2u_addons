@@ -1,0 +1,13 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="project_type_form">
+            <field name="inherit_id" ref="s2uproject.project_type_form"/>
+            <field name="model">s2u.project.type</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group/group/field[@name='classification']" position="after">
+                    <field name="label_for_service" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

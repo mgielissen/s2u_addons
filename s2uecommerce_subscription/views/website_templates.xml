@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="shop_product_detail">
+        <t t-set="use_shop_assets" t-value="True"/>
+        <t t-call="website.layout">
+            <t t-if="len(product.name) &gt; 0">
+                <t t-set="additional_title" t-value="product.name"/>
+            </t>
+            <t t-if="product.description and len(product.description) &gt; 0">
+                <t t-set="additional_description" t-value="product.description"/>
+            </t>
+            <div id="pdmodal" class="pdmodal">
+                <!-- The Close Button -->
+                <span class="pdclose" onclick="document.getElementById('pdmodal').style.display='none'">&amp;times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="pdmodal-content" id="imgcontent" />
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="pdcaption"></div>
+            </div>
+            <div class="container mb64">
+                <div class="row">
+                    <div class="col-sm-2 cd-shop-filter">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <h1 class="col-sm-12"><t t-esc="product.name"/></h1>
+                        </div>
+                        <div class="row">
+                            <img class="pdimage col-sm-4" t-att-src="'/shop/product/picture/' + product._name + '/' + str(product.id) +'/default/large'"
+                                 t-att-alt="product.name" style="width:256px;" />
+                            <p class="col-sm-8"><t t-esc="product.description"/></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="row mt32">
+                            <t t-esc="product.price_prefix"/>
+                        </div>
+                        <div class="row">
+                            <p class="col-sm-12 pull-right"><font style="font-size: 56px;"><t t-esc="product.price_before_comma"/>,</font><font style="font-size: 24px;"><sup><t t-esc="product.price_after_comma"/></sup></font></p>
+                        </div>
+                        <div class="row">
+                            <p class="col-sm-12 pull-right"><font style="font-size: 16px;">(<t t-esc="product.price_net_as_str" /> excl. BTW)</font></p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 pull-right">
+                                <t t-if="not product.delivery_id or (product.delivery_id and product.delivery_id.type != 'not')">
+                                    <p class="pull-right text-nowrap">
+                                        <a href="#0" class="cd-add-to-cart"
+                                           t-att-data-price="product.price_as_float"
+                                           t-att-data-productmodel="product._name"
+                                           t-att-data-producturl="product.product_url"
+                                           t-att-data-productid="product.id"
+                                           t-att-data-product="product.name">In winkelwagen</a>
+                                    </p>
+                                </t>
+                                <t t-if="product.delivery_id and product.delivery_id.type == 'not'">
+                                    <p class="pull-right text-nowrap">
+                                        <a href="#0" class="cd-sent-alert-cart"
+                                           t-att-data-productmodel="product._name"
+                                           t-att-data-producturl="product.product_url"
+                                           t-att-data-productid="product.id">Herinner mij</a>
+                                    </p>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-2 form-group">
+                        <a t-attf-href="/shop" class="btn btn-secundary">Terug naar product overzicht</a>
+                    </div>
+                </div>
+            </div>
+            <t t-call="s2uecommerce.display_shoppingcard" />
+        </t>
+    </template>
+
+    <template id="shop_checkout_payment_item" inherit_id="s2uecommerce.shop_checkout_payment_item">
+        <xpath expr="//tr" position="replace">
+            <tr>
+                <t t-if="item['model'] != 's2u.subscription.template'">
+                    <td><t t-esc="item['product']" /></td>
+                    <td class="text-right"><t t-esc="item['qty']" /></td>
+                    <td class="text-right"><t t-esc="item['tot_amount']" /> €</td>
+                </t>
+                <t t-if="item['model'] == 's2u.subscription.template'">
+                    <td><t t-esc="item['product']" /><br/><strong>Duration: <t t-esc="item['data'].get_duration()" /></strong></td>
+                    <td class="text-right"><t t-esc="item['qty']" /></td>
+                    <td class="text-right"><span t-field="item['data'].price_prefix"/>   <t t-esc="item['tot_amount']" /> €</td>
+                </t>
+            </tr>
+        </xpath>
+    </template>
+</odoo>
+

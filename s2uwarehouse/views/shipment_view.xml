@@ -1,0 +1,901 @@
+<openerp>
+    <data>
+        <!-- warehouse outgoing -->
+        <record model="ir.ui.view" id="warehouse_outgoing_search_view">
+            <field name="model">s2u.warehouse.outgoing</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="entity_id" />
+                    <field name="project" />
+                    <field name="user_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_outgoing_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.outgoing</field>
+            <field name="arch" type="xml">
+                <form string="Levering">
+                    <header>
+                        <button type="object" name="do_assign" string="Assign" class="oe_highlight oe_read_only"
+                                states="draft" />
+                        <button type="object" name="do_production" string="Production" class="oe_highlight oe_read_only"
+                                states="draft,production" confirm="Are you sure?" groups="s2ubase.production_company"/>
+                        <button type="object" name="do_confirm" string="Confirm" class="oe_read_only"
+                                states="draft,production" confirm="Are you sure?"/>
+                        <button type="object" name="do_done" string="Done" class="oe_highlight oe_read_only"
+                                states="ok,delivery" confirm="Are you sure?"/>
+                        <button name="undo_confirm" type="object" string="Back to concept" states="ok" class="oe_read_only"
+                                confirm="Are you sure? Items are stored back into warehouse." />
+                        <button name="undo_production" type="object" string="Back to concept" states="production" class="oe_read_only"
+                                confirm="Are you sure? Items are stored back into warehouse." />
+                        <button type="object" name="do_rma" string="RMA" class="oe_read_only"
+                                states="done" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,ok,done" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_invoice"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil-square-o"
+                                    attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                            <button name="action_view_production"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-building-o"
+                                    attrs="{'invisible': [('production_count', '=', 0)]}">
+                                <field name="production_count" widget="statinfo" string="Productions"/>
+                            </button>
+                            <button name="action_view_rma"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-undo"
+                                    attrs="{'invisible': [('rma_count', '=', 0)]}">
+                                <field name="rma_count" widget="statinfo" string="RMA's"/>
+                            </button>
+                            <button name="action_view_serialnumber"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil"
+                                    attrs="{'invisible': [('serialnumber_count', '=', 0)]}">
+                                <field name="serialnumber_count" widget="statinfo" string="Serialnumbers" />
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="transaction_date" />
+                                <field name="project" />
+                                <field name="reference" />
+                                <field name="outgoing_type_id" />
+                                <field name="tot_weight" />
+                                <field name="tot_surface" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="entity_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', entity_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': entity_id}" />
+                                <field name="user_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Todo" name="todo">
+                                <field name="todo_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Todo">
+                                        <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                        <field name="product_detail" />
+                                        <field name="product_qty" />
+                                        <field name="distribution" groups="s2ubase.production_company" />
+                                        <field name="shipped_qty" />
+                                        <field name="assigned_qty" />
+                                        <field name="available_qty" />
+                                        <field name="type" />
+                                        <field name="state" invisible="1" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="type" />
+                                                <field name="product_id" options="{'no_create': True, 'no_open': True}"
+                                                       attrs="{'readonly': [('state', 'in', ['done'])]}" />
+                                                <field name="product_detail"
+                                                       attrs="{'readonly': [('state', 'in', ['done'])]}" />
+                                                <field name="product_qty"
+                                                       attrs="{'readonly': [('state', 'in', ['done'])]}" />
+                                                <field name="distribution" groups="s2ubase.production_company"
+                                                       attrs="{'readonly': [('state', 'in', ['done'])]}" />
+                                            </group>
+                                            <group>
+                                                <field name="product_value" />
+                                                <field name="tot_weight" />
+                                                <field name="tot_surface" />
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="notes" />
+                                            <field name="state" invisible="1" />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Units assigned">
+                                <field name="units_assigned_ids" nolabel="1" >
+                                    <tree string="Units">
+                                        <field name="unit_id" />
+                                        <field name="type" />
+                                        <field name="location_id" />
+                                        <field name="on_unit" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="unit_id" />
+                                                <field name="type" />
+                                            </group>
+                                            <group>
+                                                <field name="pallet_id" />
+                                                <field name="pallet_factor" />
+                                                <field name="location_id" />
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="on_unit" />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Items assigned">
+                                <field name="items_assigned_ids" nolabel="1" >
+                                    <tree string="Items">
+                                        <field name="unitproduct_id" domain="[('unit_id.active', '=', True)]" />
+                                        <field name="assigned_qty" />
+                                        <field name="unit_id" />
+                                        <field name="current_location_id" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="unitproduct_id" />
+                                                <field name="assigned_qty" />
+                                            </group>
+                                            <group>
+                                                <field name="unit_id" />
+                                                <field name="current_location_id" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Transactions">
+                                <field name="trans_ids" nolabel="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="location_id" />
+                                        <field name="parent_id" />
+                                        <field name="unit_id" />
+                                        <field name="product_id" />
+                                        <field name="qty" />
+                                        <field name="item_picking" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="transaction_date" />
+                                                <field name="location_id" />
+                                            </group>
+                                            <group>
+                                                <field name="parent_id" />
+                                                <field name="unit_id" />
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="product_id" />
+                                        </group>
+                                        <group>
+                                            <group>
+                                                <field name="qty" />
+                                            </group>
+                                            <group>
+                                                <field name="item_picking" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Delivery and Load address">
+                                <group>
+                                    <group string="Delivery">
+                                        <field name="delivery_type" />
+                                        <field name="delivery_entity_id" domain="[('type', '=', delivery_type)]" />
+                                        <field name="delivery_contact_id"
+                                               domain="[('entity_id', '=', delivery_entity_id)]"
+                                               attrs="{'invisible': [('delivery_type', '=', 'b2c')]}"
+                                               context="{'default_entity_id': delivery_entity_id}" />
+                                        <field name="delivery_address" />
+                                        <field name="delivery_country_id" />
+                                        <field name="delivery_tinno" />
+                                        <field name="delivery_lang" />
+                                        <field name="date_delivery" />
+                                    </group>
+                                    <group string="Loading address">
+                                        <field name="load_type" />
+                                        <field name="load_entity_id" domain="[('type', '=', load_type)]" />
+                                        <field name="load_address"
+                                               attrs="{'invisible': [('load_type', '=', 'b2c')]}" />
+                                        <field name="trailer_no" />
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_outgoing_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.outgoing</field>
+            <field name="arch" type="xml">
+                <tree string="Levering" colors="green:is_ready == True;">
+                    <field name="transaction_date" />
+                    <field name="name" />
+                    <field name="project" />
+                    <field name="reference" />
+                    <field name="entity_id" />
+                    <field name="outgoing_type_id" />
+                    <field name="state" />
+                    <field name="is_ready" invisible="1" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_outgoing" model="ir.actions.act_window">
+            <field name="name">Outgoing</field>
+            <field name="res_model">s2u.warehouse.outgoing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_outgoing_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_outgoing" id="menu_warehouse_shipment_outgoing"
+            parent="menu_warehouse_shipment" sequence="10" groups="s2uwarehouse.group_warehouse_user" />
+
+        <!-- warehouse incoming -->
+        <record model="ir.ui.view" id="warehouse_incoming_search_view">
+            <field name="model">s2u.warehouse.incoming</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="entity_id" />
+                    <field name="date_delivery" />
+                    <field name="warehouse_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_incoming_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.incoming</field>
+            <field name="arch" type="xml">
+                <form string="Delivery">
+                    <header>
+                        <button type="object" name="do_confirm" string="Confirm" class="oe_highlight oe_read_only"
+                                states="draft" confirm="Are you sure?"/>
+                        <button type="object" name="do_receive_goods" string="Receive goods" class="oe_highlight oe_read_only"
+                                states="wait" />
+                        <button type="object" name="do_done" string="Done" class="oe_highlight oe_read_only"
+                                states="wait" confirm="Are you sure?"/>
+                        <button type="object" name="undo_confirm" string="Undo" class="oe_read_only"
+                                states="wait" confirm="Are you sure? All transactions will be reverted."/>
+                        <button type="object" name="undo_done" string="Reopen" class="oe_read_only"
+                                states="done" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="reference" />
+                            </group>
+                            <group>
+                                <field name="entity_id" domain="[('type', '=', 'b2b')]" />
+                                <field name="warehouse_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Expected" name="expected">
+                                <field name="line_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Opdracht">
+                                        <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                        <field name="product_detail" />
+                                        <field name="product_qty" />
+                                        <field name="received_qty" />
+                                        <field name="product_value" />
+                                        <field name="date_delivery" />
+                                        <field name="state" invisible="1" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="date_delivery" />
+                                                <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                                <field name="product_detail" />
+                                            </group>
+                                            <group>
+                                                <field name="product_qty" />
+                                                <field name="product_value" />
+                                                <field name="received_qty" />
+                                                <field name="state" invisible="1" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Pallets retour" groups="s2ubase.production_company">
+                                <field name="pallet_ids" nolabel="1" widget="one2many_list" >
+                                    <tree string="Pallets" editable="bottom" >
+                                        <field name="date_delivery" />
+                                        <field name="pallet_id" options="{'no_create': True}" />
+                                        <field name="pallet_qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Transactions">
+                                <field name="trans_ids" nolabel="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="location_id" />
+                                        <field name="parent_id" />
+                                        <field name="unit_id" />
+                                        <field name="product_id" />
+                                        <field name="qty" />
+                                        <field name="supplier_no" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_incoming_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.incoming</field>
+            <field name="arch" type="xml">
+                <tree string="Levering">
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="entity_id" />
+                    <field name="warehouse_id" />
+                    <field name="date_delivery" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="warehouse_incoming_calendar" model="ir.ui.view">
+            <field name="name">Deliveries - planning</field>
+            <field name="model">s2u.warehouse.incoming</field>
+            <field name="arch" type="xml">
+                <calendar string="Deliveries" date_start="date_delivery" color="entity_id">
+                    <field name="name"/>
+                    <field name="reference"/>
+                    <field name="entity_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_warehouse_incoming" model="ir.actions.act_window">
+            <field name="name">Incoming</field>
+            <field name="res_model">s2u.warehouse.incoming</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="warehouse_incoming_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_incoming" id="menu_warehouse_shipment_incoming"
+            parent="menu_warehouse_shipment" sequence="10" groups="s2uwarehouse.group_warehouse_user" />
+
+        <record id="view_warehouse_incoming_transaction" model="ir.ui.view">
+            <field name="model">s2u.warehouse.incoming.add</field>
+            <field name="arch" type="xml">
+                <form string="Receive goods">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="supplier_no" required="1"/>
+                                <field name="transaction_date" />
+                                <field name="pallets" groups="s2ubase.production_company" />
+                                <field name="location_id" required="1"/>
+                            </group>
+                            <group>
+                                <field name="pallet_id" attrs="{'required': [('pallets', '!=', 0)],
+                                                                'invisible': [('pallets', '=', 0)]}"
+                                       groups="s2ubase.production_company" />
+                                <field name="pallet_factor" attrs="{'required': [('pallets', '!=', 0)],
+                                                                    'invisible': [('pallets', '=', 0)]}"
+                                       groups="s2ubase.production_company" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Received">
+                                <field name="line_ids" nolabel="1" >
+                                    <tree string="Received" create="0">
+                                        <field name="product_id" />
+                                        <field name="sn_registration" invisible="1" />
+                                        <field name="qty_received" />
+                                        <field name="serialnumbers" />
+                                        <field name="qty_open" />
+                                        <field name="product_detail" />
+                                        <field name="product_value" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="product_id" readonly="1" />
+                                                <field name="product_detail" readonly="1" />
+                                                <field name="sn_registration" invisible="1" />
+                                                <field name="qty_open" readonly="1" />
+                                                <field name="qty_received" required="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="serialnumbers" attrs="{'required': [('sn_registration', '=', True)],
+                                                                                    'invisible': [('sn_registration', '=', False)]}"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button name="do_add" string="Receive goods" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_warehouse_incoming_transaction" model="ir.actions.act_window">
+            <field name="name">Receive goods</field>
+            <field name="res_model">s2u.warehouse.incoming.add</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_warehouse_incoming_transaction" />
+        </record>
+
+        <!-- warehouse RMA -->
+        <record model="ir.ui.view" id="warehouse_rma_search_view">
+            <field name="model">s2u.warehouse.rma</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="entity_id" />
+                    <field name="date_rma" />
+                    <field name="date_delivery" />
+                    <field name="warehouse_id" />
+                    <field name="user_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_rma_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.rma</field>
+            <field name="arch" type="xml">
+                <form string="RMA">
+                    <header>
+                        <button type="object" name="do_confirm" string="Confirm" class="oe_highlight oe_read_only"
+                                states="draft" confirm="Are you sure?"/>
+                        <button type="object" name="do_receive_goods" string="Receive goods" class="oe_highlight oe_read_only"
+                                states="wait" />
+                        <button type="object" name="do_done" string="Done" class="oe_highlight oe_read_only"
+                                states="wait" confirm="Are you sure?"/>
+                        <button type="object" name="undo_confirm" string="Undo" class="oe_read_only"
+                                states="wait" confirm="Are you sure? All transactions will be reverted."/>
+                        <button type="object" name="undo_done" string="Reopen" class="oe_read_only"
+                                states="done" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="reference" />
+                                <field name="date_rma" />
+                            </group>
+                            <group>
+                                <field name="type" groups="s2ubase.b2c" />
+                                <field name="entity_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', entity_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': entity_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', entity_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': entity_id}" />
+                                <field name="warehouse_id" />
+                                <field name="user_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Expected" name="expected">
+                                <field name="line_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="RMA">
+                                        <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                        <field name="product_detail" />
+                                        <field name="product_qty" />
+                                        <field name="received_qty" />
+                                        <field name="serialnumber" />
+                                        <field name="todo_id" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                                <field name="product_detail" />
+                                                <field name="sn_registration" invisible="1" />
+                                                <field name="serialnumber" attrs="{'required': [('sn_registration', '=', True)],
+                                                                                   'invisible': [('sn_registration', '=', False)]}" />
+                                                <field name="product_qty" attrs="{'required': [('sn_registration', '=', False)],
+                                                                                  'invisible': [('sn_registration', '=', True)]}" />
+                                            </group>
+                                            <group>
+                                                <field name="date_delivery" />
+                                                <field name="product_value" />
+                                                <field name="received_qty" />
+                                                <field name="todo_id" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Not usable" name="not_usable">
+                                <field name="notusable_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Not usable">
+                                        <field name="transaction_date" />
+                                        <field name="product_id" />
+                                        <field name="notusable_qty" />
+                                        <field name="serialnumber" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Transactions">
+                                <field name="trans_ids" nolabel="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="location_id" />
+                                        <field name="parent_id" />
+                                        <field name="unit_id" />
+                                        <field name="product_id" />
+                                        <field name="qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_rma_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.rma</field>
+            <field name="arch" type="xml">
+                <tree string="RMA">
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="date_rma" />
+                    <field name="entity_id" />
+                    <field name="warehouse_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="warehouse_rma_calendar" model="ir.ui.view">
+            <field name="name">RMA's - expected</field>
+            <field name="model">s2u.warehouse.rma</field>
+            <field name="arch" type="xml">
+                <calendar string="RMA's" date_start="date_delivery" color="entity_id">
+                    <field name="name"/>
+                    <field name="reference"/>
+                    <field name="entity_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_warehouse_rma" model="ir.actions.act_window">
+            <field name="name">RMA</field>
+            <field name="res_model">s2u.warehouse.rma</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="warehouse_rma_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_rma" id="menu_warehouse_shipment_rma"
+            parent="menu_warehouse_shipment" sequence="12" groups="s2uwarehouse.group_warehouse_user" />
+
+        <record id="view_warehouse_rma_transaction" model="ir.ui.view">
+            <field name="model">s2u.warehouse.rma.add</field>
+            <field name="arch" type="xml">
+                <form string="Receive goods for RMA">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="transaction_date" />
+                                <field name="pallets" groups="s2ubase.production_company" />
+                                <field name="location_id" />
+                            </group>
+                            <group>
+                                <field name="pallet_id" attrs="{'required': [('pallets', '!=', 0)],
+                                                                'invisible': [('pallets', '=', 0)]}"
+                                       groups="s2ubase.production_company" />
+                                <field name="pallet_factor" attrs="{'required': [('pallets', '!=', 0)],
+                                                                    'invisible': [('pallets', '=', 0)]}"
+                                       groups="s2ubase.production_company" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Received">
+                                <field name="line_ids" nolabel="1" >
+                                    <tree string="Received" create="0">
+                                        <field name="product_id" />
+                                        <field name="product_detail" />
+                                        <field name="serialnumber" />
+                                        <field name="qty_received" />
+                                        <field name="product_usable" />
+                                        <field name="qty_open" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="product_id" readonly="1" />
+                                                <field name="product_detail" readonly="1" />
+                                                <field name="sn_registration" invisible="1" />
+                                                <field name="qty_open" readonly="1" />
+                                            </group>
+                                            <group>
+                                                <field name="serialnumber" attrs="{'required': [('sn_registration', '=', True)],
+                                                                                   'invisible': [('sn_registration', '=', False)]}" />
+                                                <field name="qty_received" required="1" />
+                                                <field name="product_usable" attrs="{'required': [('qty_received', '>', 0.0)]}" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button name="do_add" string="Receive goods" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_warehouse_rma_transaction" model="ir.actions.act_window">
+            <field name="name">Receive goods for RMA</field>
+            <field name="res_model">s2u.warehouse.rma.add</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_warehouse_rma_transaction" />
+        </record>
+
+        <!-- warehouse pallet correction -->
+        <record model="ir.ui.view" id="warehouse_pallet_correction_search_view">
+            <field name="model">s2u.warehouse.pallet.correction</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="entry_date" />
+                    <field name="entity_id" />
+                    <field name="pallet_id" />
+                    <field name="user_id" />
+                    <field name="pallets" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_pallet_correction_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.pallet.correction</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="entity_id" />
+                                <field name="user_id" />
+                            </group>
+                            <group>
+                                <field name="pallet_id" />
+                                <field name="pallets" />
+                            </group>
+                        </group>
+                        <group>
+                               <field name="note" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_pallet_correction_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.pallet.correction</field>
+            <field name="arch" type="xml">
+                <tree string="Correction">
+                    <field name="entry_date" />
+                    <field name="user_id" />
+                    <field name="entity_id" />
+                    <field name="pallet_id" />
+                    <field name="pallets" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_pallet_correction" model="ir.actions.act_window">
+            <field name="name">Pallet correction</field>
+            <field name="res_model">s2u.warehouse.pallet.correction</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_pallet_correction_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_pallet_correction" id="menu_warehouse_shipment_pallet_correction2"
+                  parent="menu_warehouse_shipment" sequence="30" groups="s2ubase.production_company" />
+
+        <!-- warehouse outgoing type -->
+        <record model="ir.ui.view" id="warehouse_outgoing_type_search_view">
+            <field name="model">s2u.warehouse.outgoing.type</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="default" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_outgoing_type_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.outgoing.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                            </group>
+                            <group>
+                                <field name="default" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_outgoing_type_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.outgoing.type</field>
+            <field name="arch" type="xml">
+                <tree string="Type">
+                    <field name="name" />
+                    <field name="default" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_outgoing_type" model="ir.actions.act_window">
+            <field name="name">Outgoing types</field>
+            <field name="res_model">s2u.warehouse.outgoing.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_outgoing_type_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_outgoing_type" id="menu_warehouse_outgoing_type"
+                  parent="menu_warehouse_settings" sequence="50" groups="s2uwarehouse.group_warehouse_manager" />
+
+        <act_window
+            id="action_create_production_from_outgoing"
+            name="Create production"
+            res_model="s2u.warehouse.outgoing.create.production"
+            src_model="s2u.warehouse.outgoing"
+            view_mode="form"
+            multi="True"
+            target="new"
+            key2="client_action_multi"
+        />
+
+        <!-- Create production from multiple outgoings -->
+        <record id="outgoing_create_production_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.outgoing.create.production</field>
+            <field name="arch" type="xml">
+                <form string="Start production">
+                    <header>
+                        <button name="action_production" type="object" string="Start production" class="oe_highlight" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="project" />
+                        </group>
+                        <field name="line_ids" nolabel="1" widget="one2many_list">
+                            <tree string="Outgoings" editable="bottom" create="0" delete="0">
+                                <field name="outgoing_id" readonly="1"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                    <footer></footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- s2u.warehouse.outgoing.merge.with -->
+        <record id="view_warehouse_outgoing_merge_with" model="ir.ui.view">
+            <field name="model">s2u.warehouse.outgoing.merge.with</field>
+            <field name="arch" type="xml">
+                <form string="Merge delivery with">
+                    <sheet>
+                        <field name="entity_id" invisible="1" />
+                        <field name="outgoing_id" invisible="1" />
+                        <group>
+                            <group>
+                                <field name="merge_with_id"
+                                       required="1"
+                                       domain="[('entity_id', '=', entity_id), ('state', '=', 'draft'), ('id', '!=', outgoing_id)]"
+                                       options='{"no_open": True, "no_create": True}' />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="do_merge" string="Merge" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="act_view_warehouse_outgoing_merge_with"
+            name="Merge with"
+            res_model="s2u.warehouse.outgoing.merge.with" src_model="s2u.warehouse.outgoing"
+            view_mode="form" target="new" view_type="form" />
+
+
+    </data>
+</openerp>

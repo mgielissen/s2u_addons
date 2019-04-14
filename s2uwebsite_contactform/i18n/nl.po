@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2uwebsite_contactform
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-23 10:12+0000\n"
+"PO-Revision-Date: 2019-02-23 11:15+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: nl\n"
+"X-Generator: Poedit 2.2\n"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_thanks_ir_ui_view
+#: model:website.page,arch_db:s2uwebsite_contactform.contactus_thanks
+msgid "&amp;times;"
+msgstr "&amp;times;"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_form
+msgid ""
+"<span class=\"btn btn-primary btn-lg o_website_form_send\">Send</span>\n"
+"                                <span id=\"o_website_form_result\"/>"
+msgstr ""
+"<span class=\"btn btn-primary btn-lg o_website_form_send\">Send</span>\n"
+"                                <span id=\"o_website_form_result\"/>"
+
+#. module: s2uwebsite_contactform
+#: model:ir.model,name:s2uwebsite_contactform.model_s2u_crm_lead
+msgid "CRM Lead"
+msgstr "CRM Lead"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_form
+msgid "Email"
+msgstr "E-mail"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_thanks_ir_ui_view
+#: model:website.page,arch_db:s2uwebsite_contactform.contactus_thanks
+msgid "If you have an emergency, do not hesitate to contact us by phone:"
+msgstr "Als u iets van ons wilt weten, aarzel niet om ons te bellen:"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_form
+msgid "Phone Number"
+msgstr "Telefoon"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_thanks_ir_ui_view
+#: model:website.page,arch_db:s2uwebsite_contactform.contactus_thanks
+msgid "Thanks!"
+msgstr "Bedankt!"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_thanks_ir_ui_view
+#: model:website.page,arch_db:s2uwebsite_contactform.contactus_thanks
+msgid "We will get back to you shortly."
+msgstr "Wij nemen zon snel mogelijk contact met u op."
+
+#. module: s2uwebsite_contactform
+#: model:ir.actions.act_url,name:s2uwebsite_contactform.action_open_website
+msgid "Website Contact Form"
+msgstr "Website contact formulier"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_form
+msgid "Your Company"
+msgstr "Uw bedrijf"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_form
+msgid "Your Name"
+msgstr "Uw naam"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_form
+msgid "Your Question"
+msgstr "Uw vraag"
+
+#. module: s2uwebsite_contactform
+#: model:ir.ui.view,arch_db:s2uwebsite_contactform.contactus_thanks_ir_ui_view
+#: model:website.page,arch_db:s2uwebsite_contactform.contactus_thanks
+msgid "Your message has been sent successfully."
+msgstr "Uw bericht is succesvol aan ons verstuurd."

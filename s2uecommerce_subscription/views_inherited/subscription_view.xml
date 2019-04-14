@@ -1,0 +1,31 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="sale_form">
+            <field name="inherit_id" ref="s2usubscription.subscription_template_form"/>
+            <field name="model">s2u.subscription.template</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[@name='products']" position="after">
+                    <page string="Online" name="online">
+                        <group>
+                            <group>
+                                <field name="publish_webshop" />
+                                <field name="price_prefix" />
+                                <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium"}' nolabel="1"/>
+                            </group>
+                            <group>
+                                <field name="delivery_id" domain="[('type', '!=', 'not')]" />
+                                <field name="hona" />
+                                <field name="no_delivery_id" domain="[('type', '=', 'not')]" />
+                                <field name="sub_ids" widget="many2many_tags" placeholder="Subscription categories..."/>
+                            </group>
+                        </group>
+                        <group string="Shop description">
+                            <field name="description" nolabel="1" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

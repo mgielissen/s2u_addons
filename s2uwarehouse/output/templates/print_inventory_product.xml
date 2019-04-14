@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="s2uwarehouse.print_inventory_product">
+    <t t-call="web.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h2>Inventory Product till date <span t-esc="date_till"/></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 text-left">
+                        <h3>Product</h3>
+                    </div>
+                    <div class="col-xs-4 text-left">
+                        <h3>Location</h3>
+                    </div>
+                    <div class="col-xs-2 text-right">
+                        <h3>Quantity</h3>
+                    </div>
+                    <div class="col-xs-2 text-right">
+                        <h3>Amount</h3>
+                    </div>
+                </div>
+                <t t-foreach="products2" t-as="product">
+                    <div class="row">
+                        <div class="col-xs-5 text-left">
+                            <strong>
+                                <span t-esc="product['product']" />
+                            </strong>
+                        </div>
+                        <div class="col-xs-3">
+                        </div>
+                        <div class="col-xs-2 text-right">
+                            <strong>
+                                <span t-esc="product['gesamt']" />
+                            </strong>
+                        </div>
+                         <div class="col-xs-2 text-right">
+                            <strong>
+                                <span t-esc="product['gesamt_preis']" /> <span t-field="res_company.currency_id.symbol" />
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="border-bottom: 1px solid black;"></div>
+                    </div>
+                    <t t-foreach="product['locations']" t-as="loc">
+                        <div class="row">
+                            <div class="col-xs-4">
+                            </div>
+                            <div class="col-xs-4 text-left">
+                                <span t-esc="loc['location']" />
+                            </div>
+                            <div class="col-xs-2 text-right">
+                                <span t-esc="loc['qty']" />
+                            </div>
+                            <div class="col-xs-2 text-right">
+                                <span t-esc="loc['price']" /> <span t-field="res_company.currency_id.symbol" />
+                            </div>
+                        </div>
+                    </t>
+                    <div class="row mb16">
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>
+
+</odoo>

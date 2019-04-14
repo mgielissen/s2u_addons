@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Mollie Payment Acquirer -->
+        <record id="payment_acquirer_form" model="ir.ui.view">
+            <field name="inherit_id" ref="s2upayment.payment_acquirer_form"/>
+            <field name="model">s2u.payment.acquirer</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group" position="after">
+                    <group string="Manual payment aquirer data" attrs="{'invisible': [('provider', '!=', 'manual')]}">
+                        <field name="manual_account"
+                               attrs="{'required': [('provider', '=', 'manual')]}" />
+                        <field name="manual_account_owner"
+                               attrs="{'required': [('provider', '=', 'manual')]}" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

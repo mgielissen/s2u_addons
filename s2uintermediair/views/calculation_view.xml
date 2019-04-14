@@ -1,0 +1,346 @@
+<openerp>
+    <data>
+        <!-- Calculation -->
+        <record model="ir.ui.view" id="calc_search_view">
+            <field name="model">s2u.intermediair.calc</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="reference" />
+                    <field name="customer_code" />
+                    <field name="user_id" />
+                    <field name="state" />
+                    <field name="date_calc" />
+                </search>
+            </field>
+        </record>
+
+        <record id="calc_form" model="ir.ui.view">
+            <field name="model">s2u.intermediair.calc</field>
+            <field name="arch" type="xml">
+                <form string="Calculation">
+                    <header>
+                        <button name="action_add_purchase" type="object" string="Create purchase" class="oe_read_only" />
+                        <button name="action_quotation" type="object" string="Make quotation" states="draft,rejected" class="oe_highlight oe_read_only"
+                                confirm="Are you sure?" />
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,rejected" class="oe_read_only"
+                                confirm="Are you sure?" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,order" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_so"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-euro"
+                                     attrs="{'invisible': [('so_count', '=', 0)]}">
+                                <field name="so_count" widget="statinfo" string="Sales"/>
+                            </button>
+                            <button name="action_view_po"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-shopping-cart"
+                                    attrs="{'invisible': [('po_count', '=', 0)]}">
+                                <field name="po_count" widget="statinfo" string="Purchases"/>
+                            </button>
+                            <button name="action_view_outgoing"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('outgoing_count', '=', 0)]}">
+                                <field name="outgoing_count" widget="statinfo" string="Outgoings"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="reference" />
+                                <field name="customer_code" />
+                                <field name="user_id" />
+                                <field name="date_calc" />
+                                <field name="active" />
+                                <field name="date_planning" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="partner_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')],
+                                               'required': [('type', '=', 'b2b')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')],
+                                               'required': [('type', '=', 'b2b')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="product_id" />
+                                <field name="product_detail" />
+                                <field name="layout_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Labels">
+                                <field name="detail_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Labels" editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="label_id" options="{'no_open': True, 'no_create': True}" />
+                                        <field name="value" />
+                                        <field name="on_invoice" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Editions">
+                                <field name="totals_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Editions" editable="bottom">
+                                        <field name="pos" />
+                                        <field name="qty" />
+                                        <field name="price_per" />
+                                        <field name="distribution" />
+                                        <field name="net_amount" />
+                                        <field name="net_amount_kickback" />
+                                        <field name="amount_price_per"/>
+                                        <field name="salelineqty_id" readonly="1" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Fix costs">
+                                <field name="fixcosts_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Fix costs" editable="bottom">
+                                        <field name="name" />
+                                        <field name="fix_price" />
+                                        <field name="surcharge" />
+                                        <field name="amount" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Purchases">
+                                <field name="calc_po_ids" nolabel="1" widget="one2many_list" context="{'partner_id': partner_id}">
+                                    <tree string="Purchases">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="pos" />
+                                        <field name="label_id"
+                                               attrs="{'required': [('pos', '==', 'once')]}"
+                                               options="{'no_open': True, 'no_create': True}" />
+                                        <field name="product_id" />
+                                        <field name="product_detail" />
+                                        <field name="qty" />
+                                        <field name="distribution" />
+                                        <field name="surcharge" />
+                                        <field name="calc_amount" />
+                                        <field name="pass_on" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="sequence" />
+                                                <field name="pos" />
+                                                <field name="label_id"
+                                                       attrs="{'required': [('pos', '==', 'once')]}"
+                                                       options="{'no_open': True, 'no_create': True}" />
+                                            </group>
+                                            <group>
+                                                <field name="product_id" options="{'no_open': True, 'no_create': True}" />
+                                                <field name="product_detail" />
+                                                <field name="qty" />
+                                                <field name="distribution" />
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <group>
+                                                <field name="surcharge" />
+                                            </group>
+                                            <group>
+                                                <field name="calc_amount" />
+                                                <field name="pass_on" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Dynamic costs">
+                                <field name="dynamic_cost_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Var. costs" editable="bottom">
+                                        <field name="name" />
+                                        <field name="pos" />
+                                        <field name="label_id"
+                                               attrs="{'required': [('pos', '==', 'once')]}"
+                                               options="{'no_open': True, 'no_create': True}" />
+                                        <field name="product_id"
+                                               attrs="{'required': [('pos', '==', 'once')]}"
+                                               options="{'no_open': True, 'no_create': True}" />
+                                        <field name="product_detail" />
+                                        <field name="qty"
+                                               attrs="{'required': [('pos', '==', 'once')]}" />
+                                        <field name="calc_price" />
+                                        <field name="surcharge" />
+                                        <field name="calc_net_amount" />
+                                        <field name="after_price" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Invoice and delivery">
+                                <group string="Invoice address">
+                                    <group>
+                                        <field name="invoice_is_sale_address" />
+                                        <field name="invoice_type"
+                                               attrs="{'invisible': [('invoice_is_sale_address', '=', True)],
+                                                       'required': [('invoice_is_sale_address', '=', False)]}" />
+                                        <field name="invoice_partner_id" domain="[('type', '=', invoice_type)]"
+                                               attrs="{'invisible': [('invoice_is_sale_address', '=', True)],
+                                                       'required': [('invoice_is_sale_address', '=', False)]}" />
+                                    </group>
+                                    <group>
+                                        <field name="invoice_contact_id"
+                                               domain="[('entity_id', '=', invoice_partner_id)]"
+                                               attrs="{'invisible': ['|', ('invoice_type', '=', 'b2c'), ('invoice_is_sale_address', '=', True)]}"
+                                               context="{'default_entity_id': invoice_partner_id}" />
+                                        <field name="invoice_address_id"
+                                               domain="[('entity_id', '=', invoice_partner_id)]"
+                                               attrs="{'invisible': ['|', ('invoice_type', '=', 'b2c'), ('invoice_is_sale_address', '=', True)],
+                                                       'required': ['&amp;', ('invoice_type', '=', 'b2b'), ('invoice_is_sale_address', '=', False)]}"
+                                               context="{'default_entity_id': invoice_partner_id}" />
+                                        <field name="net_amount" />
+                                        <field name="kickback_id" domain="[('entity_id', '=', partner_id)]" />
+                                        <field name="kickback" />
+                                        <field name="net_amount_kickback" />
+                                        <field name="vat_amount" />
+                                        <field name="gross_amount" />
+                                    </group>
+                                </group>
+
+                                <group string="Delivery address">
+                                    <group>
+                                        <field name="delivery_is_sale_address" />
+                                        <field name="delivery_type" attrs="{'invisible': [('delivery_is_sale_address', '=', True)],
+                                                                            'required': [('delivery_is_sale_address', '=', False)]}" />
+                                        <field name="delivery_partner_id" domain="[('type', '=', delivery_type)]"
+                                               attrs="{'invisible': [('delivery_is_sale_address', '=', True)],
+                                                       'required': [('delivery_is_sale_address', '=', False)]}" />
+                                        <field name="delivery_contact_id"
+                                               domain="[('entity_id', '=', delivery_partner_id)]"
+                                               attrs="{'invisible': ['|', ('invoice_type', '=', 'b2c'), ('delivery_is_sale_address', '=', True)]}"
+                                               context="{'default_entity_id': delivery_partner_id}" />
+                                        <field name="delivery_delivery_id"
+                                               domain="[('entity_id', '=', delivery_partner_id)]"
+                                               attrs="{'invisible': ['|', ('invoice_type', '=', 'b2c'), ('delivery_is_sale_address', '=', True)]}"
+                                               context="{'default_entity_id': delivery_partner_id}" />
+                                    </group>
+                                    <group>
+                                        <field name="delivery_address" attrs="{'invisible': [('delivery_is_sale_address', '=', True)],
+                                                                               'required': [('delivery_is_sale_address', '=', False)]}" />
+                                        <field name="delivery_country_id" attrs="{'invisible': [('delivery_is_sale_address', '=', True)],
+                                                                                  'required': [('delivery_is_sale_address', '=', False)]}" />
+                                        <field name="delivery_tinno" attrs="{'invisible': [('delivery_is_sale_address', '=', True)],
+                                                                             'required': [('delivery_is_sale_address', '=', False)]}" />
+                                        <field name="delivery_lang" />
+                                        <field name="date_delivery" />
+                                        <field name="date_artwork" />
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <group string="Loading address">
+                                        <field name="load_type" />
+                                        <field name="load_entity_id" domain="[('type', '=', load_type)]" />
+                                        <field name="load_address"
+                                               attrs="{'invisible': [('load_type', '=', 'b2c')]}" />
+                                        <field name="trailer_no" />
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="calc_tree" model="ir.ui.view">
+            <field name="model">s2u.intermediair.calc</field>
+            <field name="arch" type="xml">
+                <tree string="Calculations" colors="red:po_amount_delta &lt; 0.0; green:po_amount_delta &gt; 0.0 and pre_amount_delta &lt;= po_amount_delta; blue:po_amount_delta &gt; 0.0 and pre_amount_delta &gt; po_amount_delta;">
+                    <field name="date_calc" />
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="partner_id" />
+                    <field name="qty" />
+                    <field name="net_amount" />
+                    <field name="po_amount" />
+                    <field name="po_amount_delta" />
+                    <field name="po_marge" />
+                    <field name="pre_amount" />
+                    <field name="pre_amount_delta" />
+                    <field name="pre_marge" />
+                    <field name="user_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_calc" model="ir.actions.act_window">
+            <field name="name">Calculaties</field>
+            <field name="res_model">s2u.intermediair.calc</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="calc_tree" />
+        </record>
+
+        <menuitem action="action_calc" id="menu_action_calc"
+            parent="s2usale.menu_sales_sales" sequence="5" />
+
+        <act_window
+            id="action_create_quotation_from_projects"
+            name="Create quotation"
+            res_model="s2u.intermediair.create.quotation"
+            src_model="s2u.intermediair.calc"
+            view_mode="form"
+            multi="True"
+            target="new"
+            key2="client_action_multi"
+        />
+
+        <act_window
+            id="action_create_purchase_from_projects"
+            name="Create purchase"
+            res_model="s2u.intermediair.add.purchase"
+            src_model="s2u.intermediair.calc"
+            view_mode="form"
+            multi="True"
+            target="new"
+            key2="client_action_multi"
+        />
+
+        <!-- Create quotation from multiple projects -->
+        <record id="calc_add_quotation_form" model="ir.ui.view">
+            <field name="model">s2u.intermediair.create.quotation</field>
+            <field name="arch" type="xml">
+                <form string="Make quotation">
+                    <header>
+                        <button name="action_quotation" type="object" string="Make quotation" class="oe_highlight" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="project" />
+                        </group>
+                        <field name="line_ids" nolabel="1" widget="one2many_list">
+                            <tree string="Projects" editable="bottom" create="0" delete="0">
+                                <field name="sequence" />
+                                <field name="intermediair_calc_id" />
+                            </tree>
+                        </field>
+                    </sheet>
+                    <footer>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

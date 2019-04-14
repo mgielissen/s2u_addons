@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="s2uwarehouse.print_pallets_saldo">
+    <t t-call="web.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h2>Inventory Pallet Saldo till date <span t-esc="date_till"/></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 text-left">
+                        <h3>Customer</h3>
+                    </div>
+                    <div class="col-xs-4 text-left">
+                        <h3>Pallet</h3>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <h3>Quantity</h3>
+                    </div>
+                </div>
+                <t t-foreach="customers" t-as="customer">
+                    <div class="row">
+                        <div class="col-xs-5 text-left">
+                            <strong>
+                                <span t-esc="customer['customer']" />
+                            </strong>
+                        </div>
+                        <div class="col-xs-3">
+                        </div>
+                        <div class="col-xs-4 text-right">
+                            <strong>
+                                <span t-esc="customer['gesamt']" />
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="border-bottom: 1px solid black;"></div>
+                    </div>
+                    <t t-foreach="customer['pallets']" t-as="pal">
+                        <div class="row">
+                            <div class="col-xs-4">
+                            </div>
+                            <div class="col-xs-4 text-left">
+                                <span t-esc="pal['pallet']" />
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <span t-esc="pal['qty']" />
+                            </div>
+                        </div>
+                    </t>
+                    <div class="row mb16">
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>
+
+</odoo>

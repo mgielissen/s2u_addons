@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+
+<template id="delivery_layout_page_header">
+    <t t-set="physical_address" t-value="o.entity_id.get_physical()"></t>
+    <div class="row mt16">
+        <div class="col-xs-5" >
+            <div class="row" t-att-style="'align: left;'">
+                <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 90px;"/>
+            </div>
+            <div class="row mt16">
+                <b>Customer:</b><br />
+                <span t-field="o.entity_id.name"/><br />
+                <t t-if="physical_address">
+                    <span t-field="physical_address.address"/><br />
+                    <span t-field="physical_address.zip"/>&#160;&#160;<span t-field="physical_address.city"/><br />
+                    <span t-if="physical_address.country_id" t-field="physical_address.country_id.name" /><br />
+                </t>
+            </div>
+            <div class="row mt16">
+                <b>Delivery:</b><br />
+                <t t-if="o.delivery_address">
+                    <span t-field="o.delivery_address"/>
+                </t>
+            </div>
+        </div>
+        <div class="col-xs-1" >
+        </div>
+        <div class="col-xs-6" >
+            <t t-if="o.company_id.entity_id">
+                <span t-att-style="'font-weight: bold; font-size: 115%'" t-field="o.company_id.entity_id.name" /><br />
+            </t>
+            <t t-if="o.company_id.address_id">
+                <span t-field="o.company_id.address_id.address" /><br />
+                <t t-if="o.company_id.address_id.zip">
+                    <span t-field="o.company_id.address_id.zip"/>&#160;&#160;
+                </t>
+                <span t-field="o.company_id.address_id.city" /><br />
+                <span t-if="o.company_id.address_id.country_id" t-field="o.company_id.address_id.country_id.name" /><br />
+            </t>
+            <t t-if="o.company_id.entity_id.phone">
+                <strong>t</strong>
+                <span t-field="o.company_id.entity_id.phone" /><br />
+            </t>
+            <t t-if="o.company_id.entity_id.email">
+                <strong>e</strong>
+                <span t-field="o.company_id.entity_id.email" /><br />
+            </t>
+            <t t-if="o.company_id.entity_id.website">
+                <strong>w</strong>
+                <span t-field="o.company_id.entity_id.website" /><br />
+            </t>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-5" style="border-bottom: 1px solid black;"/>
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-5 text-left">
+            <p>
+                <h4>
+                    <b>delivery note</b>
+                </h4>
+            </p>
+        </div>
+        <div class="col-xs-4 text-left">
+            <p style="margin-top: 10px;">
+                Page : <t t-esc="pagenumber"/>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-5" style="border-bottom: 1px solid black;"/>
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-5">
+            Number
+        </div>
+        <div class="col-xs-2 ">
+            Date
+        </div>
+        <div class="col-xs-2 ">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-5">
+            <span t-field="o.name"/>
+        </div>
+        <div class="col-xs-2 ">
+            <span t-field="o.transaction_date"/>
+        </div>
+        <div class="col-xs-2 ">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-5" style="border-bottom: 1px solid black;"/>
+    </div>
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-5">
+            delivery: <span t-field="o.outgoing_type_id.name"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-7 col-xs-offset-5">
+            VAT:  <span t-if="o.delivery_tinno" t-field="o.delivery_tinno"/>
+        </div>
+    </div>
+    <div class="row mt16">
+        <div class="col-xs-1">
+            <h6>
+                <br />
+                <b>Pos</b>
+            </h6>
+        </div>
+        <div class="col-xs-3">
+            <h6>
+                <br />
+                <b>Description</b>
+            </h6>
+        </div>
+        <div class="col-xs-2">
+            <h6>
+                <br />
+                <b>Code</b>
+            </h6>
+        </div>
+        <div class="col-xs-1">
+            <h6>
+                <br />
+                <b>Order</b>
+            </h6>
+        </div>
+        <div class="col-xs-2 text-right">
+            <h6>
+                <b># delivered<br />
+                    # ordered</b>
+            </h6>
+        </div>
+        <div class="col-xs-1">
+            <h6 groups="s2ubase.production_company" >
+                <b>Weight<br />
+                    Surface</b>
+            </h6>
+        </div>
+        <div class="col-xs-1">
+            <h6 groups="s2ubase.production_company">
+                <br />
+                <b>VE</b>
+            </h6>
+        </div>
+        <div class="col-xs-1">
+            <h6 groups="s2ubase.production_company">
+                <br />
+                <b>Pallets</b>
+            </h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div style="border-bottom: 1px solid black;"></div>
+        </div>
+    </div>
+</template>
+
+<template id="print_delivery_document">
+    <t t-call="web.external_layout">
+        <t t-set="o" t-value="o.with_context({'lang':o.delivery_lang})" />
+            <t t-set="pagenumber" t-value="1"></t>
+            <div class="page" t-att-style="o.company_id.font_style">
+                <t t-call="s2uwarehouse.delivery_layout_page_header" />
+                <t t-set="linenumber" t-value="0"></t>
+                <t t-set="rownumbers" t-value="0"></t>
+                <t t-foreach="o.todo_ids" t-as="l">
+                    <div class="row ">
+                        <div class="col-xs-1">
+                            <t t-if="not first_id">
+                                <t t-set="first_id" t-value="l.id"></t>
+                            </t>
+                            <t t-set="linenumber" t-value="l.id - first_id + 1"></t>
+                            <h6><t t-esc="linenumber"/></h6>
+                            <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                        </div>
+                        <div class="col-xs-3">
+                            <h6>
+                                Order from <span t-field="l.sale_id.date_so"/><br />
+                                <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                                <t t-if="not l.product_detail">
+                                    <div style="width: 400px;">
+                                        <span t-field="l.product_id.name"/><br />
+                                    </div>
+                                    <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                                </t>
+                                <t t-if="l.product_detail">
+                                    <div style="width: 400px;">
+                                        <span t-field="l.product_detail"/><br />
+                                    </div>
+                                    <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                                </t>
+                                <div t-if="l.notes" style="width: 400px;">
+                                    <span t-field="l.notes"/><br />
+                                    <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                                </div>
+                                <div groups="s2ubase.production_company">
+                                    <b>palletizing:</b><br />
+                                    <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                                    <t t-set="palettierung" t-value="l.calc_palletisation()"></t>
+                                    <t t-foreach="palettierung" t-as="pa">
+                                        <div style="width: 400px;">
+                                            <span t-esc="palettierung[pa]"/> x <span t-esc="pa"/> <br />
+                                            <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                                        </div>
+                                    </t>
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="col-xs-2">
+                            <h6>
+                                <t t-if="l.sale_id and l.sale_id.project">
+                                    <span t-field="l.sale_id.project"/> <br />
+                                </t>
+                                <t t-if="l.product_detail">
+                                    <span t-field="l.product_id.name"/>
+                                </t>
+                            </h6>
+                        </div>
+                        <div class="col-xs-1">
+                            <h6>
+                                <div style="width: 400px;">
+                                    <t t-if="l.sale_id">
+                                        <span t-field="l.sale_id.name"/>
+                                    </t>
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="col-xs-2 text-right">
+                            <h6>
+                                <span t-esc="abs(l.shipped_qty)"/><br />
+                                <span t-esc="l.product_qty"/><br />
+                                <t t-if="l.type == 'rest'">
+                                    <b>- residue -</b>
+                                </t>
+                                <t t-if="l.type == 'part'">
+                                    <b>- subset -</b>
+                                </t>
+
+                            </h6>
+                        </div>
+                        <div class="col-xs-1">
+                            <h6 groups="s2ubase.production_company">
+                                <div style="width: 400px;">
+                                    <span t-field="l.tot_weight"/> kg<br />
+                                </div>
+                                <div style="width: 400px;">
+                                    <span t-field="l.tot_surface"/> qm
+                                </div>
+                            </h6>
+                        </div>
+                        <div class="col-xs-1">
+                            <h6 groups="s2ubase.production_company">
+                                <t t-set="sendingunit" t-value="l.calc_pallets_used()"></t>
+                                <t t-if="sendingunit > 0">
+                                    <span t-esc="sendingunit"/><br />
+                                </t>
+                            </h6>
+                        </div>
+                        <div class="col-xs-1">
+                            <h6 groups="s2ubase.production_company">
+                                <t t-set="palletten" t-value="l.calc_pallets_type()"></t>
+                                <t t-foreach="palletten" t-as="p">
+                                    <span t-esc="palletten[p]['total']"/>   <span t-esc="palletten[p]['code']"/> <br />
+                                </t>
+
+                            </h6>
+                        </div>
+                    </div>
+                    <t t-if="rownumbers >= 48">
+                         <t t-set="rownumbers" t-value="0"></t>
+                         <t t-set="pagenumber" t-value="pagenumber + 1"></t>
+                         <p style="page-break-after:always;"></p>
+                         <t t-call="s2uwarehouse.delivery_layout_page_header" />
+                    </t>
+                </t>
+                <t t-foreach="o.trans_ids" t-as="t">
+                    <t t-if="t.product_id.sn_registration">
+                        <t t-set="rownumbers" t-value="rownumbers + 1"></t>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <span t-field="t.product_id.product_id.name"/> <span t-field="t.product_id.product_detail"/>
+                            </div>
+                            <div class="col-xs-6">
+                                <span t-field="t.product_id.serialnumber"/>
+                            </div>
+                        </div>
+                        <t t-if="rownumbers >= 48">
+                            <t t-set="rownumbers" t-value="0"></t>
+                            <t t-set="pagenumber" t-value="pagenumber + 1"></t>
+                            <p style="page-break-after:always;"></p>
+                            <t t-call="s2uwarehouse.delivery_layout_page_header" />
+                        </t>
+                    </t>
+                </t>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid black;"></div>
+                    </div>
+                </div>
+                <div name="delivery_postfix">
+                </div>
+                <div style="font-size:18px">
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <t t-if="o.load_address">
+                                Loading place :<br />
+                                <span t-field="o.load_address"/>
+                            </t>
+                        </div>
+                        <div class="col-xs-2" groups="s2ubase.production_company">
+                            total:
+                        </div>
+                        <div class="col-xs-3" groups="s2ubase.production_company">
+                            <div style="width: 400px;">
+                                <span t-field="o.tot_weight"/> kg<br />
+                            </div>
+                            <div style="width: 400px;">
+                                <span t-field="o.tot_surface"/> qm
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div t-if="o.trailer_no" class="col-xs-7">
+                            Trailer.-No.: <t t-esc="o.trailer_no"/>
+                        </div>
+                    </div>
+                    <div class="row mt16" groups="s2ubase.production_company">
+                        <div class="col-xs-6">
+                            <b>palette</b>
+                        </div>
+                        <div class="col-xs-2">
+                            <b>before</b>
+                        </div>
+                        <div class="col-xs-2">
+                            <b>today</b>
+                        </div>
+                        <div class="col-xs-2">
+                            <b>stock</b>
+                        </div>
+                    </div>
+                    <div groups="s2ubase.production_company">
+                        <t t-set="pallettensaldo" t-value="o.calc_pallets_saldo()"></t>
+                        <t t-foreach="pallettensaldo" t-as="s">
+                            <div class="row mt8">
+                                <div class="col-xs-6">
+                                    <t t-esc="s['pallet']"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <t t-esc="s['before']"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <t t-esc="s['today']"/>
+                                </div>
+                                <div class="col-xs-2">
+                                    <t t-esc="s['gesamt']"/>
+                                </div>
+                            </div>
+                        </t>
+                        <div class="row mt32">
+                            <div class="col-xs-6">
+                                acknowledgment of delivery
+                            </div>
+                            <div class="col-xs-6">
+                                pallet return
+                            </div>
+                        </div>
+                        <div class="row mt16">
+                            <div class="col-xs-6">
+                                ______________________
+                            </div>
+                            <div class="col-xs-6">
+                                ______________________
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+</template>
+
+<template id="print_delivery">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="s2uwarehouse.print_delivery_document" t-lang="o.delivery_lang"/>
+        </t>
+    </t>
+</template>
+
+</data>
+</openerp>

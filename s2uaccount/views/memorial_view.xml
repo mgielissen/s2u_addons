@@ -1,0 +1,126 @@
+<openerp>
+    <data>
+        <!-- Memorial -->
+        <record model="ir.ui.view" id="memorial_search_view">
+            <field name="model">s2u.account.memorial</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="date_trans" />
+                    <field name="memorial_type" />
+                </search>
+            </field>
+        </record>
+
+        <record id="memorial_form" model="ir.ui.view">
+            <field name="model">s2u.account.memorial</field>
+            <field name="arch" type="xml">
+                <form string="Memorial">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="date_trans" />
+                            </group>
+                            <group>
+                                <field name="memorial_type" />
+                                <field name="currency_id" groups="base.group_multi_currency" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Lines">
+                                        <field name="type" />
+                                        <field name="partner_id" />
+                                        <field name="account_id" />
+                                        <field name="descript" />
+                                        <field name="vat_amount" sum="Total"/>
+                                        <field name="trans_amount" sum="Total" />
+                                    </tree>
+                                    <form string="Line">
+                                        <group>
+                                            <group>
+                                                <field name="type" />
+                                                <field name="partner_id" attrs="{'invisible': [('type', 'in', ['nor', 'bat'])],
+                                                                                 'required': [('type', 'in', ['deb', 'cre'])]}" />
+                                                <field name="account_id" attrs="{'invisible': [('type', 'in', ['bat'])],
+                                                                                 'required': [('type', 'in', ['deb', 'cre', 'nor'])]}" />
+                                                <field name="descript" />
+                                                <field name="vat_id" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])]}" />
+                                            </group>
+                                            <group>
+                                                <field name="gross_amount" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])],
+                                                                                   'required': [('type', 'in', ['nor'])]}" />
+                                                <field name="net_amount" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])]}" />
+                                                <field name="vat_amount" attrs="{'invisible': [('type', 'in', ['deb', 'cre', 'bat'])],
+                                                                                 'required': [('type', 'in', ['nor'])]}" />
+                                                <field name="trans_amount" />
+                                                <field name="analytic_id" />
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Invoices (SO)" attrs="{'invisible': [('type', 'in', ['nor', 'cre', 'bat'])]}" >
+                                                <field name="so_ids" nolabel="1" widget="one2many_list">
+                                                    <tree string="Invoices" editable="bottom">
+                                                        <field name="invoice_id" domain="[('partner_id', '=', parent.partner_id)]" />
+                                                        <field name="trans_amount" />
+                                                        <field name="open_amount" />
+                                                        <field name="type" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                            <page string="Invoices (PO)" attrs="{'invisible': [('type', 'in', ['nor', 'deb', 'bat'])]}">
+                                                <field name="po_ids" nolabel="1" widget="one2many_list">
+                                                    <tree string="Invoices" editable="bottom">
+                                                        <field name="invoice_id" domain="[('partner_id', '=', parent.partner_id)]" />
+                                                        <field name="trans_amount" />
+                                                        <field name="open_amount" />
+                                                        <field name="type" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Other details">
+                                <group string="Accounts for payment differences">
+                                    <group>
+                                        <field name="account_accepted_id" />
+                                        <field name="account_so_difference_id" />
+                                        <field name="account_po_difference_id" />
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="memorial_tree" model="ir.ui.view">
+            <field name="model">s2u.account.memorial</field>
+            <field name="arch" type="xml">
+                <tree string="Memorial">
+                    <field name="date_trans" />
+                    <field name="name" />
+                    <field name="currency_id" groups="base.group_multi_currency" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_memorial" model="ir.actions.act_window">
+            <field name="name">Journal entry</field>
+            <field name="res_model">s2u.account.memorial</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="memorial_tree" />
+        </record>
+
+        <menuitem action="action_memorial" id="menu_memorial"
+            parent="menu_accounting_financial" sequence="40" groups="s2uaccount.group_account_manager" />
+    </data>
+</openerp>

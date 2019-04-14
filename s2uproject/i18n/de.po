@@ -1,0 +1,719 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2uproject
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-20 08:11+0000\n"
+"PO-Revision-Date: 2017-10-27 12:40+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_account_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_account_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_account_id
+msgid "Account"
+msgstr "Konto"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_deadline_alert
+msgid "Alert"
+msgstr "Warnung"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_contract_amount
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_rate_per_hour
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_amount
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_tree
+msgid "Amount"
+msgstr "Preis"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_form
+msgid "Are you sure?"
+msgstr "Bist du dir sicher?"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_user_id
+msgid "Author"
+msgstr "Autor"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_task_search_view
+#: selection:s2u.project,type:0
+msgid "Bussiness"
+msgstr "Bussiness"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_color
+msgid "Color Index"
+msgstr "Farbkennzeichnung"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_company_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: s2uproject
+#: selection:s2u.project.hour.invoicing,state:0
+msgid "Concept"
+msgstr "Concept"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_contact_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_contact_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_contact_id
+msgid "Contact"
+msgstr "Kontact"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_contract
+#: model:ir.model,name:s2uproject.model_s2u_contract
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_invoicing_contract
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_contract
+#: model:ir.ui.view,arch_db:s2uproject.contract_form
+#: model:ir.ui.view,arch_db:s2uproject.contract_tree
+msgid "Contract"
+msgstr "Vertrag"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_contract_period
+msgid "Contract period"
+msgstr "Vertragszeitraum"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_form
+msgid "Create invoices"
+msgstr "Rechnung erstellen"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_create_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_create_uid
+msgid "Created by"
+msgstr "Angelegt von"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_create_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_create_date
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_partner_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_partner_id
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_date_invoicing
+msgid "Date"
+msgstr "Datum"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_deadline
+msgid "Deadline"
+msgstr "Frist"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_task_kanban
+msgid "Delete"
+msgstr "Löschen"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_descript
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_descript
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_descript
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_descript
+#: model:ir.ui.view,arch_db:s2uproject.contract_form
+#: model:ir.ui.view,arch_db:s2uproject.project_form
+#: model:ir.ui.view,arch_db:s2uproject.project_task_form
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_display_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_display_name
+msgid "Display Name"
+msgstr "Angezeigter Name"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_data_file
+#: model:ir.ui.view,arch_db:s2uproject.project_task_form
+msgid "Document"
+msgstr "Dokument"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_doc_ids
+#: model:ir.ui.view,arch_db:s2uproject.project_task_form
+msgid "Documents"
+msgstr "Dokumente"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_form
+#: selection:s2u.project.hour.invoicing,state:0
+msgid "Done"
+msgstr "Fertig"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_task_kanban
+msgid "Edit Task"
+msgstr "Aufgabe bearbeiten"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_data_name
+msgid "Filename"
+msgstr "Dateiname"
+
+#. module: s2uproject
+#: selection:s2u.project.task,invoicing:0
+msgid "Fix"
+msgstr "Fix"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_fold
+msgid "Fold"
+msgstr "Falten"
+
+#. module: s2uproject
+#: selection:s2u.project.task,priority:0
+msgid "High"
+msgstr "Hoch"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_form
+msgid "Hour"
+msgstr "Stunde"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_month_hour
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_month_hour
+msgid "Hour Month"
+msgstr "Stunden Monat"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_year_hour
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_year_hour
+msgid "Hour Year"
+msgstr "Stunden Jahr"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_hour_rate
+#: model:ir.model,name:s2uproject.model_s2u_project_hour_rate_def
+msgid "Hour rate"
+msgstr "Stundensatz"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project_hour
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_hour
+msgid "Hour reg."
+msgstr "Stundenerfassung"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_hour_type
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_type_form
+msgid "Hour type"
+msgstr "Stunden Type"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project_hour_type
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_hour_type
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_type_tree
+msgid "Hour types"
+msgstr "Stunden Typen"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_hours
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_ids
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_hours
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_ids
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_hours
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_tree
+#: selection:s2u.project.task,invoicing:0
+msgid "Hours"
+msgstr "Stunden"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_form
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_tree
+msgid "Hours invoicing"
+msgstr "Stundenabrechnung"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_hours_period
+msgid "Hours period"
+msgstr "Stunden Zeitraum"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_hours_till
+msgid "Hours till"
+msgstr "Stunden bis"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_id_4019
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_id_2117
+msgid "ID"
+msgstr "ID"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_invoice_id
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_currency_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_currency_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_currency_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_currency_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_currency_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_currency_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_currency_id
+msgid "Invoice Currency"
+msgstr "Währung"
+
+#. module: s2uproject
+#: selection:s2u.project.hour.invoicing,state:0
+msgid "Invoiced"
+msgstr "Abgerechnet"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project_hour_invoicing
+#: model:ir.model,name:s2uproject.model_s2u_project_hour_invoicing
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_invoicing_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_invoicing
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_invoicing
+#: model:ir.ui.menu,name:s2uproject.menu_project_hour_invoicing
+msgid "Invoicing"
+msgstr "Berechnung"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_hour_invoicing_partner
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_invpartner_id
+msgid "Invoicing Partner"
+msgstr "Rechnungspartner"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_hour_invoicing_partner_hour
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invpartnerline_id
+msgid "Invoicing Partner Hour"
+msgstr "Stunden Rechnungspartner"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note___last_update
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_write_uid
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_contract_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_write_date
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: s2uproject
+#: selection:s2u.project.task,priority:0
+msgid "Low"
+msgstr "Niedrig"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_task_search_view
+msgid "My tasks"
+msgstr "Meine Aufgaben"
+
+#. module: s2uproject
+#: selection:s2u.project.task,invoicing:0
+msgid "No"
+msgstr "Nein"
+
+#. module: s2uproject
+#: code:addons/s2uproject/models/project.py:468
+#, python-format
+msgid "No VAT is defined for contract %s!"
+msgstr "Keine Definition der MwSt.  für Vertrag %s!"
+
+#. module: s2uproject
+#: code:addons/s2uproject/models/project.py:500
+#, python-format
+msgid "No VAT is defined for hour rate %s!"
+msgstr "Keine Definition der MwSt. für Stundensatz %s!"
+
+#. module: s2uproject
+#: code:addons/s2uproject/models/project.py:520
+#, python-format
+msgid "No VAT is defined for zero rate %s!"
+msgstr "Keine Definition der MwSt. für Nullsatz %s!"
+
+#. module: s2uproject
+#: code:addons/s2uproject/models/project.py:297
+#, python-format
+msgid "No rate is defined for user %s!"
+msgstr "Keine Definition der Rate für Benutzer %s!"
+
+#. module: s2uproject
+#: selection:s2u.project.task,priority:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_note
+#: model:ir.ui.view,arch_db:s2uproject.project_task_form
+msgid "Note"
+msgstr "Notiz"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_date_note
+msgid "Note date"
+msgstr "Notiz Datum"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_ids
+#: model:ir.ui.view,arch_db:s2uproject.project_task_form
+msgid "Notes"
+msgstr "Notizen"
+
+#. module: s2uproject
+#: sql_constraint:s2u.project.hour.rate:0
+msgid "Only one rate per user allowed !"
+msgstr "Nur ein Satz pro Benutzer erlaubt!"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_partner_id
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_form
+msgid "Partner"
+msgstr "Partner"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_ids
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_form
+msgid "Partners"
+msgstr "Partner"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_priority
+msgid "Priority"
+msgstr "Priorität"
+
+#. module: s2uproject
+#: selection:s2u.project,type:0
+msgid "Privat"
+msgstr "Privat"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_task_search_view
+msgid "Private"
+msgstr "Private"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project
+#: model:ir.model,name:s2uproject.model_s2u_project
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_project_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_project_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_project_id
+#: model:ir.ui.menu,name:s2uproject.menu_project
+#: model:ir.ui.menu,name:s2uproject.menu_project_project
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_project
+#: model:ir.ui.view,arch_db:s2uproject.project_form
+#: model:ir.ui.view,arch_db:s2uproject.project_tree
+msgid "Project"
+msgstr "Projekt"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_hour
+msgid "Project hours"
+msgstr "Projekt Stunden"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_task
+msgid "Project task"
+msgstr "Projelt Aufgaben"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_rate_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_rate_per_hour
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_def_rate_per_hour
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_rate_id
+msgid "Rate"
+msgstr "Stundensatz"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_rate_def_form
+msgid "Rate definition"
+msgstr "Tarifdefinition"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_rate_def_tree
+msgid "Rate definitions"
+msgstr "Tarifdefinitionen"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project_hour_rate_def
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_hour_rate_def
+msgid "Rates definitions"
+msgstr "Tarifdefinitionen"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_pivot
+msgid "Report-Pivot"
+msgstr "Report-Pivot"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_graph
+msgid "Report-graph"
+msgstr "Report-graph"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_responsible_id
+msgid "Responsible"
+msgstr "Verantwortlich"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.contract_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_rate_def_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_rate_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_type_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_task_search_view
+#: model:ir.ui.view,arch_db:s2uproject.project_task_stage_search_view
+msgid "Search"
+msgstr "Suchen"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_sequence
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_descript_short
+msgid "Short description"
+msgstr "Kurzbeschreibung"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_skip_invoicing
+msgid "Skip invoicing"
+msgstr "Rechnung überspringen"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project_task_stage
+#: model:ir.model,name:s2uproject.model_s2u_project_task_stage
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_stage_name
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_stage
+#: model:ir.ui.view,arch_db:s2uproject.project_task_stage_form
+#: model:ir.ui.view,arch_db:s2uproject.project_task_stage_tree
+msgid "Stage"
+msgstr "Stufe"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_state
+msgid "State"
+msgstr "Status"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project_task
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_task_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_note_task_id
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_task
+#: model:ir.ui.view,arch_db:s2uproject.project_form
+#: model:ir.ui.view,arch_db:s2uproject.project_task_form
+#: model:ir.ui.view,arch_db:s2uproject.project_task_tree
+msgid "Task"
+msgstr "Aufgabe"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_task_document
+msgid "Task documents"
+msgstr "Dokumente Aufgabe"
+
+#. module: s2uproject
+#: model:ir.model,name:s2uproject.model_s2u_project_task_note
+msgid "Task notes"
+msgstr "Notizen Aufgabe"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_ids
+#: model:ir.ui.view,arch_db:s2uproject.project_form
+msgid "Tasks"
+msgstr "Aufgaben"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_document_name
+msgid "Title"
+msgstr "Anrede"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_tot_amount
+msgid "Tot. Amount"
+msgstr "Gesamtbetrag"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_tot_amount
+msgid "Tot. amount"
+msgstr "Gesamtbetrag"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_tot_contract
+msgid "Tot. contract"
+msgstr "Gesamt Vertrag"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_tot_hours
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_tot_hours
+msgid "Tot. hours"
+msgstr "Gesamt Stunden"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_tree
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_tree
+msgid "Total"
+msgstr "Gesamt"
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_partner_hour_type_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_type_name
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_task_type
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_type
+msgid "Type"
+msgstr "Typ"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_invoicing_form
+msgid "Update invoices"
+msgstr "Rechnung aktualisieren"
+
+#. module: s2uproject
+#: model:ir.model.fields,help:s2uproject.field_s2u_project_skip_invoicing
+msgid "Use this option when you do not want this project taken in the invoicing process."
+msgstr "Verwenden Sie diese Option, wenn Sie nicht möchten, dass dieses Projekt im Rechnungsstellungsprozess ausgeführt wird."
+
+#. module: s2uproject
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_invoicing_user_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_rate_user_id
+#: model:ir.model.fields,field_description:s2uproject.field_s2u_project_hour_user_id
+msgid "User"
+msgstr "Benutzer"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_rate_form
+msgid "User rate"
+msgstr "Benutzerrate"
+
+#. module: s2uproject
+#: model:ir.actions.act_window,name:s2uproject.action_project_hour_rate
+#: model:ir.ui.menu,name:s2uproject.menu_project_project_hour_rate
+#: model:ir.ui.view,arch_db:s2uproject.project_hour_rate_tree
+msgid "User rates"
+msgstr "Benutzerraten"
+
+#. module: s2uproject
+#: model:ir.ui.view,arch_db:s2uproject.project_task_kanban
+msgid "oe_kanban_text_red"
+msgstr "oe_kanban_text_red"

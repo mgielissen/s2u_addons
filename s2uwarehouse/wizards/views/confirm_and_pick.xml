@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_confirm_and_pick_view" model="ir.ui.view">
+        <field name="name">Confirm and Pick</field>
+        <field name="model">s2u.warehouse.confirm.pick</field>
+        <field name="arch" type="xml">
+            <form string="Confirm and Pick">
+                <group>
+                    <group>
+                        <field name="picking_method" />
+                    </group>
+                    <group>
+                        <field name="product_id"
+                               domain="[('product_type', '=', 'stock')]"
+                               attrs="{'required': [('picking_method', '=', 'sn')],
+                                                     'invisible': [('picking_method', '!=', 'sn')]}" />
+                        <field name="product_detail" attrs="{'invisible': [('picking_method', '!=', 'sn')]}" />
+                        <field name="serialnumbers" attrs="{'required': [('picking_method', '=', 'sn')],
+                                                            'invisible': [('picking_method', '!=', 'sn')]}" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="do_confirm" string="Confirm" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

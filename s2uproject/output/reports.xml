@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+
+        <report 
+            id="s2uproject_hour_invoicing"
+            model="s2u.project.hour.invoicing"
+            string="Report Invoicing Hours"
+            report_type="qweb-pdf"
+            name="s2uproject.print_hour_invoicing"
+            file="s2uproject.print_hour_invoicing"
+            attachment_use="False"
+            attachment="('IHL_'+(object.hours_period or 'Project Invoice Hour Line').replace('/','').replace(' ', '_') +'.pdf')"
+        />
+
+        <report
+            id="s2uproject_hour_invoicing2"
+            model="s2u.project.hour.invoicing"
+            string="Report Invoicing Hours2"
+            report_type="qweb-pdf"
+            name="s2uproject.print_hour_invoicing2"
+            file="s2uproject.print_hour_invoicing2"
+            attachment_use="False"
+        />
+
+        <report
+            id="s2uproject_print_hours"
+            model="s2u.project.hour.date.report"
+            string="Report Date Hour"
+            report_type="qweb-pdf"
+            name="s2uproject.print_hour"
+            file="s2uproject.print_hour"
+            attachment_use="False"
+        />
+
+    </data>
+</openerp>

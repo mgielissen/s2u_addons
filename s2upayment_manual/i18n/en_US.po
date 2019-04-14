@@ -1,0 +1,117 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* s2upayment_manual
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-26 12:23+0000\n"
+"PO-Revision-Date: 2017-10-26 12:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s2upayment_manual
+#: model:ir.model.fields,field_description:s2upayment_manual.field_s2u_payment_acquirer_manual_account
+msgid "Account"
+msgstr "Account"
+
+#. module: s2upayment_manual
+#: model:ir.model.fields,field_description:s2upayment_manual.field_s2u_payment_acquirer_manual_account_owner
+msgid "Account owner"
+msgstr "Account owner"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "Checkout: bevestigen bestelling"
+msgstr "Checkout: bevestigen bestelling"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.payment_oops
+msgid "De volgende fout is opgetreden:"
+msgstr "De volgende fout is opgetreden:"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.payment_oops
+msgid "Er is iets fout gegaan tijdens het selecteren van de overmaking."
+msgstr "Er is iets fout gegaan tijdens het selecteren van de overmaking."
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "Ik ga akkoord en maak het bedrag zsm over"
+msgstr "Ik ga akkoord en maak het bedrag zsm over"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.select_acquirer
+msgid "Ik wil het bedrag zelf overmaken op uw rekening."
+msgstr "Ik wil het bedrag zelf overmaken op uw rekening."
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.payment_acquirer_form
+msgid "Manual payment aquirer data"
+msgstr "Manual payment aquirer data"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "Nee, nog even verder winkelen"
+msgstr "Nee, nog even verder winkelen"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.payment_oops
+msgid "Oops!"
+msgstr "Oops!"
+
+#. module: s2upayment_manual
+#: model:ir.model,name:s2upayment_manual.model_s2u_payment_acquirer
+msgid "Payment Acquirer"
+msgstr "Payment Acquirer"
+
+#. module: s2upayment_manual
+#: model:ir.model.fields,help:s2upayment_manual.field_s2u_payment_acquirer_manual_account
+msgid "The account information customer has to transfer money to."
+msgstr "The account information customer has to transfer money to."
+
+#. module: s2upayment_manual
+#: model:ir.model.fields,help:s2upayment_manual.field_s2u_payment_acquirer_manual_account_owner
+msgid "The owner of the account, also displayed to customer."
+msgstr "The owner of the account, also displayed to customer."
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "U heeft ervoor gekozen het geld zelf over te maken."
+msgstr "U heeft ervoor gekozen het geld zelf over te maken."
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "U kunt dit doen door het bedrag van"
+msgstr "U kunt dit doen door het bedrag van"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.select_acquirer
+msgid "Uw bestelling betalen dmv zelf overmaken"
+msgstr "Uw bestelling betalen dmv zelf overmaken"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "Zodra wij uw bedrag hebben ontvangen gaan wij over tot verzending."
+msgstr "Zodra wij uw bedrag hebben ontvangen gaan wij over tot verzending."
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "onder vermelding van"
+msgstr "onder vermelding van"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "over te maken op rekening"
+msgstr "over te maken op rekening"
+
+#. module: s2upayment_manual
+#: model:ir.ui.view,arch_db:s2upayment_manual.shop_checkout_confirm
+msgid "ten name van"
+msgstr "ten name van"
+

@@ -1,0 +1,16 @@
+<templates>
+    <!-- Templates modified at the web start, before loading of a database. -->
+
+    <t t-extend="WebClient" >
+        <t t-jquery="td.announcement_bar" t-operation="replace">
+        </t>
+    </t>
+
+    <t t-name="FieldRating">
+        <span class="oe_form_field oe_form_field_rating" style="font-weight: normal; width: 264px !important; height: 60px; color: #666; margin: -5px 5px -1px 0px; padding: 0; border-radius: 0; box-shadow: none; background: white;">
+            <img t-att-src='_s + "/s2ucrm/static/src/img/rating-icon.png"'
+                 width="64" height="65" border="0" draggable="false"/>
+        </span>
+    </t>
+
+</templates>

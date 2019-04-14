@@ -1,0 +1,21 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="crm_entity_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_form"/>
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box_s2u']/button[@name='action_view_contacts']" position="after">
+                    <button name="action_view_discount_products"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-percent"
+                            attrs="{'invisible': [('discount_products_count', '=', 0)]}"
+                            title="Discount on products">
+                        <field name="discount_products_count" widget="statinfo" string="Discount on products" nolabel="1"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

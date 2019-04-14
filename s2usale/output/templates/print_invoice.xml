@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <template id="print_invoice_so_document" inherit_id="s2uaccount.print_invoice_so_document" >
+        <xpath expr="//div[@name='invoice_prefix']" position="replace">
+            <div class="row mt16 mb16" t-if="o.template_id" name="invoice_prefix">
+                <div class="col-xs-12">
+                    <p t-field="o.prefix_invoice" />
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='invoice_postfix']" position="replace">
+            <div class="row mt8" t-if="o.template_id" name="invoice_postfix">
+                <div class="col-xs-12">
+                    <p t-field="o.postfix_invoice" />
+                </div>
+            </div>
+        </xpath>
+    </template>
+</data>
+</openerp>

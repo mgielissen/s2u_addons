@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <menuitem name="Products"
+                  id="menu_product"
+                  sequence="140"/>
+
+        <menuitem id="menu_product_sale" name="Sales"
+                  parent="menu_product" sequence="10"/>
+
+        <menuitem id="menu_product_configuration" name="Configuration"
+                  parent="menu_product" sequence="30"/>
+    </data>
+</openerp>

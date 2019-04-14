@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Payment Acquirer -->
+        <record model="ir.ui.view" id="payment_acquirer_search_view">
+            <field name="model">s2u.payment.acquirer</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="provider_active" />
+                </search>
+            </field>
+        </record>
+
+        <record id="payment_acquirer_tree" model="ir.ui.view">
+            <field name="model">s2u.payment.acquirer</field>
+            <field name="arch" type="xml">
+                <tree string="Providers">
+                    <field name="name" />
+                    <field name="environment" />
+                    <field name="provider" />
+                    <field name="provider_active" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="payment_acquirer_form" model="ir.ui.view">
+            <field name="model">s2u.payment.acquirer</field>
+            <field name="arch" type="xml">
+                <form string="Provider">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="environment" />
+                                <field name="sequence" />
+                            </group>
+                            <group>
+                                <field name="provider" />
+                                <field name="provider_active" />
+                                <field name="so_template_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_payment_acquirer" model="ir.actions.act_window">
+            <field name="name">Providers</field>
+            <field name="res_model">s2u.payment.acquirer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="payment_acquirer_tree" />
+            <field name="search_view_id" ref="payment_acquirer_search_view"/>
+        </record>
+
+        <menuitem action="action_payment_acquirer" id="menu_payment_acquirer"
+            parent="menu_payment" sequence="10"
+            groups="s2upayment.group_ecommerce" />
+
+    </data>
+</openerp>

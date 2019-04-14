@@ -1,0 +1,359 @@
+<openerp>
+    <data>
+        <!-- warehouse scrapped -->
+        <record model="ir.ui.view" id="warehouse_move_scrapped_search_view">
+            <field name="model">s2u.warehouse.move.scrapped</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="date_entry" />
+                    <field name="unit_id" />
+                    <field name="product_id" />
+                    <field name="user_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_move_scrapped_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.scrapped</field>
+            <field name="arch" type="xml">
+                <form string="Scrapped">
+                    <header>
+                        <button type="object" name="do_confirm" string="Confirm" class="oe_highlight oe_read_only"
+                                states="draft" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_entry" />
+                                <field name="user_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="unit_id" options="{'no_create': True, 'no_open': True}" domain="[('assigned_qty', '=', 0)]"/>
+                                <field name="scrap_method" />
+                            </group>
+                            <group>
+                                <field name="product_id" options="{'no_create': True, 'no_open': True}"
+                                       attrs="{'required': [('scrap_method', '=', 'part')],
+                                               'invisible': [('scrap_method', '=', 'complete')]}"/>
+                                <field name="product_qty" attrs="{'required': [('scrap_method', '=', 'part')],
+                                                                                'invisible': [('scrap_method', '=', 'complete')]}" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Remarks">
+                                <group>
+                                    <field name="remarks" nolabel="1" />
+                                </group>
+                            </page>
+                            <page string="Transactions">
+                                <field name="trans_ids" nolabel="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="unit_id" />
+                                        <field name="product_id" />
+                                        <field name="qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_move_scrapped_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.scrapped</field>
+            <field name="arch" type="xml">
+                <tree string="Scrapped">
+                    <field name="date_entry" />
+                    <field name="user_id" />
+                    <field name="unit_id" />
+                    <field name="scrap_method" />
+                    <field name="product_id" />
+                    <field name="product_qty" />
+                    <field name="remarks" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_move_scrapped" model="ir.actions.act_window">
+            <field name="name">Scrapped/lost</field>
+            <field name="res_model">s2u.warehouse.move.scrapped</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_move_scrapped_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_move_scrapped" id="menu_warehouse_movement_scrapped"
+            parent="menu_warehouse_movement" sequence="30" groups="s2uwarehouse.group_warehouse_user" />
+
+        <!-- warehouse correction -->
+        <record model="ir.ui.view" id="warehouse_move_correction_search_view">
+            <field name="model">s2u.warehouse.move.correction</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="date_entry" />
+                    <field name="unit_id" />
+                    <field name="product_id" />
+                    <field name="user_id" />
+                    <field name="serialnumber" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_move_correction_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.correction</field>
+            <field name="arch" type="xml">
+                <form string="Correction">
+                    <header>
+                        <button type="object" name="do_confirm" string="Confirm" class="oe_highlight oe_read_only"
+                                states="draft" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_entry" />
+                                <field name="user_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="create_unit" />
+                                <field name="unit_id"
+                                       options="{'no_create': True, 'no_open': True}"
+                                       domain="[('assigned_qty', '=', 0)]"
+                                       attrs="{'required': [('create_unit', '=', False)],
+                                               'invisible': [('create_unit', '=', True)]}"/>
+                                <field name="location_id"
+                                       attrs="{'required': [('create_unit', '=', True)],
+                                               'invisible': [('create_unit', '=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="sn_registration" invisible="1" />
+                                <field name="product_detail" />
+                                <field name="product_qty" attrs="{'required': [('sn_registration', '=', False)],
+                                                                  'invisible': [('sn_registration', '=', True)]}" />
+                                <field name="serialnumber" attrs="{'required': [('sn_registration', '=', True)],
+                                                                   'invisible': [('sn_registration', '=', False)]}"/>
+                                <field name="product_value" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="remarks" />
+                        </group>
+                        <notebook>
+                            <page string="Transactions">
+                                <field name="trans_ids" nolabel="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="unit_id" />
+                                        <field name="product_id" />
+                                        <field name="qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_move_correction_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.correction</field>
+            <field name="arch" type="xml">
+                <tree string="Correction">
+                    <field name="date_entry" />
+                    <field name="user_id" />
+                    <field name="unit_id" />
+                    <field name="product_id" />
+                    <field name="product_detail" />
+                    <field name="product_qty" />
+                    <field name="product_value" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_move_correction" model="ir.actions.act_window">
+            <field name="name">Correction/found</field>
+            <field name="res_model">s2u.warehouse.move.correction</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_move_correction_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_move_correction" id="menu_warehouse_movement_correction"
+            parent="menu_warehouse_movement" sequence="40" groups="s2uwarehouse.group_warehouse_manager" />
+
+        <!-- warehouse move unit -->
+        <record model="ir.ui.view" id="warehouse_move_unit_search_view">
+            <field name="model">s2u.warehouse.move.unit</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="date_entry" />
+                    <field name="unit_id" />
+                    <field name="from_location_id" />
+                    <field name="location_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_move_unit_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.unit</field>
+            <field name="arch" type="xml">
+                <form string="Move unit">
+                    <header>
+                        <button type="object" name="do_confirm" string="Confirm" class="oe_highlight oe_read_only"
+                                states="draft" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_entry" />
+                                <field name="user_id" options="{'no_create': True, 'no_open': True}" />
+                            </group>
+                            <group>
+                                <field name="unit_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="movement_to" />
+                                <field name="location_id" options="{'no_create': True}" attrs="{'required': [('movement_to', '=', 'location')],
+                                                                                                'invisible': [('movement_to', '=', 'unit')]}"/>
+                                <field name="to_unit_id" attrs="{'required': [('movement_to', '=', 'unit')],
+                                                                               'invisible': [('movement_to', '=', 'location')]}"
+                                       domain="[('parent_id', '=', False)]" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Transactions">
+                                <field name="trans_ids" nolabel="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="location_id" />
+                                        <field name="parent_id" />
+                                        <field name="unit_id" />
+                                        <field name="product_id" />
+                                        <field name="qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_move_unit_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Move unit">
+                    <field name="date_entry" />
+                    <field name="user_id" />
+                    <field name="unit_id" />
+                    <field name="movement_to" />
+                    <field name="from_location_id" />
+                    <field name="location_id" />
+                    <field name="to_unit_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_move_unit" model="ir.actions.act_window">
+            <field name="name">Unit</field>
+            <field name="res_model">s2u.warehouse.move.unit</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_move_unit_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_move_unit" id="menu_warehouse_movement_unit"
+            parent="menu_warehouse_movement" sequence="50" groups="s2uwarehouse.group_warehouse_user" />
+
+        <!-- warehouse move product -->
+        <record model="ir.ui.view" id="warehouse_move_product_search_view">
+            <field name="model">s2u.warehouse.move.product</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="date_entry" />
+                    <field name="unit_id" />
+                    <field name="from_unit_id" />
+                    <field name="product_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_move_product_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.product</field>
+            <field name="arch" type="xml">
+                <form string="Move items">
+                    <header>
+                        <button type="object" name="do_confirm" string="Confirm" class="oe_highlight oe_read_only"
+                                states="draft" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_entry" />
+                                <field name="user_id" options="{'no_create': True, 'no_open': True}" />
+                            </group>
+                            <group>
+                                <field name="from_unit_id" options="{'no_create': True, 'no_open': True}" domain="[('assigned_qty', '=', 0)]" />
+                                <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                <field name="product_qty" />
+                            </group>
+                        </group>
+                        <group>
+                            <group></group>
+                            <group>
+                                <field name="unit_id" options="{'no_create': True, 'no_open': True}" domain="[('assigned_qty', '=', 0)]" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Transactions">
+                                <field name="trans_ids" nolabel="1" >
+                                    <tree string="Transactions">
+                                        <field name="transaction_date" />
+                                        <field name="location_id" />
+                                        <field name="parent_id" />
+                                        <field name="unit_id" />
+                                        <field name="product_id" />
+                                        <field name="qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_move_product_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.move.product</field>
+            <field name="arch" type="xml">
+                <tree string="Move items">
+                    <field name="date_entry" />
+                    <field name="user_id" />
+                    <field name="from_unit_id" />
+                    <field name="unit_id" />
+                    <field name="product_id" />
+                    <field name="product_qty" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_move_product" model="ir.actions.act_window">
+            <field name="name">Items from unit</field>
+            <field name="res_model">s2u.warehouse.move.product</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_move_product_tree" />
+        </record>
+
+        <menuitem action="action_warehouse_move_product" id="menu_warehouse_movement_product"
+            parent="menu_warehouse_movement" sequence="60" groups="s2uwarehouse.group_warehouse_user" />
+    </data>
+</openerp>

@@ -1,0 +1,41 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="crm_entity_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_form"/>
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box_s2u']" position="inside">
+                    <button name="action_view_outgoing"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-truck"
+                            attrs="{'invisible': [('outgoing_count', '=', 0)]}"
+                            title="Deliveries">
+                        <field name="outgoing_open_count" widget="statinfo" string="Open" nolabel="1"/>/
+                        <field name="outgoing_count" widget="statinfo" string="Deliveries" nolabel="1"/>
+                    </button>
+                    <button name="action_view_rma"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-undo"
+                            attrs="{'invisible': [('rma_count', '=', 0)]}"
+                            title="RMA's">
+                        <field name="rma_open_count" widget="statinfo" string="Open" nolabel="1"/>/
+                        <field name="rma_count" widget="statinfo" string="RMA's" nolabel="1"/>
+                    </button>
+                    <button name="action_view_serialnumber"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-pencil"
+                            attrs="{'invisible': [('serialnumber_count', '=', 0)]}"
+                            title="Serialnumbers">
+                        <field name="serialnumber_count" widget="statinfo" string="Serialnumbers" nolabel="1"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

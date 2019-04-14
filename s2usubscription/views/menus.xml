@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_sales_subscriptions" name="Subscriptions"
+                  parent="s2usale.menu_sales" sequence="25" />
+    </data>
+</openerp>
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="layout" inherit_id="website.layout" name="s2uFramework Main Layout">
+        <xpath expr="//t[@t-set='head_website']" position="after">
+            <t t-if="use_shop_assets">
+                <t t-call-assets="s2uecommerce.assets_shop"/>
+            </t>
+            <t t-if="use_checkout_assets">
+                <t t-call-assets="s2uecommerce.assets_checkout"/>
+            </t>
+        </xpath>
+
+        <xpath expr="//t[@t-if='not title']" position="after">
+            <t t-if="use_canonical">
+                <link rel="canonical" t-att-href="use_canonical"/>
+            </t>
+            <t t-if="rel_prev">
+                <link rel="prev" t-att-href="rel_prev"/>
+            </t>
+            <t t-if="rel_next">
+                <link rel="next" t-att-href="rel_next"/>
+            </t>
+        </xpath>
+
+        <xpath expr="//meta[@name='description']" position="replace">
+
+            <t t-if="not additional_description">
+                <meta name="description" t-att-content="main_object and 'website_meta_description' in main_object and main_object.website_meta_description or website_meta_description"/>
+            </t>
+            <t t-if="additional_description">
+                <meta name="description" t-att-content="additional_description"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

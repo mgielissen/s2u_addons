@@ -1,0 +1,1339 @@
+<openerp>
+    <data>
+        <!-- Project -->
+        <record model="ir.ui.view" id="project_search_view">
+            <field name="model">s2u.project</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="type" />
+                    <field name="partner_id" />
+                    <field name="manual_invoicing" />
+                    <field name="skip_invoicing" />
+                    <field name="projecttype_id" />
+                    <field name="short_descript" />
+                    <field name="customer_code" />
+                    <field name="responsible_id" />
+                    <field name="responsible_extern_id" />
+                    <field name="state" />
+                    <filter string="Open projecten" domain="[('state', '=', 'open')]" name="all_open_projects_filter"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="project_form" model="ir.ui.view">
+            <field name="model">s2u.project</field>
+            <field name="arch" type="xml">
+                <form string="Project">
+                    <header>
+                        <button name="action_increase" type="object" string="Increase project" class="oe_read_only" />
+                        <button name="write_hours" type="object" string="Write hours"
+                                attrs="{'invisible': [('state','!=','open')]}" class="oe_read_only" />
+                        <button name="create_invoice" type="object" string="Charge hours"
+                                class="oe_read_only" attrs="{'invisible': ['|', ('manual_invoicing', '=', False), ('skip_invoicing', '=', True)]}"/>
+                        <button name="action_excel" type="object" string="Excel for mailmerge" class="oe_read_only" />
+                        <field name="state" widget="statusbar" clickable="True" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <field name="classification_visual" widget="classification" />
+                            <button name="action_view_sale"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-eur"
+                                    attrs="{'invisible': [('sale_count', '=', 0)]}">
+                                <field name="sale_count" widget="statinfo" string="Sales"/>
+                            </button>
+                            <button name="action_view_tasks"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-tasks"
+                                    attrs="{'invisible': [('task_count', '=', 0)]}">
+                                <field name="task_count" widget="statinfo" string="Tasks"/>
+                            </button>
+                            <button name="action_view_hours"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-hourglass"
+                                    attrs="{'invisible': [('hours_count', '=', 0)]}">
+                                <field name="hours_count" widget="statinfo" string="Hours"/>
+                            </button>
+                            <button name="action_view_invoice"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil-square-o"
+                                    attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                            <button name="action_view_document"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-file"
+                                    title="Documents">
+                                <field name="document_count" widget="statinfo" string="Documents" nolabel="1"/>
+                            </button>
+                            <button name="toggle_active" type="object" groups="s2ubase.archiver"
+                                    class="oe_stat_button" icon="fa-archive"
+                                    confirm="Are you sure? You are going to archive/unarchive this object if you continue.">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}' />
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="short_descript" required="1" />
+                                <field name="customer_code" />
+                                <field name="date_project" />
+                                <field name="partner_id" />
+                                <field name="type" />
+                                <field name="projecttype_id" />
+                                <field name="label_tasks"/>
+                            </group>
+                            <group>
+                                <field name="responsible_id" />
+                                <field name="responsible_extern_id" />
+                                <field name="skip_invoicing" groups="s2uproject.group_project_admin" />
+                                <field name="manual_invoicing" groups="s2uproject.group_project_admin" />
+                                <field name="zone1" groups="s2uproject.group_project_admin" />
+                                <field name="zone2" groups="s2uproject.group_project_admin" />
+                                <field name="zone3" groups="s2uproject.group_project_admin" />
+                                <field name="zone4" groups="s2uproject.group_project_admin" />
+                                <field name="reference" readonly="1" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Roles" >
+                                <field name="rate_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Roles" editable="bottom" decoration-danger="forecast_alert == True" >
+                                        <field name="forecast_alert" invisible="1" />
+                                        <field name="stage_id" required="1"/>
+                                        <field name="rate_id" />
+                                        <field name="descript" />
+                                        <field name="rate_per_hour" />
+                                        <field name="hours" sum="Hours" widget="float_time" />
+                                        <field name="amount" sum="Amount" />
+                                        <field name="real_hours" sum="Hours" widget="float_time" />
+                                        <field name="real_amount" sum="Amount" />
+                                        <field name="hours_to_spend" sum="Hours" widget="float_time" />
+                                        <field name="rolling_forecast" sum="Hours" widget="float_time" />
+                                        <field name="state" />
+                                        <button name="new_task" type="object" string="New task" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Tasks" >
+                                <field name="task_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Tasks" create="false" decoration-danger="forecast_alert == True">
+                                        <field name="forecast_alert" invisible="1" />
+                                        <field name="name" />
+                                        <field name="responsible_id" />
+                                        <field name="deadline" />
+                                        <field name="stage_id" />
+                                        <field name="rate_id" />
+                                        <field name="hours_available" widget="float_time" sum="Total"/>
+                                        <field name="hours_written" widget="float_time" sum="Total"/>
+                                        <field name="hours_to_spend" widget="float_time" sum="Total"/>
+                                        <field name="task_forecast" widget="float_time" sum="Total"/>
+                                        <field name="state" />
+                                    </tree>
+                                    <form string="Task" create="false">
+                                        <group>
+                                            <group>
+                                                <field name="name" />
+                                                <field name="stage_id" required="1" />
+                                                <field name="rate_id" required="1" />
+                                            </group>
+                                            <group>
+                                                <field name="responsible_id" />
+                                                <field name="deadline" />
+                                                <field name="hours_available" widget="float_time" />
+                                                <field name="task_forecast" widget="float_time" />
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="descript" />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Description">
+                                <group>
+                                    <field name="descript" nolabel="1" />
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="privacy_visibility" />
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_create_project" model="ir.actions.act_window">
+            <field name="name">Create a project</field>
+            <field name="res_model">s2u.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <record id="act_project_project_2_project_task_all" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="res_model">s2u.project.task</field>
+            <field name="view_mode">tree,form,calendar,kanban</field>
+            <field name="context">{
+                'default_group_by': 'stage_id',
+                'search_default_project_id': [active_id],
+                'default_project_id': active_id,
+            }</field>
+            <field name="search_view_id" ref="project_task_search_view"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Here, you can create new tasks
+                </p>
+                <p>
+                    You can now manage your tasks in order to get things done efficiently. Track progress, discuss, attach documents, etc.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_kanban">
+            <field name="model">s2u.project</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors" on_create="s2uproject.open_create_project">
+                    <field name="name"/>
+                    <field name="short_descript"/>
+                    <field name="partner_id"/>
+                    <field name="color"/>
+                    <field name="task_count"/>
+                    <field name="task_needaction_count"/>
+                    <field name="label_tasks"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_has_icon">
+                                <div class="o_project_kanban_main">
+                                    <div class="o_kanban_card_content">
+                                        <div class="o_kanban_primary_left">
+                                            <div class="o_primary">
+                                                <span><t t-esc="record.name.value"/></span>
+                                                <span t-if="record.partner_id.value">
+                                                    <strong><t t-esc="record.partner_id.value"/></strong>
+                                                </span>
+                                            </div>
+                                            <div t-if="record.short_descript.value">
+                                                <span><t t-esc="record.short_descript.value"/></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_card_manage_pane" groups="s2uproject.group_project_manager">
+                                        <div class="o_kanban_card_manage_section o_kanban_manage_reports">
+                                            <div>
+                                                <a type="edit">Settings</a>
+                                            </div>
+                                            <div>
+                                                <a name="%(s2uproject.act_project_project_2_project_task_all)d" type="action">Tasks</a>
+                                            </div>
+                                        </div>
+                                        <div class="o_project_kanban_colorpicker">
+                                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        </div>
+                                    </div>
+                                    <a class="o_kanban_manage_toggle_button o_left" href="#" groups="s2uproject.group_project_manager"><i class="fa fa-ellipsis-v" /></a>
+                                    <span class="o_right"><field name="is_favorite" widget="boolean_favorite" nolabel="1" force_save="1" /></span>
+                                </div>
+
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <a class="o_project_kanban_box" name="%(s2uproject.act_project_project_2_project_task_all)d" type="action">
+                                            <div>
+                                                <span class="o_value"><t t-esc="record.task_count.value"/></span>
+                                                <span class="o_label"><t t-esc="record.label_tasks.value"/></span>
+                                                <button t-if="record.task_needaction_count.raw_value" class="btn-link o_needaction" name="%(s2uproject.act_project_project_2_project_task_all)d" type="action" context="{'search_default_message_needaction': 1}">
+                                                    <t t-esc="record.task_needaction_count.raw_value"/>
+                                                </button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="classification_visual" widget="classification_kanban" />
+                                        <img t-att-src="kanban_image('s2u.crm.entity', 'image_small', record.partner_id.raw_value)" t-att-title="record.partner_id.value" width="30" height="30" class="oe_kanban_avatar"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="project_tree" model="ir.ui.view">
+            <field name="model">s2u.project</field>
+            <field name="arch" type="xml">
+                <tree string="Project">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name" />
+                    <field name="short_descript" />
+                    <field name="date_project" />
+                    <field name="partner_id" />
+                    <field name="projecttype_id" />
+                    <field name="planning_hours" widget="float_time" sum="Total"/>
+                    <field name="real_hours" widget="float_time" sum="Total"/>
+                    <field name="hours_to_spend" widget="float_time" sum="Total"/>
+                    <field name="rolling_forecast" widget="float_time" sum="Total"/>
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project" model="ir.actions.act_window">
+            <field name="name">Project</field>
+            <field name="res_model">s2u.project</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context">{'search_default_all_open_projects_filter': 1}</field>
+            <field name="view_id" ref="project_kanban" />
+        </record>
+
+        <menuitem action="action_project" id="menu_project_project_project"
+            parent="menu_project_project" sequence="20" groups="s2uproject.group_project_user" />
+
+        <!-- Stage -->
+        <record model="ir.ui.view" id="project_task_stage_search_view">
+            <field name="model">s2u.project.task.stage</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="project_task_stage_form" model="ir.ui.view">
+            <field name="model">s2u.project.task.stage</field>
+            <field name="arch" type="xml">
+                <form string="Fase">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="fold" />
+                            </group>
+                            <group>
+                                <field name="sequence" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_task_stage_tree" model="ir.ui.view">
+            <field name="model">s2u.project.task.stage</field>
+            <field name="arch" type="xml">
+                <tree string="Fase">
+                    <field name="sequence" />
+                    <field name="name" />
+                    <field name="fold" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_task_stage" model="ir.actions.act_window">
+            <field name="name">Fase</field>
+            <field name="res_model">s2u.project.task.stage</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="project_task_stage_tree" />
+        </record>
+
+        <menuitem action="action_project_task_stage" id="menu_project_project_stage"
+            parent="menu_project_project" sequence="30" groups="s2uproject.group_project_manager" />
+
+        <!-- Task -->
+        <record model="ir.ui.view" id="project_task_search_view">
+            <field name="model">s2u.project.task</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="project_descript" />
+                    <field name="project_id" />
+                    <field name="partner_id" />
+                    <field name="stage_id" />
+                    <field name="rate_id" />
+                    <field name="state" />
+                    <field name="deadline" />
+                    <field name="manager_id" />
+                    <field name="responsible_id" />
+                    <field name="contact_id" />
+                    <field name="priority" />
+                    <field name="type" />
+                    <field name="change_request" />
+                    <field name="change_request_id" />
+                    <field name="priority" />
+                    <filter string="My open tasks" domain="[('responsible_id','=',uid),
+                                                            ('state', '=', 'open'),
+                                                            ('project_id.state', '=', 'open')]" name="my_open_project_tasks_filter"/>
+                    <filter string="Tasks to check" domain="[('manager_id','=',uid),
+                                                             ('state', '=', 'ready')]" name="manager_tasks_to_check_filter"/>
+                    <filter string="All open tasks" domain="[('state', '=', 'open'),
+                                                             ('project_id.state', '=', 'open')]" name="all_open_project_tasks_filter"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="project_task_form" model="ir.ui.view">
+            <field name="model">s2u.project.task</field>
+            <field name="arch" type="xml">
+                <form string="Task">
+                    <header>
+                        <field name="project_state" invisible="1" />
+                        <button name="write_hours" type="object" string="Write hours"
+                                attrs="{'invisible': [('project_state','!=','open')]}" class="oe_read_only" />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_hours"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-hourglass"
+                                    attrs="{'invisible': [('hours_count', '=', 0)]}">
+                                <field name="hours_count" widget="statinfo" string="Hours"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="project_id" required="1" options="{'no_create': True}" domain="[('state', '=', 'open')]"/>
+                                <field name="stage_id" required="1" options="{'no_create': True}" />
+                                <field name="rate_id" required="1" options="{'no_create': True}" />
+                                <field name="name" />
+                                <field name="type" groups="s2uproject.group_project_user" />
+                                <field name="hours_available" widget="float_time" required="1" />
+                            </group>
+                            <group>
+                                <field name="manager_id" />
+                                <field name="responsible_id" options="{'no_create': True}" />
+                                <field name="deadline" />
+                                <field name="priority" />
+                                <field name="contact_id" />
+                                <field name="task_forecast" widget="float_time" />
+                                <field name="change_request" />
+                                <field name="change_request_id" options="{'no_create': True}"
+                                       attrs="{'invisible': [('change_request', '!=', True)],
+                                               'required': [('change_request', '=', True)]}" />
+                                <field name="forecast_alert" invisible="1" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <group string="Task description">
+                                    <field name="descript" nolabel="1" required="1" />
+                                </group>
+                                <group string="Internal note">
+                                    <field name="internal_description" nolabel="1" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="open_create_task" model="ir.actions.act_window">
+            <field name="name">Create a task</field>
+            <field name="res_model">s2u.project.task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="project_task_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Project Task Kanban View -->
+        <record model="ir.ui.view" id="project_task_kanban">
+            <field name="model">s2u.project.task</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="project_id" class="o_kanban_small_column o_kanban_project_tasks" on_create="s2uproject.open_create_task">
+                    <field name="color"/>
+                    <field name="priority"/>
+                    <field name="stage_id" />
+                    <field name="contact_id"/>
+                    <field name="responsible_id"/>
+                    <field name="descript"/>
+                    <field name="hours_to_spend" />
+                    <field name="deadline"/>
+                    <field name="attachment_ids"/>
+                    <field name="displayed_image_id"/>
+                    <field name="active"/>
+                    <field name="activity_ids"/>
+                    <field name="activity_state"/>
+                    <field name="message_needaction_counter"/>
+                    <progressbar field="kanban_state" colors='{"done": "success", "blocked": "danger"}'/>
+                    <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title"><field name="name"/></strong><br/>
+                                        <small class="o_kanban_record_subtitle text-muted">
+                                            <field name="project_id" invisible="context.get('default_project_id', False)"/>
+                                            <t t-if="record.deadline.raw_value and record.deadline.raw_value lt (new Date())" t-set="red">oe_kanban_text_red</t>
+                                            <span t-attf-class="#{red || ''}"><i><field name="deadline"/></i></span>
+                                            <t t-if="record.contact_id.raw_value"><span><field name="contact_id"/></span></t>
+                                        </small>
+                                    </div>
+                                    <div class="o_dropdown_kanban dropdown" groups="base.group_user">
+                                        <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                            <span class="fa fa-ellipsis-v" aria-hidden="true"/>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                            <li t-if="widget.editable"><a type="set_cover">Set Cover Image</a></li>
+                                            <li t-if="widget.editable"><a type="edit">Edit Task</a></li>
+                                            <li t-if="widget.deletable"><a type="delete">Delete</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header">Record's Colour</li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                    <div t-if="record.displayed_image_id.value">
+                                        <field name="displayed_image_id" widget="attachment_image"/>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <field name="priority" widget="priority"/>
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                        <t t-if="record.message_needaction_counter.raw_value">
+                                            <span class='oe_kanban_mail_new' title='Unread Messages'><i class='fa fa-comments'/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                        </t>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="kanban_state" widget="state_selection" groups="base.group_user"/>
+                                        <img t-att-src="kanban_image('res.users', 'image_small', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" width="24" height="24" class="oe_kanban_avatar"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_clear"></div>
+                        </div>
+                    </t>
+                    </templates>
+                </kanban>
+            </field>
+         </record>
+
+        <record id="project_task_tree" model="ir.ui.view">
+            <field name="model">s2u.project.task</field>
+            <field name="arch" type="xml">
+                <tree string="Task" decoration-danger="forecast_alert == True">
+                    <field name="sequence" widget="handle"/>
+                    <field name="forecast_alert" invisible="1" />
+                    <field name="partner_id" />
+                    <field name="project_descript" />
+                    <field name="stage_id" />
+                    <field name="rate_id" />
+                    <field name="name" />
+                    <field name="responsible_id" />
+                    <field name="deadline" />
+                    <field name="priority" />
+                    <field name="change_request" />
+                    <field name="hours_available" widget="float_time" sum="Total"/>
+                    <field name="hours_written" widget="float_time" sum="Total"/>
+                    <field name="hours_to_spend" widget="float_time" sum="Total"/>
+                    <field name="task_forecast" widget="float_time" sum="Total"/>
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="project_task_calendar" model="ir.ui.view">
+            <field name="name">Task - deadline</field>
+            <field name="model">s2u.project.task</field>
+            <field name="arch" type="xml">
+                <calendar string="Sales" date_start="deadline" color="project_id">
+                    <field name="partner_id"/>
+                    <field name="project_id"/>
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="action_project_task" model="ir.actions.act_window">
+            <field name="name">Task</field>
+            <field name="res_model">s2u.project.task</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,kanban</field>
+            <field name="context">{'search_default_all_open_project_tasks_filter': 1}</field>
+            <field name="view_id" ref="project_task_kanban" />
+            <field name="search_view_id" ref="project_task_search_view"/>
+        </record>
+
+        <menuitem action="action_project_task" id="menu_project_project_task"
+            parent="menu_project_project" sequence="10" groups="s2uproject.group_project_user" />
+
+        <act_window
+            id="wizard_action_close_tasks"
+            name="Close tasks"
+            res_model="s2u.project.action.close.tasks"
+            src_model="s2u.project.task"
+            view_mode="form"
+            multi="True"
+            target="new"
+            key2="client_action_multi"
+            groups="s2uproject.group_project_manager"
+        />
+
+        <act_window
+            id="wizard_action_reopen_tasks"
+            name="Reopen tasks"
+            res_model="s2u.project.action.reopen.tasks"
+            src_model="s2u.project.task"
+            view_mode="form"
+            multi="True"
+            target="new"
+            key2="client_action_multi"
+            groups="s2uproject.group_project_manager"
+        />
+
+        <!-- Hour -->
+        <record model="ir.ui.view" id="project_hour_search_view">
+            <field name="model">s2u.project.hour</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="project_id" />
+                    <field name="partner_id" />
+                    <field name="projectrate_id" />
+                    <field name="task_id" />
+                    <field name="user_id" />
+                    <field name="date" />
+                    <field name="year_hour" />
+                    <field name="month_hour" />
+                    <field name="change_request" />
+                    <field name="change_request_id" />
+                    <field name="zone" />
+                    <filter string="Dagoverzicht" domain="[('user_id','=',uid), ('date', '=', datetime.datetime.now().strftime('%Y-%m-%d'))]" name="daily_report_filter"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="project_hour_form" model="ir.ui.view">
+            <field name="model">s2u.project.hour</field>
+            <field name="arch" type="xml">
+                <form string="Hour">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="locked" invisible="1" />
+                                <field name="user_id" attrs="{'readonly': [('locked', '=', True)]}" />
+                                <field name="date" />
+                                <field name="partner_id" attrs="{'readonly': [('locked', '=', True)]}" />
+                                <field name="project_id"
+                                       options="{'no_create': True}"
+                                       domain="['&amp;', ('partner_id', '=', partner_id), ('state', '=', 'open')]"
+                                       attrs="{'readonly': [('locked', '=', True)]}" />
+                                <field name="projectrate_id"
+                                       domain="[('project_id', '=', project_id)]"
+                                       required="1" options="{'no_create': True}"
+                                       attrs="{'readonly': [('locked', '=', True)]}" />
+                                <field name="task_id"
+                                       domain="[('project_id', '=', project_id)]"
+                                       options="{'no_create': True}"
+                                       attrs="{'readonly': [('locked', '=', True)]}" />
+                            </group>
+                            <group>
+                                <field name="hours_to_spend" widget="float_time"/>
+                                <field name="zone" />
+                                <field name="hours_zone" widget="float_time"/>
+                                <field name="change_request" readonly="1" />
+                                <field name="change_request_id" readonly="1"
+                                       attrs="{'invisible': [('change_request', '!=', True)]}" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="task_state" attrs="{'invisible': [('task_id', '=', False)],
+                                                                 'required': [('task_id', '!=', False)]}" />
+                            </group>
+                            <group>
+                                <field name="hours"
+                                       widget="float_time"
+                                       attrs="{'required': [('change_request', '!=', True)]}" />
+                                <field name="task_forecast"
+                                       widget="float_time"
+                                       attrs="{'invisible': [('task_state', '!=', 'open')],
+                                               'required': [('task_state', '=', 'open')]}"/>
+                            </group>
+                        </group>
+                        <group string="Description (visible for customer)">
+                            <field name="name" nolabel="1" />
+                        </group>
+                        <group string="Internal note"
+                               attrs="{'invisible': [('task_id', '=', False)]}" >
+                            <field name="internal_description" nolabel="1" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_hour_pivot" model="ir.ui.view">
+            <field name="model">s2u.project.hour</field>
+            <field name="arch" type="xml">
+                <pivot string="Report-Pivot" >
+                    <field name="year_hour" type="row"/>
+                    <field name="month_hour" type="row"/>
+                    <field name="hours_zone" type="measure" widget="float_time"/>
+                 </pivot>
+             </field>
+        </record>
+
+        <record id="project_hour_graph" model="ir.ui.view">
+            <field name="model">s2u.project.hour</field>
+            <field name="arch" type="xml">
+                <graph string="Report-graph" >
+                    <field name="year_hour" type="row"/>
+                    <field name="month_hour" type="row"/>
+                    <field name="hours_zone" type="measure" widget="float_time"/>
+                 </graph>
+             </field>
+        </record>
+
+        <record id="project_hour_tree" model="ir.ui.view">
+            <field name="model">s2u.project.hour</field>
+            <field name="arch" type="xml">
+                <tree string="Hours">
+                    <field name="user_id" />
+                    <field name="partner_id" />
+                    <field name="project_id" />
+                    <field name="projectrate_id" />
+                    <field name="task_id" />
+                    <field name="short_descript" />
+                    <field name="date" />
+                    <field name="zone_short" />
+                    <field name="hours" widget="float_time" sum="Total"/>
+                    <field name="hours_zone" widget="float_time" sum="Total"/>
+                    <field name="change_request" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_hour" model="ir.actions.act_window">
+            <field name="name">Hour reg.</field>
+            <field name="res_model">s2u.project.hour</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="project_hour_tree" />
+            <field name="search_view_id" ref="project_hour_search_view"/>
+        </record>
+
+        <menuitem action="action_project_hour" id="menu_project_project_hour"
+            parent="menu_project_project" sequence="11" groups="s2uproject.group_project_user" />
+
+        <!-- Hour invoicing -->
+        <record model="ir.ui.view" id="project_hour_invoicing_search_view">
+            <field name="model">s2u.project.hour.invoicing</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="date_invoicing" />
+                    <field name="hours_till" />
+                </search>
+            </field>
+        </record>
+
+        <record id="project_hour_invoicing_form" model="ir.ui.view">
+            <field name="model">s2u.project.hour.invoicing</field>
+            <field name="arch" type="xml">
+                <form string="Hours invoicing">
+                    <header>
+                        <button type="object" name="create_invoices" string="Create invoices"
+                                states="draft" class="oe_highlight oe_read_only" />
+                        <button type="object" name="create_invoices" string="Update invoices"
+                                states="invoiced" class="oe_highlight oe_read_only" />
+                        <button type="object" name="done_invoices" string="Done"
+                                states="invoiced" class="oe_read_only" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_invoice"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil-square-o"
+                                    attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date_invoicing" />
+                                <field name="user_id" />
+                                <field name="hours_period" />
+                                <field name="project_only_id" />
+                            </group>
+                            <group>
+                                <field name="hours_till" />
+                                <field name="tot_hours" widget="float_time" />
+                                <field name="tot_amount" />
+                            </group>
+                        </group>
+                        <field name="partner_ids" nolabel="1" widget="one2many_list">
+                            <tree string="Partners" >
+                                <field name="partner_id" />
+                                <field name="tot_hours" widget="float_time" />
+                                <field name="tot_amount" />
+                                <field name="tot_changerequest" />
+                            </tree>
+                            <form string="Partner">
+                                <group>
+                                    <group>
+                                        <field name="partner_id" />
+                                    </group>
+                                    <group>
+                                        <field name="tot_hours" widget="float_time" />
+                                        <field name="tot_amount" />
+                                        <field name="tot_changerequest" />
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_hour_invoicing_tree" model="ir.ui.view">
+            <field name="model">s2u.project.hour.invoicing</field>
+            <field name="arch" type="xml">
+                <tree string="Hours invoicing">
+                    <field name="date_invoicing" />
+                    <field name="user_id" />
+                    <field name="hours_till" />
+                    <field name="tot_hours" widget="float_time" sum="Total"/>
+                    <field name="tot_amount" sum="Amount"/>
+                    <field name="hours_period" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_hour_invoicing" model="ir.actions.act_window">
+            <field name="name">Invoicing</field>
+            <field name="res_model">s2u.project.hour.invoicing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="project_hour_invoicing_tree" />
+            <field name="search_view_id" ref="project_hour_invoicing_search_view"/>
+        </record>
+
+        <menuitem action="action_project_hour_invoicing" id="menu_project_hour_invoicing"
+            parent="menu_project_project" sequence="80" groups="s2uproject.group_project_manager" />
+
+        <!-- Hour rate -->
+        <record model="ir.ui.view" id="project_hour_rate_search_view">
+            <field name="model">s2u.project.hour.rate</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="user_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="project_hour_rate_form" model="ir.ui.view">
+            <field name="model">s2u.project.hour.rate</field>
+            <field name="arch" type="xml">
+                <form string="Costs employee">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id" />
+                            </group>
+                            <group>
+                                <field name="rate_per_hour" />
+                                <field name="cost_per_hour" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_hour_rate_tree" model="ir.ui.view">
+            <field name="model">s2u.project.hour.rate</field>
+            <field name="arch" type="xml">
+                <tree string="Costs employee">
+                    <field name="user_id" />
+                    <field name="rate_per_hour" />
+                    <field name="cost_per_hour" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_hour_rate" model="ir.actions.act_window">
+            <field name="name">Costs employee</field>
+            <field name="res_model">s2u.project.hour.rate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="project_hour_rate_tree" />
+            <field name="search_view_id" ref="project_hour_rate_search_view"/>
+        </record>
+
+        <menuitem action="action_project_hour_rate" id="menu_project_project_hour_rate"
+            parent="menu_project_project" sequence="110" groups="s2uproject.group_project_manager" />
+
+        <!-- Hour rate def's -->
+        <record model="ir.ui.view" id="project_hour_rate_def_search_view">
+            <field name="model">s2u.project.hour.rate.def</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="account_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="project_hour_rate_def_form" model="ir.ui.view">
+            <field name="model">s2u.project.hour.rate.def</field>
+            <field name="arch" type="xml">
+                <form string="Role definition">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_discount"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-percent">
+                                <field name="discount_count" widget="statinfo" string="Discounts"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="account_id" />
+                            </group>
+                            <group>
+                                <field name="rate_per_hour" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_hour_rate_def_tree" model="ir.ui.view">
+            <field name="model">s2u.project.hour.rate.def</field>
+            <field name="arch" type="xml">
+                <tree string="Role definitions">
+                    <field name="name" />
+                    <field name="account_id" />
+                    <field name="rate_per_hour" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_hour_rate_def" model="ir.actions.act_window">
+            <field name="name">Role definitions</field>
+            <field name="res_model">s2u.project.hour.rate.def</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="project_hour_rate_def_tree" />
+            <field name="search_view_id" ref="project_hour_rate_def_search_view"/>
+        </record>
+
+        <menuitem action="action_project_hour_rate_def" id="menu_project_project_hour_rate_def"
+            parent="menu_project_project" sequence="120" groups="s2uproject.group_project_manager" />
+
+        <!-- Sale Rate discount -->
+        <record model="ir.ui.view" id="sale_rate_discount_search_view">
+            <field name="model">s2u.project.hour.rate.def.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="rate_id" />
+                    <field name="partner_id" />
+                    <field name="rate_per_hour" />
+                </search>
+            </field>
+        </record>
+
+        <record id="sale_rate_discount_tree" model="ir.ui.view">
+            <field name="model">s2u.project.hour.rate.def.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Discounts">
+                    <field name="partner_id" />
+                    <field name="rate_id" />
+                    <field name="discount_type" />
+                    <field name="rate_per_hour" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="sale_rate_discount_form" model="ir.ui.view">
+            <field name="model">s2u.project.hour.rate.def.partner</field>
+            <field name="arch" type="xml">
+                <form string="Discount">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="rate_id" />
+                                <field name="partner_id" />
+                            </group>
+                            <group>
+                                <field name="discount_type" />
+                                <field name="rate_per_hour" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sale_rate_discount" model="ir.actions.act_window">
+            <field name="name">Discounts</field>
+            <field name="res_model">s2u.project.hour.rate.def.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sale_rate_discount_tree" />
+            <field name="search_view_id" ref="sale_rate_discount_search_view"/>
+        </record>
+
+        <!-- Contract -->
+        <!--
+        <record model="ir.ui.view" id="contract_search_view">
+            <field name="model">s2u.contract</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="account_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="contract_form" model="ir.ui.view">
+            <field name="model">s2u.contract</field>
+            <field name="arch" type="xml">
+                <form string="Contract">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="partner_id" domain="[('type', '=', 'b2b')]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       context="{'default_entity_id': partner_id}" />
+                            </group>
+                            <group>
+                                <field name="contract_amount" />
+                                <field name="account_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <group>
+                                    <field name="descript" nolabel="1" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="contract_tree" model="ir.ui.view">
+            <field name="model">s2u.contract</field>
+            <field name="arch" type="xml">
+                <tree string="Contract">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="contract_amount" />
+                    <field name="account_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_contract" model="ir.actions.act_window">
+            <field name="name">Contract</field>
+            <field name="res_model">s2u.contract</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="contract_tree" />
+        </record>
+        -->
+
+        <record id="view_report_invoice_partner" model="ir.ui.view">
+            <field name="model">s2u.project.hour.invoicing.report</field>
+            <field name="arch" type="xml">
+                <form string="Report Invoice Partner">
+                    <group>
+                        <field name="type"/>
+                        <field name="invoicing_id" attrs="{'required': ['|', ('type','=','project'), ('type','=','partner')]}"/>
+                        <field name="invpartner_id" attrs="{'invisible':[('type','!=','partner')], 'required': [('type','=','partner')]}" domain="[('invoicing_id', '=', invoicing_id)]"/>
+                        <field name="project_id" attrs="{'invisible':[('type','!=','project')], 'required': [('type','=','project')]}"/>
+                    </group>
+                    <footer>
+                        <button name="do_report" string="Report" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="s2u_project_report_invoice_partner_view_action" model="ir.actions.act_window">
+        <field name="name">Invoice Project/Partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">s2u.project.hour.invoicing.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_report_invoice_partner"/>
+        <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_report_invoice_partner"
+                  parent="menu_project_report"
+                  action="s2u_project_report_invoice_partner_view_action"
+                  sequence="10" groups="s2uproject.group_project_manager" />
+
+        <record id="view_report_date_partner" model="ir.ui.view">
+            <field name="model">s2u.project.hour.date.report</field>
+            <field name="arch" type="xml">
+                <form string="Report Invoice Partner">
+                    <group>
+                        <field name="type"/>
+                        <field name="date_from"/>
+                        <field name="date_till"/>
+                        <field name="partner_id" attrs="{'invisible':[('type','!=','partner')], 'required': [('type','=','partner')]}"/>
+                        <field name="project_id" attrs="{'invisible':[('type','!=','project')], 'required': [('type','=','project')]}"/>
+                    </group>
+                    <footer>
+                        <button name="do_report" string="Report" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="s2u_project_report_date_partner_view_action" model="ir.actions.act_window">
+        <field name="name">Date Project/Partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">s2u.project.hour.date.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_report_date_partner"/>
+        <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_report_date_partner"
+                  parent="menu_project_report"
+                  action="s2u_project_report_date_partner_view_action"
+                  sequence="20" groups="s2uproject.group_project_manager" />
+
+        <!--
+        <menuitem action="action_contract" id="menu_project_project_contract"
+            parent="menu_project_project" sequence="150" />
+        -->
+
+        <!-- Contract Template-->
+        <!--
+        <record model="ir.ui.view" id="contract_template_search_view">
+            <field name="model">s2u.contract.template</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="contract_template_form" model="ir.ui.view">
+            <field name="model">s2u.contract.template</field>
+            <field name="arch" type="xml">
+                <form string="Contract">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="amount" />
+                            </group>
+                            <group>
+                                <field name="account_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description" name="descript">
+                                <group>
+                                    <field name="descript" nolabel="1" />
+                                </group>
+                            </page>
+                            <page string="Products" name="products">
+                                <field name="product_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Products" editable="bottom">
+                                        <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                                        <field name="use_product_detail_so" />
+                                        <field name="product_detail" />
+                                        <field name="qty" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="contract_template_tree" model="ir.ui.view">
+            <field name="model">s2u.contract.template</field>
+            <field name="arch" type="xml">
+                <tree string="Subscriptions" >
+                    <field name="name" />
+                    <field name="amount" />
+                    <field name="account_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_contract_template" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">s2u.contract.template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="contract_template_tree" />
+        </record>
+
+        <menuitem action="action_contract_template" id="menu_contract_template"
+            parent="s2uproject.menu_project_settings" sequence="250" />
+        -->
+
+        <!-- Project type -->
+        <record model="ir.ui.view" id="project_type_search_view">
+            <field name="model">s2u.project.type</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="allow_in_so" />
+                </search>
+            </field>
+        </record>
+
+        <record id="project_type_form" model="ir.ui.view">
+            <field name="model">s2u.project.type</field>
+            <field name="arch" type="xml">
+                <form string="Project type">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <field name="classification_visual" widget="classification" />
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="allow_in_so" />
+                            </group>
+                            <group>
+                                <field name="classification" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Fases" >
+                                <field name="stage_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Fases">
+                                        <field name="sequence" widget="handle" />
+                                        <field name="stage_id" />
+                                        <field name="hours" widget="float_time" />
+                                    </tree>
+                                    <form string="Fase">
+                                        <group>
+                                            <group>
+                                                <field name="stage_id" />
+                                            </group>
+                                            <group>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="rate_ids" nolabel="1" widget="one2many_list">
+                                                <tree string="Roles" editable="bottom">
+                                                    <field name="rate_id" />
+                                                    <field name="descript" />
+                                                    <field name="hours" sum="Hours" widget="float_time" />
+                                                    <field name="rate_per_hour"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_type_tree" model="ir.ui.view">
+            <field name="model">s2u.project.type</field>
+            <field name="arch" type="xml">
+                <tree string="Project">
+                    <field name="name" />
+                    <field name="allow_in_so" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_project_type" model="ir.actions.act_window">
+            <field name="name">Project typen</field>
+            <field name="res_model">s2u.project.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="project_type_tree" />
+        </record>
+
+        <menuitem action="action_project_type" id="menu_project_type"
+            parent="s2uproject.menu_project_settings" sequence="260" groups="s2uproject.group_project_manager" />
+
+    </data>
+</openerp>

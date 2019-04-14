@@ -1,0 +1,68 @@
+<openerp>
+    <data>
+        <!-- serialnumber -->
+        <record model="ir.ui.view" id="warehouse_serialnumber_search_view">
+            <field name="model">s2u.warehouse.serialnumber</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="entity_id" />
+                    <field name="outgoing_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_serialnumber_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.serialnumber</field>
+            <field name="arch" type="xml">
+                <form string="Serialnumber" create="false" edit="false" delete="false">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_transaction"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-exchange"
+                                    attrs="{'invisible': [('transaction_count', '=', 0)]}">
+                                <field name="transaction_count" widget="statinfo" string="Transactions" />
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="entity_id" />
+                                <field name="outgoing_id" />
+                            </group>
+                            <group>
+                                <field name="by_customer" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_serialnumber_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.serialnumber</field>
+            <field name="arch" type="xml">
+                <tree string="Serialnumbers" create="false" edit="false" delete="false">
+                    <field name="name" />
+                    <field name="entity_id" />
+                    <field name="outgoing_id" />
+                    <field name="product_id" />
+                    <field name="by_customer" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_serialnumber" model="ir.actions.act_window">
+            <field name="name">Serialnumbers</field>
+            <field name="res_model">s2u.warehouse.serialnumber</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_serialnumber_tree" />
+        </record>
+    </data>
+</openerp>

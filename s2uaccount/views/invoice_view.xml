@@ -1,0 +1,391 @@
+<openerp>
+    <data>
+        <!-- Sales invoice -->
+        <record model="ir.ui.view" id="invoice_search_view">
+            <field name="model">s2u.account.invoice</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="date_invoice" />
+                    <field name="customer_code" />
+                    <field name="project" />
+                    <field name="reference" />
+                    <field name="customer_code" />
+                    <field name="state" />
+                    <field name="alert_for_send" />
+                    <field name="year_invoice" />
+                    <field name="delivery_tinno" />
+                    <field name="delivery_ref" />
+                </search>
+            </field>
+        </record>
+
+        <record id="invoice_form" model="ir.ui.view">
+            <field name="model">s2u.account.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Invoice">
+                    <header>
+                        <button name="action_proforma" type="object" string="Proforma"
+                                class="oe_read_only" states="draft"/>
+                        <button name="action_validate" type="object" string="Validate"
+                                class="oe_highlight oe_read_only" states="draft,proforma,reopen"/>
+                        <button name="action_send_by_email" type="object" string="Send by Email"
+                                class="oe_highlight oe_read_only" states="proforma,invoiced"/>
+                        <button name="action_creditnota" type="object" string="Credit nota"
+                                class="oe_read_only" states="invoiced"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="invoiced"
+                                confirm="Are you sure?"/>
+                        <button name="action_reopen" type="object" string="Reopen" states="invoiced"
+                                confirm="Are you sure?" groups="s2uaccount.group_account_manager" />
+                        <button name="action_excel" type="object" string="Excel for mailmerge" class="oe_read_only" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,invoiced" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_document"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-file"
+                                    title="Documents">
+                                <field name="document_count" widget="statinfo" string="Documents" nolabel="1"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" readonly="1" />
+                                <field name="date_invoice" />
+                                <field name="account_id" />
+                                <field name="project" />
+                                <field name="reference" />
+                                <field name="customer_code" />
+                            </group>
+                            <group>
+                                <field name="type" />
+                                <field name="partner_id" domain="[('type', '=', type)]" />
+                                <field name="contact_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="address_id"
+                                       domain="[('entity_id', '=', partner_id)]"
+                                       attrs="{'invisible': [('type', '=', 'b2c')]}"
+                                       context="{'default_entity_id': partner_id}" />
+                                <field name="amount_open" />
+                                <field name="currency_id" groups="base.group_multi_currency" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines" name="lines">
+                                <field name="line_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Lines">
+                                        <field name="account_id" />
+                                        <field name="qty" />
+                                        <field name="net_price" />
+                                        <field name="price_per" />
+                                        <field name="discount" />
+                                        <field name="descript" />
+                                        <field name="vat_id" />
+                                        <field name="gross_amount" sum="Total" />
+                                        <field name="net_amount" sum="Total" />
+                                        <field name="vat_amount" sum="Total" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="account_id" />
+                                                <field name="qty" />
+                                                <field name="net_price" />
+                                                <field name="price_per" />
+                                                <field name="discount" />
+                                                <field name="descript" />
+                                            </group>
+                                            <group>
+                                                <field name="vat_id" />
+                                                <field name="gross_amount" />
+                                                <field name="net_amount" />
+                                                <field name="vat_amount" />
+                                                <field name="analytic_id" />
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Detailed info's">
+                                                <field name="detailed_ids" nolabel="1" widget="one2many_list">
+                                                    <tree string="Detailed" editable="bottom">
+                                                        <field name="sequence" />
+                                                        <field name="detailed_label" />
+                                                        <field name="detailed_info" />
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                            <!--
+                            <page string="Detailed info's">
+                                <field name="detailed_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Detailed" editable="bottom">
+                                        <field name="sequence" widget="handle" />
+                                        <field name="detailed_label" />
+                                        <field name="detailed_info" />
+                                    </tree>
+                                </field>
+                            </page>
+                            -->
+                            <page string="General" name="other">
+                                <group>
+                                    <group>
+                                        <field name="date_due" />
+                                        <field name="date_financial" />
+                                        <field name="user_id" />
+                                        <field name="use_email_address" />
+                                        <field name="alert_for_send" />
+                                    </group>
+                                    <group>
+                                        <field name="delivery_address" />
+                                        <field name="delivery_country_id" />
+                                        <field name="delivery_tinno" />
+                                        <field name="delivery_ref" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="remarks" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="invoice_pivot" model="ir.ui.view">
+            <field name="model">s2u.account.invoice</field>
+            <field name="arch" type="xml">
+                <pivot string="Report-Pivot" >
+                    <field name="year_invoice" type="row"/>
+                    <field name="month_invoice" type="row"/>
+                    <field name="amount_net" type="measure"/>
+                    <field name="amount_vat" type="measure"/>
+                    <field name="amount_gross" type="measure"/>
+                    <field name="amount_open" type="measure"/>
+                 </pivot>
+             </field>
+        </record>
+
+        <record id="invoice_graph" model="ir.ui.view">
+            <field name="model">s2u.account.invoice</field>
+            <field name="arch" type="xml">
+                <graph string="Report-graph" stacked="False" type="bar">
+                    <field name="year_invoice" type="row"/>
+                    <field name="month_invoice" type="row"/>
+                    <field name="amount_vat" type="measure"/>
+                    <field name="amount_gross" type="measure"/>
+                    <field name="amount_open" type="measure"/>
+                    <field name="amount_net" type="measure"/>
+                 </graph>
+             </field>
+        </record>
+
+        <record id="invoice_tree" model="ir.ui.view">
+            <field name="model">s2u.account.invoice</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice">
+                    <field name="partner_id" />
+                    <field name="name" />
+                    <field name="date_invoice" />
+                    <field name="project" />
+                    <field name="reference" />
+                    <field name="amount_net" sum="Total Net"/>
+                    <field name="amount_vat" sum="Total VAT"/>
+                    <field name="amount_gross" sum="Total Gross"/>
+                    <field name="amount_open" sum="Total Open"/>
+                    <field name="currency_id" groups="base.group_multi_currency" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_invoice" model="ir.actions.act_window">
+            <field name="name">Sales invoice</field>
+            <field name="res_model">s2u.account.invoice</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="view_id" ref="invoice_tree" />
+        </record>
+
+        <menuitem action="action_invoice" id="menu_invoice"
+            parent="menu_accounting_financial" sequence="10" groups="s2uaccount.group_account_invoice" />
+
+        <!-- Purchase invoice -->
+        <record model="ir.ui.view" id="invoice_po_search_view">
+            <field name="model">s2u.account.invoice.po</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="date_invoice" />
+                    <field name="state" />
+                    <field name="reference" />
+                </search>
+            </field>
+        </record>
+
+        <record id="invoice_po_form" model="ir.ui.view">
+            <field name="model">s2u.account.invoice.po</field>
+            <field name="arch" type="xml">
+                <form string="Invoice">
+                    <header>
+                        <button type="object" name="do_set_valid" string="Accept" class="oe_highlight oe_read_only"
+                                states="draft,wait" />
+                        <!--
+                        <button type="object" name="do_set_incoming" string="to OCR" class="oe_read_only"
+                                states="draft" />
+                        <button type="object" name="do_set_draft" string="Stop" class="oe_read_only"
+                                states="incoming,import,wait,valid,reject,failed" />
+                        -->
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="manual,valid" />
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_document"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    style="width: 90px !important;"
+                                    icon="fa-file"
+                                    title="Documents">
+                                <field name="document_count" widget="statinfo" string="Documents" nolabel="1"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="date_invoice" />
+                                <field name="account_id" />
+                            </group>
+                            <group>
+                                <field name="partner_id" domain="[('type', '=', 'b2b')]" />
+                                <field name="reference" />
+                                <field name="currency_id" groups="base.group_multi_currency" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines" name="lines">
+                                <field name="line_ids" nolabel="1" widget="one2many_list">
+                                    <tree string="Lines">
+                                        <field name="account_id" />
+                                        <field name="descript" />
+                                        <field name="vat_id" />
+                                        <field name="gross_amount" sum="Total" />
+                                        <field name="net_amount" sum="Total" />
+                                        <field name="vat_amount" sum="Total" />
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="account_id" />
+                                                <field name="descript" />
+                                                <field name="vat_id" />
+                                            </group>
+                                            <group>
+                                                <field name="gross_amount" />
+                                                <field name="net_amount" />
+                                                <field name="vat_amount" />
+                                                <field name="analytic_id" />
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page strong="Other details" name="other">
+                                <group>
+                                    <group>
+                                        <field name="date_financial" />
+                                    </group>
+                                    <group>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Data" name="data">
+                                <field name="source_data" nolabel="1" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="invoice_po_tree" model="ir.ui.view">
+            <field name="model">s2u.account.invoice.po</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice">
+                    <field name="partner_id" />
+                    <field name="name" />
+                    <field name="reference" />
+                    <field name="date_invoice" />
+                    <field name="amount_net" />
+                    <field name="amount_vat" />
+                    <field name="amount_gross" />
+                    <field name="amount_open" />
+                    <field name="currency_id" groups="base.group_multi_currency" />
+                    <field name="state" invisible="1" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_invoice_po" model="ir.actions.act_window">
+            <field name="name">Purchase invoice</field>
+            <field name="res_model">s2u.account.invoice.po</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="invoice_po_tree" />
+        </record>
+
+        <menuitem action="action_invoice_po" id="menu_invoice_po"
+            parent="menu_accounting_financial" sequence="20" groups="s2uaccount.group_account_invoice" />
+
+        <!-- Invoice payment-->
+        <record id="view_invoice_payment" model="ir.ui.view">
+            <field name="model">s2u.account.invoice.payment</field>
+            <field name="arch" type="xml">
+                <form string="Payment">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="account_id" />
+                            </group>
+                            <group>
+                                <field name="amount_paid" />
+                                <field name="payment_date" />
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="do_payment" string="Payment" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="act_view_invoice_payment"
+            name="Payment"
+            res_model="s2u.account.invoice.payment" src_model="s2u.account.invoice"
+            view_mode="form" target="new" view_type="form" />
+    </data>
+</openerp>

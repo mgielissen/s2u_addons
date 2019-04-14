@@ -1,0 +1,92 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="warehouse_outgoing_form">
+            <field name="inherit_id" ref="s2uwarehouse.warehouse_outgoing_form"/>
+            <field name="model">s2u.warehouse.outgoing</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[@name='todo']/field/tree/field[@name='type']" position="after">
+                    <field name="saleline_id" />
+                    <field name="purchase_id" />
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page[@name='todo']/field/form/group/group/field[@name='type']" position="after">
+                    <field name="saleline_id" required="1" />
+                    <field name="purchase_id" />
+                </xpath>
+                <xpath expr="/form/header/button[@name='do_production']" position="after">
+                    <button type="object" name="do_purchase" string="Purchase" class="oe_highlight oe_read_only"
+                            states="draft" />
+                </xpath>
+                <xpath expr="/form/sheet/div[@name='button_box']/button[@name='action_view_production']" position="after">
+                    <button name="action_view_purchase"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-book"
+                            attrs="{'invisible': [('purchase_count', '=', 0)]}">
+                        <field name="purchase_count" widget="statinfo" string="Purchases"/>
+                    </button>
+                </xpath>
+                <xpath expr="/form/sheet/group/group/field[@name='contact_id']" position="after">
+                    <field name="template_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="warehouse_incoming_form">
+            <field name="inherit_id" ref="s2uwarehouse.warehouse_incoming_form"/>
+            <field name="model">s2u.warehouse.incoming</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box']" position="inside">
+                    <button name="action_view_purchase"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-shopping-cart"
+                            attrs="{'invisible': [('purchase_count', '=', 0)]}">
+                        <field name="purchase_count" widget="statinfo" string="Purchases"/>
+                    </button>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page[@name='expected']/field/tree/field[@name='date_delivery']" position="after">
+                    <field name="purchase_id" />
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page[@name='expected']/field/form/group/group/field[@name='date_delivery']" position="after">
+                    <field name="purchase_id" required="1" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_warehouse_outgoing_purchase" model="ir.ui.view">
+            <field name="model">s2u.warehouse.outgoing.purchase.add</field>
+            <field name="arch" type="xml">
+                <form string="Purchase products">
+                    <sheet>
+                        <group>
+                            <field name="line_ids" nolabel="1" >
+                                <tree string="Purchase" editable="bottom" create="0">
+                                    <field name="product_id"/>
+                                    <field name="product_detail" groups="s2ubase.production_company" />
+                                    <field name="qty_purchase" />
+                                    <field name="entity_id" />
+                                    <field name="po_price" />
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="do_purchase" string="Purchase" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="warehouse_rma_form">
+            <field name="inherit_id" ref="s2uwarehouse.warehouse_rma_form"/>
+            <field name="model">s2u.warehouse.rma</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group/group/field[@name='contact_id']" position="after">
+                    <field name="template_id" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

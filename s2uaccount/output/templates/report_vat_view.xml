@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="report_vat">
+    <t t-call="web.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <h2><span t-esc="res_company.name"/>: Aangifte omzetbelasting</h2>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Gb.Rekening</th>
+                            <th>Omschrijving</th>
+                            <th class="text-right">BTW hoog</th>
+                            <td width="4px"></td>
+                            <th class="text-right">BTW laag</th>
+                            <td width="4px"></td>
+                            <th class="text-right">BTW nul</th>
+                            <td width="4px"></td>
+                            <th class="text-right">BTW geen</th>
+                            <td width="4px"></td>
+                            <th class="text-right">BTW prive</th>
+                            <td width="4px"></td>
+                            <th class="text-right">BTW verlegd</th>
+                            <td width="4px"></td>
+                            <th class="text-right">BTW overig</th>
+                            <td width="4px"></td>
+                            <th class="text-right">Totaal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="accounts" t-as="account">
+                            <tr>
+                                <td><span t-esc="account['code']"/></td>
+                                <td><span t-esc="account['name']"/></td>
+                                <td class="text-right">
+                                    <span t-esc="account['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td width="4px"></td>
+                                <td class="text-right">
+                                    <span t-esc="account['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td width="4px"></td>
+                                <td class="text-right">
+                                    <span t-esc="account['03']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td width="4px"></td>
+                                <td class="text-right">
+                                    <span t-esc="account['04']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td width="4px"></td>
+                                <td class="text-right">
+                                    <span t-esc="account['05']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td width="4px"></td>
+                                <td class="text-right">
+                                    <span t-esc="account['06']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td width="4px"></td>
+                                <td class="text-right">
+                                    <span t-esc="account['07']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                                <td width="4px"></td>
+                                <td class="text-right">
+                                    <span t-esc="account['total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                    <tr>
+                        <td></td>
+                        <td>Totaal</td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['03']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['04']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['05']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['06']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['07']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_totals['total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Tot deze periode</td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['03']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['04']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['05']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['06']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['07']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="account_till_totals['total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr>
+                        <td></td>
+                        <td>Totaal deze periode</td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_this_totals['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_this_totals['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_this_totals['03']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_this_totals['05']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_this_totals['06']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_this_totals['07']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="account_this_totals['total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr>
+                        <td></td>
+                        <td>Berekende BTW</td>
+                        <td class="text-right">
+                            <span t-esc="vat_calulated['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_calulated['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td colspan="12"></td>
+                    </tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr>
+                        <td></td>
+                        <td>Werkelijke BTW</td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_is['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_is['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_is['03']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_is['05']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_is['06']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_is['07']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_is['total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Tot deze periode</td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_till['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_till['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_till['03']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_till['05']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_till['06']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_till['07']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_till['total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr>
+                        <td></td>
+                        <td>Af te dragen BTW</td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_to_pay['01']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_to_pay['02']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_to_pay['03']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_to_pay['05']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_to_pay['06']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_to_pay['07']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_to_pay['total']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr>
+                        <td></td>
+                        <td>Te vorderen BTW</td>
+                        <td colspan="8"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_to_receive" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Tot deze periode</td>
+                        <td colspan="8"></td>
+                        <td class="text-right" style="border-bottom:solid 2px">
+                            <span t-esc="vat_to_receive_till" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td colspan="6"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td colspan="10"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_to_receive_this" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Te vorderen deze periode</td>
+                        <td colspan="14"></td>
+                        <td class="text-right" style="border-bottom:solid 2px">
+                            <span t-esc="vat_to_receive_this" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td t-if="vat_valid &gt;= 0.0">Te betalen BTW</td>
+                        <td t-if="vat_valid &lt; 0.0">Te ontvangen BTW</td>
+                        <td colspan="14"></td>
+                        <td class="text-right" style="border-bottom:solid 4px">
+                            <span t-esc="vat_valid" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                    </tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr><td colspan="17">&#160;</td></tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="text-right"><strong>Exp in EU</strong></td>
+                        <td width="4px"></td>
+                        <td class="text-right"><strong>Exp uit EU</strong></td>
+                        <td width="4px"></td>
+                        <td class="text-right"><strong>Imp in EU</strong></td>
+                        <td width="4px"></td>
+                        <td class="text-right"><strong>Imp uit EU</strong></td>
+                        <td colspan="8"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Totaal</td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_total['15']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_total['16']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_total['17']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_total['18']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td colspan="8"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Tot deze periode</td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_till['15']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_till['16']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_till['17']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right">
+                            <span t-esc="vat_export_import_till['18']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td colspan="8"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Totaal deze periode</td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_export_import_this['15']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_export_import_this['16']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_export_import_this['17']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td width="4px"></td>
+                        <td class="text-right" style="border-top:solid 2px">
+                            <span t-esc="vat_export_import_this['18']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                        </td>
+                        <td colspan="8"></td>
+                    </tr>
+                </table>
+                <p style="page-break-after:always;"></p>
+                <h2>Aangifte omzetbelasting (btw) t/m <span t-esc="date_vat_till"></span></h2>
+                <table class="table table-condensed">
+                    <t t-foreach="vat_categories" t-as="cat">
+                        <t t-if="not cat.parent_id">
+                            <tr>
+                                <td><span t-esc="cat.code"></span>  <span t-esc="cat.name"></span></td>
+                                <td colspan="3"></td>
+                            </tr>
+                        </t>
+                        <t t-if="cat.parent_id">
+                            <tr>
+                                <td><strong><span t-esc="cat.code"></span>  <span t-esc="cat.name"></span></strong></td>
+                                <t t-if="cat.code in ['5', '5a', '5b', '5c']"><td class="text-right"><strong></strong></td></t>
+                                <t t-if="cat.code not in ['5', '5a', '5b', '5c']"><td class="text-right"><strong>Bedrag</strong></td></t>
+                                <td width="8px"></td>
+                                <td class="text-right"><strong>BTW</strong></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <t t-if="vat_categories_amounts.get(cat.code, False)">
+                                    <t t-if="cat.code in ['5', '5a', '5b']">
+                                        <td></td>
+                                    </t>
+                                    <t t-if="cat.code in ['5c']">
+                                        <t t-if="vat_categories_amounts['5c']['vat'] &gt;= 0.0">
+                                            <td>Te betalen BTW</td>
+                                        </t>
+                                        <t t-if="vat_categories_amounts['5c']['vat'] &lt; 0.0">
+                                            <td>Te ontvangen BTW</td>
+                                        </t>
+                                    </t>
+                                    <t t-if="cat.code not in ['5', '5a', '5b', '5c']">
+                                        <td class="text-right">
+                                            <span t-esc="vat_categories_amounts[cat.code]['amount']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                        </td>
+                                    </t>
+                                    <td width="8px"></td>
+                                    <td class="text-right">
+                                        <span t-esc="vat_categories_amounts[cat.code]['vat']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                                    </td>
+                                </t>
+                                <t t-if="not vat_categories_amounts.get(cat.code, False)">
+                                    <td class="text-right">&#160;</td>
+                                    <td width="8px"></td>
+                                    <td class="text-right">&#160;</td>
+                                </t>
+                            </tr>
+                        </t>
+                    </t>
+                </table>
+                <p style="page-break-after:always;"></p>
+                <h2>Aangifte omzetbelasting (btw) t/m <span t-esc="date_vat_till"></span></h2>
+                <h3>Intracommunautaire prestaties (ICP-opgave) Dit is een nadere specificatie van rubriek 3b in dit overzicht. In de ICP-aangifte vult u deze gegevens in
+bij rubriek 3b en niet rubriek 3a.</h3>
+                <table class="table table-condensed">
+                    <tr>
+                        <th>Landcode</th>
+                        <th>BTW-nummer</th>
+                        <th class="text-right">Totaal leveringen</th>
+                        <th width="8px"></th>
+                        <th class="text-right">Totaal diensten</th>
+                    </tr>
+                    <t t-foreach="icp_values" t-as="icp">
+                        <tr>
+                            <td><span t-esc="icp['country']"/></td>
+                            <td><span t-esc="icp['code']"/></td>
+                            <td class="text-right">
+                                <span t-esc="icp['total_deliveries']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </td>
+                            <td width="8px"></td>
+                            <td class="text-right">
+                                <span t-esc="icp['total_services']" t-esc-options='{"widget": "monetary", "display_currency": "res_company.currency_id"}'/>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+
+</odoo>

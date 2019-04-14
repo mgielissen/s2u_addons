@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="s2uwarehouse.print_pallets_history">
+    <t t-call="web.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h2>Inventory Pallet History for <span t-esc="customer"/> till date <span t-esc="date_till"/></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 text-left">
+                        <h3>Number</h3>
+                    </div>
+                    <div class="col-xs-2 text-left">
+                        <h3>date</h3>
+                    </div>
+                    <div class="col-xs-1 text-center">
+                        <h3>type</h3>
+                    </div>
+                    <div class="col-xs-2 text-left">
+                        <h3>pallet</h3>
+                    </div>
+                    <div class="col-xs-1 text-right">
+                        <h3>qty</h3>
+                    </div>
+                    <div class="col-xs-3 text-right">
+                        <h3>Note</h3>
+                    </div>
+                </div>
+                <t t-foreach="historys" t-as="history">
+                    <div class="row">
+                        <div style="border-bottom: 1px solid black;"></div>
+                    </div>
+                    <t t-set="product_set" t-value="False"/>
+                    <t t-foreach="history['pallets']" t-as="pal">
+                        <div class="row">
+                            <t t-if="product_set == history['number']">
+                                <div class="row">
+                                    <div class="col-xs-6">
+
+                                    </div>
+                                    <div class="col-xs-2 text-left">
+                                        <span t-esc="pal['pallet']" />
+                                    </div>
+                                    <div class="col-xs-1 text-right">
+                                        <span t-esc="pal['qty']" />
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-if="not product_set or product_set != history['number']">
+                                <t t-set="product_set" t-value="history['number']"/>
+                                <div class="row">
+                                    <div class="col-xs-3 text-left">
+                                        <strong>
+                                            <span t-esc="history['number']" />
+                                        </strong>
+                                    </div>
+                                    <div class="col-xs-2 text-left">
+                                        <strong>
+                                            <span t-esc="history['date']" />
+                                        </strong>
+                                    </div>
+                                    <div class="col-xs-1 text-center">
+                                        <strong>
+                                            <span t-esc="history['type']" />
+                                        </strong>
+                                    </div>
+                                    <div class="col-xs-2 text-left">
+                                        <span t-esc="pal['pallet']" />
+                                    </div>
+                                    <div class="col-xs-1 text-right">
+                                        <span t-esc="pal['qty']" />
+                                    </div>
+                                    <div class="col-xs-3 text-right">
+                                        <strong>
+                                            <span t-esc="history['note']" />
+                                        </strong>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                    <div class="row mb16">
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>
+
+</odoo>

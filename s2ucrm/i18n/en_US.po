@@ -1,0 +1,595 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* s2ucrm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-25 13:37+0000\n"
+"PO-Revision-Date: 2017-10-25 13:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: s2ucrm
+#: code:addons/s2ucrm/models/entity.py:318
+#, python-format
+msgid "A phone or email address is required!"
+msgstr "A phone or email address is required!"
+
+#. module: s2ucrm
+#: model:ir.actions.act_window,name:s2ucrm.action_crm_entity_address
+#: model:ir.model.fields,field_description:s2ucrm.field_res_company_address_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_address
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_address
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_address_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_address_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_address
+#: model:ir.ui.menu,name:s2ucrm.menu_crm_entity_address
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_address_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_address_tree
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "Address"
+msgstr "Address"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_address_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "Address ..."
+msgstr "Address ..."
+
+#. module: s2ucrm
+#: code:addons/s2ucrm/models/entity.py:200
+#, python-format
+msgid "Address does not belong to the selected company!"
+msgstr "Address does not belong to the selected company!"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_ids
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Addresses"
+msgstr "Addresses"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity,type:0
+msgid "B2B"
+msgstr "B2B"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity,type:0
+msgid "B2C"
+msgstr "B2C"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_bank_bic
+msgid "BIC"
+msgstr "BIC"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_bank_name
+msgid "Bank"
+msgstr "Bank"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Bank data"
+msgstr "Bank data"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_birthdate
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_birthdate
+msgid "Birthdate"
+msgstr "Birthdate"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_contact_form
+msgid "Business contact data"
+msgstr "Business contact data"
+
+#. module: s2ucrm
+#: model:ir.ui.menu,name:s2ucrm.menu_crm
+#: model:ir.ui.menu,name:s2ucrm.menu_crm_crm
+msgid "CRM"
+msgstr "CRM"
+
+#. module: s2ucrm
+#: model:ir.model,name:s2ucrm.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entity"
+
+#. module: s2ucrm
+#: model:ir.model,name:s2ucrm.model_s2u_crm_entity_address
+msgid "CRM Entity Address"
+msgstr "CRM Entity Address"
+
+#. module: s2ucrm
+#: model:ir.model,name:s2ucrm.model_s2u_crm_entity_contact
+msgid "CRM Entity Contact"
+msgstr "CRM Entity Contact"
+
+#. module: s2ucrm
+#: model:ir.model,name:s2ucrm.model_s2u_crm_entity_message
+msgid "CRM Entity message"
+msgstr "CRM Entity message"
+
+#. module: s2ucrm
+#: model:ir.model,name:s2ucrm.model_s2u_crm_lead
+msgid "CRM Lead"
+msgstr "CRM Lead"
+
+#. module: s2ucrm
+#: model:ir.model,name:s2ucrm.model_s2u_crm_tag
+msgid "CRM Tag"
+msgstr "CRM Tag"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_c_of_c
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_c_of_c
+msgid "Chamber of Commerce"
+msgstr "Chamber of Commerce"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_city
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_city
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_city
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_city
+msgid "City"
+msgstr "City"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_address_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "City ..."
+msgstr "City ..."
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_entity_code
+msgid "Code"
+msgstr "Code"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_communication
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_communication
+msgid "Communication"
+msgstr "Communication"
+
+#. module: s2ucrm
+#: model:ir.model,name:s2ucrm.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_company_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_entity_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_company_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_company_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_display_company
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_entity_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_sub_company_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_entity_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_company_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_company_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_company_id
+msgid "Company"
+msgstr "Company"
+
+#. module: s2ucrm
+#: code:addons/s2ucrm/models/entity.py:363
+#, python-format
+msgid "Company or contact should be present to convert!"
+msgstr "Company or contact should be present to convert!"
+
+#. module: s2ucrm
+#: model:ir.actions.act_window,name:s2ucrm.action_crm_entity_contact
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_contact_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_contact_name
+#: model:ir.ui.menu,name:s2ucrm.menu_crm_entity_contact
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_contact_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_contact_tree
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: selection:s2u.crm.lead,state:0
+msgid "Contact"
+msgstr "Contact"
+
+#. module: s2ucrm
+#: code:addons/s2ucrm/models/entity.py:332
+#, python-format
+msgid "Contact with this phone and/or mail address is already present!"
+msgstr "Contact with this phone and/or mail address is already present!"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_ids
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Contacts"
+msgstr "Contacts"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "Convert lead"
+msgstr "Convert lead"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_country_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_country_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_country_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_country_id
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_address_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "Country"
+msgstr "Country"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_create_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_create_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_create_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_create_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_create_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_create_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_create_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_create_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_create_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_create_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_dt_message
+msgid "Date/time"
+msgstr "Date/time"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Dear Mr. Jones,"
+msgstr "Dear Mr. Jones,"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity.address,type:0
+msgid "Default"
+msgstr "Default"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_display_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_display_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_display_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_display_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_display_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: s2ucrm
+#: model:ir.actions.act_window,name:s2ucrm.action_crm_entity
+#: model:ir.model.fields,field_description:s2ucrm.field_res_company_entity_id
+#: model:ir.ui.menu,name:s2ucrm.menu_crm_entity
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_tree
+#: selection:s2u.crm.lead,state:0
+msgid "Entity"
+msgstr "Entity"
+
+#. module: s2ucrm
+#: code:addons/s2ucrm/models/entity.py:330
+#, python-format
+msgid "Entity with this phone and/or mail address is already present!"
+msgstr "Entity with this phone and/or mail address is already present!"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_external_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_external_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_external_id
+msgid "External ID"
+msgstr "External ID"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_fax
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_fax
+msgid "Fax"
+msgstr "Fax"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "For later"
+msgstr "For later"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_ids
+msgid "History"
+msgstr "History"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_bank_iban
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_id
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity.message,type:0
+msgid "Inbox"
+msgstr "Inbox"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_info
+msgid "Info"
+msgstr "Info"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_lang
+msgid "Language"
+msgstr "Language"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity___last_update
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address___last_update
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact___last_update
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message___last_update
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead___last_update
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_write_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_write_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_write_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_write_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_write_uid
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_write_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_write_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_write_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_write_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_write_date
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: s2ucrm
+#: selection:s2u.crm.lead,state:0
+msgid "Later"
+msgstr "Later"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_res_company_privat_module
+msgid "Layout module"
+msgstr "Layout module"
+
+#. module: s2ucrm
+#: model:ir.actions.act_window,name:s2ucrm.action_crm_lead
+#: model:ir.ui.menu,name:s2ucrm.menu_crm_lead
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_tree
+msgid "Lead"
+msgstr "Lead"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_date_lead
+msgid "Lead Date"
+msgstr "Lead Date"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_message
+msgid "Message"
+msgstr "Message"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Messages"
+msgstr "Messages"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_mobile
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_mobile
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_mobile
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "Mr. Doc. Prof."
+msgstr "Mr. Doc. Prof."
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_name
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_name
+msgid "Name"
+msgstr "Name"
+
+#. module: s2ucrm
+#: selection:s2u.crm.lead,state:0
+msgid "New"
+msgstr "New"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity.message,type:0
+msgid "Note"
+msgstr "Note"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Other details"
+msgstr "Other details"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_payment_terms
+msgid "Payment terms"
+msgstr "Payment terms"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_phone
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_phone_privat
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_phone
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_phone
+msgid "Phone"
+msgstr "Phone"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity.address,type:0
+msgid "Physical"
+msgstr "Physical"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_position
+msgid "Position"
+msgstr "Position"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity.address,type:0
+msgid "Postal"
+msgstr "Postal"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_prefix
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_prefix
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_prefix
+msgid "Prefix"
+msgstr "Prefix"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_contact_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Privat contact data"
+msgstr "Privat contact data"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_address_search_view
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_contact_search_view
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_search_view
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_search_view
+#: model:ir.ui.view,arch_db:s2ucrm.crm_tag_search_view
+msgid "Search"
+msgstr "Search"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_search_key
+msgid "Search key"
+msgstr "Search key"
+
+#. module: s2ucrm
+#: selection:s2u.crm.entity.message,type:0
+msgid "Sent"
+msgstr "Sent"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_skype
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_skype
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_skype
+msgid "Skype"
+msgstr "Skype"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_state
+msgid "State"
+msgstr "State"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_sub_company
+msgid "Sub company"
+msgstr "Sub company"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_subject
+msgid "Subject"
+msgstr "Subject"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_tinno
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_tinno
+msgid "TIN no."
+msgstr "TIN no."
+
+#. module: s2ucrm
+#: model:ir.actions.act_window,name:s2ucrm.action_crm_tag
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_tag_name
+#: model:ir.ui.menu,name:s2ucrm.menu_crm_tag
+#: model:ir.ui.view,arch_db:s2ucrm.crm_tag_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_tag_tree
+msgid "Tag"
+msgstr "Tag"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_tag_ids
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_tag_ids
+msgid "Tags"
+msgstr "Tags"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_contact_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+msgid "Tags..."
+msgstr "Tags..."
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_type
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_type
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_type
+msgid "Type"
+msgstr "Type"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_message_user_id
+msgid "User"
+msgstr "User"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_website
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_website
+msgid "Website"
+msgstr "Website"
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_address_zip
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_zip
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_zip
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_zip
+msgid "Zip"
+msgstr "Zip"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_address_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_entity_form
+#: model:ir.ui.view,arch_db:s2ucrm.crm_lead_form
+msgid "Zip ..."
+msgstr "Zip ..."
+
+#. module: s2ucrm
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_email
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_contact_email_privat
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_entity_email
+#: model:ir.model.fields,field_description:s2ucrm.field_s2u_crm_lead_email
+msgid "eMail"
+msgstr "eMail"
+
+#. module: s2ucrm
+#: model:ir.ui.view,arch_db:s2ucrm.view_company_s2u_form
+msgid "s2uFramework"
+msgstr "s2uFramework"
+

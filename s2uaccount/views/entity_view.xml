@@ -1,0 +1,16 @@
+<openerp>
+    <data>
+
+        <!-- CRM Entity -->
+        <record model="ir.ui.view" id="view_company_s2u_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_form"/>
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group/group[@name='extra_info_right']" position="inside">
+                    <field name="payment_term_id" required="1" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

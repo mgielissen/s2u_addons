@@ -1,0 +1,53 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="crm_entity_rule">
+            <field name="name">Object s2u.crm.entity</field>
+            <field name="model_id" ref="model_s2u_crm_entity"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="crm_entity_address_rule">
+            <field name="name">Object s2u.crm.entity.address</field>
+            <field name="model_id" ref="model_s2u_crm_entity_address"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="crm_entity_contact_rule">
+            <field name="name">Object s2u.crm.entity.contact</field>
+            <field name="model_id" ref="model_s2u_crm_entity_contact"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="crm_lead_rule">
+            <field name="name">Object s2u.crm.lead</field>
+            <field name="model_id" ref="model_s2u_crm_lead"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="crm_tag_rule">
+            <field name="name">Object s2u.crm.tag</field>
+            <field name="model_id" ref="model_s2u_crm_tag"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="crm_favorite_rule">
+            <field name="name">Object s2u.crm.favorite</field>
+            <field name="model_id" ref="model_s2u_crm_favorite"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="crm_entity_delivery_rule">
+            <field name="name">Object s2u.crm.entity.delivery</field>
+            <field name="model_id" ref="model_s2u_crm_entity_delivery"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+
+    </data>
+</openerp>

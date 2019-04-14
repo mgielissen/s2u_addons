@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="Warehouse"
+                  id="menu_warehouse"
+                  sequence="150" groups="s2uwarehouse.allowed" />
+
+        <menuitem id="menu_warehouse_shipment" name="Shipments" parent="menu_warehouse" sequence="10"
+                  groups="s2uwarehouse.allowed" />
+        <menuitem id="menu_warehouse_movement" name="Movements" parent="menu_warehouse" sequence="15"
+                  groups="s2uwarehouse.allowed" />
+        <menuitem id="menu_warehouse_production2" name="Production" parent="menu_warehouse" sequence="16"
+                  groups="s2ubase.production_company" />
+        <menuitem id="menu_warehouse_stock" name="Stock" parent="menu_warehouse" sequence="18"
+                  groups="s2uwarehouse.allowed" />
+        <menuitem id="menu_warehouse_reporting" name="Reports" parent="menu_warehouse" sequence="20"
+                  groups="s2uwarehouse.allowed" />
+        <menuitem id="menu_warehouse_settings" name="Settings" parent="menu_warehouse" sequence="100"
+                  groups="s2uwarehouse.allowed" />
+    </data>
+</openerp>
+

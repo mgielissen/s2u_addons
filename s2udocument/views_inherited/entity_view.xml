@@ -1,0 +1,20 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="crm_entity_form">
+            <field name="inherit_id" ref="s2ucrm.crm_entity_form"/>
+            <field name="model">s2u.crm.entity</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div[@name='button_box_s2u']" position="inside">
+                    <button name="action_view_document"
+                            type="object"
+                            class="oe_stat_button"
+                            style="width: 90px !important;"
+                            icon="fa-file"
+                            title="Documents">
+                        <field name="document_count" widget="statinfo" string="Documents" nolabel="1"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

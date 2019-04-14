@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="print_invoice_so_document">
+    <t t-call="web.external_layout">
+        <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})" />
+        <div class="page" t-att-style="o.company_id.font_style" >
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-12" t-att-style="'margin-top: 15px;'">
+                            <p>
+                                <t t-call="s2ucrm.print_address_data_content">
+                                    <t t-set="document_object" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                                </t>
+                                <br />
+                                <strong>Tel:</strong> <span t-field="o.partner_id.phone"/>
+                                <br />
+                                <strong>VAT:</strong> <span t-field="o.partner_id.tinno"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6" t-att-style="'margin-top: 150px;'">
+                    <div t-if="o.delivery_tinno and o.delivery_address and o.delivery_ref" class="row">
+                        <b>
+                            <div class="col-xs-4" style="padding-right:0;">
+                                Delivery<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                            </div>
+                            <div class="col-xs-8" style="padding-left:0;">
+                                <span t-field="o.delivery_ref"/>
+                            </div>
+                        </b>
+                    </div>
+                    <div t-if="o.delivery_tinno and o.delivery_address" class="row">
+                        <b>
+                            <div class="col-xs-4" style="padding-right:0;">
+                                Delivery address<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                            </div>
+                            <div class="col-xs-8" style="padding-left:0;">
+                                <span t-field="o.delivery_address"/>
+                            </div>
+                        </b>
+                    </div>
+                    <div t-if="o.delivery_tinno and o.delivery_address" class="row">
+                        <b>
+                            <div class="col-xs-4" style="padding-right:0;">
+                                Delivery VAT<span class="pull-right">:&amp;nbsp;&amp;nbsp;</span>
+                            </div>
+                            <div class="col-xs-8" style="padding-left:0;">
+                                <span t-field="o.delivery_tinno"/>
+                            </div>
+                        </b>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt16">
+                <h2 class="col-xs-12">
+                    Invoice <span t-field="o.name"/>
+                </h2>
+            </div>
+
+            <div class="row mt32">
+                <div class="col-xs-3">
+                    <strong>Invoice Date:</strong>
+                </div>
+                <div class="col-xs-3">
+                    <strong>Due Date:</strong>
+                </div>
+                <div class="col-xs-3">
+                    <strong>Your ref.:</strong>
+                </div>
+                <div class="col-xs-3">
+                    <strong>Our ref.:</strong>
+                </div>
+            </div>
+            <div class="row mb16">
+                <div class="col-xs-3" t-if="o.date_invoice">
+                    <span t-field="o.date_invoice"/>
+                </div>
+                <div class="col-xs-3" t-if="o.date_due">
+                    <span t-field="o.date_due"/>
+                </div>
+                <div class="col-xs-3" t-if="o.customer_code">
+                    <span t-field="o.customer_code"/>
+                </div>
+                <div class="col-xs-3" t-if="o.reference">
+                    <span t-field="o.reference"/>
+                </div>
+            </div>
+
+            <div name="invoice_prefix">
+            </div>
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th class="text-right">Qty</th>
+                        <th>Description</th>
+                        <th class="text-right">Vat</th>
+                        <th class="text-right">Price net</th>
+                        <th class="text-right">Amount net</th>
+                    </tr>
+                </thead>
+                <tbody class="invoice_tbody">
+                    <t t-foreach="o.line_ids" t-as="l">
+                        <tr>
+                            <td class="text-right"><span t-field="l.qty"/></td>
+                            <td><span t-field="l.descript"/></td>
+                            <td class="text-right">
+                                <span t-if="l.vat_id" t-field="l.vat_id.name" />
+                            </td>
+                            <td class="text-right">
+                                <span t-field="l.net_price_after_discount"
+                                    t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                <t t-if="l.price_per != 'item'">
+                                     &amp;nbsp;<span t-field="l.price_per"/>
+                                </t>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="l.net_amount"
+                                    t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-xs-4 pull-right">
+                    <table class="table table-condensed">
+                        <tr class="border-black">
+                            <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Subtotal</strong></td>
+                            <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                                <span t-field="o.amount_net" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Vat</strong></td>
+                            <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                                <span t-field="o.amount_vat" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                        <tr class="border-black">
+                            <td style="padding-top: 4px; padding-bottom: 0px;"><strong>Total</strong></td>
+                            <td class="text-right" style="padding-top: 4px; padding-bottom: 0px;">
+                                 <span t-field="o.amount_gross" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row mt32">
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <span t-field="o.remarks" />
+                    </div>
+                </div>
+            </div>
+
+            <div name="invoice_postfix">
+            </div>
+
+        </div>
+    </t>
+</template>
+
+<template id="print_invoice_so">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="s2uaccount.print_invoice_so_document" t-lang="o.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+
+</data>
+</openerp>

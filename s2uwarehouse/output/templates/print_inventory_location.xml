@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="s2uwarehouse.print_inventory_location">
+    <t t-call="web.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h3>Inventory Location till date <span t-esc="date_till"/></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 text-left">
+                        <h3>Location</h3>
+                    </div>
+                    <div class="col-xs-4 text-left">
+                    </div>
+                    <div class="col-xs-4 text-right">
+                    </div>
+                </div>
+                <t t-set="location_set" t-value="False"/>
+                <t t-foreach="location2" t-as="location">
+                    <t t-if="not location_set or location_set != location['location'] ">
+                        <t t-set="location_set" t-value="location['location']"/>
+                        <div class="col-xs-4 text-left">
+                            <strong>
+                                <span t-esc="location['location']" />
+                            </strong>
+                        </div>
+                        <div class="col-xs-4 text-left">
+                            <strong>
+                                Product
+                            </strong>
+                        </div>
+                        <div class="col-xs-4 text-right">
+                            <strong>
+                                Quantity
+                            </strong>
+                        </div>
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 1px solid black;"></div>
+                        </div>
+                    </t>
+                    <t t-set="product_set" t-value="False"/>
+                    <t t-foreach="location['products']" t-as="loc">
+                       <t t-if="product_set == location['palette']">
+                           <div class="col-xs-4">
+                                &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;+
+                           </div>
+                       </t>
+                       <t t-if="not product_set or product_set != location['palette']">
+                           <t t-set="product_set" t-value="location['palette']"/>
+                           <div class="col-xs-4">
+                                <span t-esc="location['palette']" />
+                           </div>
+                       </t>
+                       <div class="col-xs-4 text-left">
+                           <span t-esc="loc['product']" />
+                       </div>
+                       <div class="col-xs-4 text-right">
+                           <span t-esc="loc['qty']" />
+                       </div>
+                    </t>
+                    <div class="col-xs-12">
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>
+
+</odoo>

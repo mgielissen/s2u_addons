@@ -1,0 +1,1516 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* s2uintermediair
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 06:29+0000\n"
+"PO-Revision-Date: 2019-01-22 14:25+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 2.2.1\n"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_calc_net_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_amount
+msgid "# Amount"
+msgstr "Betrag"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_po_amount_delta
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_pre_amount_delta
+msgid "# Delta"
+msgstr "# Delta"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_used_amount
+msgid "# Used"
+msgstr "# benutzt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_purchase_intermediair_calc_count
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_sale_intermediair_calc_count
+msgid "# of Calculations"
+msgstr "# der Kalkulation"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_outgoing_count
+msgid "# of Outgoings"
+msgstr "# der Ausgänge"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_po_count
+msgid "# of Purchases"
+msgstr "# der Einkäufe"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_so_count
+msgid "# of Sales"
+msgstr "# der Verkäufe"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "0,1&amp;#37; afvalbeheersbijdrage verpakkingen"
+msgstr "0,1&amp;#37; Abfallbewirtschaftungsbeitrag Verpackung"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "<b>Item<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span></b>"
+msgstr "<b>Artikel<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span></b>"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "<b>Total agreed amount</b><span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "<b>Gesamtbetrag</b><span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "<b>Total</b><span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "<b>Summe</b><span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_po_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_so_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_so_document
+msgid "<span>:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "<span>:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_qty
+msgid "Aantal"
+msgstr "Anzahl"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:1383
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_add_purchase
+#, python-format
+msgid "Add purchase"
+msgstr "Kauf hinzufügen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_address_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_address
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_invoice_address_id
+msgid "Address"
+msgstr "Adresse"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:758
+#, python-format
+msgid "Address does not belong to the selected debitor!"
+msgstr "Adresse gehört nicht zum ausgewählten Debitor!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:775
+#, python-format
+msgid "Address does not belong to the selected invoice!"
+msgstr "Adresse gehört nicht zur gewählten Rechnung!"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_calc_amount_kickback
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_net_amount_kickback
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_net_amount_kickback
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_net_amount_kickback
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_net_amount_kickback
+msgid "Amount (kb)"
+msgstr "Betrag (kb)"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_amount_price_per
+msgid "Amount per"
+msgstr "Betrag pro"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_analytic_id
+msgid "Analytic"
+msgstr "Analytic"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Are you sure?"
+msgstr "Bist du dir sicher?"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_artwork
+msgid "Artwork"
+msgstr "Artwork"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_po_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_po_document
+msgid "Artwork date"
+msgstr "Gestaltungsdatum"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_purchase_date_artwork
+msgid "Artwork delivery"
+msgstr "Artwork Lieferung"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc,delivery_type:0
+#: selection:s2u.intermediair.calc,invoice_type:0
+#: selection:s2u.intermediair.calc,load_type:0
+#: selection:s2u.intermediair.calc,type:0
+#: selection:s2u.intermediair.calc.delivery.address,delivery_type:0
+#: selection:s2u.intermediair.calc.delivery.address,load_type:0
+msgid "B2B"
+msgstr "B2B"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc,delivery_type:0
+#: selection:s2u.intermediair.calc,invoice_type:0
+#: selection:s2u.intermediair.calc,load_type:0
+#: selection:s2u.intermediair.calc,type:0
+#: selection:s2u.intermediair.calc.delivery.address,delivery_type:0
+#: selection:s2u.intermediair.calc.delivery.address,load_type:0
+msgid "B2C"
+msgstr "B2C"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_payment
+msgid "Betaling"
+msgstr "Bezahlung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_account_invoice_amount_bijdrage
+msgid "Bijdrage"
+msgstr "Beitrag"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_crm_entity
+msgid "CRM Entity"
+msgstr "CRM Entität"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_calc_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_calc_amount_base
+msgid "Calc."
+msgstr "Calc."
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_calcpurchase_id
+msgid "Calc. purchase"
+msgstr "Calc. Einkauf"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_calc_price
+msgid "Calculatie"
+msgstr "Berechnung"
+
+#. module: s2uintermediair
+#: model:ir.actions.act_window,name:s2uintermediair.action_calc
+#: model:ir.ui.menu,name:s2uintermediair.menu_action_calc
+msgid "Calculaties"
+msgstr "Berechnungen"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_purchase_line_intermediair_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_warehouse_outgoing_intermediair_calc_id
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Calculation"
+msgstr "Kalkulation"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:580
+#, python-format
+msgid "Calculation qty must have a positive value!"
+msgstr "Kalkulationsmenge muss einen positiven Wert haben!"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_tree
+msgid "Calculations"
+msgstr "Kalkulationen"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/wizards/add_purchase.py:131
+#, python-format
+msgid "Can not match distribution! Position [%s] is not defined."
+msgstr "Verteilung kann nicht übereinstimmen! Position [%s] ist nicht definiert."
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+#: model:ir.ui.view,arch_db:s2uintermediair.wizard_add_purchase_view
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc,state:0
+msgid "Canceled"
+msgstr "Abgebrochen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_code
+msgid "Code"
+msgstr "Code"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_company_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_company_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_company_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_condition
+msgid "Conditie"
+msgstr "Kondition"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc,state:0
+msgid "Confirmed"
+msgstr "Bestätigt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_contact_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_contact_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_contact_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_invoice_contact_id
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:756
+#, python-format
+msgid "Contact does not belong to the selected debitor!"
+msgstr "Kontakt gehört nicht zum ausgewählten Debitor!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:790
+#, python-format
+msgid "Contact does not belong to the selected delivery!"
+msgstr "Kontakt gehört nicht zur ausgewählten Lieferung!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:773
+#, python-format
+msgid "Contact does not belong to the selected invoice!"
+msgstr "Kontakt gehört nicht zur ausgewählten Rechnung!"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_create_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_create_id
+msgid "Create"
+msgstr "erstellen"
+
+#. module: s2uintermediair
+#: model:ir.actions.act_window,name:s2uintermediair.action_create_purchase_from_projects
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+#: model:ir.ui.view,arch_db:s2uintermediair.wizard_add_purchase_view
+msgid "Create purchase"
+msgstr "Kauf erstellen"
+
+#. module: s2uintermediair
+#: model:ir.actions.act_window,name:s2uintermediair.action_create_quotation_from_projects
+msgid "Create quotation"
+msgstr "Angebot erstellen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_create_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_create_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_partner_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_partner_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_invoice_partner_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_partner_id
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_date_calc
+msgid "Date"
+msgstr "Datum"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_date_artwork
+msgid "Date artwork"
+msgstr "Datum artwork"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_date_delivery
+msgid "Date delivery"
+msgstr "Lieferdatum"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_date_submission
+msgid "Date submission"
+msgstr "Datum der Einreichung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,help:s2uintermediair.field_s2u_crm_entity_intermediair_kickback
+msgid "Default kickback"
+msgstr "Rückzahlung Standard"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_default_value
+msgid "Default value"
+msgstr "Standardwert"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_ids
+msgid "Deliveries"
+msgstr "Lieferungen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_delivery_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_delivery_id
+msgid "Delivery"
+msgstr "Lieferung"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Delivery address"
+msgstr "Lieferadresse"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_po_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_po_document
+msgid "Delivery date"
+msgstr "Lieferdatum"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_is_sale_address
+msgid "Delivery is sale address"
+msgstr "Lieferadresse ist Verkaufsadresse"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc.dynamic.costs,pos:0
+msgid "Detail"
+msgstr "Detail"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_product_detail
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_ids
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_product_detail
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_product_detail
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_product_detail
+msgid "Details"
+msgstr "Details"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_display
+msgid "Display"
+msgstr "Anzeige"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_display_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_distribution
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_distribution
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_distribution
+msgid "Distribution"
+msgstr "Verteilung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_overigen
+msgid "Diversen"
+msgstr "Diversen"
+
+#. module: s2uintermediair
+#: sql_constraint:s2u.intermediair.calc.totals:0
+msgid "Double pos used !"
+msgstr "Doppelte pos verwendet!"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Dynamic costs"
+msgstr "Dynamische Kosten"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc_dynamic_costs
+msgid "Dynamic costs in calculation"
+msgstr "Dynamische Kosten in der Kalkulation"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_ids
+msgid "EV"
+msgstr "EV"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_ids
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Editions"
+msgstr "Editions"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_product_id
+msgid "Eindproduct"
+msgstr "Endprodukt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_product_id
+msgid "Einproduct"
+msgstr "Endprodukt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_entity_id
+msgid "Entity"
+msgstr "Entität"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fixcosts_ids
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Fix costs"
+msgstr "Fixkosten"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc_fix_costs
+msgid "Fix costs in calculation"
+msgstr "Fixkosten in der Kalkulation"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_calc_gross_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_gross_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_gross_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_gross_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_gross_amount
+msgid "Gross amount"
+msgstr "Bruttobetrag"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_id_5690
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_name
+msgid "Group"
+msgstr "Gruppe"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_id
+msgid "ID"
+msgstr "ID"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "INVOICE"
+msgstr "RECHNUNG"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_sale_intermediair_image
+msgid "Image"
+msgstr "Bild"
+
+#. module: s2uintermediair
+#: model:res.groups,name:s2uintermediair.allowed
+msgid "Intermediair Module"
+msgstr "Intermediair Module"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_currency_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_currency_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_currency_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_currency_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_currency_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_currency_id
+msgid "Invoice Currency"
+msgstr "Währung"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Invoice address"
+msgstr "Rechnungsanschrift"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Invoice and delivery"
+msgstr "Rechnung und Lieferung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_invoice_is_sale_address
+msgid "Invoice is sale address"
+msgstr "Rechnungsadresse ist Verkaufsadresse"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "Invoice number<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "Rechnungsnummer<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc.totals,price_per:0
+msgid "Item"
+msgstr "Artikel"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_kickback_id
+msgid "Kickback"
+msgstr "Rückzahlung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_intermediair_kickback
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_intermediair_kickback_ids
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_kickback
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_kickback
+msgid "Kickback in %"
+msgstr "Rückzahlung (%)"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_fix_price
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_fix_price
+msgid "Kostprijs"
+msgstr "Kosten Preis"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_label_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_label_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_label_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_name
+#: selection:s2u.intermediair.add.purchase.line,pos:0
+#: selection:s2u.intermediair.calc.purchase,pos:0
+msgid "Label"
+msgstr "Label"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Labels"
+msgstr "Labels"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_lang
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_lang
+msgid "Language"
+msgstr "Sprache"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label___last_update
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group___last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_write_uid
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert durch"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_kickback_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_group_write_date
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_layout_id
+msgid "Layout"
+msgstr "Vorlage"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_condition_delivery
+msgid "Leveringsconditie"
+msgstr "Lieferbedingungen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_country_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_country_id
+msgid "Leveringsland"
+msgstr "Lieferland"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_account_invoice_intermediair_linked_orders
+msgid "Linked orders"
+msgstr "Verknüpfte Aufträge"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_load_address
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_load_address
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Loading address"
+msgstr "Verladeadresse"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_load_entity_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_load_entity_id
+msgid "Loading entity"
+msgstr "Verlade Entität"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_location_id
+msgid "Location"
+msgstr "Ort"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_po_amount_locked
+msgid "Locked"
+msgstr "gesperrt"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_add_quotation_form
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Make quotation"
+msgstr "Angebot machen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_crm_entity_intermediair_marge
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_surcharge
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_surcharge
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_po_marge
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_pre_marge
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_surcharge
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_surcharge
+msgid "Marge in %"
+msgstr "Marge in %"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_modellen
+msgid "Modellen"
+msgstr "Modellen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_po_amount
+msgid "Nacalc."
+msgstr "Nachber."
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_after_price
+msgid "Nacalculatie"
+msgstr "Nachberechnung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_net_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_net_amount
+msgid "Net amount"
+msgstr "Netto Preis"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc,state:0
+msgid "New"
+msgstr "Neu"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/sale.py:156
+#: code:addons/s2uintermediair/models_inherited/shipment.py:148
+#, python-format
+msgid "No VAT is defined for 'Afvalbeheersbijdrage' %s!"
+msgstr "Für 'Abfallentsorgungsbeitrag' %s ist keine Mehrwertsteuer definiert!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/shipment.py:86
+#, python-format
+msgid "No VAT is defined for product %s!"
+msgstr "Für das Produkt %s ist keine Mehrwertsteuer definiert!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/shipment.py:35
+#, python-format
+msgid "No financial account is defined for product %s!"
+msgstr "Für das Produkt %s ist kein Finanzkonto definiert!"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_details
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_fix_costs_name
+msgid "Omschrijving"
+msgstr "Beschreibung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_on_invoice
+msgid "On invoice"
+msgstr "Bei Rechnung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_qty
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_product_qty
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_qty
+msgid "Oplage"
+msgstr "Zirkulation"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc,state:0
+msgid "Order"
+msgstr "Bestellung"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "Order number<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "Bestellnummer<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc.detail,display:0
+msgid "Order only"
+msgstr "nur Bestellung"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_po_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_po_document
+msgid "Our order number"
+msgstr "Unsere Bestellnummer"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_reference
+msgid "Our reference"
+msgstr "Unsere Reference"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_warehouse_outgoing
+msgid "Outgoing"
+msgstr "Ausgehend"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Outgoings"
+msgstr "Ausgehende"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_layout_id
+msgid "PO Layout"
+msgstr "PO Vorlage"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_po_amount_fixed
+msgid "PO amount fixed"
+msgstr "Bestellbetrag festgelegt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_pass_on
+msgid "Pass on"
+msgstr "weitergeben"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_item_price
+msgid "Per stuk"
+msgstr "pro Stück"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_date_planning
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_planning
+msgid "Planning"
+msgstr "Planung"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/sale.py:134
+#: code:addons/s2uintermediair/models_inherited/shipment.py:56
+#: code:addons/s2uintermediair/models_inherited/shipment.py:126
+#, python-format
+msgid "Please define Country VAT rule for country %s!"
+msgstr "Bitte definieren Sie die Mehrwertsteuerregel für Land %s!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/sale.py:97
+#: code:addons/s2uintermediair/models_inherited/shipment.py:108
+#, python-format
+msgid "Please define account 8075 for 'Afvalbeheersbijdrage'!"
+msgstr "Bitte definieren Sie das Konto 8075 für \"Entsorgungsbeitrag\"!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:1703
+#, python-format
+msgid "Please enter the totals for project [%s]!"
+msgstr "itte geben Sie die Summen für das Projekt ein [%s]!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:1268
+#: code:addons/s2uintermediair/models/calculation.py:1375
+#, python-format
+msgid "Please enter the totals for this project!"
+msgstr "Please enter the totals for this project!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:70
+#: code:addons/s2uintermediair/models/calculation.py:150
+#: code:addons/s2uintermediair/models/calculation.py:542
+#: code:addons/s2uintermediair/models/calculation.py:655
+#: code:addons/s2uintermediair/models/calculation.py:1040
+#, python-format
+msgid "Please enter valid kickback!"
+msgstr "Please enter valid kickback!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:1321
+#, python-format
+msgid "Please mark which stock products to reserve!"
+msgstr "Please mark which stock products to reserve!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:754
+#, python-format
+msgid "Please select a b2b debitor!"
+msgstr "Bitte wählen Sie einen b2b-Schuldner aus!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:788
+#, python-format
+msgid "Please select a b2b delivery!"
+msgstr "Bitte wählen Sie eine b2b Lieferung!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:771
+#, python-format
+msgid "Please select a b2b invoice!"
+msgstr "Bitte wählen Sie eine b2b-Rechnung aus!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:801
+#, python-format
+msgid "Please select a b2b loading!"
+msgstr "Bitte wähle ein b2b Beladung aus!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:761
+#, python-format
+msgid "Please select a b2c debitor!"
+msgstr "Bitte wählen Sie einen b2c-Schuldner aus!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:793
+#, python-format
+msgid "Please select a b2c delivery!"
+msgstr "Bitte wählen Sie eine b2c Lieferung!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:778
+#, python-format
+msgid "Please select a b2c invoice!"
+msgstr "Bitte wählen Sie eine b2c-Rechnung aus!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:804
+#, python-format
+msgid "Please select a b2c loading!"
+msgstr "Bitte wähle ein b2c Beladung aus!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/wizards/add_purchase.py:73
+#, python-format
+msgid "Please select products to purchase!"
+msgstr "Bitte wählen Sie Produkte zum Kauf!"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.wizard_add_purchase_view
+msgid "Please select suppliers to add purchases for:"
+msgstr "Bitte wählen Sie Lieferanten für ihre Einkäufe aus:"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_pos
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_pos
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_pos
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_pos
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_pos
+msgid "Pos"
+msgstr "Pos"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_price_per
+msgid "Pricing"
+msgstr "Preisgestaltung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_prices
+msgid "Prijzen"
+msgstr "Preise"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_product_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_product_id
+msgid "Product"
+msgstr "Produkt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_intermediair_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_intermediair_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_project
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_name
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_intermediair_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_project
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_purchase_line_qty_intermediair_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_sale_line_intermediair_calc_id
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_warehouse_production_used_materials_intermediair_calc_id
+msgid "Project"
+msgstr "Projekt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_ids
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_add_quotation_form
+msgid "Projects"
+msgstr "Projekte"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_purchase
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_ids
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_purchase
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_purchaseline_id
+#: model:ir.ui.view,arch_db:s2uintermediair.wizard_add_purchase_view
+msgid "Purchase"
+msgstr "Einkauf"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_purchase_line
+msgid "Purchase line"
+msgstr "Einkaufslinie"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_purchase_line_qty
+msgid "Purchase line Qty"
+msgstr "Einkaufslinie Qty"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_calc_po_ids
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Purchases"
+msgstr "Einkäufe"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_qty
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_qty
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_product_qty
+msgid "Qty"
+msgstr "Menge"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc.detail,display:0
+msgid "Quotation and Order"
+msgstr "Angebot und Bestellung"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_so_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_so_document
+msgid "Quotation number"
+msgstr "Angebotsnummer"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc.detail,display:0
+msgid "Quotation only"
+msgstr "nur Angebot"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_reference
+msgid "Reference"
+msgstr "Referenz"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc,state:0
+msgid "Rejected"
+msgstr "Abgelehnt"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_reserve
+msgid "Reserve"
+msgstr "Reserve"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_reservedline_id
+msgid "Reserved"
+msgstr "Reserved"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_sale
+msgid "Sale"
+msgstr "Verkauf"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_sale_line
+msgid "Sale line"
+msgstr "Verkaufslinie"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_sale_line_qty
+msgid "Sale line Qty"
+msgstr "Verkaufslinie Qty"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_salelineqty_id
+msgid "Sale line qty"
+msgstr "Verkaufslinie Menge"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Sales"
+msgstr "Verkauf"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_account_invoice
+msgid "Sales invoice"
+msgstr "Verkaufsrechnung"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_search_view
+msgid "Search"
+msgstr "Suchen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_line_sequence
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_sequence
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_sequence
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_create_quotation_line_sequence
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_sequence
+msgid "Sequence"
+msgstr "Nummernfolge"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:949
+#, python-format
+msgid "Sequence for creating calculation number (s2u.intermediair.calc) not exists!"
+msgstr "Sequenz zur Erstellung der Berechnungsnummer (s2u.intermediair.calc) existiert nicht!"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_show_on_po
+msgid "Show on PO"
+msgstr "Auf Einkauf anzeigen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_show_on_so
+msgid "Show on SO"
+msgstr "Auf Verkauf anzeigen"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_show_on_invoice
+msgid "Show on invoice"
+msgstr "Auf Rechnung anzeigen"
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.add.purchase.line,pos:0
+#: selection:s2u.intermediair.calc.dynamic.costs,pos:0
+#: selection:s2u.intermediair.calc.purchase,pos:0
+#: selection:s2u.intermediair.calc.stock,pos:0
+#: selection:s2u.intermediair.calc.totals,pos:0
+msgid "Staffel 1."
+msgstr "Staffel 1."
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.add.purchase.line,pos:0
+#: selection:s2u.intermediair.calc.dynamic.costs,pos:0
+#: selection:s2u.intermediair.calc.purchase,pos:0
+#: selection:s2u.intermediair.calc.stock,pos:0
+#: selection:s2u.intermediair.calc.totals,pos:0
+msgid "Staffel 2."
+msgstr "Staffel 2."
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.add.purchase.line,pos:0
+#: selection:s2u.intermediair.calc.dynamic.costs,pos:0
+#: selection:s2u.intermediair.calc.purchase,pos:0
+#: selection:s2u.intermediair.calc.stock,pos:0
+#: selection:s2u.intermediair.calc.totals,pos:0
+msgid "Staffel 3."
+msgstr "Staffel 3."
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.add.purchase.line,pos:0
+#: selection:s2u.intermediair.calc.dynamic.costs,pos:0
+#: selection:s2u.intermediair.calc.purchase,pos:0
+#: selection:s2u.intermediair.calc.stock,pos:0
+#: selection:s2u.intermediair.calc.totals,pos:0
+msgid "Staffel 4."
+msgstr "Staffel 4."
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.add.purchase.line,pos:0
+#: selection:s2u.intermediair.calc.dynamic.costs,pos:0
+#: selection:s2u.intermediair.calc.purchase,pos:0
+#: selection:s2u.intermediair.calc.stock,pos:0
+#: selection:s2u.intermediair.calc.totals,pos:0
+msgid "Staffel 5."
+msgstr "Staffel 5."
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_purchase_line_qty_startup_costs
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_purchase_line_startup_costs
+msgid "Startup"
+msgstr "Startup"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_state
+msgid "State"
+msgstr "Bundesland"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "Subtotal<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "Zwischensumme<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_add_purchase_supplier_ids
+msgid "Suppliers"
+msgstr "Lieferanten"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_tinno
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_tinno
+msgid "TIN no."
+msgstr "USt-ID-Nr."
+
+#. module: s2uintermediair
+#: selection:s2u.intermediair.calc.totals,price_per:0
+msgid "Total"
+msgstr "Summe"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_trailer_no
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_trailer_no
+msgid "Trailer-No."
+msgstr "Trailer-No."
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_delivery_type
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_address_load_type
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_delivery_type
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_invoice_type
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_load_type
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_type
+msgid "Type"
+msgstr "Typ"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_unit_id
+msgid "Unit"
+msgstr "Einheit"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_label_use_as_default
+msgid "Use as default"
+msgstr "Als standard benutzen"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_warehouse_production_used_materials
+msgid "Used materials"
+msgstr "Verwendete Materialien"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_user_id
+msgid "User"
+msgstr "Benutzer"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_costs_calc_vat_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_purchase_vat_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_stock_vat_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_totals_vat_amount
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_vat_amount
+msgid "VAT"
+msgstr "MwSt."
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_detail_value
+msgid "Value"
+msgstr "Wert"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_dynamic_cost_ids
+#: model:ir.ui.view,arch_db:s2uintermediair.calc_form
+msgid "Var. costs"
+msgstr "Var. costs"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "Vat<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "MwSt.<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_pre_amount
+msgid "Voorcalc."
+msgstr "Vorberechnung"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,help:s2uintermediair.field_s2u_intermediair_calc_active
+msgid "When set to not active, this project is not visible anymore."
+msgstr "Wenn diese Einstellung nicht aktiviert ist, ist dieses Projekt nicht mehr sichtbar."
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:970
+#, python-format
+msgid "You can not delete a confirmed calculation!"
+msgstr "Sie können eine bestätigte Kalkulation nicht löschen!"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:1313
+#, python-format
+msgid "You have no products selected from stock!"
+msgstr "Sie haben keine Produkte aus Vorrat ausgewählt!"
+
+#. module: s2uintermediair
+#: model:ir.model.fields,field_description:s2uintermediair.field_s2u_intermediair_calc_customer_code
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_po_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_order_so_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_po_document
+#: model:ir.ui.view,arch_db:s2uintermediair.print_quotation_so_document
+msgid "Your reference"
+msgstr "Ihre Reference"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.print_invoice_so_document
+msgid "Your reference<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+msgstr "Ihre Refernce<span class=\"pull-right\">:&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:391
+#, python-format
+msgid "april"
+msgstr "April"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:392
+#, python-format
+msgid "august"
+msgstr "August"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:393
+#, python-format
+msgid "december"
+msgstr "Dezember"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:390
+#, python-format
+msgid "februar"
+msgstr "Februar"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:390
+#, python-format
+msgid "januar"
+msgstr "Januar"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:392
+#, python-format
+msgid "july"
+msgstr "Juli"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:391
+#, python-format
+msgid "june"
+msgstr "Juni"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:390
+#, python-format
+msgid "march"
+msgstr "März"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:391
+#, python-format
+msgid "may"
+msgstr "Mai"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:393
+#, python-format
+msgid "november"
+msgstr "November"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:393
+#, python-format
+msgid "october"
+msgstr "Oktober"
+
+#. module: s2uintermediair
+#: model:ir.ui.view,arch_db:s2uintermediair.wizard_add_purchase_view
+msgid "or"
+msgstr "oder"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/sale.py:59
+#: selection:s2u.intermediair.calc.totals,price_per:0
+#, python-format
+msgid "per 10"
+msgstr "pro 10"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/sale.py:60
+#: selection:s2u.intermediair.calc.totals,price_per:0
+#, python-format
+msgid "per 100"
+msgstr "pro 100"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/sale.py:61
+#: selection:s2u.intermediair.calc.totals,price_per:0
+#, python-format
+msgid "per 1000"
+msgstr "pro 1000"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models_inherited/sale.py:58
+#, python-format
+msgid "per Item"
+msgstr "pro Stück"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_crm_entity_kickback
+msgid "s2u.crm.entity.kickback"
+msgstr "s2u.crm.entity.kickback"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_add_purchase_line
+msgid "s2u.intermediair.add.purchase.line"
+msgstr "s2u.intermediair.add.purchase.line"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc_delivery_address
+msgid "s2u.intermediair.calc.delivery.address"
+msgstr "s2u.intermediair.calc.delivery.address"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc_detail
+msgid "s2u.intermediair.calc.detail"
+msgstr "s2u.intermediair.calc.detail"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc_purchase
+msgid "s2u.intermediair.calc.purchase"
+msgstr "s2u.intermediair.calc.purchase"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc_stock
+msgid "s2u.intermediair.calc.stock"
+msgstr "s2u.intermediair.calc.stock"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_calc_totals
+msgid "s2u.intermediair.calc.totals"
+msgstr "s2u.intermediair.calc.totals"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_create_quotation
+msgid "s2u.intermediair.create.quotation"
+msgstr "s2u.intermediair.create.quotation"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_create_quotation_line
+msgid "s2u.intermediair.create.quotation.line"
+msgstr "s2u.intermediair.create.quotation.line"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_label
+msgid "s2u.intermediair.label"
+msgstr "s2u.intermediair.label"
+
+#. module: s2uintermediair
+#: model:ir.model,name:s2uintermediair.model_s2u_intermediair_label_group
+msgid "s2u.intermediair.label.group"
+msgstr "s2u.intermediair.label.group"
+
+#. module: s2uintermediair
+#: code:addons/s2uintermediair/models/calculation.py:392
+#, python-format
+msgid "september"
+msgstr "September"

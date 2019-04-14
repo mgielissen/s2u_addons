@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <!-- Mollie Payment Acquirer -->
+        <record id="payment_acquirer_form" model="ir.ui.view">
+            <field name="inherit_id" ref="s2upayment.payment_acquirer_form"/>
+            <field name="model">s2u.payment.acquirer</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/group" position="after">
+                    <group string="Mollie payment aquirer data" attrs="{'invisible': [('provider', '!=', 'mollie')]}">
+                        <field name="mollie_api_key_prod"
+                               attrs="{'required': ['&amp;', ('provider', '=', 'mollie'),
+                                                             ('environment', '=', 'prod')]}" />
+                        <field name="mollie_base_url_prod"
+                               attrs="{'required': ['&amp;', ('provider', '=', 'mollie'),
+                                                             ('environment', '=', 'prod')]}" />
+                        <field name="mollie_api_key_test"
+                               attrs="{'required': ['&amp;', ('provider', '=', 'mollie'),
+                                                             ('environment', '=', 'test')]}" />
+                        <field name="mollie_base_url_test"
+                               attrs="{'required': ['&amp;', ('provider', '=', 'mollie'),
+                                                             ('environment', '=', 'test')]}" />
+                        <field name="mollie_account_id"
+                               attrs="{'required': [('provider', '=', 'mollie')]}" />
+                        <field name="mollie_description"
+                               attrs="{'required': [('provider', '=', 'mollie')]}" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

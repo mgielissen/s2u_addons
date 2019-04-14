@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <menuitem name="Webshop"
+                  id="menu_s2uecommerce_configuration"
+                  parent="website.menu_website_configuration" sequence="400"/>
+    </data>
+</openerp>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="s2uintermediair.allowed" model="res.groups">
+            <field name="category_id" ref="s2ubase.module_category_s2uframework"/>
+            <field name="name">Intermediair Module</field>
+        </record>
+    </data>
+</openerp>

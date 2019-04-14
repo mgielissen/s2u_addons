@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_shop">
+        <link href="/s2uecommerce/static/src/css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="/s2uecommerce/static/src/js/main.js" defer="defer" async="async"></script>
+    </template>
+
+    <template id="assets_checkout">
+        <script src="/s2uecommerce/static/src/js/checkout.js" defer="defer" async="async"></script>
+    </template>
+</odoo>

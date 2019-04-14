@@ -1,0 +1,75 @@
+<openerp>
+    <data>
+        <!-- Available -->
+        <record model="ir.ui.view" id="warehouse_available_search_view">
+            <field name="model">s2u.warehouse.available</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="product_id" />
+                    <field name="product_detail" />
+                </search>
+            </field>
+        </record>
+
+        <record id="warehouse_available_form" model="ir.ui.view">
+            <field name="model">s2u.warehouse.available</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse available" create="false" edit="false" delete="false">
+                    <sheet>
+                        <div class="oe_button_box" style="width: 100%;" name="button_box">
+                            <button name="action_view_outgoing"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-truck"
+                                    attrs="{'invisible': [('outgoing_count', '=', 0)]}">
+                                <field name="outgoing_count" widget="statinfo" string="Outgoings"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="product_id" options="{'no_create': True, 'no_open': True}" />
+                            </group>
+                            <group>
+                                <field name="product_detail" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="qty_available" />
+                            </group>
+                            <group>
+                                <field name="qty_assigned" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="warehouse_available_tree" model="ir.ui.view">
+            <field name="model">s2u.warehouse.available</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouse available" create="false" edit="false" delete="false">
+                    <field name="product_id" />
+                    <field name="product_detail" />
+                    <field name="qty_available" sum="Total"/>
+                    <field name="qty_assigned" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_warehouse_available" model="ir.actions.act_window">
+            <field name="name">Available</field>
+            <field name="res_model">s2u.warehouse.available</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="warehouse_available_tree" />
+            <field name="domain"></field>
+        </record>
+
+        <menuitem action="action_warehouse_available" id="menu_warehouse_available"
+            parent="menu_warehouse_stock" sequence="30" groups="s2uwarehouse.group_warehouse_user"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,10 @@
+<openerp>
+    <data noupdate="0">
+        <record model="ir.rule" id="s2u_baseproduct_item_rule">
+            <field name="name">Object s2u.baseproduct.item</field>
+            <field name="model_id" ref="model_s2u_baseproduct_item"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id','=',user.company_id.id)]</field>
+        </record>
+    </data>
+</openerp>
