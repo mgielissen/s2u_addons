@@ -11,7 +11,7 @@ Install the modules you want. If you have installed accounting, to get a default
 
 The main goal of s2u_addons is to do your accounting, project management, timesheets and subscriptions.
 
-To give you an impression how thinks works:
+To give you an impression how things works:
 https://www.youtube.com/watch?v=nhUQ3ZWp6Uw
 
 Please contact us if you have any questions:
